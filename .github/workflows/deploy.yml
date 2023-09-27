@@ -32,21 +32,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7
-
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
-          cache: pnpm
+          node-version: "16.x"
 
       # install dependencies
-      - run: pnpm install
+      - run: npm install
 
       # run build script
       - name: Build Vitepress site
-        run: pnpm run docs:build
+        run: npm run docs:build
 
       # deploy static file
       - name: Deploy to Github Pages
