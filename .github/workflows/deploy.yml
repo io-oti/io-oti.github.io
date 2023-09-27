@@ -3,7 +3,7 @@ name: Deploy
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -46,7 +46,7 @@ jobs:
 
       # run build script
       - name: Build Vitepress site
-        run: pnpm run build
+        run: pnpm run docs:build
 
       # deploy static file
       - name: Deploy to Github Pages
