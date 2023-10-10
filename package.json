@@ -1,5 +1,5 @@
 {
-  "name": "io-oti.github.com",
+  "name": "io-oti.github.io",
   "version": "1.0.0",
   "description": "a github blog",
   "main": "index.js",
@@ -11,17 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/io-oti/io-oti.github.com.git"
+    "url": "git+https://github.com/io-oti/io-oti.github.io.git"
   },
   "keywords": [
-    "blog"
+    "blog",
+    "vitepress",
+    "github pages"
   ],
   "author": "io_oti",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/io-oti/io-oti.github.com/issues"
+    "url": "https://github.com/io-oti/io-oti.github.io/issues"
   },
-  "homepage": "https://github.com/io-oti/io-oti.github.com#readme",
+  "homepage": "https://github.com/io-oti/io-oti.github.io#readme",
   "devDependencies": {
     "vitepress": "^1.0.0-rc.20"
   }
