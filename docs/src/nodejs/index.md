@@ -8,17 +8,11 @@ npm 是 Node.js 标准的软件包管理器。
 
 
 - npmmirror 镜像源：[https://registry.npmmirror.com](https://registry.npmmirror.com/)
-- 平安镜像源：[http://maven.paic.com.cn/repository/npm/](http://maven.paic.com.cn/repository/npm/)
 
 
 ```bash
 # 配置 npmmirror 镜像源
 npm config set registry=https://registry.npmmirror.com
-
-
-# 配置平安镜像源
-npm config set registry=http://maven.paic.com.cn/repository/npm/
-
 
 ```
 
