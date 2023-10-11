@@ -49,14 +49,14 @@ export default defineConfig({
           {
             text: 'Vue 3',
             items: [
-              { text: 'Options API', link: '/vue/3/' },
+              { text: 'Options API', link: '/vue/3/options-api' },
               { text: 'Composition API', link: '/vue/3/composition-api' },
             ]
           },
           {
             text: 'Vue 2',
             items: [
-              { text: 'Options API', link: '/vue/2/' },
+              { text: 'Options API', link: '/vue/2/options-api' },
               { text: 'Render Function', link: '/vue/2/render-function' },
               { text: 'JSX', link: '/vue/2/jsx' },
             ]
@@ -76,12 +76,12 @@ export default defineConfig({
           }
         ]
       },
-      { text: 'Git', link: '/git/' },
       {
         text: 'Others',
         items: [
           { text: 'Browser', link: '/others/browser' },
-          { text: 'Nginx', link: '/others/nginx' },
+          { text: 'Nginx', link: '/nginx/nginx-guide' },
+          { text: 'Git', link: '/git/git-cheapsheets' },
         ],
       }
     ],
@@ -108,14 +108,14 @@ export default defineConfig({
           {
             text: 'Vue 3',
             items: [
-              { text: 'Options API', link: '/3/' },
+              { text: 'Options API', link: '/3/options-api' },
               { text: 'Composition API', link: '/3/composition-api' },
             ]
           },
           {
             text: 'Vue 2',
             items: [
-              { text: 'Options API', link: '/2/' },
+              { text: 'Options API', link: '/2/options-api' },
               { text: 'Render Function', link: '/2/render-function' },
               { text: 'JSX', link: '/2/jsx' },
             ]
