@@ -5,7 +5,7 @@ export default defineConfig({
   lang: 'zh-CN',
   title: "槭林",
   description: "连林人不觉 独树众乃奇",
-
+  cleanUrls: true,
   srcDir: 'src',
 
   head: [
@@ -19,7 +19,27 @@ export default defineConfig({
     logo: { src: '/maple.svg', width: 24, height: 24 },
 
     search: {
-      provider: 'local'
+      provider: 'local',
+      options: {
+        locales: {
+          zh: {
+            translations: {
+              button: {
+                buttonText: '搜索文档',
+                buttonAriaLabel: '搜索文档'
+              },
+              modal: {
+                noResultsText: '无法找到相关结果',
+                resetButtonTitle: '清除查询条件',
+                footer: {
+                  selectText: '选择',
+                  navigateText: '切换'
+                }
+              }
+            }
+          }
+        }
+      }
     },
 
     nav: [
@@ -27,13 +47,20 @@ export default defineConfig({
         text: 'Vue',
         items: [
           {
+            text: 'Vue 3',
+            items: [
+              { text: 'Options API', link: '/vue/3/' },
+              { text: 'Composition API', link: '/vue/3/composition-api' },
+            ]
+          },
+          {
             text: 'Vue 2',
             items: [
-              { text: 'Options API', link: '/vue/' },
-              { text: 'Render Function', link: '/vue/render-function' },
-              { text: 'JSX', link: '/vue/jsx' },
+              { text: 'Options API', link: '/vue/2/' },
+              { text: 'Render Function', link: '/vue/2/render-function' },
+              { text: 'JSX', link: '/vue/2/jsx' },
             ]
-          }
+          },
         ],
       },
       {
@@ -51,45 +78,11 @@ export default defineConfig({
       },
       { text: 'Git', link: '/git/' },
       {
-        text: 'Other',
+        text: 'Others',
         items: [
-          { text: 'Browser', link: '/browser/' },
+          { text: 'Browser', link: '/others/browser' },
+          { text: 'Nginx', link: '/others/nginx' },
         ],
-      }
-    ],
-
-    sidebar: [
-      {
-        text: 'Vue',
-        items: [
-          {
-            text: 'Vue 2',
-            items: [
-              { text: 'Options API', link: '/vue/' },
-              { text: 'Render Function', link: '/vue/render-function' },
-              { text: 'JSX', link: '/vue/jsx' },
-            ]
-          }
-        ],
-      },
-      {
-        text: 'NodeJS',
-        items: [
-          { text: 'Node Package Manager', link: '/nodejs/' },
-          {
-            text: 'Packages',
-            items: [
-              { text: 'xlsx', link: '/nodejs/packages/xlsx' },
-              { text: 'node-sass', link: '/nodejs/packages/node-sass' },
-            ]
-          }
-        ]
-      },
-      {
-        text: 'Git',
-        items: [
-          { text: 'Git Cheapsheets', link: '/git/' },
-        ]
       }
     ],
 
@@ -106,6 +99,52 @@ export default defineConfig({
         },
         link: 'https://codepen.io/Io_oTI'
       }
-    ]
+    ],
+
+    sidebar: {
+      '/vue/': {
+        base: '/vue/',
+        items: [
+          {
+            text: 'Vue 3',
+            items: [
+              { text: 'Options API', link: '/3/' },
+              { text: 'Composition API', link: '/3/composition-api' },
+            ]
+          },
+          {
+            text: 'Vue 2',
+            items: [
+              { text: 'Options API', link: '/2/' },
+              { text: 'Render Function', link: '/2/render-function' },
+              { text: 'JSX', link: '/2/jsx' },
+            ]
+          },
+        ]
+      },
+      '/nodejs/': {
+        base: '/nodejs/',
+        items: [
+          { text: 'NPM', link: '/' },
+          {
+            text: 'Packages',
+            items: [
+              { text: 'xlsx', link: '/packages/xlsx' },
+              { text: 'node-sass', link: '/packages/node-sass' },
+            ]
+          }
+        ]
+      }
+    },
+
+    outline: {
+      level: 'deep',
+      label: '本页目录'
+    },
+
+    docFooter: {
+      prev: '上一篇',
+      next: '下一篇'
+    }
   }
 })

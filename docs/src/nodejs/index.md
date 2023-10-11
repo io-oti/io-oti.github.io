@@ -1,7 +1,7 @@
-# Node Package Manager
+# NPM
 
 
-npm 是 Node.js 标准的软件包管理器。
+Node Package Manager 是 Node.js 标准的软件包管理器。
 
 
 ## 配置
@@ -186,12 +186,12 @@ library
 ## 问题集
 
 
-### 公司网络从淘宝镜像下载依赖问题
+### 内网环境从淘宝镜像下载依赖问题
 
 
 1. 删除 package.json 文件中的 node-sass 依赖和 image-webpack-loader 依赖。
 2. 将 webpack.base.conf.js 文件中 url-loader 部分注释掉的内容放开，将原本放开的 loaders 注释掉。
-3. 修改镜像源，执行 `npm config set registry=http://maven.paic.com.cn/repository/npm/` 。
+3. 修改镜像源，执行 `npm config set registry=http://xxx.com.cn/repository/npm/` 。
 4. 第 3 步 执行完后执行 `npm install` 。
 5. 第 4 步 执行完后执行 `npm install node-sass@4.10.0 --sass-binary-site=http://30.16.105.146/mirrors/node-sass` 。
 6. 执行 `npm run dev` 。
