@@ -4,6 +4,10 @@
 
 `createElement(tagName, property, children)`
 
+将 h 作为 createElement 的别名是 Vue 生态系统中的一个通用惯例，实际上也是 JSX 所要求的。从 Vue 的 Babel 插件的 3.4.0 版本开始，在以 ES2015 语法声明的含有 JSX 的任何方法和 getter 中 (不是函数或箭头函数中) 自动注入 const h = this.$createElement，这样你就可以去掉 (h) 参数了。对于更早版本的插件，如果 h 在当前作用域中不可用，应用会抛错。
+
+要了解更多关于 JSX 如何映射到 JavaScript，请阅读[使用文档](https://github.com/vuejs/jsx#installation)。
+
 ## Arguments
 
 ### tagName
@@ -95,7 +99,7 @@ Type: `{ String | Array }`
 
 ### Content
 
-```javascript
+```javascript{8-10}
 export default {
   data () {
     return {
@@ -115,8 +119,8 @@ export default {
 
 `vm.$props` 当前组件接收到的 props 对象。Vue 实例代理了对其 props 对象 property 的访问。
 
-```javascript
-import Children form './children.vue'
+```javascript{21-23}
+import Children from './children.vue'
 
 export default {
   name: 'Parent',
@@ -142,7 +146,7 @@ export default {
 }
 ```
 
-```javascript
+```javascript{9-11}
 export default {
  name: 'Children',
 
@@ -159,7 +163,7 @@ export default {
 
 ### DomProps
 
-```javascript
+```javascript{9-14}
 export default {
   data () {
     return {
@@ -172,7 +176,7 @@ export default {
     return h('div', {}, [
       h('div', { domProps: { innerText: this.text } }),
       h('div', { domProps: { innerHTML: this.html } })
-  ]);
+    ]);
   }
 };
 ```
@@ -181,7 +185,7 @@ export default {
 
 `vm.$listeners` 包含了父作用域中的 (不含 `.native` 修饰器的) `v-on` 事件监听器。
 
-```javascript
+```javascript{14-16}
 export default {
  data () {
     return {
@@ -207,7 +211,7 @@ export default {
 
 `vm.$scopedSlots` 用来访问[作用域插槽](https://cn.vuejs.org/v2/guide/components-slots.html#作用域插槽)。对于包括 `默认 slot` 在内的每一个插槽，该对象都包含一个返回相应 VNode 的函数。
 
-```javascript
+```javascript{17-24}
 import Children from './Children.vue'
 
 export default {
@@ -235,7 +239,7 @@ export default {
 }
 ```
 
-```javascript
+```javascript{4-12}
 export default {
   name: 'Children',
 
@@ -253,7 +257,7 @@ export default {
 
 ### Directives
 
-```javascript
+```javascript{8-14}
 export default {
  data () {
     return {
@@ -273,7 +277,7 @@ export default {
 
 ### v-model
 
-```javascript
+```javascript{14-21}
 export default {
   data () {
     return {

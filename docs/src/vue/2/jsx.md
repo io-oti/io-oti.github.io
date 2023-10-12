@@ -23,7 +23,7 @@ export default {
 `vm.$props` 当前组件接收到的 props 对象。Vue 实例代理了对其 props 对象 property 的访问。
 
 ```jsx
-import Children form './children.vue'
+import Children from './children.vue'
 
 export default {
   name: 'Parent',
