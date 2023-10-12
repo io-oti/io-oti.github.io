@@ -33,27 +33,3 @@ features:
     title: Git Cheapsheets
     details: git 备忘录
 ---
-<style>
-:root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #c21f30 30%, #f62e10);
-
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, #c21f30 50%, #f62e10 50%);
-  --vp-home-hero-image-filter: blur(40px);
-  --vp-c-indigo-1: #f62e10;
-  --vp-c-indigo-2: #d81e06;
-  --vp-c-indigo-3: #c21f30;
-}
-
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(56px);
-  }
-}
-
-@media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(72px);
-  }
-}
-</style>
