@@ -2,22 +2,29 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  lang: 'zh-CN',
-  title: "槭林",
+  title: "槭 林",
   description: "连林人不觉 独树众乃奇",
-  cleanUrls: true,
+
+  lang: 'zh-CN',
   srcDir: 'src',
+  cleanUrls: true,
 
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/maple.svg' }],
-    ['link', { rel: 'icon', type: 'image/png', href: '/maple.png' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/icons/maple.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/icons/maple.png' }],
   ],
+
+  markdown: {
+    lineNumbers: true
+  },
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
-    logo: { src: '/maple.svg', width: 24, height: 24 },
+    // logo - 网站图标
+    logo: { src: '/icons/maple.svg', width: 24, height: 24 },
 
+    // search - 搜索
     search: {
       provider: 'local',
       options: {
@@ -42,6 +49,7 @@ export default defineConfig({
       }
     },
 
+    // nav - 导航
     nav: [
       {
         text: 'Vue',
@@ -64,14 +72,14 @@ export default defineConfig({
         ],
       },
       {
-        text: 'NodeJS',
+        text: 'Node.js',
         items: [
-          { text: 'NPM', link: '/nodejs/' },
+          { text: 'NPM', link: '/nodejs/npm' },
           {
             text: 'Packages',
             items: [
-              { text: 'xlsx', link: '/nodejs/packages/xlsx' },
               { text: 'node-sass', link: '/nodejs/packages/node-sass' },
+              { text: 'xlsx', link: '/nodejs/packages/xlsx' },
             ]
           }
         ]
@@ -86,6 +94,7 @@ export default defineConfig({
       }
     ],
 
+    // socialLinks - 社交链接
     socialLinks: [
       {
         text: 'github',
@@ -101,23 +110,25 @@ export default defineConfig({
       }
     ],
 
+    // sidebar - 侧边栏
     sidebar: {
       '/vue/': {
-        base: '/vue/',
         items: [
           {
             text: 'Vue 3',
+            base: '/vue/3/',
             items: [
-              { text: 'Options API', link: '/3/options-api' },
-              { text: 'Composition API', link: '/3/composition-api' },
+              { text: 'Options API', link: 'options-api' },
+              { text: 'Composition API', link: 'composition-api' },
             ]
           },
           {
             text: 'Vue 2',
+            base: '/vue/2/',
             items: [
-              { text: 'Options API', link: '/2/options-api' },
-              { text: 'Render Function', link: '/2/render-function' },
-              { text: 'JSX', link: '/2/jsx' },
+              { text: 'Options API', link: 'options-api' },
+              { text: 'Render Function', link: 'render-function' },
+              { text: 'JSX', link: 'jsx' },
             ]
           },
         ]
@@ -125,26 +136,39 @@ export default defineConfig({
       '/nodejs/': {
         base: '/nodejs/',
         items: [
-          { text: 'NPM', link: '/' },
+          { text: 'NPM', link: 'npm' },
           {
             text: 'Packages',
             items: [
-              { text: 'xlsx', link: '/packages/xlsx' },
-              { text: 'node-sass', link: '/packages/node-sass' },
+              { text: 'node-sass', link: 'packages/node-sass' },
+              { text: 'xlsx', link: 'packages/xlsx' },
             ]
           }
         ]
       }
     },
 
+    // outline - 目录
     outline: {
-      level: 'deep',
-      label: '本页目录'
+      label: '目录',
+      level: 'deep'
     },
 
+    // lastUpdated - 最后更新时间
+    lastUpdated: {
+      text: '最后更新'
+    },
+
+    // docFooter - 翻页
     docFooter: {
       prev: '上一篇',
       next: '下一篇'
+    },
+
+    // footer - 页脚
+    footer: {
+      message: 'Email: io_oti@outlook.com',
+      copyright: 'Copyright © 2023 Io_oTI'
     }
   }
 })
