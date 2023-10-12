@@ -77,61 +77,6 @@ npm rebuild
 ## 常用依赖包
 
 
-### 开发依赖
-
-
-#### postcss
-
-
-一个用JavaScript转换CSS的工具。
-
-
-#### sass
-
-
-Sass 是世界上最成熟、稳定、强大的专业级 CSS 扩展语言。
-
-
-#### less
-
-
-一个基于 Javascript 的 CSS 预处理器。
-
-
-
-### 依赖
-
-
-#### axios
-
-
-一个基于 Promise 的 HTTP 请求库。
-
-
-#### flyio
-
-
-一个基于 promise 的 HTTP 请求库。
-
-
-#### superagent
-
-
-小型渐进式客户端HTTP请求库和具有相同API的Node.js模块，支持许多高级HTTP客户端功能。
-
-
-#### moment
-
-
-用于解析、验证、操作和格式化日期的JavaScript日期库。
-
-
-#### dayjs
-
-
-一个轻量的处理时间和日期的 JavaScript 库。
-
-
 ```bash
 .
 ├── Framework

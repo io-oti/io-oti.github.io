@@ -78,7 +78,7 @@ export default defineConfig({
           {
             text: 'Packages',
             items: [
-              { text: 'node-sass', link: '/nodejs/packages/node-sass' },
+              { text: 'node-sass', link: '/nodejs/packages/css/node-sass' },
               { text: 'xlsx', link: '/nodejs/packages/xlsx' },
             ]
           }
@@ -134,14 +134,20 @@ export default defineConfig({
         ]
       },
       '/nodejs/': {
-        base: '/nodejs/',
         items: [
-          { text: 'NPM', link: 'npm' },
+          { text: 'NPM', base: '/nodejs/', link: 'npm' },
           {
-            text: 'Packages',
+            text: 'CSS',
+            base: '/nodejs/packages/css/',
             items: [
-              { text: 'node-sass', link: 'packages/node-sass' },
-              { text: 'xlsx', link: 'packages/xlsx' },
+              { text: 'node-sass', link: 'node-sass' },
+            ]
+          },
+          {
+            text: 'Others',
+            base: '/nodejs/packages/',
+            items: [
+              { text: 'xlsx', link: 'xlsx' },
             ]
           }
         ]

@@ -1,4 +1,4 @@
-# XLSX
+# xlsx
 
 
 npmjs: [xlsx](https://www.npmjs.com/package/xlsx) | [sheetjs 主页](https://sheetjs.com/)

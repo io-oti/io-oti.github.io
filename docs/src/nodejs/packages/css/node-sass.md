@@ -1,6 +1,8 @@
 # node-sass
 
 
+Sass 是世界上最成熟、最稳定、最强大的专业级 CSS 扩展语言。
+
 npmjs: [node-sass](https://www.npmjs.com/package/node-sass)
 
 
@@ -16,7 +18,7 @@ npmjs: [node-sass](https://www.npmjs.com/package/node-sass)
 
 | NodeJS  | Supported node-sass version | Node Module |
 | ------- | --------------------------- | ----------- |
-| Node 20 | 8.0+                        | 115         |
+| Node 20 | 9.0+                        | 115         |
 | Node 19 | 8.0+                        | 111         |
 | Node 18 | 8.0+                        | 108         |
 | Node 17 | 7.0+, <8.0                  | 102         |
