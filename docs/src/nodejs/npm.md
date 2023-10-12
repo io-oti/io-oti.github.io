@@ -6,22 +6,17 @@ Node Package Manager 是 Node.js 标准的软件包管理器。
 
 ## 配置
 
-
-- npmmirror 镜像源：[https://registry.npmmirror.com](https://registry.npmmirror.com/)
-
+npmmirror 镜像源：[https://registry.npmmirror.com](https://registry.npmmirror.com/)，将 registry 配置为 npmmirror 镜像源：
 
 ```bash
-# 配置 npmmirror 镜像源
 npm config set registry=https://registry.npmmirror.com
 
 ```
 
-
 ### npmrc 文件
 
 
-// TODO: [config | npm Docs (npmjs.com)](https://docs.npmjs.com/cli/v9/using-npm/config#npmrc-files)
-
+文档: [config | npm Docs (npmjs.com)](https://docs.npmjs.com/cli/v9/using-npm/config#npmrc-files)
 
 ## 命令
 
@@ -76,11 +71,10 @@ npm rebuild
 
 ## Npx
 
+文档:  [npx | npm Docs (npmjs.com)](https://docs.npmjs.com/cli/v9/commands/npx)
 
-// TODO: [npx | npm Docs (npmjs.com)](https://docs.npmjs.com/cli/v9/commands/npx)
 
-
-## 软件包
+## 常用依赖包
 
 
 ### 开发依赖
@@ -138,8 +132,8 @@ Sass 是世界上最成熟、稳定、强大的专业级 CSS 扩展语言。
 一个轻量的处理时间和日期的 JavaScript 库。
 
 
-```
-library
+```bash
+.
 ├── Framework
 │   ├── Meteor.js
 │   ├── Qwik
@@ -148,15 +142,15 @@ library
 ├── validate forms
 │   └── Parsley
 ├── tools
-│   ├── Ramda       一个很重要的库，提供了许多有用的方法，每个 JavaScript 程序员都应该掌握这个工具
-│   ├── Lodash      一个一致性、模块化、高性能的 JavaScript 实用工具库
-│   ├── jQuery      封装了各种dom/事件操作, 设计思想值得研究借鉴
-│   ├── Zepto      jquery 的轻量级版本, 适合移动端操作
-│   ├── fastclick    一个简单易用的库，它消除了移动端浏览器上的点击和触发一个 click 事件之间的 300ms 的延迟。
+│   ├── Ramda                 # 一个很重要的库，提供了许多有用的方法，每个 JavaScript 程序员都应该掌握这个工具
+│   ├── Lodash                #一个一致性、模块化、高性能的 JavaScript 实用工具库
+│   ├── jQuery                #封装了各种dom/事件操作, 设计思想值得研究借鉴
+│   ├── Zepto                 #jquery 的轻量级版本, 适合移动端操作
+│   ├── fastclick             #一个简单易用的库，它消除了移动端浏览器上的点击和触发一个 click 事件之间的 300ms 的延迟。
 │   ├── Underscore.js
-│   ├── qs        一个 url 参数转化 (parse和stringify)的轻量级 js 库
-│   ├── Knip       Kinp 可以在 JavaScript 和 TypeScript 项目中寻找未使用的文件、依赖和导出，并移除掉
-│   └── big       一个小型，快速的JavaScript库，用于任意精度的十进制算术运算
+│   ├── qs                    # 一个 url 参数转化 (parse和stringify)的轻量级 js 库
+│   ├── Knip                  # Kinp 可以在 JavaScript 和 TypeScript 项目中寻找未使用的文件、依赖和导出，并移除掉
+│   └── big                   # 一个小型，快速的JavaScript库，用于任意精度的十进制算术运算
 ├── chart
 │   ├── Chart.js
 │   └── ECharts
@@ -165,7 +159,7 @@ library
 ├── excel
 │   └── xlsx
 ├── Animation
-│   ├── Anime.js    一个 JavaScript 动画库
+│   ├── Anime.js              # 一个 JavaScript 动画库
 │   ├── Granim.js
 │   ├── Choreographer.js
 │   └── Animate On Scroll
