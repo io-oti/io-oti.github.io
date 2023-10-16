@@ -62,6 +62,12 @@ export default defineConfig({
             ]
           },
           {
+            text: 'Vite',
+            items: [
+              { text: '如何从 Vue CLI 迁移到 Vite', link: '/vite/how-to-migrate-from-vue-cli-to-vite' }
+            ]
+          },
+          {
             text: 'Vue 2',
             items: [
               { text: 'Options API', link: '/vue/2/options-api' },
@@ -131,6 +137,11 @@ export default defineConfig({
               { text: 'JSX', link: 'jsx' },
             ]
           },
+        ]
+      },
+      '/vite/': {
+        items: [
+          { text: '如何从 Vue CLI 迁移到 Vite', base: '/vite/', link: 'how-to-migrate-from-vue-cli-to-vite' }
         ]
       },
       '/nodejs/': {
