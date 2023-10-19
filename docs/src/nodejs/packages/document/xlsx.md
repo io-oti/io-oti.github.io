@@ -1,7 +1,11 @@
 # xlsx
 
 
-npmjs: [xlsx](https://www.npmjs.com/package/xlsx) | [sheetjs 主页](https://sheetjs.com/)
+适用于web浏览器和服务器读取、编辑和导出电子表格。
+
+npmjs: [xlsx](https://www.npmjs.com/package/xlsx)
+
+repository: [sheetjs](https://github.com/SheetJS/sheetjs)
 
 
 ## 安装
@@ -12,7 +16,7 @@ $ npm install xlsx
 ```
 
 
-## 示例
+## 使用
 
 
 ```javascript

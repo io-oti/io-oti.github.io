@@ -1,11 +1,8 @@
 # 如何从 Vue CLI 迁移到 Vite
 
-
-如果你在 2021 年之前一直在使用 Vue 进行开发，那么你选择的构建工具很有可能是 Vue CLI。一段时间以来，它一直是脚手架 Vue.js 项目的事实标准。不过现在，Evan You的下一代构建工具Vite已经引起了很多关注，是Vue CLI的绝佳替代品。
-
+如果你在 2021 年之前一直在使用 Vue 进行开发，那么你选择的构建工具很有可能是 Vue CLI。一段时间以来，它一直是脚手架 Vue.js 项目的事实标准。不过现在，Evan You 的下一代构建工具 Vite 已经引起了很多关注，是 Vue CLI 的绝佳替代品。
 
 ## 为什么要从 Vue CLI 迁移到 Vite？
-
 
 采取行动的主要原因是速度。Vite 的开发服务器速度很快。因为它对 JavaScript 模块使用本机浏览器支持，所以服务器启动时间是即时的。这种方法还意味着，无论应用程序的大小如何，热模块更换都保持快速，因为不必重建整个捆绑包。
 
@@ -20,9 +17,7 @@
 
 请记住，这只是脚手架样板。随着项目的增长，Vue CLI 版本只会逐渐变慢，而 Vite 承诺无论你的项目规模如何，都能以相同的水平执行。
 
-
 ## 如何从 Vue CLI 迁移到 Vite
-
 
 所以你确信 Vite 适合你，那么如何将你的项目从使用 Vue CLI 迁移到 Vite？
 
@@ -32,9 +27,7 @@
 
 最后，如果你不想和我一起完成整个过程，你可以在此示例存储库中看到更改的差异。
 
-
-### 步骤1：更新依赖项
-
+### 步骤 1：更新依赖项
 
 迁移到 Vite 的第一步是更新 package.json 中的依赖项。我们需要删除与 Vue CLI 相关的依赖项。
 
@@ -76,11 +69,11 @@
 "vue-template-compiler": "^2.6.11" //remove (SFC support provided by vite vue plugin)
 ```
 
-### 步骤2：仅为现代浏览器提供支持
+### 步骤 2：仅为现代浏览器提供支持
 
 由于 Vite 是下一代构建工具，让我们乐观地继续只支持最现代的浏览器。这将使我们的构建尽可能精简和快速。
 
-实际上，这意味着我们可以从依赖项中完全删除 Babel，因为大多数移动和桌面常青浏览器几乎完全支持所有 ES6 功能。如果你仍然需要支持像Internet Explorer 11这样的旧浏览器，Vite确实为此提供了一个官方插件。
+实际上，这意味着我们可以从依赖项中完全删除 Babel，因为大多数移动和桌面常青浏览器几乎完全支持所有 ES6 功能。如果你仍然需要支持像 Internet Explorer 11 这样的旧浏览器，Vite 确实为此提供了一个官方插件。
 
 因此，要删除 Babel，首先我们将删除 babel.config.js 该文件。
 
@@ -120,7 +113,7 @@ env: {
 $ npm install eslint@8 eslint-plugin-vue@8
 ```
 
-### 步骤3：添加Vite配置
+### 步骤 3：添加 Vite 配置
 
 在此步骤中，让我们为 Vue.js 项目配置 Vite。Vite 是通过项目根目录中的文件配置 vite.config.js 的。这是使用 为 npm init vite@latest Vue 生成全新 Vite 项目时的默认 vite.config.js 文件的样子。
 
@@ -132,7 +125,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()]
+  plugins: [vue()],
 })
 ```
 
@@ -143,7 +136,7 @@ export default defineConfig({
 ```javascript
 // vite.config.js
 import vue from '@vitejs/plugin-vue' // remove
-import { createVuePlugin as vue } from "vite-plugin-vue2";
+import { createVuePlugin as vue } from 'vite-plugin-vue2'
 
 //...
 ```
@@ -155,22 +148,22 @@ import { createVuePlugin as vue } from "vite-plugin-vue2";
 ```javascript
 // vite.config.js
 //...
-const path = require("path");
+const path = require('path')
 export default defineConfig({
   //...
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
   },
-});
+})
 ```
 
-### 步骤4：移动 index.html
+### 步骤 4：移动 index.html
 
-与 Vue CLI 相反，Vite 实际上将保存 Vue.js 应用程序的索引.html文件放在项目的根目录中而不是公共目录中，因此你需要移动它。
+与 Vue CLI 相反，Vite 实际上将保存 Vue.js 应用程序的索引.html 文件放在项目的根目录中而不是公共目录中，因此你需要移动它。
 
-同样在索引中.html你需要进行一些更改。
+同样在索引中.html 你需要进行一些更改。
 
 首先， <%= htmlWebpackPlugin.options.title %> 我们将占位符的实例更改为硬编码值。
 
@@ -184,9 +177,15 @@ export default defineConfig({
 
 //...
 <!--remove-->
-<strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+<strong
+  >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly
+  without JavaScript enabled. Please enable it to continue.</strong
+>
 <!--add-->
-<strong>We're sorry but this app doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+<strong
+  >We're sorry but this app doesn't work properly without JavaScript enabled.
+  Please enable it to continue.</strong
+>
 ```
 
 我们还需要将 <%= BASE_URL %> 占位符替换为绝对路径。
@@ -195,9 +194,9 @@ export default defineConfig({
 // index.html
 
 <!--remove-->
-<link rel="icon" href="<%= BASE_URL %>favicon.ico">
+<link rel="icon" href="<%= BASE_URL %>favicon.ico" />
 <!--add-->
-<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="/favicon.ico" />
 ```
 
 最后也是最重要的一点，JavaScript 应用程序不再是自动注入的，所以我们需要像这样包含它：
@@ -206,9 +205,9 @@ export default defineConfig({
 <script type="module" src="/src/main.js"></script>
 ```
 
-### 步骤5：更新脚本
+### 步骤 5：更新脚本
 
-回到package.json，我们还需要更新脚本。我们将旧 vue-cli-service 命令更改为 Vite 特定命令。
+回到 package.json，我们还需要更新脚本。我们将旧 vue-cli-service 命令更改为 Vite 特定命令。
 
 ```jsonc
 // package.json
@@ -227,7 +226,7 @@ export default defineConfig({
 "lint": "eslint --ext .js,.vue --ignore-path .gitignore --fix src"
 ```
 
-### 步骤6：更新环境变量
+### 步骤 6：更新环境变量
 
 环境变量在 Vite 中的工作方式与它们在 Vue CLI 中的工作方式之间存在很多交叉。例如，你的 .env 命名约定可以保持不变。
 
@@ -246,15 +245,15 @@ base: process.env.BASE_URL, //remove
 base: import.meta.env.BASE_URL,
 ```
 
-此外，用于使声明客户端公开的 env 变量更明显的 VUE_APP_ 前缀更改为 ，因此如果你有任何此类环境变量 VITE_ ，则必须相应地更新它们。
+此外，用于使声明客户端公开的 env 变量更明显的 VUE*APP* 前缀更改为 ，因此如果你有任何此类环境变量 VITE\_ ，则必须相应地更新它们。
 
-### 步骤7：将 .vue 扩展名添加到 SFC 导入
+### 步骤 7：将 .vue 扩展名添加到 SFC 导入
 
 虽然我们新创建的 Vue CLI 项目已经这样做了，但我敢打赌你现有的应用程序可能不会这样做。因此，必须确保单个文件组件的所有导入都以 .vue 扩展名结尾。
 
 ```javascript
 // Home.vue
-import HelloWorld from "@/components/HelloWorld.vue"; // .vue is required
+import HelloWorld from '@/components/HelloWorld.vue' // .vue is required
 ```
 
 如果此过程由于代码库的大小而过于压倒性，则可以配置 vite，以便不需要这样做。这是通过添加到 .vue 中的 resolve.extensions vite.config.js 配置选项来实现的。确保还手动包含所有默认扩展名，因为此选项会覆盖默认值。
@@ -268,12 +267,12 @@ export default defineConfig({
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
     //...
   },
-});
+})
 ```
 
 虽然这有效，但如果可能的话，应该避免。为什么？因为根据 Vite 文档：“请注意，不建议省略自定义导入类型的扩展（例如 .vue ），因为它会干扰 IDE 和类型支持。
 
-### 步骤8：清理魔术注释
+### 步骤 8：清理魔术注释
 
 最后，你可以删除所有用于命名动态导入的魔术注释，因为这些是特定于 webpack 的注释，对 Vite 没有任何意义。
 
@@ -287,7 +286,7 @@ import(
 
 相反，Vite 将根据原始 .vue 文件名和缓存破坏哈希自动命名你的块，如下所示： About.37a9fa9f.js
 
-### 步骤9：享受更快，更无缝的开发体验
+### 步骤 9：享受更快，更无缝的开发体验
 
 完成上述步骤 1-8 后，你的应用程序应该已准备好开始使用 Vite 运行！继续启动你的开发服务器 npm run dev ，看看 Vite 对自己来说有多快。
 
@@ -295,6 +294,6 @@ import(
 
 最后，请记住，在此示例存储库中，可以将所有这些更改视为差异，以帮助进行迁移。
 
----
+## 参考
 
-Reference: https://vueschool.io/articles/vuejs-tutorials/how-to-migrate-from-vue-cli-to-vite/
+[How to Migrate from Vue CLI to Vite](https://vueschool.io/articles/vuejs-tutorials/how-to-migrate-from-vue-cli-to-vite/)

@@ -4,16 +4,16 @@
 
 ```jsx
 export default {
-  data () {
+  data() {
     return {
-      text: 'hello thmas'
-    };
+      text: 'hello thmas',
+    }
   },
 
-  render () {
-    return <div>{ this.text }</div>;
-  }
-};
+  render() {
+    return <div>{this.text}</div>
+  },
+}
 ```
 
 ## Attrs/Props
@@ -93,7 +93,6 @@ export default {
 ## On
 
 包含了父作用域中的 (不含 `.native` 修饰器的) `v-on` 事件监听器。它可以通过 `v-on="$listeners"` 传入内部组件——在创建更高层次的组件时非常有用。
-
 
 ```jsx
 export default {
@@ -175,20 +174,18 @@ export default {
 
 ```jsx
 export default {
- data () {
+  data() {
     return {
-      permissionCode: '0'
-    };
+      permissionCode: '0',
+    }
   },
 
-  render () {
-    const directives = [
-      { name: 'permission', value: this.permissionCode }
-    ]
+  render() {
+    const directives = [{ name: 'permission', value: this.permissionCode }]
 
-    return <div directives={ directives }></div>;
-  }
-};
+    return <div directives={directives}></div>
+  },
+}
 ```
 
 ## v-model
@@ -216,4 +213,3 @@ export default {
   }
 };
 ```
-

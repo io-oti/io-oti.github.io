@@ -64,7 +64,7 @@ export default defineConfig({
           {
             text: 'Vite',
             items: [
-              { text: '如何从 Vue CLI 迁移到 Vite', link: '/vite/how-to-migrate-from-vue-cli-to-vite' }
+              { text: '如何从 Vue CLI 迁移到 Vite', link: '/vue/vite/how-to-migrate-from-vue-cli-to-vite' }
             ]
           },
           {
@@ -84,8 +84,7 @@ export default defineConfig({
           {
             text: 'Packages',
             items: [
-              { text: 'node-sass', link: '/nodejs/packages/css/node-sass' },
-              { text: 'xlsx', link: '/nodejs/packages/xlsx' },
+              { text: '目录', link: '/nodejs/packages/toc' },
             ]
           }
         ]
@@ -93,9 +92,10 @@ export default defineConfig({
       {
         text: 'Others',
         items: [
-          { text: 'Browser', link: '/others/browser' },
+          { text: 'Browser', link: '/browser/browser' },
           { text: 'Nginx', link: '/nginx/nginx-guide' },
           { text: 'Git', link: '/git/git-cheapsheets' },
+          { text: 'Webpack', link: '/webpack/webpack' },
         ],
       }
     ],
@@ -129,8 +129,16 @@ export default defineConfig({
             ]
           },
           {
+            text: 'Vite',
+            base: '/vue/vite/',
+            items: [
+              { text: '如何从 Vue CLI 迁移到 Vite', link: 'how-to-migrate-from-vue-cli-to-vite' }
+            ]
+          },
+          {
             text: 'Vue 2',
             base: '/vue/2/',
+            // collapsed: true,
             items: [
               { text: 'Options API', link: 'options-api' },
               { text: 'Render Function', link: 'render-function' },
@@ -139,28 +147,58 @@ export default defineConfig({
           },
         ]
       },
-      '/vite/': {
-        items: [
-          { text: '如何从 Vue CLI 迁移到 Vite', base: '/vite/', link: 'how-to-migrate-from-vue-cli-to-vite' }
-        ]
-      },
       '/nodejs/': {
         items: [
           { text: 'NPM', base: '/nodejs/', link: 'npm' },
           {
-            text: 'CSS',
-            base: '/nodejs/packages/css/',
-            items: [
-              { text: 'node-sass', link: 'node-sass' },
+            text: '依赖包', base: '/nodejs/packages/', items: [
+              { text: '目录', link: 'toc' },
+              {
+                text: 'Animation',
+                base: '/nodejs/packages/animation/',
+                items: [
+                  { text: 'animejs', link: 'animejs' },
+                ]
+              },
+              {
+                text: 'Chart',
+                base: '/nodejs/packages/chart/',
+                items: [
+                  { text: 'echarts', link: 'echarts' },
+                ]
+              },
+              {
+                text: 'Date',
+                base: '/nodejs/packages/date/',
+                items: [
+                  { text: 'day', link: 'day' },
+                  { text: 'moment', link: 'moment' },
+                ]
+              },
+              {
+                text: 'Document',
+                base: '/nodejs/packages/document/',
+                items: [
+                  { text: 'xlsx', link: 'xlsx' },
+                ]
+              },
+              {
+                text: 'HTTP',
+                base: '/nodejs/packages/http/',
+                items: [
+                  { text: 'axios', link: 'axios' },
+                  { text: 'superagent', link: 'superagent' },
+                ]
+              },
+              {
+                text: 'Utils',
+                base: '/nodejs/packages/utils/',
+                items: [
+                  { text: 'lodash', link: 'lodash' },
+                ]
+              }
             ]
           },
-          {
-            text: 'Others',
-            base: '/nodejs/packages/',
-            items: [
-              { text: 'xlsx', link: 'xlsx' },
-            ]
-          }
         ]
       }
     },

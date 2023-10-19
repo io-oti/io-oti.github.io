@@ -3,21 +3,21 @@
 layout: home
 
 title: 槭 林
-titleTemplate: 连林人不觉 独树众乃奇
+titleTemplate: 今日菖蒲花 明朝枫树老
 
 hero:
   name: 槭 林
-  tagline: 连林人不觉 独树众乃奇
-  actions:
-    - theme: brand
-      text: Vue
-      link: /vue/2/options-api
-    - theme: alt
-      text: Node.js
-      link: /nodejs/npm
-    - theme: alt
-      text: Git Cheapsheets
-      link: /git/git-cheapsheets
+  tagline: 今日菖蒲花 明朝枫树老
+  # actions:
+    # - theme: brand
+    #   text: Vue
+    #   link: /vue/2/options-api
+    # - theme: alt
+    #   text: Node.js
+    #   link: /nodejs/npm
+    # - theme: alt
+    #   text: Git Cheapsheets
+    #   link: /git/git-cheapsheets
   # image:
   #   src: /maple.png
   #   alt: maple

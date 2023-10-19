@@ -1,15 +1,20 @@
 # node-sass
 
-
-Sass 是世界上最成熟、最稳定、最强大的专业级 CSS 扩展语言。
+Node-sass 是一个库，它为 Node.js 提供了与 LibSass 的绑定，LibSass 是流行的样式表预处理器 sass 的 C 版本。
 
 npmjs: [node-sass](https://www.npmjs.com/package/node-sass)
 
+repository: [node-sass](https://github.com/sass/node-sass)
+
+## 安装
+
+```bash
+$ npm install node-sass
+```
 
 ## Node.js 版本支持策略
 
-
-1. 支持的 Node.js 版本因版本而异，请参阅 [版本页面](https://github.com/sass/node-sass/releases)。
+1. 支持的 Node.js 版本因发行版而异，请参阅 [发行版页面](https://github.com/sass/node-sass/releases)。
 2. 达到生命周期结束的 [Node.js 版本](https://github.com/nodejs/Release) 将在每个 Node.js 版本（主要、次要）中退出支持。
 3. 我们将停止为不受支持的版本构建二进制文件，测试依赖项兼容性的中断，但我们不会阻止那些想要支持自己的人的安装。
 4. 新 Node.js 版本需要少量的内部更改以及 CI 提供商（AppVeyor、GitHub Actions）的支持。我们将打开一个问题供感兴趣的各方订阅，并关闭其他问题。
@@ -32,9 +37,7 @@ npmjs: [node-sass](https://www.npmjs.com/package/node-sass)
 | Node 8  | 4.5.3+, <5.0                | 57          |
 | Node <8 | <5.0                        | <57         |
 
-
 ## 重建 node-sass 二进制文件
-
 
 ```bash
 # 指定本地文件安装

@@ -4,7 +4,7 @@
 
 1. 新建 `<github username>.github.io` 的仓库
 2. 克隆新建的 github 仓库到本地并修改内容
-3. 在 github 上修改仓库的配置 `Settings` > `Pages` > `Build and deployment`，Source 选项选择 `Deploy from a branch`，Branch选项选择 `gh-pages` 分支和 `/root` 路径
+3. 在 github 上修改仓库的配置 `Settings` > `Pages` > `Build and deployment`，Source 选项选择 `Deploy from a branch`，Branch 选项选择 `gh-pages` 分支和 `/root` 路径
 
 ## 配置 Github Actions
 
@@ -16,7 +16,7 @@ name: Deploy Github Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ['main']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -35,7 +35,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "16.x"
+          node-version: '16.x'
 
       - name: Install dependencies
         run: npm install
@@ -52,7 +52,6 @@ jobs:
           build_dir: docs/.vitepress/dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 ```
 
 ### 部署问题：

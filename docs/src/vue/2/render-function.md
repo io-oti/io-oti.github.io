@@ -88,7 +88,6 @@ Type: `{ Object }`
 }
 ```
 
-
 ### children
 
 Type: `{ String | Array }`
@@ -301,5 +300,3 @@ export default {
   }
 };
 ```
-
-

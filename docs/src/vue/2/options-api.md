@@ -12,12 +12,12 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      text: 'hello'
-    };
-  }
-};
+      text: 'hello',
+    }
+  },
+}
 </script>
 ```
 
@@ -25,7 +25,7 @@ export default {
 
 ```vue
 <template>
- <div v-html="html"></div>
+  <div v-html="html"></div>
 </template>
 
 <script>
@@ -43,7 +43,7 @@ exprot default {
 
 ```vue
 <template>
- <div v-show="isShow">hello</div>
+  <div v-show="isShow">hello</div>
 </template>
 
 <script>
@@ -61,8 +61,8 @@ exprot default {
 
 ```vue
 <template>
- <div>
-  <div v-if="type === 0">{{ type }}</div>
+  <div>
+    <div v-if="type === 0">{{ type }}</div>
     <div v-else-if="type === 1">{{ type }}</div>
     <div v-else>{{ type }}</div>
   </div>
@@ -90,13 +90,21 @@ exprot default {
 
 ```vue
 <template>
- <div>
+  <div>
     <!-- array -->
-    <div v-for="(item, index) in items" :key="index">{{ item.key }}: {{ item.value }}</div>
-    <div v-for="(item, index) of items" :key="index">{{ item.key }}: {{ item.value }}</div>
+    <div v-for="(item, index) in items" :key="index">
+      {{ item.key }}: {{ item.value }}
+    </div>
+    <div v-for="(item, index) of items" :key="index">
+      {{ item.key }}: {{ item.value }}
+    </div>
     <!-- object -->
-    <div v-for="(value, key, index) in object" :key="key">{{ index }}. {{ key }}: {{ value }}</div>
-    <div v-for="(value, key, index) of object" :key="key">{{ index }}. {{ key }}: {{ value }}</div>
+    <div v-for="(value, key, index) in object" :key="key">
+      {{ index }}. {{ key }}: {{ value }}
+    </div>
+    <div v-for="(value, key, index) of object" :key="key">
+      {{ index }}. {{ key }}: {{ value }}
+    </div>
   </div>
 </template>
 
@@ -124,29 +132,31 @@ exprot default {
 
 ```vue
 <template>
- <div>
-  <button v-on:click="handleCount">{{ count }}</button>
-    <button v-on="{click: handleCount, change: handleChange}">{{ count }}</button>
+  <div>
+    <button v-on:click="handleCount">{{ count }}</button>
+    <button v-on="{ click: handleCount, change: handleChange }">
+      {{ count }}
+    </button>
     <button @click="handleCount">{{ count }}</button>
   </div>
 </template>
 
 <script>
 export default {
- data () {
+  data() {
     return {
-      count: 0
+      count: 0,
     }
   },
 
   methods: {
-    handleCount () {
+    handleCount() {
       this.count++
     },
-    handleChange () {
-      console.log('hello');
-    }
-  }
+    handleChange() {
+      console.log('hello')
+    },
+  },
 }
 </script>
 ```
@@ -155,18 +165,18 @@ export default {
 
 ```vue
 <template>
- <div>
+  <div>
     <!-- attrs -->
-    <input placeholder="msg"/>
+    <input placeholder="msg" />
     <!-- props -->
     <input v-bind:placeholder="msg" />
     <input :placeholder="msg" />
     <!-- class -->
     <div :class="{ 'some-selector': hasClass, 'some-selector2': true }"></div>
-    <div :class="[{ 'some-selector': hasClass }, 'some-selector2' ]"></div>
+    <div :class="[{ 'some-selector': hasClass }, 'some-selector2']"></div>
     <!-- style -->
     <div :style="{ color: someColor, fontSize: `${someSize}px` }"></div>
-    <div :style="[ styleObject, { fontSize: `${someSize}px` }]"></div>
+    <div :style="[styleObject, { fontSize: `${someSize}px` }]"></div>
   </div>
 </template>
 
@@ -192,7 +202,7 @@ exprot default {
 }
 
 .some-selector2 {
- font-size: 12px;
+  font-size: 12px;
 }
 </style>
 ```
@@ -201,9 +211,7 @@ exprot default {
 
 ```vue
 <template>
- <div>
-
-  </div>
+  <div></div>
 </template>
 
 <script>
@@ -233,15 +241,15 @@ exprot default {
 
 ```vue
 <template>
- <input v-model="value" />
+  <input v-model="value" />
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     value: 'hello'
-  }
-};
+  },
+}
 </script>
 ```
 
@@ -251,7 +259,7 @@ export default {
 
 ```vue
 <template>
- <span v-pre>{{ this will not be compiled }}</span>
+  <span v-pre>{{ this will not be compiled }}</span>
 </template>
 ```
 
@@ -261,7 +269,7 @@ export default {
 
 ```vue
 <template>
- <div v-cloak>{{ message }}</div>
+  <div v-cloak>{{ message }}</div>
 </template>
 ```
 
@@ -271,8 +279,6 @@ export default {
 
 ```vue
 <template>
- <button v-once>This will never change</button>
+  <button v-once>This will never change</button>
 </template>
 ```
-
-

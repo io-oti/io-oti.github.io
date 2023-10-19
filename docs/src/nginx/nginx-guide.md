@@ -67,7 +67,7 @@ http {                                        # http区块的开始
 }
 ```
 
-## 配置 gzip
+## 开启 gzip
 
 gzip 是一种优秀的压缩算法，我们可以在 HTTP 请求上对一些文本文件，设置 gzip 压缩。
 服务端将响应头设置上 `Content-encoding: gzip`，表示当前资源会使用 gzip 压缩，提示客户端解压使用。
