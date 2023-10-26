@@ -6,7 +6,6 @@ export default defineConfig({
   description: "连林人不觉 独树众乃奇",
 
   lang: 'zh-CN',
-  srcDir: 'src',
   cleanUrls: true,
 
   head: [
@@ -62,17 +61,17 @@ export default defineConfig({
             ]
           },
           {
-            text: 'Vite',
+            text: 'Vue 2',
             items: [
-              { text: '如何从 Vue CLI 迁移到 Vite', link: '/vue/vite/how-to-migrate-from-vue-cli-to-vite' }
+              { text: 'Vue 2 备忘录', link: '/vue/2/cheatsheet' },
+              { text: '渲染函数', link: '/vue/2/render-function' },
+              { text: 'JSX', link: '/vue/2/jsx' },
             ]
           },
           {
-            text: 'Vue 2',
+            text: 'Vite',
             items: [
-              { text: 'Options API', link: '/vue/2/options-api' },
-              { text: 'Render Function', link: '/vue/2/render-function' },
-              { text: 'JSX', link: '/vue/2/jsx' },
+              { text: '如何从 Vue CLI 迁移到 Vite', link: '/vue/vite/how-to-migrate-from-vue-cli-to-vite' }
             ]
           },
         ],
@@ -82,7 +81,7 @@ export default defineConfig({
         items: [
           { text: 'NPM', link: '/nodejs/npm' },
           {
-            text: 'Packages',
+            text: '软件包',
             items: [
               { text: '目录', link: '/nodejs/packages/toc' },
             ]
@@ -94,7 +93,7 @@ export default defineConfig({
         items: [
           { text: 'Browser', link: '/browser/browser' },
           { text: 'Nginx', link: '/nginx/nginx-guide' },
-          { text: 'Git', link: '/git/git-cheapsheets' },
+          { text: 'Git', link: '/git/git-cheatsheet' },
           { text: 'Webpack', link: '/webpack/webpack' },
         ],
       }
@@ -129,20 +128,20 @@ export default defineConfig({
             ]
           },
           {
-            text: 'Vite',
-            base: '/vue/vite/',
-            items: [
-              { text: '如何从 Vue CLI 迁移到 Vite', link: 'how-to-migrate-from-vue-cli-to-vite' }
-            ]
-          },
-          {
             text: 'Vue 2',
             base: '/vue/2/',
             // collapsed: true,
             items: [
-              { text: 'Options API', link: 'options-api' },
-              { text: 'Render Function', link: 'render-function' },
+              { text: 'Vue 2 备忘录', link: 'cheatsheet.md' },
+              { text: '渲染函数', link: 'render-function' },
               { text: 'JSX', link: 'jsx' },
+            ]
+          },
+          {
+            text: 'Vite',
+            base: '/vue/vite/',
+            items: [
+              { text: '如何从 Vue CLI 迁移到 Vite', link: 'how-to-migrate-from-vue-cli-to-vite' }
             ]
           },
         ]
@@ -151,50 +150,56 @@ export default defineConfig({
         items: [
           { text: 'NPM', base: '/nodejs/', link: 'npm' },
           {
-            text: '依赖包', base: '/nodejs/packages/', items: [
+            text: '软件包', base: '/nodejs/packages/', items: [
               { text: '目录', link: 'toc' },
               {
                 text: 'Animation',
                 base: '/nodejs/packages/animation/',
                 items: [
-                  { text: 'animejs', link: 'animejs' },
+                  { text: 'Anime.js', link: 'animejs' },
                 ]
               },
               {
                 text: 'Chart',
                 base: '/nodejs/packages/chart/',
                 items: [
-                  { text: 'echarts', link: 'echarts' },
+                  { text: 'Apache ECharts', link: 'apache-echarts' },
                 ]
               },
               {
                 text: 'Date',
                 base: '/nodejs/packages/date/',
                 items: [
-                  { text: 'day', link: 'day' },
-                  { text: 'moment', link: 'moment' },
+                  { text: 'Day.js', link: 'day' },
+                  { text: 'Moment.js', link: 'moment' },
                 ]
               },
               {
                 text: 'Document',
                 base: '/nodejs/packages/document/',
                 items: [
-                  { text: 'xlsx', link: 'xlsx' },
+                  { text: 'Docx', link: 'docx' },
+                  { text: 'PDF.js', link: 'pdfjs' },
+                  { text: 'SheetJS', link: 'sheetjs' },
+                  { text: 'Vditor', link: 'vditor' },
+                  { text: 'X-Spreadsheet', link: 'x-spreadsheet' },
                 ]
               },
               {
                 text: 'HTTP',
                 base: '/nodejs/packages/http/',
                 items: [
-                  { text: 'axios', link: 'axios' },
-                  { text: 'superagent', link: 'superagent' },
+                  { text: 'Axios', link: 'axios' },
+                  { text: 'SuperAgent', link: 'superagent' },
                 ]
               },
               {
                 text: 'Utils',
                 base: '/nodejs/packages/utils/',
                 items: [
-                  { text: 'lodash', link: 'lodash' },
+                  { text: 'Lodash', link: 'lodash' },
+                  { text: 'Ramda', link: 'ramda' },
+                  { text: 'Underscore.js', link: 'underscorejs' },
                 ]
               }
             ]
@@ -223,7 +228,7 @@ export default defineConfig({
     // footer - 页脚
     footer: {
       message: 'Email: io_oti@outlook.com',
-      copyright: 'Copyright © 2023 Io_oTI'
+      copyright: 'Copyright © 2023-present Io_oTI. All Rights Reserved.'
     }
   }
 })
