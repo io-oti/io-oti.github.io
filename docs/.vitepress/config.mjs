@@ -1,9 +1,10 @@
 import { defineConfig } from 'vitepress'
+import { genSidebar } from './configs/sidebar.js'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "槭 林",
-  description: "连林人不觉 独树众乃奇",
+  description: "今日菖蒲花 明朝枫树老",
 
   lang: 'zh-CN',
   cleanUrls: true,
@@ -83,7 +84,7 @@ export default defineConfig({
           {
             text: '软件包',
             items: [
-              { text: '目录', link: '/nodejs/packages/toc' },
+              { text: '目录', link: '/nodejs/packages/' },
             ]
           }
         ]
@@ -116,97 +117,7 @@ export default defineConfig({
     ],
 
     // sidebar - 侧边栏
-    sidebar: {
-      '/vue/': {
-        items: [
-          {
-            text: 'Vue 3',
-            base: '/vue/3/',
-            items: [
-              { text: 'Options API', link: 'options-api' },
-              { text: 'Composition API', link: 'composition-api' },
-            ]
-          },
-          {
-            text: 'Vue 2',
-            base: '/vue/2/',
-            // collapsed: true,
-            items: [
-              { text: 'Vue 2 备忘录', link: 'cheatsheet.md' },
-              { text: '渲染函数', link: 'render-function' },
-              { text: 'JSX', link: 'jsx' },
-            ]
-          },
-          {
-            text: 'Vite',
-            base: '/vue/vite/',
-            items: [
-              { text: '如何从 Vue CLI 迁移到 Vite', link: 'how-to-migrate-from-vue-cli-to-vite' }
-            ]
-          },
-        ]
-      },
-      '/nodejs/': {
-        items: [
-          { text: 'NPM', base: '/nodejs/', link: 'npm' },
-          {
-            text: '软件包', base: '/nodejs/packages/', items: [
-              { text: '目录', link: 'toc' },
-              {
-                text: 'Animation',
-                base: '/nodejs/packages/animation/',
-                items: [
-                  { text: 'Anime.js', link: 'animejs' },
-                ]
-              },
-              {
-                text: 'Chart',
-                base: '/nodejs/packages/chart/',
-                items: [
-                  { text: 'Apache ECharts', link: 'apache-echarts' },
-                ]
-              },
-              {
-                text: 'Date',
-                base: '/nodejs/packages/date/',
-                items: [
-                  { text: 'Day.js', link: 'day' },
-                  { text: 'Moment.js', link: 'moment' },
-                ]
-              },
-              {
-                text: 'Document',
-                base: '/nodejs/packages/document/',
-                items: [
-                  { text: 'Docx', link: 'docx' },
-                  { text: 'PDF.js', link: 'pdfjs' },
-                  { text: 'SheetJS', link: 'sheetjs' },
-                  { text: 'Vditor', link: 'vditor' },
-                  { text: 'X-Spreadsheet', link: 'x-spreadsheet' },
-                ]
-              },
-              {
-                text: 'HTTP',
-                base: '/nodejs/packages/http/',
-                items: [
-                  { text: 'Axios', link: 'axios' },
-                  { text: 'SuperAgent', link: 'superagent' },
-                ]
-              },
-              {
-                text: 'Utils',
-                base: '/nodejs/packages/utils/',
-                items: [
-                  { text: 'Lodash', link: 'lodash' },
-                  { text: 'Ramda', link: 'ramda' },
-                  { text: 'Underscore.js', link: 'underscorejs' },
-                ]
-              }
-            ]
-          },
-        ]
-      }
-    },
+    sidebar: genSidebar('vue/3', 'vue/2', 'vue/vite', 'nodejs', 'browser', 'nginx', 'git', 'webpack'),
 
     // outline - 目录
     outline: {
