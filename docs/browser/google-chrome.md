@@ -44,10 +44,32 @@ open -n /Applications/Microsoft\ Edge.app --args --disable-web-security --disabl
 
 ## Chrome DevTools
 
-### 为所有元素添加边框
+### Sources
+
+#### Snippets
+
+为所有元素添加边框
 
 ```javascript
 ;[].forEach.call($$('*'), function (a) {
   a.style.outline = '1px solid #' + (~~(Math.random() * (1 << 24))).toString(16)
 })
 ```
+
+### 快捷键
+
+#### 打开开发工具
+
+| 操作               | Windows/Linux               | macOS                       |
+| ------------------ | --------------------------- | --------------------------- |
+| 打开上次使用的窗格 | `F12` 或 `Ctrl + Shift + I` | `⌘ + ⌥ + I`                 |
+| 打开“控制台”工具   | `Ctrl + Shift + J`          | `⌘ + ⌥ + J`                 |
+| 打开“元素”工具     | `Ctrl + Shift + C`          | `⌘ + ⇧ + C` 或 `⌘ + ⌥ + C` |
+
+#### 全局键盘快捷方式
+
+| 操作           | Windows/Linux  | macOS               |
+| -------------- | -------------- | ------------------- |
+| 显示“设置”     | Shift+？ 或 F1 | ⇧+？ 或 Function+F1 |
+| 聚焦于下一窗格 | `Ctrl + ]`     | `⌘ + ]`             |
+| 聚焦于上一窗格 | `Ctrl + [`     | `⌘ + [`             |

@@ -101,7 +101,7 @@ export default defineConfig({
       {
         text: 'Others',
         items: [
-          { text: 'Browser', link: '/browser/browser' },
+          { text: 'Browser', link: '/browser/google-chrome' },
           { text: 'Nginx', link: '/nginx/nginx-guide' },
           { text: 'Git', link: '/git/git-cheatsheet' },
           { text: 'Webpack', link: '/webpack/webpack' },
