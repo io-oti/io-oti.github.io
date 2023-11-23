@@ -15,7 +15,16 @@ export default defineConfig({
   ],
 
   markdown: {
-    lineNumbers: true
+    // 启用代码块中的行号
+    lineNumbers: true,
+    // 全局自定义容器标题
+    container: {
+      tipLabel: '提示',
+      warningLabel: '警告',
+      dangerLabel: '危险',
+      infoLabel: '信息',
+      detailsLabel: '详细信息'
+    }
   },
 
   themeConfig: {
@@ -24,7 +33,7 @@ export default defineConfig({
     // logo - 网站图标
     logo: { src: '/icons/maple.svg', width: 24, height: 24 },
 
-    // search - 搜索
+    // Search - 搜索
     search: {
       provider: 'local',
       options: {
@@ -49,7 +58,7 @@ export default defineConfig({
       }
     },
 
-    // nav - 导航
+    // Nav - 导航
     nav: [
       {
         text: 'Vue',
@@ -100,7 +109,7 @@ export default defineConfig({
       }
     ],
 
-    // socialLinks - 社交链接
+    // SocialLinks - 社交链接
     socialLinks: [
       {
         text: 'github',
@@ -116,27 +125,27 @@ export default defineConfig({
       }
     ],
 
-    // sidebar - 侧边栏
+    // Sidebar - 侧边栏
     sidebar: genSidebar('vue/3', 'vue/2', 'vue/vite', 'nodejs', 'browser', 'nginx', 'git', 'webpack'),
 
-    // outline - 目录
+    // Outline - 目录
     outline: {
       label: '目录',
       level: 'deep'
     },
 
-    // lastUpdated - 最后更新时间
+    // LastUpdated - 最后更新时间
     lastUpdated: {
       text: '最后更新'
     },
 
-    // docFooter - 翻页
+    // DocFooter - 翻页
     docFooter: {
       prev: '上一篇',
       next: '下一篇'
     },
 
-    // footer - 页脚
+    // Footer - 页脚
     footer: {
       message: 'Email: io_oti@outlook.com',
       copyright: 'Copyright © 2023-present Io_oTI. All Rights Reserved.'

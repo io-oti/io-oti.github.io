@@ -1,9 +1,7 @@
-.vscode
-
-draft
-
 docs/.vitepress/cache
 docs/.vitepress/dist
 docs/.vitepress/temp
+
+draft
 
 node_modules
