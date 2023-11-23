@@ -101,6 +101,7 @@ export default defineConfig({
       {
         text: 'Others',
         items: [
+          { text: 'Windows', link: '/windows/' },
           { text: 'Browser', link: '/browser/google-chrome' },
           { text: 'Nginx', link: '/nginx/nginx-guide' },
           { text: 'Git', link: '/git/git-cheatsheet' },
@@ -126,7 +127,7 @@ export default defineConfig({
     ],
 
     // Sidebar - 侧边栏
-    sidebar: genSidebar('vue/3', 'vue/2', 'vue/vite', 'nodejs', 'browser', 'nginx', 'git', 'webpack'),
+    sidebar: genSidebar('vue/3', 'vue/2', 'vue/vite', 'nodejs', 'windows', 'browser', 'nginx', 'git', 'webpack'),
 
     // Outline - 目录
     outline: {
