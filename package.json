@@ -26,5 +26,8 @@
   "homepage": "https://github.com/io-oti/io-oti.github.io#readme",
   "devDependencies": {
     "vitepress": "^1.0.0-rc.20"
+  },
+  "dependencies": {
+    "vue": "^3.4.5"
   }
 }
