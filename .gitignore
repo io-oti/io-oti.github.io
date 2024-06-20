@@ -1,7 +1,6 @@
-draft
+docs/.vitepress/cache
+docs/.vitepress/dist
+docs/.vitepress/temp
+docs/draft
 
 node_modules
-
-.vitepress/cache
-.vitepress/dist
-.vitepress/temp

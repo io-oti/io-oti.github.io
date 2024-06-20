@@ -1,13 +1,27 @@
 {
-  "vite.autoStart": false,
-  "vite.port": 5173,
-  "vite.devCommand": "npm run docs:dev",
-  "vite.buildCommand": "npm run docs:build",
-  "vite.browserType": "system",
-  // 控制相关文件嵌套展示
+  /* 控制相关文件嵌套展示 */
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
     "package.json": ".npmrc,.gitignore,package-lock.json"
-  }
+  },
+
+  /* extensions - Vite */
+  "vite.autoStart": false,
+  "vite.browserType": "system",
+  "vite.buildCommand": "npm run docs:build",
+  "vite.devCommand": "npm run docs:dev",
+  "vite.port": 5173,
+
+  /* extensions - Code Spell Checker */
+  "cSpell.words": [
+    "chsh",
+    "gitee",
+    "powerlevel"
+  ],
+  "cSpell.ignoreWords": [
+    "Meslo",
+    "dirsfirst",
+    "robbyrussell"
+  ],
 }
