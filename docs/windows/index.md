@@ -72,6 +72,215 @@ $ sudo apt update && sudo apt upgrade
 - [WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) 扩展允许你打开一个连接到 WSL 的远程窗口，使你在 WSL 中使用 VS Code，就像在 Windows 中使用一样。
 - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) 增强 Git 并释放存储库中未开发的知识，以更好地理解、编写和审查代码。
 
+## 配置 Ubuntu
+
+```bash
+# 查看当前 shell
+echo $0
+
+# 查看系统 shell
+cat /etc/shells
+
+# 切换 zsh (重启终端)
+chsh -s /usr/bin/zsh
+```
+
+### 安装 ZSH
+
+安装 ZSH 前，需要先更新 Ubuntu 的包列表：
+
+```shell
+sudo apt update
+```
+
+接下来，安装 ZSH
+
+```shell
+sudo apt install zsh -y
+```
+
+验证安装
+
+```shell
+zsh --version
+```
+
+更换到 ZSH
+
+```shell
+chsh -s /usr/bin/zsh
+```
+
+### 安装 oh-my-zsh
+
+```shell
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# 或者
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+```
+
+#### 安装 `powerlevel10k` 主题
+
+中国用户可以使用 gitee 上的官方镜像加速下载.
+
+```shell
+# github
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# gitee
+git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+修改 `oh-my-zsh` 的配置文件，将主题设置为 `powerlevel10k`：
+
+```shell
+code ~/.zshrc
+
+# 将 "ZSH_THEME=robbyrussell" 修改为:
+ZSH_THEME="powerlevel10k/powerlevel10k"
+```
+
+#### 安装字体
+
+缺少字体终端可能会显示乱码，可以在 Windows 系统安装 `powerlevel10k` 推荐字体解决此问题：
+[MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+[MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
+[MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
+[MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
+
+
+下载好字体以后可以直接双击字体文件安装，然后修改 `visual studio code` 的配置，将字体添加到配置项：
+
+```json
+{
+  "editor.fontFamily": "MesloLGS NF",
+}
+```
+
+运行以下命令配置 `powerlevel10k` 主题:
+```shell
+p10k configure
+```
+
+#### 安装插件
+
+```shell
+# zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+修改 `.zshrc` 配置文件:
+
+```shell
+# 添加 zsh-autosuggestions, zsh-syntax-highlighting 和 zsh-z 插件
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  z
+)
+
+# Enable instant prompt and don't print warnings when detecting console output
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+```
+
+应用 `.zshrc` 文件的配置：
+
+```shell
+source ~/.zshrc
+```
+
+### tree
+
+安装 tree 工具:
+
+```shell
+sudo apt install tree
+```
+
+#### 常用命令
+
+```shell
+# 打印 src 目录
+tree [src] -L 2 --dirsfirst
+```
+
+帮助文档：
+
+```shell
+# 查看帮助命令
+tree —help
+
+# 输出：
+usage: tree [-acdfghilnpqrstuvxACDFJQNSUX] [-H baseHREF] [-T title ]
+        [-L level [-R]] [-P pattern] [-I pattern] [-o filename] [--version]
+        [--help] [--inodes] [--device] [--noreport] [--nolinks] [--dirsfirst]
+        [--charset charset] [--filelimit[=]#] [--si] [--timefmt[=]<f>]
+        [--sort[=]<name>] [--matchdirs] [--ignore-case] [--fromfile] [--]
+        [<directory list>]
+  ------- Listing options -------
+  -a            All files are listed.
+  -d            List directories only.
+  -l            Follow symbolic links like directories.
+  -f            Print the full path prefix for each file.
+  -x            Stay on current filesystem only.
+  -L level      Descend only level directories deep.
+  -R            Rerun tree when max dir level reached.
+  -P pattern    List only those files that match the pattern given.
+  -I pattern    Do not list files that match the given pattern.
+  --ignore-case Ignore case when pattern matching.
+  --matchdirs   Include directory names in -P pattern matching.
+  --noreport    Turn off file/directory count at end of tree listing.
+  --charset X   Use charset X for terminal/HTML and indentation line output.
+  --filelimit # Do not descend dirs with more than # files in them.
+  --timefmt <f> Print and format time according to the format <f>.
+  -o filename   Output to file instead of stdout.
+  ------- File options -------
+  -q            Print non-printable characters as '?'.
+  -N            Print non-printable characters as is.
+  -Q            Quote filenames with double quotes.
+  -p            Print the protections for each file.
+  -u            Displays file owner or UID number.
+  -g            Displays file group owner or GID number.
+  -s            Print the size in bytes of each file.
+  -h            Print the size in a more human readable way.
+  --si          Like -h, but use in SI units (powers of 1000).
+  -D            Print the date of last modification or (-c) status change.
+  -F            Appends '/', '=', '*', '@', '|' or '>' as per ls -F.
+  --inodes      Print inode number of each file.
+  --device      Print device ID number to which each file belongs.
+  ------- Sorting options -------
+  -v            Sort files alphanumerically by version.
+  -t            Sort files by last modification time.
+  -c            Sort files by last status change time.
+  -U            Leave files unsorted.
+  -r            Reverse the order of the sort.
+  --dirsfirst   List directories before files (-U disables).
+  --sort X      Select sort: name,version,size,mtime,ctime.
+  ------- Graphics options -------
+  -i            Don't print indentation lines.
+  -A            Print ANSI lines graphic indentation lines.
+  -S            Print with CP437 (console) graphics indentation lines.
+  -n            Turn colorization off always (-C overrides).
+  -C            Turn colorization on always.
+  ------- XML/HTML/JSON options -------
+  -X            Prints out an XML representation of the tree.
+  -J            Prints out an JSON representation of the tree.
+  -H baseHREF   Prints out HTML format with baseHREF as top directory.
+  -T string     Replace the default HTML title and H1 header with string.
+  --nolinks     Turn off hyperlinks in HTML output.
+  ------- Input options -------
+  --fromfile    Reads paths from files (.=stdin)
+  ------- Miscellaneous options -------
+  --version     Print version and exit.
+  --help        Print usage and this help message and exit.
+  --            Options processing terminator.
+```
+
 ## 参考
 
 - [设置 WSL 开发环境](https://learn.microsoft.com/zh-cn/windows/wsl/setup/environment)
