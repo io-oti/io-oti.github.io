@@ -3,7 +3,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "package.json": ".npmrc,.gitignore,package-lock.json"
+    "README.md": ".npmrc,.gitignore,package.json,package-lock.json"
   },
 
   /* extensions - Vite */
