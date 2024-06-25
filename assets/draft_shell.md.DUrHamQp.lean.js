@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./chunks/framework.BYhES31N.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"draft/shell.md","filePath":"draft/shell.md","lastUpdated":1719112283000}'),r={name:"draft/shell.md"};function s(o,l,c,d,n,p){return a(),t("div")}const i=e(r,[["render",s]]);export{_ as __pageData,i as default};
