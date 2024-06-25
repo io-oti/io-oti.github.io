@@ -43,6 +43,18 @@ Windows 不会自动更新或升级 Linux 分发版。 大多数 Linux 用户往
 $ sudo apt update && sudo apt upgrade
 ```
 
+### [WSL 中的高级设置配置](https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config)
+
+使用 WSL 会出现 vmmem 程序内存占用过高的情况，使用 .wslconfig 为 WSL 上运行的所有已安装的发行版配置全局设置，下面的 `.wslconfig` 示例文件演示了一些可用的配置选项。 在此示例中，文件路径为 `C:\Users\<UserName>\.wslconfig`。
+
+```shell
+# Settings apply across all Linux distros running on WSL 2
+[wsl2]
+
+# Limits VM memory to use no more than 2 GB, this can be set as whole numbers using GB or MB
+memory=2GB
+```
+
 ## 安装 Nvm、Node.js 和 Npm
 
 除了选择在 Windows 还是在 WSL 上安装，安装 Node.js 时还要作出其他选择。 建议使用版本管理器，因为版本变更速度非常快。 你可能需要根据所使用的不同项目的需求在多个版本的 Node.js 之间进行切换。
