@@ -12,16 +12,4 @@
   "vite.buildCommand": "npm run docs:build",
   "vite.devCommand": "npm run docs:dev",
   "vite.port": 5173,
-
-  /* extensions - Code Spell Checker */
-  "cSpell.words": [
-    "chsh",
-    "gitee",
-    "powerlevel"
-  ],
-  "cSpell.ignoreWords": [
-    "Meslo",
-    "dirsfirst",
-    "robbyrussell"
-  ],
 }
