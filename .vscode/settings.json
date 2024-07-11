@@ -1,9 +1,9 @@
 {
-  /* 控制相关文件嵌套展示 */
+  /* vscode - explorer */
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "README.md": ".npmrc,.gitignore,package.json,package-lock.json"
+    "README.md": "*.config.js,.npmrc,.gitignore,package.json,package-lock.json"
   },
 
   /* extensions - Vite */

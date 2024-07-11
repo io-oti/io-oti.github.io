@@ -1,5 +1,14 @@
-// .vitepress/theme/index.js
 import DefaultTheme from 'vitepress/theme'
-import './custom.css'
+import './style/custom.css'
 
-export default DefaultTheme
+import Layout from './components/Layout/index.vue'
+
+import home from './pages/home/index.vue'
+
+export default {
+  extends: DefaultTheme,
+  Layout,
+  enhanceApp ({ app }) {
+    app.component("home", home)
+  }
+}

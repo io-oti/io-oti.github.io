@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync, statSync } from 'fs'
 import { basename, extname } from 'path'
 
-const BASE_PATH = './docs'
+const BASE_PATH = './docs/posts'
 const EXT_NAME = '.md'
 
 // 判断是否是文件夹

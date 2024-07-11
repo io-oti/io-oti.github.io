@@ -2,5 +2,6 @@
   "recommendations": [
     "shd101wyy.markdown-preview-enhanced",
     "yzhang.markdown-all-in-one",
+    "antfu.vite",
   ]
 }
