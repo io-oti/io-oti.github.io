@@ -1,13 +1,18 @@
 ---
 author: Io_oTI
 date: 2023-09-27
+draft: false
 tag: 'vue'
 title: 'JSX'
 ---
 
-# JSX
+# Vue 2 JSX 语法
 
-## Content
+## 安装
+
+## 使用
+
+### 内容 - Content
 
 ```jsx
 export default {
@@ -23,13 +28,15 @@ export default {
 }
 ```
 
-## Attrs/Props
+### 属性 - Attrs/Props
 
 `vm.$attrs` 包含了父作用域中不作为 prop 被识别 (且获取) 的 attribute 绑定 (class 和 style 除外)。
 
 `vm.$props` 当前组件接收到的 props 对象。Vue 实例代理了对其 props 对象 property 的访问。
 
-```jsx
+::: code-group
+
+```jsx [Parent]
 import Children from './children.vue'
 
 export default {
@@ -56,7 +63,7 @@ export default {
 };
 ```
 
-```jsx
+```jsx [Children]
 export default {
   name: 'Children',
 
@@ -72,8 +79,9 @@ export default {
   }
 }
 ```
+:::
 
-## DomProps
+#### DomProps
 
 ```jsx
 export default {
@@ -97,7 +105,7 @@ export default {
 };
 ```
 
-## On
+### 事件 - On
 
 包含了父作用域中的 (不含 `.native` 修饰器的) `v-on` 事件监听器。它可以通过 `v-on="$listeners"` 传入内部组件——在创建更高层次的组件时非常有用。
 
@@ -125,9 +133,11 @@ export default {
 };
 ```
 
-## ScopedSlots
+### 插槽 - ScopedSlots
 
-```jsx
+:::code-group
+
+```jsx [Parent]
 import Children from './Children.vue'
 
 export default {
@@ -161,7 +171,7 @@ export default {
 };
 ```
 
-```jsx
+```jsx [Children]
 export default {
   name: 'Children',
 
@@ -177,7 +187,9 @@ export default {
 };
 ```
 
-## Directives
+:::
+
+### 指令 - Directives
 
 ```jsx
 export default {
@@ -195,7 +207,7 @@ export default {
 }
 ```
 
-## v-model
+#### v-model
 
 ```jsx
 export default {
