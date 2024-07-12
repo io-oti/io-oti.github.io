@@ -1,5 +1,7 @@
 <script lang="jsx">
 import { computed, ref, withKeys } from "vue"
+import ArrowLeft from "@/components/Icons/ArrowLeft.vue"
+import ArrowRight from "@/components/Icons/ArrowRight.vue"
 
 export default {
   props: {
@@ -17,43 +19,41 @@ export default {
     },
   },
   emits: ["update:pageNumb", "update:pageSize"],
-  setup (props, { emit }) {
-    const enter = ref('')
+  setup(props, { emit }) {
+    const enter = ref("")
 
     const current = computed(() => {
       return `${props.pageNumb} / ${props.total}`
     })
 
-    const onChangePage = (numb = 1) => {
-      if (numb && numb < props.total && numb >= 1) {
-        enter.value = ''
-        emit("update:pageNumb", numb)
-      } else {
-        emit("update:pageNumb", 1)
+    const onChangePage = (e) => {
+      const pageNumb = Number(e.target.value)
+
+      if (pageNumb && 1 <= pageNumb && pageNumb <= props.total) {
+        emit("update:pageNumb", pageNumb)
       }
+      e.target.value = ""
     }
 
     const onChangeSize = (size = 10) => {
       emit("update:pageSize", size)
     }
 
-    const onPrevPage = () => {
+    const onPrevPage = (e) => {
+      if (e.target.value) return
       if (props.pageNumb <= 1) return
       emit("update:pageNumb", props.pageNumb - 1)
     }
 
-    const onNextPage = () => {
+    const onNextPage = (e) => {
+      if (e.target.value) return
+      if (props.pageNumb >= props.total) return
       emit("update:pageNumb", props.pageNumb + 1)
     }
 
     return () => (
       <div class="paginator">
-        <a
-          class="paginator__prev"
-          onclick={onPrevPage}
-        >
-          Prev
-        </a>
+        <ArrowLeft />
         <input
           type="number"
           value={enter.value}
@@ -61,14 +61,11 @@ export default {
           placeholder={current.value}
           min={1}
           max={props.total}
-          onKeyup={withKeys((e) => onChangePage(e.target.value), ["enter"])}
+          onKeyup={withKeys(onPrevPage, ["left"])}
+          onKeyup={withKeys(onChangePage, ["enter"])}
+          onKeyup={withKeys(onNextPage, ["right"])}
         />
-        <a
-          class="paginator__next"
-          onclick={onNextPage}
-        >
-          Next
-        </a>
+        <ArrowRight />
       </div>
     )
   },
@@ -78,23 +75,17 @@ export default {
 <style lang="scss" scoped>
 .paginator {
   display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
-
-  &__prev,
-  &__next {
-    color: var(--color-text);
-    font-size: 16px;
-
-    &:hover {
-      font-weight: bold;
-    }
-  }
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 12px 0;
 
   &__input {
     width: 100px;
+    margin: 0 12px;
     text-align: center;
-    border: 1px solid var(--vp-c-border);
+    background: var(--vp-c-bg-alt);
+    border: 1px solid transparent;
     border-radius: var(--border-size-1);
     outline: none;
     transition: border-color 0.25s;

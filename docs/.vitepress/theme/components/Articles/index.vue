@@ -8,25 +8,23 @@ export default {
     const pageNumb = ref(1)
     const pageSize = ref(10)
 
-    const allPost = data.filter((post) => !post.draft)
+    const posts = data.filter((post) => !post.draft)
 
     const total = computed(() => {
-      return Number((allPost.length / pageSize.value).toFixed())
+      return Math.ceil(posts.length / pageSize.value)
     })
 
-    const posts = computed(() => {
+    const pages = computed(() => {
       const start = (pageNumb.value - 1) * pageSize.value
       const end = pageNumb.value * pageSize.value
 
-      return allPost.slice(start, end)
+      return posts.slice(start, end)
     })
-
-    onMounted(() => {})
 
     return () => (
       <div class="article">
         <ul class="article-list">
-          {posts.value.map((post) => (
+          {pages.value.map((post) => (
             <li class="article-item">
               <a
                 class="article-item__title"
@@ -53,8 +51,8 @@ export default {
 
 <style lang="scss" scoped>
 .article {
-  &-list {
-  }
+  // &-list {
+  // }
 
   &-item {
     display: flex;
@@ -62,7 +60,7 @@ export default {
     margin: 12px 0;
 
     &__title {
-      color: var(--color-text);
+      color: var(--vp-c-text-1);
       font-size: 18px;
 
       &:hover {
@@ -71,7 +69,7 @@ export default {
     }
 
     &__date {
-      color: var(--color-subtext-0);
+      color: var(--vp-c-text-3);
     }
   }
 }
