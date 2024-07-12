@@ -1,7 +1,7 @@
 <script lang="jsx">
 import { computed, onMounted, ref } from "vue"
 import { data } from "@/posts.data.js"
-import Pagination from "../Pagination/index.vue"
+import Paginator from "../Paginator/index.vue"
 
 export default {
   setup(props, context) {
@@ -36,7 +36,7 @@ export default {
             </li>
           ))}
         </ul>
-        <Pagination
+        <Paginator
           v-models={[
             [pageNumb.value, "pageNumb"],
             [pageSize.value, "pageSize"],
