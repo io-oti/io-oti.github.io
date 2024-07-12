@@ -1,3 +1,11 @@
+---
+author: Io_oTI
+date: 2024-07-12
+draft: false
+tag: 'windows'
+title: 'WSL'
+---
+
 # WSL
 
 `io_oti / Time.2023`
