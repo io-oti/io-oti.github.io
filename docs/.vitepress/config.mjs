@@ -15,9 +15,8 @@ export default defineConfig({
     ["link", { rel: "icon", type: "image/png", href: "/icons/maple.png" }],
   ],
 
+  // https://vitepress.dev/reference/default-theme-config
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-
     // logo - 网站图标
     logo: { src: "/icons/maple.svg", width: 24, height: 24 },
 

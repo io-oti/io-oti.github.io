@@ -7,13 +7,9 @@ export default createContentLoader("posts/**/*.md", {
   render: true,
   transform(raw) {
     return raw
-      .map(({ url, frontmatter: { author, date, title }, excerpt }) => ({
-        author: author,
-        date: formatDate(date),
-        excerpt,
-        title: title,
-        url,
-      }))
+      .map(({ excerpt, frontmatter: { date, ...z }, url }) => {
+        return { date: formatDate(date), excerpt, url, ...z }
+      })
       .sort((a, b) => b.date.time - a.date.time)
   },
 })
