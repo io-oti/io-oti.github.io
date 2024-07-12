@@ -11,7 +11,7 @@
   </svg>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .icon {
   width: 20px;
   height: 20px;
