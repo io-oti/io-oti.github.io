@@ -1,3 +1,10 @@
+---
+author: Io_oTI
+date: 2024-07-12
+tag: 'node'
+title: 'Vditor'
+---
+
 # Vditor
 
 易于使用的 Markdown 编辑器，为适配不同的应用场景而生。

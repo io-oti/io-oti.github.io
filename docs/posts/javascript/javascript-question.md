@@ -1,3 +1,10 @@
+---
+author: Io_oTI
+date: 2024-07-12
+tag: 'javascript'
+title: 'JavaScript 进阶问题列表'
+---
+
 # JavaScript 进阶问题列表
 
 我在我的 [Instagram](https://www.instagram.com/theavocoder) 上每天都会发布 JavaScript 的多选问题，并且同时也会在这个仓库中发布。

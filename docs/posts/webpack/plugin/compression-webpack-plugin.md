@@ -1,3 +1,10 @@
+---
+author: Io_oTI
+date: 2024-07-12
+tag: 'webpack'
+title: 'compression-webpack-plugin'
+---
+
 # compression-webpack-plugin
 
 这个插件可以提供资产的压缩版本，以使用内容编码为其提供服务。

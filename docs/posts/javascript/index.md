@@ -1,3 +1,10 @@
+---
+author: Io_oTI
+date: 2024-07-12
+tag: 'javascript'
+title: 'Language'
+---
+
 # Language
 
 ## Data Types

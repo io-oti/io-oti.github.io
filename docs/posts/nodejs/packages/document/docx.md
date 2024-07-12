@@ -1,3 +1,10 @@
+---
+author: Io_oTI
+date: 2024-07-12
+tag: 'node'
+title: 'docx'
+---
+
 # docx
 
 使用JS/TS轻松生成和修改.docx文件。适用于浏览器上的节点和。

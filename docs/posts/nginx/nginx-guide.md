@@ -1,3 +1,10 @@
+---
+author: Io_oTI
+date: 2024-07-12
+tag: 'nginx'
+title: 'Nginx'
+---
+
 # Nginx
 
 ## 命令

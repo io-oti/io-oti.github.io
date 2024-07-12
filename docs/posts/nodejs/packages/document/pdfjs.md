@@ -1,3 +1,10 @@
+---
+author: Io_oTI
+date: 2024-07-12
+tag: 'node'
+title: 'PDF.js'
+---
+
 # PDF.js
 
 一个通用的、基于web标准的平台，用于解析和呈现PDF。

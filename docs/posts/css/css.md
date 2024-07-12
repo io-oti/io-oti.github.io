@@ -1,8 +1,8 @@
 ---
 author: Io_oTI
 date: 2023-10-26
+tag: 'css'
 title: 'CSS'
-description: ''
 ---
 
 # CSS

@@ -1,3 +1,10 @@
+---
+author: Io_oTI
+date: 2024-07-12
+tag: 'webpack'
+title: 'uglifyjs-webpack-plugin'
+---
+
 # uglifyjs-webpack-plugin
 
 这个插件使用 [uglify-js](https://github.com/mishoo/UglifyJS2) 来缩小你的 JavaScript。

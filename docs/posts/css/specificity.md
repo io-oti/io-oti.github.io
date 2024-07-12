@@ -1,8 +1,8 @@
 ---
 author: Io_oTI
 date: 2023-10-26
+tag: 'css'
 title: '特异性（Specificity）'
-description: ''
 ---
 
 # 特异性（Specificity）

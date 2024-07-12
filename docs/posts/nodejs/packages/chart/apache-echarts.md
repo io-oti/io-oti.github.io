@@ -1,3 +1,10 @@
+---
+author: Io_oTI
+date: 2024-07-12
+tag: 'node'
+title: 'Apache ECharts'
+---
+
 # Apache ECharts
 
 Apache ECharts 是一个免费、强大的图表和可视化库，提供了将直观、交互式和高度可定制的图表添加到商业产品中的简单方法。
