@@ -9,6 +9,7 @@ export default defineConfig({
 
   lang: "zh-CN",
   cleanUrls: true,
+  ignoreDeadLinks: true,
 
   head: [
     ["link", { rel: "icon", type: "image/svg+xml", href: "/icons/maple.svg" }],
