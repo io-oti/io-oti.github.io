@@ -1,9 +1,9 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
-layout: page
+# layout: home
 
-title: 槭 林
-titleTemplate: 今日菖蒲花 明朝枫树老
+# title: 槭 林
+# titleTemplate: 今日菖蒲花 明朝枫树老
 
 # hero:
 #   name: 槭 林
@@ -32,5 +32,7 @@ titleTemplate: 今日菖蒲花 明朝枫树老
 #   - icon: 🍁
 #     title: Git Cheapsheets
 #     details: Git 备忘录
+
+layout: page
 ---
 <home />

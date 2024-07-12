@@ -1,6 +1,6 @@
 <script lang="jsx">
 import { computed, onMounted, ref } from "vue"
-import { data } from "@/docs.data.js"
+import { data } from "@/posts.data.js"
 import Pagination from "../Pagination/index.vue"
 
 export default {
@@ -8,15 +8,17 @@ export default {
     const pageNumb = ref(1)
     const pageSize = ref(10)
 
+    const allPost = data.filter((post) => !post.draft)
+
     const total = computed(() => {
-      return Number((data.length / pageSize.value).toFixed())
+      return Number((allPost.length / pageSize.value).toFixed())
     })
 
     const posts = computed(() => {
       const start = (pageNumb.value - 1) * pageSize.value
       const end = pageNumb.value * pageSize.value
 
-      return data.slice(start, end)
+      return allPost.slice(start, end)
     })
 
     onMounted(() => {})
@@ -30,11 +32,9 @@ export default {
                 class="article-item__title"
                 href={post.url}
               >
-                {post?.title || "--"}
+                {post?.title}
               </a>
-              <span class="article-item__date">
-                {post?.date?.string || "--"}
-              </span>
+              <span class="article-item__date">{post?.date?.string}</span>
             </li>
           ))}
         </ul>
@@ -63,7 +63,7 @@ export default {
 
     &__title {
       color: var(--color-text);
-      font-size: 20px;
+      font-size: 18px;
 
       &:hover {
         font-weight: bold;
