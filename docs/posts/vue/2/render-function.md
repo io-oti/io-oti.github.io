@@ -2,20 +2,18 @@
 author: Io_oTI
 date: 2023-09-27
 tag: 'vue'
-title: '渲染函数'
+title: 'Vue 2 渲染函数用法'
 ---
 
-# 渲染函数
-
-## Syntax
-
-`createElement(tagName, property, children)`
+# Vue 2 渲染函数用法
 
 将 h 作为 createElement 的别名是 Vue 生态系统中的一个通用惯例，实际上也是 JSX 所要求的。从 Vue 的 Babel 插件的 3.4.0 版本开始，在以 ES2015 语法声明的含有 JSX 的任何方法和 getter 中 (不是函数或箭头函数中) 自动注入 const h = this.$createElement，这样你就可以去掉 (h) 参数了。对于更早版本的插件，如果 h 在当前作用域中不可用，应用会抛错。
 
-要了解更多关于 JSX 如何映射到 JavaScript，请阅读[使用文档](https://github.com/vuejs/jsx#installation)。
+## 语法
 
-## Arguments
+`createElement(tagName, property, children)`
+
+## 参数
 
 ### tagName
 
@@ -101,9 +99,9 @@ Type: `{ String | Array }`
 
 子级虚拟节点 (VNodes)，由 `createElement()` 构建而成，也可以使用字符串来生成“文本虚拟节点”。可选。
 
-## Examples
+## 示例
 
-### Content
+### 内容 - Content
 
 ```javascript{8-10}
 export default {
@@ -119,14 +117,16 @@ export default {
 };
 ```
 
-### Attrs/Props
+### 属性 - Attrs/Props
 
 `vm.$attrs` 包含了父作用域中不作为 prop 被识别 (且获取) 的 attribute 绑定 (class 和 style 除外)。
 
 `vm.$props` 当前组件接收到的 props 对象。Vue 实例代理了对其 props 对象 property 的访问。
 
-```javascript{21-23}
-import Children from './children.vue'
+:::code-group
+
+```javascript{21-23} [Parent.vue]
+import Children from './Children.vue'
 
 export default {
   name: 'Parent',
@@ -152,7 +152,7 @@ export default {
 }
 ```
 
-```javascript{9-11}
+```javascript{9-11} [Children.vue]
 export default {
  name: 'Children',
 
@@ -167,7 +167,9 @@ export default {
 };
 ```
 
-### DomProps
+:::
+
+#### DomProps
 
 ```javascript{9-14}
 export default {
@@ -187,7 +189,7 @@ export default {
 };
 ```
 
-### On
+### 事件 - On
 
 `vm.$listeners` 包含了父作用域中的 (不含 `.native` 修饰器的) `v-on` 事件监听器。
 
@@ -211,13 +213,15 @@ export default {
 };
 ```
 
-### ScopedSlots
+### 插槽 - Slots
 
 `vm.$slots` 用来访问被[插槽分发](https://cn.vuejs.org/v2/guide/components.html#通过插槽分发内容)的内容。每个[具名插槽](https://cn.vuejs.org/v2/guide/components-slots.html#具名插槽)有其相应的 property (例如：`v-slot:foo` 中的内容将会在 `vm.$slots.foo` 中被找到)。`default` property 包括了所有没有被包含在具名插槽中的节点，或 `v-slot:default` 的内容。
 
 `vm.$scopedSlots` 用来访问[作用域插槽](https://cn.vuejs.org/v2/guide/components-slots.html#作用域插槽)。对于包括 `默认 slot` 在内的每一个插槽，该对象都包含一个返回相应 VNode 的函数。
 
-```javascript{17-24}
+:::code-group
+
+```javascript{17-24} [Children.vue]
 import Children from './Children.vue'
 
 export default {
@@ -245,7 +249,7 @@ export default {
 }
 ```
 
-```javascript{4-12}
+```javascript{4-12} [Children.vue]
 export default {
   name: 'Children',
 
@@ -261,7 +265,9 @@ export default {
 };
 ```
 
-### Directives
+:::
+
+### 指令 - Directives
 
 ```javascript{8-14}
 export default {
@@ -281,7 +287,7 @@ export default {
 };
 ```
 
-### v-model
+#### v-model
 
 ```javascript{14-21}
 export default {

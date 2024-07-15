@@ -3,14 +3,30 @@ author: Io_oTI
 date: 2023-09-27
 draft: false
 tag: 'vue'
-title: 'JSX'
+title: 'Vue 2 JSX 用法'
 ---
 
-# Vue 2 JSX 语法
+# Vue 2 JSX 用法
+
+要了解更多关于 JSX 如何映射到 JavaScript，请阅读[使用文档](https://github.com/vuejs/jsx#installation)。
 
 ## 安装
 
-## 使用
+安装预设：
+
+```shell
+npm install @vue/babel-preset-jsx @vue/babel-helper-vue-jsx-merge-props
+```
+
+然后将预设添加到 `babel.config.js`：
+
+```javascript
+module.exports = {
+  presets: ['@vue/babel-preset-jsx'],
+}
+```
+
+## 示例
 
 ### 内容 - Content
 
@@ -36,8 +52,8 @@ export default {
 
 ::: code-group
 
-```jsx [Parent]
-import Children from './children.vue'
+```jsx [Parent.vue]
+import Children from './Children.vue'
 
 export default {
   name: 'Parent',
@@ -63,7 +79,7 @@ export default {
 };
 ```
 
-```jsx [Children]
+```jsx [Children.vue]
 export default {
   name: 'Children',
 
@@ -133,11 +149,11 @@ export default {
 };
 ```
 
-### 插槽 - ScopedSlots
+### 插槽 - Slots
 
 :::code-group
 
-```jsx [Parent]
+```jsx [Parent.vue]
 import Children from './Children.vue'
 
 export default {
@@ -171,7 +187,7 @@ export default {
 };
 ```
 
-```jsx [Children]
+```jsx [Children.vue]
 export default {
   name: 'Children',
 
