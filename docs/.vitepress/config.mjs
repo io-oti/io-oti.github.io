@@ -61,13 +61,14 @@ export default defineConfig({
             text: "Vue 2",
             items: [
               { text: "Vue 2 备忘录", link: "posts/vue/2/cheatsheet" },
-              { text: "Vue 2 JSX用法", link: "posts/vue/2/jsx" },
+              { text: "Vue 2 JSX 用法", link: "posts/vue/2/jsx" },
               { text: "Vue 2 渲染函数用法", link: "posts/vue/2/render-function" },
             ],
           },
           {
             text: "Vue 3",
             items: [
+              { text: "Vue 3 JSX 用法", link: "posts/vue/3/jsx" },
               { text: "Vue 3 Options API", link: "posts/vue/3/options-api" },
               { text: "Vue 3 Composition API", link: "posts/vue/3/composition-api" },
             ],

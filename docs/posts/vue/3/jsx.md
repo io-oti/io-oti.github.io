@@ -3,14 +3,14 @@ author: Io_oTI
 date: 2024-07-12
 draft: false
 tag: 'vue'
-title: 'Vue 3 JSX 语法'
+title: 'Vue 3 JSX 用法'
 ---
 
 # Vue 3 JSX 语法
 
 ## 安装
 
-## 使用
+## 示例
 
 ### 内容 - Content
 
