@@ -84,7 +84,6 @@ export default {
   align-items: center;
   justify-content: center;
   margin-top: 24px;
-  padding: 12px 0;
 
   &__input {
     width: 100px;
@@ -113,7 +112,7 @@ export default {
     transition: all 0.3 ease;
 
     &:hover {
-      fill: var(--vp-c-text-1);
+      fill: var(--vp-c-brand-1);
     }
   }
 

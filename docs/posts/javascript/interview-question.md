@@ -1,11 +1,9 @@
 ---
 author: Io_oTI
 date: 2024-07-12
-tag: 'javascript'
+tag: 'javascript,typescript'
 title: '前端面试手写题'
 ---
-
-# 前端面试手写题
 
 整理前端面试常见的手写题，面试出现概率极高，建议每个都过自己过一遍。
 

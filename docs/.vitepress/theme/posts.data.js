@@ -3,8 +3,8 @@ import { createContentLoader } from "vitepress"
 
 export default createContentLoader("posts/**/*.md", {
   excerpt: true,
-  includeSrc: true,
-  render: true,
+  // includeSrc: true,
+  // render: true,
   transform(raw) {
     return raw
       .map(({ excerpt, frontmatter: { date, ...z }, url }) => {
@@ -21,7 +21,7 @@ function formatDate(raw) {
 
   return {
     time: +date,
-    string: date.toLocaleDateString("cn-ZH", {
+    string: date.toLocaleDateString("cn-zh", {
       year: "numeric",
       month: "numeric",
       day: "numeric",

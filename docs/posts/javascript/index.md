@@ -6,8 +6,6 @@ tag: 'javascript'
 title: 'Language'
 ---
 
-# Language
-
 ## Data Types
 
 ### Undefined Type

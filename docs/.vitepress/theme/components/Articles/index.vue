@@ -2,6 +2,7 @@
 import { computed, onMounted, ref } from "vue"
 import { data } from "@/posts.data.js"
 import Paginator from "../Paginator/index.vue"
+import Tags from "../Tags/index.vue"
 
 export default {
   setup(props, context) {
@@ -22,17 +23,29 @@ export default {
     })
 
     return () => (
-      <div class="article">
+      <div>
         <ul class="article-list">
           {pages.value.map((post) => (
-            <li class="article-item">
-              <a
-                class="article-item__title"
-                href={post.url}
-              >
-                {post?.title}
-              </a>
-              <span class="article-item__date">{post?.date?.string}</span>
+            <li class="article-list__item">
+              <article class="article">
+                <div>
+                  <h2 class="article-title">
+                    <a href={post.url}>{post.title}</a>
+                  </h2>
+                  {post.excerpt ? (
+                    <div
+                      v-html={post.excerpt}
+                      class="article-excerpt"
+                    />
+                  ) : (
+                    <div class="article-excerpt">这里没有摘要哦...</div>
+                  )}
+                </div>
+                <div class="article-footer">
+                  <span class="article-date">{post.date.string}</span>
+                  <Tags tags={post.tag} />
+                </div>
+              </article>
             </li>
           ))}
         </ul>
@@ -51,26 +64,41 @@ export default {
 
 <style lang="scss" scoped>
 .article {
-  // &-list {
-  // }
-
-  &-item {
-    display: flex;
-    justify-content: space-between;
-    margin: 12px 0;
-
-    &__title {
-      color: var(--vp-c-text-1);
-      font-size: 18px;
-
-      &:hover {
-        font-weight: bold;
+  &-list {
+    &__item {
+      & + & {
+        margin-top: 24px;
       }
     }
+  }
 
-    &__date {
-      color: var(--vp-c-text-3);
+  &-title {
+    color: var(--vp-c-text-1);
+    font-size: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    & a:hover {
+      color: var(--vp-c-brand-1);
     }
+  }
+
+  &-excerpt {
+    margin-top: 24px;
+    color: var(--vp-c-text-2);
+    overflow: hidden;
+  }
+
+  &-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  &-date {
+    color: var(--vp-c-text-3);
+    line-height: 24px;
   }
 }
 </style>
