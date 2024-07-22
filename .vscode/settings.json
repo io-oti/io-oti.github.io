@@ -1,4 +1,10 @@
 {
+  /* vscode - editor */
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+
   /* vscode - explorer */
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
@@ -6,7 +12,12 @@
     "README.md": "*.config.js,.npmrc,.gitignore,package.json,package-lock.json"
   },
 
-  /* extensions - Vite */
+  /* vscode - vue */
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+
+  /* extensions - vite */
   "vite.autoStart": false,
   "vite.browserType": "system",
   "vite.buildCommand": "npm run docs:build",

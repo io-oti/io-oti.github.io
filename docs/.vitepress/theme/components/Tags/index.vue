@@ -1,6 +1,4 @@
 <script lang="jsx">
-import { ref } from "vue"
-
 export default {
   props: {
     tags: {
@@ -8,7 +6,7 @@ export default {
       default: "Tag",
     },
   },
-  setup(props, context) {
+  setup (props) {
     const tags = props.tags.split(",")
 
     return () => (
@@ -25,6 +23,7 @@ export default {
 <style lang="scss" scoped>
 .tag {
   padding: 4px 8px;
+  color: var(--vp-c-text-2);
   font-size: 12px;
   line-height: 16px;
   border-radius: 4px;

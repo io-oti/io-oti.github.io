@@ -111,16 +111,16 @@ export default {
     cursor: pointer;
     transition: all 0.3 ease;
 
-    &:hover {
+    &:active {
       fill: var(--vp-c-brand-1);
     }
   }
 
-  &__prev:hover {
+  &__prev:active {
     transform: translateX(-2px);
   }
 
-  &__next:hover {
+  &__next:active {
     transform: translateX(2px);
   }
 }

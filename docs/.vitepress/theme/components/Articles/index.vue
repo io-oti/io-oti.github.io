@@ -1,11 +1,11 @@
 <script lang="jsx">
-import { computed, onMounted, ref } from "vue"
+import { ref, computed } from "vue"
 import { data } from "@/posts.data.js"
-import Paginator from "../Paginator/index.vue"
-import Tags from "../Tags/index.vue"
+import Paginator from "@/components/Paginator/index.vue"
+import Tags from "@/components/Tags/index.vue"
 
 export default {
-  setup(props, context) {
+  setup () {
     const pageNumb = ref(1)
     const pageSize = ref(10)
 
@@ -23,7 +23,7 @@ export default {
     })
 
     return () => (
-      <div>
+      <>
         <ul class="article-list">
           {pages.value.map((post) => (
             <li class="article-list__item">
@@ -56,7 +56,7 @@ export default {
           ]}
           total={total.value}
         />
-      </div>
+      </>
     )
   },
 }
@@ -87,6 +87,7 @@ export default {
   &-excerpt {
     margin-top: 24px;
     color: var(--vp-c-text-2);
+    font-size: 14px;
     overflow: hidden;
   }
 
@@ -98,6 +99,7 @@ export default {
 
   &-date {
     color: var(--vp-c-text-3);
+    font-size: 14px;
     line-height: 24px;
   }
 }
