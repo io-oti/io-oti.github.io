@@ -129,9 +129,9 @@ export default defineConfig({
     resolve: {
       alias: {
         // 设置路径
-        "~": path.resolve(__dirname, "./"),
+        "~": path.resolve(__dirname, "./"), // eslint-disable-line
         // 设置别名
-        "@": path.resolve(__dirname, "./theme"),
+        "@": path.resolve(__dirname, "./theme"), // eslint-disable-line
       },
       // https://cn.vitejs.dev/config/#resolve-extensions
       extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],

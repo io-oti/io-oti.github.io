@@ -1,3 +1,11 @@
+---
+author: Io_oTI
+date: 2024-07-23
+draft: true
+tag: 'macos'
+title: 'macOS'
+---
+
 # macOS
 
 ## Homebrew
