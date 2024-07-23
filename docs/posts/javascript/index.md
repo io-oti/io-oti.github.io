@@ -6,6 +6,8 @@ tag: 'javascript'
 title: 'Language'
 ---
 
+# Javascript 学习
+
 ## Data Types
 
 ### Undefined Type

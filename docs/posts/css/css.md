@@ -1,6 +1,7 @@
 ---
 author: Io_oTI
 date: 2023-10-26
+draft: true
 tag: 'css'
 title: 'CSS'
 ---
