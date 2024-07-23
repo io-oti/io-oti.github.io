@@ -1,41 +1,46 @@
 export class Animation {
   constructor(selector, option) {
-    this.canvas = this.init(selector)
-    this.fireflies = new Array(option.count).fill({}).map(function () {
+    this.canvas = document.querySelector(selector)
+    this.fireflies = Array.from({ length: option.count }, () => {
       return new Firefly(option)
     })
+    this.running = false
+    this.raf = null
+  }
+
+  start() {
+    this.resize()
+    window.addEventListener("resize", this.resize.bind(this))
+    this.running = true
     this.draw()
-
-    this.dispose = () => {
-      this.fireflies.length = 0
-    }
   }
 
-  init = (selector) => {
-    var canvas = document.querySelector(selector)
-    var resize = function () {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
-
-    resize()
-    window.addEventListener("resize", resize)
-
-    return canvas
+  stop() {
+    window.cancelAnimationFrame(this.raf)
+    this.running = false
   }
 
-  draw = () => {
+  resize() {
+    this.canvas.width = window.innerWidth
+    this.canvas.height = window.innerHeight
+  }
+
+  draw() {
     var drawer = this.draw.bind(this)
 
-    this.redraw()
-    window.requestAnimationFrame(drawer)
+    if (this.running) {
+      this.redraw()
+      this.raf = window.requestAnimationFrame(drawer)
+    }
   }
 
-  redraw = () => {
+  redraw() {
     var ctx = this.canvas.getContext("2d")
 
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
-    this.fireflies.forEach(function (firefly) {
+    for (var i = 0; i < this.fireflies.length; i++) {
+      var firefly = this.fireflies[i]
+
       firefly.fly()
       firefly.flicker()
 
@@ -46,7 +51,7 @@ export class Animation {
       ctx.shadowBlur = firefly.radius * 5
       ctx.shadowColor = "yellow"
       ctx.fill()
-    })
+    }
   }
 }
 
@@ -64,7 +69,7 @@ class Firefly {
     this.color = option.color
   }
 
-  fly = () => {
+  fly() {
     if (this.angle >= 360 || this.angle <= 0 || Math.random() * 360 < 6) {
       this.veer = !this.veer
     }
@@ -80,7 +85,7 @@ class Firefly {
     if (this.y > window.innerHeight) this.y -= window.innerHeight
   }
 
-  flicker = () => {
+  flicker() {
     if (this.opacity >= 1 || this.opacity <= 0.001) {
       this.flare = !this.flare
     }
