@@ -6,7 +6,7 @@ export default {
   setup(props, context) {
     return () => (
       <Transition name="home">
-        <div class="home">
+        <div class="page-container">
           <Articles />
         </div>
       </Transition>
@@ -17,8 +17,7 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  width: min(100vw - 60px, 900px);
-  height: min-content;
+  width: min(100vw - 64px, 900px);
   margin: 32px auto;
   padding: 32px;
   border-radius: var(--border-size-4);
@@ -26,6 +25,17 @@ export default {
   background-color: var(--vp-c-bg);
 }
 
+/* Mobile */
+@media (max-width: 426px) {
+  .home {
+    width: min(100vw - 32px, 425px);
+    margin: 16px;
+    padding: 16px;
+  }
+}
+</style>
+
+<style>
 .home-enter-from,
 .home-leave-to {
   opacity: 0;

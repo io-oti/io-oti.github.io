@@ -2,14 +2,15 @@
 import { createContentLoader } from "vitepress"
 
 export default createContentLoader("posts/**/*.md", {
-  excerpt: true,
-  // includeSrc: true,
-  // render: true,
   transform(raw) {
     return raw
-      .map(({ excerpt, frontmatter: { date, ...z }, url }) => {
-        return { date: formatDate(date), excerpt, url, ...z }
-      })
+      .reduce((res, { frontmatter: { date, draft, ...z }, url }) => {
+        if (draft) return res
+
+        res.push({ date: formatDate(date), url, ...z })
+
+        return res
+      }, [])
       .sort((a, b) => b.date.time - a.date.time)
   },
 })
@@ -21,10 +22,10 @@ function formatDate(raw) {
 
   return {
     time: +date,
-    string: date.toLocaleDateString("cn-zh", {
+    string: date.toLocaleDateString("zh-CN", {
       year: "numeric",
-      month: "numeric",
-      day: "numeric",
+      month: "2-digit",
+      day: "2-digit",
     }),
   }
 }

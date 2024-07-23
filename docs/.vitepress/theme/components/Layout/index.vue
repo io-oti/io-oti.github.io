@@ -15,7 +15,7 @@ import { Animation } from "../../utils/fireflies.js"
 const { Layout } = DefaultTheme
 const { isDark } = useData()
 const route = useRoute()
-let fireflies = null
+let anime = null
 
 const enableTransitions = () =>
   "startViewTransition" in document &&
@@ -53,30 +53,31 @@ provide("toggle-appearance", async ({ clientX: x, clientY: y }) => {
 // watchEffect(
 //   () => {
 //     if (route.path === "/") {
-//       fireflies = new Animation("#fireflies", {
+//       anime = new Animation("#fireflies", {
 //         count: 25,
 //         color: "rgba(236, 196, 94, 1)",
 //         speed: 1,
 //         radius: 2,
 //       })
 //     } else {
-//       fireflies && fireflies.dispose()
+//       anime && anime.stop()
 //     }
 //   },
 //   { flush: "post" }
 // )
 
 onMounted(() => {
-  fireflies = new Animation("#fireflies", {
+  anime = new Animation("#fireflies", {
     count: 25,
     color: "rgba(236, 196, 94, 1)",
     speed: 1,
     radius: 2,
   })
+  anime.start()
 })
 
 onUnmounted(() => {
-  fireflies.dispose()
+  anime.stop()
 })
 </script>
 

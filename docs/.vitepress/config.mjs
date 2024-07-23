@@ -54,56 +54,8 @@ export default defineConfig({
 
     // Nav - 导航
     nav: [
-      {
-        text: "Vue",
-        items: [
-          {
-            text: "Vue 2",
-            items: [
-              { text: "Vue 2 备忘录", link: "posts/vue/2/cheatsheet" },
-              { text: "Vue 2 JSX 用法", link: "posts/vue/2/jsx" },
-              { text: "Vue 2 渲染函数用法", link: "posts/vue/2/render-function" },
-            ],
-          },
-          {
-            text: "Vue 3",
-            items: [
-              { text: "Vue 3 JSX 用法", link: "posts/vue/3/jsx" },
-              { text: "Vue 3 Options API", link: "posts/vue/3/options-api" },
-              { text: "Vue 3 Composition API", link: "posts/vue/3/composition-api" },
-            ],
-          },
-          {
-            text: "Vite",
-            items: [
-              {
-                text: "如何从 Vue CLI 迁移到 Vite",
-                link: "posts/vue/vite/how-to-migrate-from-vue-cli-to-vite",
-              },
-            ],
-          },
-        ],
-      },
-      {
-        text: "Node.js",
-        items: [
-          { text: "NPM", link: "posts/nodejs/npm" },
-          {
-            text: "软件包",
-            items: [{ text: "目录", link: "posts/nodejs/packages" }],
-          },
-        ],
-      },
-      {
-        text: "Others",
-        items: [
-          { text: "Windows", link: "posts/windows" },
-          { text: "Browser", link: "posts/browser/google-chrome" },
-          { text: "Nginx", link: "posts/nginx/nginx-guide" },
-          { text: "Git", link: "posts/git/git-cheatsheet" },
-          { text: "Webpack", link: "posts/webpack/webpack" },
-        ],
-      },
+      { text: 'Archives', link: 'pages/archives' },
+      { text: 'Categories', link: 'pages/categories' },
     ],
 
     // SocialLinks - 社交链接

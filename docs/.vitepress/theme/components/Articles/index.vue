@@ -24,26 +24,16 @@ export default {
 
     return () => (
       <>
-        <ul class="article-list">
+        <ul class="post-list">
           {pages.value.map((post) => (
-            <li class="article-list__item">
-              <article class="article">
-                <div>
-                  <h2 class="article-title">
-                    <a href={post.url}>{post.title}</a>
-                  </h2>
-                  {post.excerpt ? (
-                    <div
-                      v-html={post.excerpt}
-                      class="article-excerpt"
-                    />
-                  ) : (
-                    <div class="article-excerpt">这里没有摘要哦...</div>
-                  )}
-                </div>
-                <div class="article-footer">
-                  <span class="article-date">{post.date.string}</span>
-                  <Tags tags={post.tag} />
+            <li>
+              <article class="post">
+                <h2 class="post-title">
+                  <a href={post.url}>{post.title}</a>
+                </h2>
+                <div class="post-desc">
+                  <Tags tag={post.tag} />
+                  <span class="post-date">{post.date.string}</span>
                 </div>
               </article>
             </li>
@@ -63,44 +53,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.article {
+.post {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+
   &-list {
-    &__item {
-      & + & {
-        margin-top: 24px;
-      }
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   &-title {
     color: var(--vp-c-text-1);
-    font-size: 20px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+    font-size: 16px;
 
-    & a:hover {
+    a:hover {
       color: var(--vp-c-brand-1);
     }
   }
 
-  &-excerpt {
-    margin-top: 24px;
-    color: var(--vp-c-text-2);
-    font-size: 14px;
-    overflow: hidden;
-  }
-
-  &-footer {
+  &-desc {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    gap: 12px;
   }
 
   &-date {
     color: var(--vp-c-text-3);
     font-size: 14px;
-    line-height: 24px;
+    line-height: 16px;
   }
 }
 </style>

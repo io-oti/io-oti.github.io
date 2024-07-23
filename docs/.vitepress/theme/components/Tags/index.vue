@@ -1,21 +1,13 @@
 <script lang="jsx">
 export default {
   props: {
-    tags: {
+    tag: {
       type: String,
       default: "Tag",
     },
   },
   setup (props) {
-    const tags = props.tags.split(",")
-
-    return () => (
-      <>
-        {tags.map((tag) => (
-          <span class="tag">{tag}</span>
-        ))}
-      </>
-    )
+    return () => (<span class="tag">{props.tag}</span>)
   },
 }
 </script>
@@ -30,10 +22,11 @@ export default {
   background: var(--vp-c-bg-soft);
 
   &-blue {
+    color: var(--vp-c-text-1);
     background-color: var(--color-blue);
   }
 
-  span + & {
+  span+& {
     margin-left: 12px;
   }
 }
