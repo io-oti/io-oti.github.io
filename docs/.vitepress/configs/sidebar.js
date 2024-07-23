@@ -40,7 +40,7 @@ const getFrontmatter = (path) => matter(readFile(path))
 
 // 递归文件夹中读取文件
 const recursionDir = (path) => {
-  const prevPath = `${BASE_PATH}/${path}`
+  const prevPath = `${BASE_PATH}${path}`
   const items = readDirectory(prevPath)
 
   return items.reduce((res, item) => {
@@ -70,7 +70,7 @@ const recursionDir = (path) => {
 
 export function genSidebar(...paths) {
   return paths.reduce((res, path) => {
-    res[`/${path}/`] = { items: recursionDir(path) }
+    res[`${path}`] = { items: recursionDir(path) }
 
     return res
   }, {})
