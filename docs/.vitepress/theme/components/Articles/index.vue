@@ -2,7 +2,6 @@
 import { ref, computed } from "vue"
 import { data } from "@/posts.data.js"
 import Paginator from "@/components/Paginator/index.vue"
-import Tags from "@/components/Tags/index.vue"
 
 export default {
   setup () {
@@ -32,7 +31,7 @@ export default {
                   <a href={post.url}>{post.title}</a>
                 </h2>
                 <div class="post-desc">
-                  <Tags tag={post.tag} />
+                  <Badge text={post.tag} type="info" />
                   <span class="post-date">{post.date.string}</span>
                 </div>
               </article>
@@ -77,14 +76,14 @@ export default {
 
   &-desc {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 12px;
   }
 
   &-date {
     color: var(--vp-c-text-3);
     font-size: 14px;
-    line-height: 16px;
+    line-height: 23.6px;
   }
 }
 </style>

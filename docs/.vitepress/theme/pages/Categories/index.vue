@@ -1,10 +1,9 @@
 <script lang="jsx">
 import { ref, computed } from "vue"
 import { data } from "@/posts.data.js"
-import Tags from "@/components/Tags/index.vue"
 
 export default {
-  setup (props, context) {
+  setup () {
     const categories = data.reduce((res, post) => {
       if (!res.includes(post.tag)) {
         res = [...res, post.tag]
@@ -26,9 +25,10 @@ export default {
         <ul class="categories">
           {categories.map((category) => (
             <li>
-              <Tags
-                class={currentTag.value === category ? "tag-text" : ""}
-                tag={category}
+              <Badge
+                class={currentTag.value === category ? "active" : ""}
+                text={category}
+                type='info'
                 onclick={() => onChangeTag(category)}
               />
             </li>
@@ -58,11 +58,10 @@ export default {
   gap: 16px 16px;
 }
 
-.tag {
-  font-size: 14px;
+.VPBadge {
   cursor: pointer;
 
-  &-text {
+  &.active {
     color: var(--vp-c-brand-1);
   }
 }
@@ -72,7 +71,6 @@ export default {
 
   .post {
     margin: 12px 0px;
-    padding: 0px 8px 0px 0px;
 
     &-title {
       display: flex;
