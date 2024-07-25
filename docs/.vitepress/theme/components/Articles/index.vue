@@ -1,5 +1,5 @@
 <script lang="jsx">
-import { ref, computed } from "vue"
+import { ref, computed, TransitionGroup } from "vue"
 import { data } from "@/posts.data.js"
 import Paginator from "@/components/Paginator/index.vue"
 
@@ -23,9 +23,9 @@ export default {
 
     return () => (
       <>
-        <ul class="post-list">
+        <TransitionGroup name="list" tag="ul" class="post-list">
           {pages.value.map((post) => (
-            <li>
+            <li key={post.title}>
               <article class="post">
                 <h2 class="post-title">
                   <a href={post.url}>{post.title}</a>
@@ -37,7 +37,7 @@ export default {
               </article>
             </li>
           ))}
-        </ul>
+        </TransitionGroup>
         <Paginator
           v-models={[
             [pageNumb.value, "pageNumb"],

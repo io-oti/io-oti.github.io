@@ -3,7 +3,7 @@ import { Transition } from "vue"
 import Articles from "@/components/Articles/index"
 
 export default {
-  setup(props, context) {
+  setup() {
     return () => (
       <Transition name="home">
         <div class="page-container">

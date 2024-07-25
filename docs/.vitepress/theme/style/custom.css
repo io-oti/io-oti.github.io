@@ -36,6 +36,7 @@
  * layout - page
  * -------------------------------------------------------------------------- */
  @import url(./layout.css);
+ @import url(./animation.css);
 
  :root {
   /* common - color */
@@ -51,6 +52,9 @@
   --border-size-2: 8px;
   --border-size-3: 16px;
   --border-size-4: 20px;
+
+  /* common - timing */
+  --timing-1: cubic-bezier(0, 1, 0.5, 1);
 
   /* light - color */
   --color-rosewater: #dc8a78;

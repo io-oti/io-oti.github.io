@@ -35,9 +35,9 @@ export default {
       e.target.value = "";
     };
 
-    const onChangeSize = (size = 10) => {
-      emit("update:pageSize", size);
-    };
+    // const onChangeSize = (size = 10) => {
+    //   emit("update:pageSize", size);
+    // };
 
     const onPrevPage = (e) => {
       if (e.target.value) return;

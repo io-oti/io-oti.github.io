@@ -2,7 +2,7 @@
 import { data } from "@/posts.data.js"
 
 export default {
-  setup (props, context) {
+  setup () {
     const archives = data.reduce((res, post) => {
       const year = post.date.string.slice(0, 4)
       const group = res.find((x) => x[0] === year)
@@ -42,14 +42,13 @@ export default {
 .archives {
   display: flex;
   flex-direction: column;
-  gap: 12px;
   border-right: 2px solid var(--vp-c-border);
 
   &__year,
   &__item {
     position: relative;
-    padding-right: 12px;
-    transition: all 0.3s ease-in-out;
+    padding: 6px 12px 6px;
+    transition: all 0.3s var(--timing-1);
 
     &::after {
       content: '';
@@ -58,18 +57,13 @@ export default {
       top: 0;
       right: -2px;
       width: 2px;
-      height: 24px;
+      height: 36px;
       background-color: transparent;
-    }
-
-    &:hover {
-      &::after {
-        background-color: var(--vp-c-brand-1);
-      }
     }
   }
 
   &__year {
+    margin-bottom: 16px;
     color: var(--vp-c-text-2);
     font-size: 28px;
     font-weight: bold;
@@ -83,7 +77,14 @@ export default {
 
   &__item {
     &:hover {
+      border-top-left-radius: var(--border-size-2);
+      border-bottom-left-radius: var(--border-size-2);
+      background-color: var(--vp-c-bg-alt);
       border-color: var(--color-red);
+
+      &::after {
+        background-color: var(--vp-c-brand-1);
+      }
     }
   }
 

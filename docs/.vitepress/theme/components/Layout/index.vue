@@ -1,21 +1,15 @@
 <template>
-  <Layout>
-    <template #layout-top>
-      <canvas id="fireflies" />
-    </template>
-  </Layout>
+  <DefaultTheme.Layout />
 </template>
 
 <script setup>
 import DefaultTheme from "vitepress/theme"
-import { useData, useRoute } from "vitepress"
-import { watchEffect, onMounted, onUnmounted, nextTick, provide } from "vue"
-import { Animation } from "../../utils/fireflies.js"
+import { useData } from "vitepress"
+import { onMounted, onUnmounted, nextTick, provide } from "vue"
+import * as fireflies  from "@/utils/fireflies.js"
 
-const { Layout } = DefaultTheme
 const { isDark } = useData()
-const route = useRoute()
-let anime = null
+const animation = fireflies.init()
 
 const enableTransitions = () =>
   "startViewTransition" in document &&
@@ -50,34 +44,12 @@ provide("toggle-appearance", async ({ clientX: x, clientY: y }) => {
   )
 })
 
-// watchEffect(
-//   () => {
-//     if (route.path === "/") {
-//       anime = new Animation("#fireflies", {
-//         count: 25,
-//         color: "rgba(236, 196, 94, 1)",
-//         speed: 1,
-//         radius: 2,
-//       })
-//     } else {
-//       anime && anime.stop()
-//     }
-//   },
-//   { flush: "post" }
-// )
-
 onMounted(() => {
-  anime = new Animation("#fireflies", {
-    count: 25,
-    color: "rgba(236, 196, 94, 1)",
-    speed: 1,
-    radius: 2,
-  })
-  anime.start()
+  animation.start()
 })
 
 onUnmounted(() => {
-  anime.stop()
+  animation.stop()
 })
 </script>
 
@@ -91,13 +63,6 @@ onUnmounted(() => {
   :deep(.VPNavScreen) {
     height: 100vh;
   }
-}
-
-#fireflies {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
 }
 </style>
 

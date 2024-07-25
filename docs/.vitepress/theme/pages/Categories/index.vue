@@ -1,5 +1,5 @@
 <script lang="jsx">
-import { ref, computed } from "vue"
+import { ref, computed, TransitionGroup } from "vue"
 import { data } from "@/posts.data.js"
 
 export default {
@@ -34,16 +34,16 @@ export default {
             </li>
           ))}
         </ul>
-        <ul class="posts">
+        <TransitionGroup name="list" tag="ul" class="posts">
           {posts.value.map((post) => (
-            <li class="post">
+            <li class="post" key={post.title}>
               <h2 class="post-title">
                 <a href={post.url}>{post.title}</a>
                 <span class="post-date">{post.date.string}</span>
               </h2>
             </li>
           ))}
-        </ul>
+        </TransitionGroup>
       </div>
     )
   },
