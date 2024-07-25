@@ -1,15 +1,12 @@
 <script lang="jsx">
-import { Transition } from "vue"
 import Articles from "@/components/Articles/index"
 
 export default {
-  setup() {
+  setup () {
     return () => (
-      <Transition name="home">
-        <div class="page-container">
-          <Articles />
-        </div>
-      </Transition>
+      <div class="page-container">
+        <Articles />
+      </div>
     )
   },
 }
@@ -32,17 +29,5 @@ export default {
     margin: 16px;
     padding: 16px;
   }
-}
-</style>
-
-<style>
-.home-enter-from,
-.home-leave-to {
-  opacity: 0;
-}
-
-.home-enter-from .home,
-.home-leave-to .home {
-  transform: scale(1.1);
 }
 </style>
