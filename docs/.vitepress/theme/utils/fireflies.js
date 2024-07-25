@@ -1,16 +1,35 @@
+/**
+ * 默认设置
+ * @property {object}  defaults        - 生成萤火虫的默认配置
+ * @property {number}  defaults.count  - 生成萤火虫的数量
+ * @property {string}  defaults.color  - 生成萤火虫的颜色（rgba）
+ * @property {number}  defaults.speed  - 生成萤火虫的飞行速度（单位像素）
+ * @property {number}  defaults.radius - 生成萤火虫的大小（半径：单位像素）
+ * -------------------------------------------------------------------------- */
+var defaults = {
+  count: 25,
+  color: "rgba(236, 196, 94, 1)",
+  speed: 1,
+  radius: 2,
+}
+
+/**
+ * 动画类
+ * @class Animation
+ * -------------------------------------------------------------------------- */
 export class Animation {
-  constructor(selector, option) {
-    this.canvas = document.querySelector(selector)
-    this.fireflies = Array.from({ length: option.count }, () => {
-      return new Firefly(option)
-    })
+  constructor() {
+    this.canvas = document.createElement("canvas")
+    this.fireflies = []
     this.running = false
     this.raf = null
   }
 
-  start() {
-    this.resize()
+  start(option = defaults) {
     window.addEventListener("resize", this.resize.bind(this))
+    this.fireflies = Array.from({ length: option.count }, () => {
+      return new Firefly(option)
+    })
     this.running = true
     this.draw()
   }
@@ -18,6 +37,8 @@ export class Animation {
   stop() {
     window.cancelAnimationFrame(this.raf)
     this.running = false
+    this.fireflies = []
+    this.canvas.remove()
   }
 
   resize() {
@@ -55,6 +76,10 @@ export class Animation {
   }
 }
 
+/**
+ * 萤火虫类
+ * @class Firefly
+ * -------------------------------------------------------------------------- */
 class Firefly {
   constructor(option) {
     this.x = random(window.innerWidth, option.radius, true)
@@ -95,14 +120,44 @@ class Firefly {
   }
 }
 
+/**
+ * 生成指定范围的随机数
+ * @function random
+ * @param {string} max - 最大随机值
+ * @param {string} min - 最小随机值
+ * @param {boolean} isInt - 是否是整数
+ * @returns {number}
+ * -------------------------------------------------------------------------- */
 function random(max, min, isInt) {
   return isInt
     ? Math.floor(Math.random() * (max - min) + min)
     : Number((Math.random() * (max - min) + min).toFixed(3))
 }
 
+/**
+ * 为 rgba 值设置透明度
+ * @function setOpacity
+ * @param {string} color - rgba 值
+ * @param {number} opacity - 透明度
+ * @returns
+ * -------------------------------------------------------------------------- */
 function setOpacity(color, opacity) {
   var colors = color.match(/^rgba\((\d+),\s*(\d+),\s*(\d+),\s*(\S+)\)$/)
 
   return `rgba(${colors[1]}, ${colors[2]}, ${colors[3]}, ${opacity})`
+}
+
+/**
+ * 初始化 anime
+ * @function init
+ * @returns {object} anime
+ * -------------------------------------------------------------------------- */
+export function init() {
+  var animation = new Animation()
+
+  document.body.prepend(animation.canvas)
+  animation.canvas.style.position = "fixed"
+  animation.resize()
+
+  return animation
 }
