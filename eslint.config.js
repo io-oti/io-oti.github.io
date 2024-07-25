@@ -7,6 +7,7 @@ export default [
   {
     files: ['**/*.vue'],
     languageOptions: {
+      globals: {},
       parserOptions: {
         ecmaVersion: 2020,
         ecmaFeatures: {

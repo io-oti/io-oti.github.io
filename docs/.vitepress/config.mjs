@@ -106,7 +106,6 @@ export default defineConfig({
 
     // Footer - 页脚
     footer: {
-      message: "Email: io_oti@outlook.com",
       copyright: "Copyright © 2023-present Io_oTI. All Rights Reserved.",
     },
   },
