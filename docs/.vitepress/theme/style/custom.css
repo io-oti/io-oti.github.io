@@ -35,10 +35,10 @@
 /**
  * layout - page
  * -------------------------------------------------------------------------- */
- @import url(./layout.css);
- @import url(./animation.css);
+@import url(./layout.css);
+@import url(./animation.css);
 
- :root {
+:root {
   /* common - color */
   --vp-c-brand-1: #f62e10;
   --vp-c-brand-2: #d81e06;
@@ -96,7 +96,11 @@
   --vp-c-bg-elv: #e6e9efcc;
   --vp-c-bg-soft: #dce0e8cc;
 
-/**
+  ::selection {
+    background: var(--color-overlay-3);
+  }
+
+  /**
  * Component: Nav
  * -------------------------------------------------------------------------- */
 
@@ -143,4 +147,8 @@
   --vp-c-bg-alt: #11111bcc;
   --vp-c-bg-elv: #11111bcc;
   --vp-c-bg-soft: #1e1e2ecc;
+
+  ::selection {
+    background: var(--color-overlay-3);
+  }
 }

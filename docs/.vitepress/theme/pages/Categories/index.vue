@@ -36,8 +36,8 @@ export default {
           ))}
         </ul>
         <List class="posts">
-          {posts.value.map((post) => (
-            <li class="post" key={post.title}>
+          {posts.value.map((post, index) => (
+            <li class="post" key={post.title} data-index={index}>
               <h2 class="post-title">
                 <a href={post.url}>{post.title}</a>
                 <span class="post-date">{post.date.string}</span>
@@ -56,10 +56,11 @@ export default {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px 16px;
+  gap: 16px 24px;
 }
 
 .VPBadge {
+  width: 100%;
   cursor: pointer;
 
   &.active {
@@ -71,7 +72,15 @@ export default {
   margin-top: 24px;
 
   .post {
-    margin: 12px 0px;
+    width: calc(50% - 12px);
+    padding: 16px;
+    background: var(--vp-c-bg-soft);
+    border-radius: var(--border-size-3);
+    transition: background 0.3s ease-in-out;
+
+    &:hover {
+      background: var(--vp-c-bg-elv);
+    }
 
     &-title {
       display: flex;
@@ -89,6 +98,13 @@ export default {
       color: var(--vp-c-text-3);
       font-size: 16px;
       line-height: 24px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 426px) {
+    .post {
+      width: 100%;
     }
   }
 }

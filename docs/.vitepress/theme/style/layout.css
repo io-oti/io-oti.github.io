@@ -10,12 +10,3 @@
   backdrop-filter: blur(2px);
   background-color: var(--vp-c-bg);
 }
-
-/* Mobile */
-@media (max-width: 426px) {
-  .page-container {
-    width: min(100vw - 32px, 425px);
-    margin: 16px auto;
-    padding: 16px;
-  }
-}

@@ -1,11 +1,11 @@
 import DefaultTheme from 'vitepress/theme'
-import './style/custom.css'
+import '@/style/custom.css'
 
-import Layout from './components/Layout/index.vue'
+import Layout from '@/components/Layout/index.vue'
 
-import Home from './pages/Home/index.vue'
-import Archives from './pages/Archives/index.vue'
-import Categories from './pages/Categories/index.vue'
+import Home from '@/pages/Home/index.vue'
+import Archives from '@/pages/Archives/index.vue'
+import Categories from '@/pages/Categories/index.vue'
 
 export default {
   extends: DefaultTheme,

@@ -1,7 +1,5 @@
 <script lang="jsx">
 import { computed, ref, withKeys } from "vue";
-import ArrowLeft from "@/components/Icons/ArrowLeft.vue";
-import ArrowRight from "@/components/Icons/ArrowRight.vue";
 
 export default {
   props: {
@@ -19,7 +17,7 @@ export default {
     },
   },
   emits: ["update:pageNumb", "update:pageSize"],
-  setup(props, { emit }) {
+  setup (props, { emit, expose }) {
     const enter = ref("");
 
     const current = computed(() => {
@@ -39,24 +37,20 @@ export default {
     //   emit("update:pageSize", size);
     // };
 
-    const onPrevPage = (e) => {
-      if (e.target.value) return;
+    const onPrevPage = () => {
       if (props.pageNumb <= 1) return;
       emit("update:pageNumb", props.pageNumb - 1);
     };
 
-    const onNextPage = (e) => {
-      if (e.target.value) return;
+    const onNextPage = () => {
       if (props.pageNumb >= props.total) return;
       emit("update:pageNumb", props.pageNumb + 1);
     };
 
+    expose({ onPrevPage, onNextPage })
+
     return () => (
       <div class="paginator">
-        <ArrowLeft
-          class="paginator__prev"
-          onClick={onPrevPage}
-        />
         <input
           type="number"
           value={enter.value}
@@ -64,13 +58,7 @@ export default {
           placeholder={current.value}
           min={1}
           max={props.total}
-          onKeyup={withKeys(onPrevPage, ["left"])}
           onKeyup={withKeys(onChangePage, ["enter"])}
-          onKeyup={withKeys(onNextPage, ["right"])}
-        />
-        <ArrowRight
-          class="paginator__next"
-          onClick={onNextPage}
         />
       </div>
     );
@@ -83,7 +71,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 24px;
+  margin-bottom: 24px;
 
   &__input {
     width: 100px;
