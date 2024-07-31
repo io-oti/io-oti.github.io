@@ -434,6 +434,9 @@ git config --global core.pager 'less -RFX'
 # 使用 Git 的自动更正功能来修复错误键入的命令
 git config --global help.autocorrect 1
 
+# 配置 Git 保存密码
+git config --global credential.helper store
+
 # 列出 Git 命令的别名
 git config --get-regexp alias
 
