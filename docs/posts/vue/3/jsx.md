@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-07-12
-draft: true
+draft: false
 tag: 'vue'
 title: 'Vue 3 JSX 用法'
 ---
@@ -9,6 +9,20 @@ title: 'Vue 3 JSX 用法'
 # Vue 3 JSX 语法
 
 ## 安装
+
+安装插件
+
+```bash
+npm install @vue/babel-plugin-jsx -D
+```
+
+配置 Babel
+
+```js
+{
+  "plugins": ["@vue/babel-plugin-jsx"]
+}
+```
 
 ## 示例
 
@@ -76,7 +90,22 @@ const App = () => <input type="email" placeholder={placeholderText} />;
 
 #### 鼠标事件
 
+```jsx
+const App = () => (
+  <button
+    onclick={() => {})}
+    onMouseoverOnceCapture={() => {}}
+  />
+)
+```
+
 #### 键盘事件
+
+```jsx
+import { withKeys } from "vue";
+
+const App = () => (<input onKeyup={withKeys(() => {}, ["enter"])} />)
+```
 
 ### 插槽 - Slots
 
@@ -136,6 +165,18 @@ const App = {
 ### 指令 - Directives
 
 #### v-if
+
+```jsx
+import { ref } from 'vue'
+
+const App = {
+  setup() {
+    const isExist = ref(false)
+
+    return () => (<>{ isExist.value ? <button>Button</button> : null}</>)
+  }
+}
+```
 
 #### v-show
 
@@ -250,3 +291,14 @@ const App = {
   },
 };
 ```
+
+## 兼容性
+
+要求：
+
+- **Babel 7+**
+- **Vue 3+**
+
+## 参考
+
+- [@vue/babel-plugin-jsx](https://www.npmjs.com/package/@vue/babel-plugin-jsx)
