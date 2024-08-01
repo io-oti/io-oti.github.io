@@ -334,11 +334,35 @@ npm i -g @antfu/ni
 
 #### 1. ubuntu 文件夹背景高亮
 
-其实很简单，drwxrwxrwx 权限中如果其它组权限拥有写入权限，系统默认这是一个高风险目录，因为任何人都可以该目录进行写入操作，当然也包括黑客，所以将它显示为醒目的绿色背景以警示操作者。表示将 PYCR 文件夹下所有的文件权限改为 除自己和所在群组外其他用户不能写入。
+其实很简单，drwxrwxrwx 权限中如果其它组权限拥有写入权限，系统默认这是一个高风险
+目录，因为任何人都可以该目录进行写入操作，当然也包括黑客，所以将它显示为醒目的绿
+色背景以警示操作者。表示将 PYCR 文件夹下所有的文件权限改为 除自己和所在群组外其
+他用户不能写入。
 
 ```shell
 chmod -R 775 PYCR/
 ```
+
+#### 2. 通过局域网访问 wsl 服务
+
+通过netsh命令添加网络代理
+
+```powershell
+netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8080 connectaddress=xxx.xxx.xxx.xxx
+```
+查看所有代理状态
+
+```powershell
+netsh interface portproxy show all
+```
+
+删除代理
+
+```powershell
+netsh interface portproxy delete v4tov4 listenaddress=127.0.0.1 listenport=8080
+```
+
+参考：[Netsh 命令语法、上下文和格式](https://learn.microsoft.com/zh-cn/windows-server/networking/technologies/netsh/netsh-contexts)
 
 ## 安装 Visual Studio Code
 
