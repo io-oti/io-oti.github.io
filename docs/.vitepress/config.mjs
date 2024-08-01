@@ -124,6 +124,9 @@ export default defineConfig({
   },
 
   vite: {
+    server: {
+      host: true,
+    },
     plugins: [vueJsx()],
     resolve: {
       alias: {
