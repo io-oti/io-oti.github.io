@@ -3,19 +3,19 @@
 </template>
 
 <script setup>
-import DefaultTheme from "vitepress/theme"
-import { useData } from "vitepress"
-import { onMounted, onUnmounted, nextTick, provide } from "vue"
-import * as fireflies  from "@/utils/fireflies.js"
+import DefaultTheme from 'vitepress/theme'
+import { useData } from 'vitepress'
+import { onMounted, onUnmounted, nextTick, provide } from 'vue'
+import * as fireflies from '@/utils/fireflies.js'
 
 const { isDark } = useData()
 const animation = fireflies.init()
 
 const enableTransitions = () =>
-  "startViewTransition" in document &&
-  window.matchMedia("(prefers-reduced-motion: no-preference)").matches
+  'startViewTransition' in document &&
+  window.matchMedia('(prefers-reduced-motion: no-preference)').matches
 
-provide("toggle-appearance", async ({ clientX: x, clientY: y }) => {
+provide('toggle-appearance', async ({ clientX: x, clientY: y }) => {
   if (!enableTransitions()) {
     isDark.value = !isDark.value
     return
@@ -38,8 +38,8 @@ provide("toggle-appearance", async ({ clientX: x, clientY: y }) => {
     { clipPath: isDark.value ? clipPath.reverse() : clipPath },
     {
       duration: 300,
-      easing: "ease-out",
-      pseudoElement: `::view-transition-${isDark.value ? "old" : "new"}(root)`,
+      easing: 'ease-out',
+      pseudoElement: `::view-transition-${isDark.value ? 'old' : 'new'}(root)`,
     }
   )
 })

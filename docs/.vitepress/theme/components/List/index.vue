@@ -1,31 +1,32 @@
 <script lang="jsx">
-import { TransitionGroup } from "vue"
+import { TransitionGroup } from 'vue'
 import gsap from 'gsap'
 
 export default {
-  setup (props, { slots }) {
-    function onBeforeEnter (el) {
+  setup(props, { slots }) {
+    function onBeforeEnter(el) {
       el.style.opacity = 0
-      el.style.transform = "translateX(50%)"
+      el.style.transform = 'translateX(50%)'
     }
 
-    function onEnter (el, done) {
+    function onEnter(el, done) {
       gsap.to(el, {
         opacity: 1,
-        transform: "translateX(0%)",
+        transform: 'translateX(0%)',
         // ease: `slow(0.7,0.7,false)`,
         // delay: el.dataset.index % 2 * 0.35,
-        onComplete: done
+        onComplete: done,
       })
     }
 
-    function onLeave (el, done) {
+    function onLeave(el, done) {
       gsap.to(el, {
         opacity: 0,
-        transform: el.dataset.index % 2 ? "translateX(50%)" : "translateX(-50%)",
+        transform:
+          el.dataset.index % 2 ? 'translateX(50%)' : 'translateX(-50%)',
         // ease: `slow(0.7,0.7,false)`,
         // delay: el.dataset.index % 2 * 0.35,
-        onComplete: done
+        onComplete: done,
       })
     }
 
@@ -41,7 +42,7 @@ export default {
         {slots.default()}
       </TransitionGroup>
     )
-  }
+  },
 }
 </script>
 

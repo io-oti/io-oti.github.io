@@ -1,8 +1,8 @@
 <script lang="jsx">
-import { data } from "@/posts.data.js"
+import { data } from '@/posts.data.js'
 
 export default {
-  setup () {
+  setup() {
     const archives = data.reduce((res, post) => {
       const year = post.date.string.slice(0, 4)
       const group = res.find((x) => x[0] === year)
@@ -18,17 +18,19 @@ export default {
 
     return () => (
       <div class="page-container">
-        {archives.map(group => (
+        {archives.map((group) => (
           <ul class="archives">
             {group.map((post) => {
-              return typeof post === 'string'
-                ? <li class="archives__year">{post}</li>
-                : <li class="archives__item" >
+              return typeof post === 'string' ? (
+                <li class="archives__year">{post}</li>
+              ) : (
+                <li class="archives__item">
                   <h2 class="post-title">
                     <a href={post.url}>{post.title}</a>
                     <span class="post-date">{post.date.string.slice(-5)}</span>
                   </h2>
                 </li>
+              )
             })}
           </ul>
         ))}
@@ -88,7 +90,7 @@ export default {
     }
   }
 
-  &+& {
+  & + & {
     margin-top: 32px;
   }
 }

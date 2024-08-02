@@ -1,5 +1,5 @@
 <script lang="jsx">
-import { computed, ref, withKeys } from "vue";
+import { computed, ref, withKeys } from 'vue'
 
 export default {
   props: {
@@ -16,36 +16,36 @@ export default {
       default: 0,
     },
   },
-  emits: ["update:pageNumb", "update:pageSize"],
-  setup (props, { emit, expose }) {
-    const enter = ref("");
+  emits: ['update:pageNumb', 'update:pageSize'],
+  setup(props, { emit, expose }) {
+    const enter = ref('')
 
     const current = computed(() => {
-      return `${props.pageNumb} / ${props.total}`;
-    });
+      return `${props.pageNumb} / ${props.total}`
+    })
 
     const onChangePage = (e) => {
-      const pageNumb = Number(e.target.value);
+      const pageNumb = Number(e.target.value)
 
       if (pageNumb && 1 <= pageNumb && pageNumb <= props.total) {
-        emit("update:pageNumb", pageNumb);
+        emit('update:pageNumb', pageNumb)
       }
-      e.target.value = "";
-    };
+      e.target.value = ''
+    }
 
     // const onChangeSize = (size = 10) => {
     //   emit("update:pageSize", size);
     // };
 
     const onPrevPage = () => {
-      if (props.pageNumb <= 1) return;
-      emit("update:pageNumb", props.pageNumb - 1);
-    };
+      if (props.pageNumb <= 1) return
+      emit('update:pageNumb', props.pageNumb - 1)
+    }
 
     const onNextPage = () => {
-      if (props.pageNumb >= props.total) return;
-      emit("update:pageNumb", props.pageNumb + 1);
-    };
+      if (props.pageNumb >= props.total) return
+      emit('update:pageNumb', props.pageNumb + 1)
+    }
 
     expose({ onPrevPage, onNextPage })
 
@@ -58,12 +58,12 @@ export default {
           placeholder={current.value}
           min={1}
           max={props.total}
-          onKeyup={withKeys(onChangePage, ["enter"])}
+          onKeyup={withKeys(onChangePage, ['enter'])}
         />
       </div>
-    );
+    )
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>

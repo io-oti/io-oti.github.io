@@ -1,17 +1,19 @@
 <script lang="jsx">
-import { ref, computed } from "vue"
-import { data } from "@/posts.data.js"
-import List from "@/components/List/index"
+import { ref, computed } from 'vue'
+import { data } from '@/posts.data.js'
+import List from '@/components/List/index'
 
 export default {
-  setup () {
-    const categories = data.reduce((res, post) => {
-      if (!res.includes(post.tag)) {
-        res = [...res, post.tag]
-      }
+  setup() {
+    const categories = data
+      .reduce((res, post) => {
+        if (!res.includes(post.tag)) {
+          res = [...res, post.tag]
+        }
 
-      return res
-    }, []).sort()
+        return res
+      }, [])
+      .sort()
 
     const currentTag = ref(categories[0])
 
@@ -19,7 +21,7 @@ export default {
       return data.filter((post) => post.tag.includes(currentTag.value))
     })
 
-    const onChangeTag = (category) => currentTag.value = category
+    const onChangeTag = (category) => (currentTag.value = category)
 
     return () => (
       <div class="page-container">
@@ -27,9 +29,9 @@ export default {
           {categories.map((category) => (
             <li>
               <Badge
-                class={currentTag.value === category ? "active" : ""}
+                class={currentTag.value === category ? 'active' : ''}
                 text={category}
-                type='info'
+                type="info"
                 onclick={() => onChangeTag(category)}
               />
             </li>
@@ -37,7 +39,11 @@ export default {
         </ul>
         <List class="posts">
           {posts.value.map((post, index) => (
-            <li class="post" key={post.title} data-index={index}>
+            <li
+              class="post"
+              key={post.title}
+              data-index={index}
+            >
               <h2 class="post-title">
                 <a href={post.url}>{post.title}</a>
                 <span class="post-date">{post.date.string}</span>

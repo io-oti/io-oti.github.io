@@ -14,8 +14,18 @@
 
   /* vscode - vue */
   "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
+  /* extensions - prettier */
+  "prettier.bracketSameLine": false,
+  "prettier.bracketSpacing": true,
+  "prettier.printWidth": 80,
+  "prettier.semi": false,
+  "prettier.singleAttributePerLine": true,
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "es5",
 
   /* extensions - vite */
   "vite.autoStart": false,

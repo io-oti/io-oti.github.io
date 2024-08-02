@@ -1,13 +1,13 @@
 <script lang="jsx">
-import { ref, computed, onMounted, onUnmounted } from "vue"
-import { data } from "@/posts.data.js"
-import Paginator from "@/components/Paginator/index.vue"
-import List from "@/components/List/index"
-import ArrowLeft from "@/components/Icons/ArrowLeft.vue"
-import ArrowRight from "@/components/Icons/ArrowRight.vue"
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { data } from '@/posts.data.js'
+import Paginator from '@/components/Paginator/index.vue'
+import List from '@/components/List/index'
+import ArrowLeft from '@/components/Icons/ArrowLeft.vue'
+import ArrowRight from '@/components/Icons/ArrowRight.vue'
 
 export default {
-  setup () {
+  setup() {
     const paginator = ref(null)
     const pageNumb = ref(1)
     const pageSize = ref(10)
@@ -50,8 +50,8 @@ export default {
       <div class="page-container">
         <Paginator
           v-models={[
-            [pageNumb.value, "pageNumb"],
-            [pageSize.value, "pageSize"],
+            [pageNumb.value, 'pageNumb'],
+            [pageSize.value, 'pageSize'],
           ]}
           total={total.value}
           ref={paginator}
