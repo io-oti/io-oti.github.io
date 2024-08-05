@@ -62,8 +62,8 @@ export default {
 <style lang="scss" scoped>
 .paginator {
   width: min(100vw - 64px, 900px);
-  margin: 36px auto;
-  overflow: hidden;
+  margin: 0 auto;
+  padding: 36px;
 
   &-page {
     display: flex;
