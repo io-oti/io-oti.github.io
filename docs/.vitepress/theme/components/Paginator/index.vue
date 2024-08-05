@@ -1,65 +1,58 @@
 <script lang="jsx">
-import { computed, ref, withKeys } from 'vue'
+import { computed } from 'vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Keyboard } from 'swiper/modules'
+
+import 'swiper/css'
 
 export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
   props: {
-    pageNumb: {
-      type: [Number, String],
-      default: 1,
-    },
     pageSize: {
       type: [Number, String],
       default: 10,
     },
-    total: {
-      type: [Number, String],
-      default: 0,
+    data: {
+      type: Array,
+      default: () => [],
     },
   },
-  emits: ['update:pageNumb', 'update:pageSize'],
-  setup(props, { emit, expose }) {
-    const enter = ref('')
+  setup(props, { slots }) {
+    const total = computed(() => Math.ceil(props.data.length / props.pageSize))
 
-    const current = computed(() => {
-      return `${props.pageNumb} / ${props.total}`
-    })
+    const pages = computed(() => {
+      const result = []
 
-    const onChangePage = (e) => {
-      const pageNumb = Number(e.target.value)
+      for (let i = 0; i < total.value; i++) {
+        const page = props.data.slice(
+          i * props.pageSize,
+          (i + 1) * props.pageSize
+        )
 
-      if (pageNumb && 1 <= pageNumb && pageNumb <= props.total) {
-        emit('update:pageNumb', pageNumb)
+        result.push(page)
       }
-      e.target.value = ''
-    }
 
-    // const onChangeSize = (size = 10) => {
-    //   emit("update:pageSize", size);
-    // };
-
-    const onPrevPage = () => {
-      if (props.pageNumb <= 1) return
-      emit('update:pageNumb', props.pageNumb - 1)
-    }
-
-    const onNextPage = () => {
-      if (props.pageNumb >= props.total) return
-      emit('update:pageNumb', props.pageNumb + 1)
-    }
-
-    expose({ onPrevPage, onNextPage })
+      return result
+    })
 
     return () => (
       <div class="paginator">
-        <input
-          type="number"
-          value={enter.value}
-          class="paginator__input"
-          placeholder={current.value}
-          min={1}
-          max={props.total}
-          onKeyup={withKeys(onChangePage, ['enter'])}
-        />
+        <swiper
+          class="paginator-pages"
+          slidesPerView={1}
+          spaceBetween={24}
+          keyboard={{ enabled: true }}
+          modules={[Keyboard]}
+        >
+          {pages.value.map((page) => (
+            <swiper-slide class="paginator-page">
+              {page.map((post) => slots.default(post))}
+            </swiper-slide>
+          ))}
+        </swiper>
       </div>
     )
   },
@@ -68,48 +61,14 @@ export default {
 
 <style lang="scss" scoped>
 .paginator {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
+  width: min(100vw - 64px, 900px);
+  margin: 36px auto;
+  overflow: hidden;
 
-  &__input {
-    width: 100px;
-    margin: 0 12px;
-    text-align: center;
-    background: var(--vp-c-bg-alt);
-    border: 1px solid transparent;
-    border-radius: var(--border-size-1);
-    outline: none;
-    transition: border-color 0.25s;
-
-    &:hover,
-    &:focus {
-      border-color: var(--vp-c-brand-1);
-    }
-
-    &:invalid {
-      border-color: var(--warning-border);
-    }
-  }
-
-  &__prev,
-  &__next {
-    fill: var(--vp-c-text-3);
-    cursor: pointer;
-    transition: all 0.3 ease;
-
-    &:active {
-      fill: var(--vp-c-brand-1);
-    }
-  }
-
-  &__prev:active {
-    transform: translateX(-2px);
-  }
-
-  &__next:active {
-    transform: translateX(2px);
+  &-page {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
   }
 }
 </style>

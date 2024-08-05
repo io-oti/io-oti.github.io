@@ -125,7 +125,7 @@ export default defineConfig({
 
   vite: {
     server: {
-      host: true,
+      host: "0.0.0.0",
     },
     plugins: [vueJsx()],
     resolve: {
