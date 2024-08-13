@@ -1,8 +1,9 @@
 <script lang="jsx">
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Keyboard } from 'swiper/modules'
+import { EffectFlip, Keyboard } from 'swiper/modules'
 
 import 'swiper/css'
+import 'swiper/css/effect-flip';
 
 export default {
   components: {
@@ -26,10 +27,9 @@ export default {
       const result = []
 
       for (let i = 0; i < total.value; i++) {
-        const page = props.data.slice(
-          i * props.pageSize,
-          (i + 1) * props.pageSize
-        )
+        const start = i * props.pageSize
+        const end = (i + 1) * props.pageSize
+        const page = props.data.slice(start, end)
 
         result.push(page)
       }
@@ -40,15 +40,16 @@ export default {
     return () => (
       <div class="paginator">
         <swiper
+          effect='flip'
           class="paginator-pages"
           slidesPerView={1}
           spaceBetween={24}
           keyboard={{ enabled: true }}
-          modules={[Keyboard]}
+          modules={[EffectFlip, Keyboard]}
         >
-          {pages.value.map((page) => (
+          {pages.value.map(page => (
             <swiper-slide class="paginator-page">
-              {page.map((post) => slots.default(post))}
+              {page.map(post => slots.default(post))}
             </swiper-slide>
           ))}
         </swiper>
@@ -60,9 +61,9 @@ export default {
 
 <style lang="scss" scoped>
 .paginator {
-  width: min(100vw - 64px, 900px);
+  width: min(100vw - 48px, 900px);
   margin: 0 auto;
-  padding: 36px;
+  padding: 24px 0;
 
   &-page {
     display: flex;

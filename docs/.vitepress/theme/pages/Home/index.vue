@@ -40,7 +40,7 @@ export default {
 <style lang="scss" scoped>
 .post {
   width: calc(50% - 12px);
-  padding: 16px;
+  padding: 24px;
   background: var(--vp-c-bg-soft);
   border-radius: var(--border-size-3);
   transition: background 0.3s ease-in-out;
