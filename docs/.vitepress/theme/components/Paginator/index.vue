@@ -1,5 +1,4 @@
 <script lang="jsx">
-import { computed } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Keyboard } from 'swiper/modules'
 

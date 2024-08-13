@@ -1,5 +1,4 @@
 <script lang="jsx">
-import { ref, computed } from 'vue'
 import { data } from '@/posts.data.js'
 import List from '@/components/List/index'
 

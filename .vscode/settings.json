@@ -9,7 +9,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "README.md": "*.config.js,.npmrc,.gitignore,package.json,package-lock.json"
+    "README.md": "*.js,*.json,.gitignore"
   },
 
   /* vscode - vue */

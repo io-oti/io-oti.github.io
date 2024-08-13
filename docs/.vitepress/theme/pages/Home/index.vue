@@ -1,6 +1,4 @@
 <script lang="jsx">
-import { ref, computed } from 'vue'
-
 import { data } from '@/posts.data.js'
 import Paginator from '@/components/Paginator/index.vue'
 
