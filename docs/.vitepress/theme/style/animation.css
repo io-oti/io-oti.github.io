@@ -1,7 +1,7 @@
 .list-move,
 .list-enter-active,
 .list-leave-active {
-  transition: opacity 0.5s, transform 0.5s var(--timing-1);
+  transition: opacity 0.5s, transform 0.5s var(--pg-a-timing-1);
 }
 
 .list-leave-active {
