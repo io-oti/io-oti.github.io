@@ -6,7 +6,7 @@ export default {
   setup() {
     const categories = data
       .reduce((res, post) => {
-        if (!res.includes(post.tag)) {
+        if (post.tag && !res.includes(post.tag)) {
           res = [...res, post.tag]
         }
 
@@ -17,15 +17,15 @@ export default {
     const currentTag = ref(categories[0])
 
     const posts = computed(() => {
-      return data.filter((post) => post.tag.includes(currentTag.value))
+      return data.filter(post => post.tag?.includes(currentTag.value))
     })
 
-    const onChangeTag = (category) => (currentTag.value = category)
+    const onChangeTag = category => (currentTag.value = category)
 
     return () => (
       <div class="page-container">
         <ul class="categories">
-          {categories.map((category) => (
+          {categories.map(category => (
             <li>
               <Badge
                 class={currentTag.value === category ? 'active' : ''}
