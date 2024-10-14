@@ -6,25 +6,25 @@ export default {
   setup() {
     const pageSize = ref(10)
 
-    const posts = computed(() => data.filter((post) => !post.draft))
+    const posts = computed(() => data.filter(post => !post.draft))
 
     return () => (
       <Paginator
         v-models={[[pageSize.value, 'pageSize']]}
         data={posts.value}
         v-slots={{
-          default: (post) => (
+          default: ({ title, url, date, tag }) => (
             <div
-              key={post.title}
+              key={title}
               class="post"
             >
               <h2 class="post-title">
-                <a href={post.url}>{post.title}</a>
+                <a href={url}>{title}</a>
               </h2>
               <div class="post-desc">
-                <span class="post-date">{post.date.string}</span>
+                <span class="post-date">{date.string}</span>
                 <Badge
-                  text={post.tag}
+                  text={tag}
                   type="info"
                 />
               </div>
@@ -42,7 +42,7 @@ export default {
   width: calc(50% - 12px);
   padding: 24px;
   background: var(--vp-c-bg-soft);
-  border-radius: var(--border-size-3);
+  border-radius: 16px;
   transition: background 0.3s ease-in-out;
 
   &:hover {

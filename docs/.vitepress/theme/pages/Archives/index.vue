@@ -79,8 +79,8 @@ export default {
 
   &__item {
     &:hover {
-      border-top-left-radius: var(--border-size-2);
-      border-bottom-left-radius: var(--border-size-2);
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
       background-color: var(--vp-c-bg-alt);
       border-color: var(--color-red);
 

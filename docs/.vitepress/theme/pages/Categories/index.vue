@@ -80,7 +80,7 @@ export default {
     width: calc(50% - 12px);
     padding: 16px;
     background: var(--vp-c-bg-soft);
-    border-radius: var(--border-size-3);
+    border-radius: 16px;
     transition: background 0.3s ease-in-out;
 
     &:hover {
