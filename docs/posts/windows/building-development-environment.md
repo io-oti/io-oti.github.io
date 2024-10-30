@@ -1,9 +1,12 @@
 ---
 author: Io_oTI
 date: 2023-10-23
+draft: false
 tag: 'windows'
-title: 'Windows 搭建前端开发环境'
+title: 'Windows 构建前端开发环境'
 ---
+
+# Windows 构建前端开发环境
 
 ::: tip
 以下教程仅运行于 Windows 10 以上版本的 Windows 操作系统。
@@ -30,18 +33,20 @@ wsl --install -d [DistroName]
 
 在此安装过程中，你将需要重启计算机。
 
-> [!TIP]
-> 若要卸载 WSL，请参阅[卸载旧版 WSL](https://learn.microsoft.com/zh-cn/windows/wsl/troubleshooting#uninstall-legacy-version-of-wsl) 或[注销或卸载 Linux 发行版](https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands#unregister-or-uninstall-a-linux-distribution)。
+::: warning
+若要卸载 WSL，请参阅[卸载旧版 WSL](https://learn.microsoft.com/zh-cn/windows/wsl/troubleshooting#uninstall-legacy-version-of-wsl)或[注销或卸载 Linux 发行版](https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands#unregister-or-uninstall-a-linux-distribution)。
+:::
 
 ### [WSL 中的高级设置配置](https://learn.microsoft.com/zh-cn/windows/wsl/wsl-config)
 
 使用 WSL 会出现 vmmem 程序内存占用过高的情况，使用 .wslconfig 为 WSL 上运行的所有已安装的发行版配置全局设置，下面的 `.wslconfig` 示例文件演示了一些可用的配置选项。 在此示例中，文件路径为 `C:\Users\<UserName>\.wslconfig`。
 
-```shell [.wslconfig]
+```shell
 # Settings apply across all Linux distros running on WSL 2
 [wsl2]
 
-# Limits VM memory to use no more than 2 GB, this can be set as whole numbers using GB or MB
+# Limits VM memory to use no more than 2 GB,
+# this can be set as whole numbers using GB or MB
 memory=2GB
 ```
 
@@ -88,93 +93,6 @@ Windows 不会自动更新或升级 Linux 分发版。 大多数 Linux 用户往
 $ sudo apt update && sudo apt upgrade
 ```
 
-### 推荐安装 tree
-
-安装 tree 工具:
-
-```shell
-sudo apt install tree
-```
-
-#### 常用命令
-
-```shell
-# 打印 src 目录
-tree [src] -L 2 --dirsfirst
-```
-
-帮助文档：
-
-```shell
-# 查看帮助命令
-tree —help
-
-# 输出：
-usage: tree [-acdfghilnpqrstuvxACDFJQNSUX] [-H baseHREF] [-T title ]
-        [-L level [-R]] [-P pattern] [-I pattern] [-o filename] [--version]
-        [--help] [--inodes] [--device] [--noreport] [--nolinks] [--dirsfirst]
-        [--charset charset] [--filelimit[=]#] [--si] [--timefmt[=]<f>]
-        [--sort[=]<name>] [--matchdirs] [--ignore-case] [--fromfile] [--]
-        [<directory list>]
-  ------- Listing options -------
-  -a            All files are listed.
-  -d            List directories only.
-  -l            Follow symbolic links like directories.
-  -f            Print the full path prefix for each file.
-  -x            Stay on current filesystem only.
-  -L level      Descend only level directories deep.
-  -R            Rerun tree when max dir level reached.
-  -P pattern    List only those files that match the pattern given.
-  -I pattern    Do not list files that match the given pattern.
-  --ignore-case Ignore case when pattern matching.
-  --matchdirs   Include directory names in -P pattern matching.
-  --noreport    Turn off file/directory count at end of tree listing.
-  --charset X   Use charset X for terminal/HTML and indentation line output.
-  --filelimit # Do not descend dirs with more than # files in them.
-  --timefmt <f> Print and format time according to the format <f>.
-  -o filename   Output to file instead of stdout.
-  ------- File options -------
-  -q            Print non-printable characters as '?'.
-  -N            Print non-printable characters as is.
-  -Q            Quote filenames with double quotes.
-  -p            Print the protections for each file.
-  -u            Displays file owner or UID number.
-  -g            Displays file group owner or GID number.
-  -s            Print the size in bytes of each file.
-  -h            Print the size in a more human readable way.
-  --si          Like -h, but use in SI units (powers of 1000).
-  -D            Print the date of last modification or (-c) status change.
-  -F            Appends '/', '=', '*', '@', '|' or '>' as per ls -F.
-  --inodes      Print inode number of each file.
-  --device      Print device ID number to which each file belongs.
-  ------- Sorting options -------
-  -v            Sort files alphanumerically by version.
-  -t            Sort files by last modification time.
-  -c            Sort files by last status change time.
-  -U            Leave files unsorted.
-  -r            Reverse the order of the sort.
-  --dirsfirst   List directories before files (-U disables).
-  --sort X      Select sort: name,version,size,mtime,ctime.
-  ------- Graphics options -------
-  -i            Don't print indentation lines.
-  -A            Print ANSI lines graphic indentation lines.
-  -S            Print with CP437 (console) graphics indentation lines.
-  -n            Turn colorization off always (-C overrides).
-  -C            Turn colorization on always.
-  ------- XML/HTML/JSON options -------
-  -X            Prints out an XML representation of the tree.
-  -J            Prints out an JSON representation of the tree.
-  -H baseHREF   Prints out HTML format with baseHREF as top directory.
-  -T string     Replace the default HTML title and H1 header with string.
-  --nolinks     Turn off hyperlinks in HTML output.
-  ------- Input options -------
-  --fromfile    Reads paths from files (.=stdin)
-  ------- Miscellaneous options -------
-  --version     Print version and exit.
-  --help        Print usage and this help message and exit.
-  --            Options processing terminator.
-```
-
 ### 使用 ZSH
 
 查看当前系统是否已安装 zsh ，如已安装则可以省略安装步骤，切换到 zsh 使用即可。
@@ -195,24 +113,66 @@ chsh -s /usr/bin/zsh
 
 #### 安装 oh-my-zsh
 
-```shell
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+::: code-group
 
-# 或者
+```shell[使用 curl 安装]
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+```shell[使用 wget 安装]
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+```
+
+:::
+
+#### 安装 oh-my-zsh 插件
+
+下载 zsh-autosuggestions 插件：
+
+```shell
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+下载 zsh-syntax-highlighting 插件：
+
+```shell
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+下载好 `zsh-autosuggestions` 和 `zsh-syntax-highlighting` 插件后，还需要将插件添加至 `.zshrc` 配置文件:
+
+```shell{5-6}
+# 添加 zsh-autosuggestions, zsh-syntax-highlighting 和 zsh-z 插件
+# oh-my-zsh 内置了 git 和 z 插件，所以无需安装，直接配置就可使用
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  z
+)
+```
+
+最后使用命令让 `.zshrc` 配置文件生效：
+
+```shell
+source ~/.zshrc
 ```
 
 #### 安装 `powerlevel10k` 主题
 
-中国用户可以使用 gitee 上的官方镜像加速下载.
+中国用户可以使用 gitee 上的官方镜像加速下载。
 
-```shell
-# github
+::: code-group
+
+```shell[Github]
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
 
-# gitee
+```shell[Gitee]
 git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
+
+:::
 
 修改 `oh-my-zsh` 的配置文件，将主题设置为 `powerlevel10k`：
 
@@ -221,50 +181,6 @@ code ~/.zshrc
 
 # 将 "ZSH_THEME=robbyrussell" 修改为:
 ZSH_THEME="powerlevel10k/powerlevel10k"
-```
-
-#### 安装字体
-
-缺少字体终端可能会显示乱码，可以在 Windows 系统安装 `powerlevel10k` 推荐字体解决此问题：
-[MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
-[MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
-[MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
-[MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
-
-
-下载好字体以后可以直接双击字体文件安装，然后修改 `visual studio code` 的配置，将字体添加到配置项：
-
-```json
-{
-  "editor.fontFamily": "MesloLGS NF",
-}
-```
-
-运行以下命令配置 `powerlevel10k` 主题:
-```shell
-p10k configure
-```
-
-#### 安装 zsh 插件
-
-```shell
-# zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-# zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-```
-
-修改 `.zshrc` 配置文件，添加插件:
-
-```shell{4-6}
-# 添加 zsh-autosuggestions, zsh-syntax-highlighting 和 zsh-z 插件
-plugins=(
-  git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  z
-)
 
 # Enable instant prompt and don't print warnings when detecting console output
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
@@ -279,30 +195,62 @@ typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 )
 ```
 
-应用 `.zshrc` 文件的配置：
+当然，修改完 `.zshrc` 配置文件别忘了让它生效：
 
 ```shell
 source ~/.zshrc
 ```
 
-### 安装 Nvm、Node.js 和 Npm
+#### 安装字体
+
+缺少字体终端中的文字和符号会显示乱码，可以在 Windows 系统安装 `powerlevel10k` 推荐字体以解决此问题：
+
+[MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+
+[MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
+
+[MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
+
+[MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
+
+下载好字体以后可以直接双击字体文件安装，然后修改 `visual studio code` 的配置，将字体添加到配置项：
+
+```json{2}
+{
+  "editor.fontFamily": "MesloLGS NF",
+}
+```
+
+现在你可以运行以下命令配置 `powerlevel10k` 主题:
+
+```shell
+p10k configure
+```
+
+### 安装 nvm、node.js 和 npm
 
 除了选择在 Windows 还是在 WSL 上安装，安装 Node.js 时还要作出其他选择。 建议使用版本管理器，因为版本变更速度非常快。 你可能需要根据所使用的不同项目的需求在多个版本的 Node.js 之间进行切换。
 
-> [!WARNING]
-> 在安装版本管理器之前，始终建议从操作系统中删除 Node.js 或 npm 的任何现有安装，因为不同的安装类型可能会导致出现奇怪和混淆的冲突。 例如，可以使用 Ubuntu 的 `apt-get` 命令安装的 Node 版本当前已过时。 有关删除先前安装的帮助，请参阅[如何从 ubuntu 中删除 node.js](https://askubuntu.com/questions/786015/how-to-remove-nodejs-from-ubuntu-16-04)
+::: warning
+在安装版本管理器之前，始终建议从操作系统中删除 Node.js 或 npm 的任何现有安装，因为不同的安装类型可能会导致出现奇怪和混淆的冲突。 例如，可以使用 Ubuntu 的 `apt-get` 命令安装的 Node 版本当前已过时。 有关删除先前安装的帮助，请参阅[如何从 ubuntu 中删除 node.js](https://askubuntu.com/questions/786015/how-to-remove-nodejs-from-ubuntu-16-04)
+:::
 
 1. 打开 Ubuntu 命令行（或所选的发行版）。
+
 2. 使用以下命令安装 cURL（用于在命令行中从 Internet 下载内容的工具）：
    ```shell
    sudo apt-get install curl
    ```
+
 3. 使用以下命令安装 nvm：
    ```shell
    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
    ```
+
 4. 若要验证安装，请输入：`command -v nvm`。此命令应返回“nvm”，如果你收到“找不到命令”或根本没有响应，请关闭当前终端，将其重新打开，然后重试。
+
 5. 列出当前安装的 Node 版本（此时应为无）：`nvm ls`
+
 6. 安装 Node.js 的当前版本和稳定的 LTS 版本。 后面的步骤将介绍如何使用 nvm 命令在 Node.js 的活动版本之间切换。
    - 安装 Node.js 的当前稳定的 LTS 版本（推荐用于生产应用程序）：
     ```shell
@@ -313,10 +261,12 @@ source ~/.zshrc
     nvm install node
     ```
 7. 列出安装的 Node 版本：`nvm ls`。现在应会看到刚安装的两个版本。
-8. 使用以下命令验证 Node.js 是否已安装，以及是否为当前默认版本：`node --version`。 然后使用以下命令验证是否也有 npm：`npm --version`（还可以使用 `which node` 或 `which npm` 来查看用于默认版本的路径）。
-9.  若要更改要用于项目的 Node.js 版本，请创建新的项目目录 `mkdir NodeTest`，输入目录 cd NodeTest，然后输入 `nvm use node` 切换到当前版本，或输入 `nvm use --lts` 切换到 LTS 版本。 你还可以使用已安装的任何其他版本的特定数量，如 `nvm use v8.2.1`。 （若要列出 Node.js 的所有可用版本，请使用以下命令：`nvm ls-remote`）。
 
-如果要使用 NVM 安装 Node.js 和 NPM，则不需要使用 SUDO 命令来安装新包。
+8. 使用以下命令验证 Node.js 是否已安装，以及是否为当前默认版本：`node --version`。 然后使用以下命令验证是否也有 npm：`npm --version`（还可以使用 `which node` 或 `which npm` 来查看用于默认版本的路径）。
+
+9. 若要更改要用于项目的 Node.js 版本，请创建新的项目目录 `mkdir NodeTest`，输入目录 cd NodeTest，然后输入 `nvm use node` 切换到当前版本，或输入 `nvm use --lts` 切换到 LTS 版本。 你还可以使用已安装的任何其他版本的特定数量，如 `nvm use v8.2.1`。 （若要列出 Node.js 的所有可用版本，请使用以下命令：`nvm ls-remote`）。
+
+   如果要使用 NVM 安装 Node.js 和 NPM，则不需要使用 SUDO 命令来安装新包。
 
 #### 使用 @antfu/ni
 
@@ -332,7 +282,7 @@ npm i -g @antfu/ni
 
 ### 问题
 
-#### 1. ubuntu 文件夹背景高亮
+#### 1. Ubuntu 文件夹背景高亮
 
 其实很简单，drwxrwxrwx 权限中如果其它组权限拥有写入权限，系统默认这是一个高风险
 目录，因为任何人都可以该目录进行写入操作，当然也包括黑客，所以将它显示为醒目的绿
