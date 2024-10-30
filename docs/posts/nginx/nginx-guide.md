@@ -1,6 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-07-12
+draft: false
 tag: 'nginx'
 title: 'Nginx'
 ---
@@ -76,8 +77,12 @@ http {                                        # http区块的开始
 
 ### 开启 gzip
 
-gzip 是一种优秀的压缩算法，我们可以在 HTTP 请求上对一些文本文件，设置 gzip 压缩。
-服务端将响应头设置上 `Content-encoding: gzip`，表示当前资源会使用 gzip 压缩，提示客户端解压使用。
+`gzip` 是一种优秀的压缩算法，我们可以在 HTTP 请求上对一些文本文件，设置 `gzip` 压
+缩。
+
+服务端将响应头设置上 `Content-encoding: gzip`，表示当前资源会使用 `gzip` 压缩，提
+示客户端解压使用。
+
 当然前提是客户端支持该压缩算法，服务端会通过客户端发送的请求头中的 `Accept-Encoding` 字段来确定是否支持。
 
 ```bash
