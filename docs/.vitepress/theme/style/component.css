@@ -1,0 +1,54 @@
+/**
+ * Animation: Timing
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --pg-a-timing-1: cubic-bezier(0, 1, 0.5, 1);
+}
+
+/**
+ * Component: Layout
+ * -------------------------------------------------------------------------- */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root),
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root),
+.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+
+:root {
+  .page-container {
+    width: min(100vw - 64px, 900px);
+    margin: 36px auto;
+    padding: 24px;
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
+    background-color: var(--vp-c-bg);
+  }
+}
+
+/**
+ * Component: Nav
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-nav-screen-bg-color: var(--vp-c-bg);
+}
+
+/**
+ * Element: a
+ * -------------------------------------------------------------------------- */
+
+.vp-doc a {
+  text-underline-offset: 4px;
+}

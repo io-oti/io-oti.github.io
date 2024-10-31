@@ -14,11 +14,13 @@ export function useThemeAnimate() {
     }
 
     const clipPath = [
-      `circle(0px at ${x}px ${y}px)`,
-      `circle(${Math.hypot(
-        Math.max(x, innerWidth - x),
-        Math.max(y, innerHeight - y)
-      )}px at ${x}px ${y}px)`,
+      { clipPath: `circle(0px at ${x}px ${y}px)` },
+      {
+        clipPath: `circle(${Math.hypot(
+          Math.max(x, innerWidth - x),
+          Math.max(y, innerHeight - y)
+        )}px at ${x}px ${y}px)`,
+      },
     ]
 
     await document.startViewTransition(async () => {
@@ -27,10 +29,10 @@ export function useThemeAnimate() {
     }).ready
 
     document.documentElement.animate(
-      { clipPath: isDark.value ? clipPath.reverse() : clipPath },
+      isDark.value ? clipPath.reverse() : clipPath,
       {
         duration: 300,
-        easing: 'ease-out',
+        easing: 'ease-in',
         pseudoElement: `::view-transition-${
           isDark.value ? 'old' : 'new'
         }(root)`,
