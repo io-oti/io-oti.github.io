@@ -20,10 +20,6 @@ useThemeAnimate()
 
   :deep(.VPNavScreen) {
     height: 100vh;
-
-    & .container {
-      backdrop-filter: blur(2px);
-    }
   }
 
   :deep(.VPSwitchAppearance) {

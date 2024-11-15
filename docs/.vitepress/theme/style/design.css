@@ -167,7 +167,7 @@
   --vp-c-text-3: #6c6f8580;
 
   ::selection {
-    background: var(--color-overlay-3);
+    background: var(--color-surface-2);
   }
 }
 
@@ -200,9 +200,9 @@
 }
 
 .dark {
-  --vp-c-bg: #181825cc;
-  --vp-c-bg-alt: #11111bcc;
-  --vp-c-bg-elv: #11111bcc;
+  --vp-c-bg: #11111bcc;
+  --vp-c-bg-alt: #181825cc;
+  --vp-c-bg-elv: #1e1e2ecc;
   --vp-c-bg-soft: #1e1e2ecc;
 }
 

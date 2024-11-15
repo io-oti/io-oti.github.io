@@ -1,10 +1,12 @@
 import { defineConfig } from 'vitepress'
-import { genSidebar } from './configs/sidebar.js'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import autoImport from 'unplugin-auto-import/vite'
 import components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+// import { fileURLToPath, URL } from 'node:url'
 import path from 'path'
+
+import { genSidebar } from './configs/sidebar.js'
 
 export default defineConfig({
   title: '槭 林',
@@ -145,12 +147,17 @@ export default defineConfig({
       vueJsx(),
     ],
     resolve: {
-      alias: {
-        // 设置路径
-        '~': path.resolve(__dirname, './'), // eslint-disable-line
-        // 设置别名
-        '@': path.resolve(__dirname, './theme'), // eslint-disable-line
-      },
+      // 设置别名
+      alias: [
+        { find: '~', replacement: path.resolve(__dirname, './') },
+        { find: '@', replacement: path.resolve(__dirname, './theme') },
+        // {
+        //   find: /^.*\/VPPage\.vue$/,
+        //   replacement: fileURLToPath(
+        //     new URL('./theme/pages/Profile/index.vue', import.meta.url)
+        //   ),
+        // },
+      ],
       // https://cn.vitejs.dev/config/#resolve-extensions
       extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
     },

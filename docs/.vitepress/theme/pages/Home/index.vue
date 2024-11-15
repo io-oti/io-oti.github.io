@@ -22,11 +22,11 @@ export default {
                 <a href={url}>{title}</a>
               </h2>
               <div class="post-desc">
-                <span class="post-date">{date.string}</span>
                 <Badge
                   text={tag}
                   type="info"
                 />
+                <span class="post-date">{date.string}</span>
               </div>
             </div>
           ),
