@@ -1,6 +1,7 @@
 ---
 author: Io_oTI
 date: 2023-09-27
+draft: false
 tag: 'google chrome'
 title: 'Google Chrome'
 ---
