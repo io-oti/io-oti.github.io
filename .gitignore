@@ -5,3 +5,4 @@ docs/.vitepress/temp
 playground
 
 node_modules
+package-lock.json
