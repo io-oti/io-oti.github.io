@@ -36,5 +36,4 @@
 layout: page
 ---
 
-<profile />
-<!-- <home /> -->
+<home />

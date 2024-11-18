@@ -6,21 +6,19 @@ export default {
     const page = ref(1)
     const pageSize = ref(12)
 
-    const posts = computed(() => data.filter(post => !post.draft))
-    // const total = computed(() => Math.ceil(posts.value.length / pageSize.value))
-    const pages = computed(() => {
-      const start = page.value * pageSize.value
-      const end = (page.value + 1) * pageSize.value
+    const posts = computed(() => {
+      const start = (page.value - 1) * pageSize.value
+      const end = page.value * pageSize.value
 
-      return posts.value.slice(start, end)
+      return data.slice(start, end)
     })
 
     return () => (
       <ul class="post">
-        {pages.value.map(({ title, url, date }) => (
+        {posts.value.map(({ title, url, date }) => (
           <li
-            key={title}
             class="post-item"
+            key={title}
           >
             <a
               class="post-item__title"
@@ -43,18 +41,18 @@ export default {
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 10px;
   flex: 1;
   padding: 20px;
-  background: var(--vp-c-bg);
+  // background: var(--vp-c-bg);
   border-radius: 16px;
-  border: 1px solid var(--vp-c-gutter);
+  // border: 1px solid var(--vp-c-gutter);
 
   &-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    line-height: 36px;
 
     &__title {
       color: var(--vp-c-text-1);

@@ -1,81 +1,49 @@
 <script lang="jsx">
-import { data } from '@/posts.data.js'
-import Paginator from '@/components/Paginator/index.vue'
+import Profile from './components/Profile.vue'
+import Posts from './components/Posts.vue'
 
 export default {
   setup() {
-    const pageSize = ref(10)
-
-    const posts = computed(() => data.filter(post => !post.draft))
-
     return () => (
-      <Paginator
-        v-models={[[pageSize.value, 'pageSize']]}
-        data={posts.value}
-        v-slots={{
-          default: ({ title, url, date, tag }) => (
-            <div
-              key={title}
-              class="post"
-            >
-              <h2 class="post-title">
-                <a href={url}>{title}</a>
-              </h2>
-              <div class="post-desc">
-                <Badge
-                  text={tag}
-                  type="info"
-                />
-                <span class="post-date">{date.string}</span>
-              </div>
-            </div>
-          ),
-        }}
-      />
+      <div class="home-container">
+        <div class="home-wrap">
+          <Profile />
+          <Posts />
+        </div>
+      </div>
     )
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.post {
-  width: calc(50% - 12px);
-  padding: 24px;
-  background: var(--vp-c-bg-soft);
-  border-radius: 16px;
-  transition: background 0.3s ease-in-out;
-
-  &:hover {
-    background: var(--vp-c-bg-elv);
-  }
-
-  &-title {
-    color: var(--vp-c-text-1);
-    font-size: 16px;
-
-    a:hover {
-      color: var(--vp-c-brand-1);
-    }
-  }
-
-  &-desc {
+.home {
+  &-container {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-top: 12px;
+    align-items: center;
+    width: min(100vw - 64px, 1024px);
+    min-height: calc(100vh - 64px - 89px);
+    margin: 0 auto;
+    padding: 20px 0;
   }
 
-  &-date {
-    color: var(--vp-c-text-3);
-    font-size: 14px;
-    line-height: 23.6px;
+  &-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
   }
 }
 
 /* Mobile */
 @media (max-width: 426px) {
-  .post {
-    width: 100%;
+  .home {
+    &-container {
+      width: calc(100vw - 40px);
+    }
+
+    &-wrap {
+      gap: 20px;
+    }
   }
 }
 </style>
