@@ -1,39 +1,60 @@
 <script lang="jsx">
+import ICollapse from '@/components/ICollapse/index'
 import { data } from '@/posts.data.js'
 
 export default {
   setup() {
-    const archives = data.reduce((res, post) => {
-      const year = post.date.string.slice(0, 4)
-      const group = res.find((x) => x[0] === year)
+    const years = reactive(
+      data.reduce((years, post, index) => {
+        const label = post.date.string.slice(0, 4)
+        const value = index === 0
+        const year = years.find(year => year.label === label)
 
-      if (group) {
-        group.push(post)
-      } else {
-        res = [...res, [year, post]]
+        if (year) {
+          year.posts.push(post)
+        } else {
+          years = [...years, { label, value, posts: [post] }]
+        }
+
+        return years
+      }, [])
+    )
+
+    const onChange = ({ label, value }) => {
+      for (let year of years) {
+        if (label === year.label) {
+          year.value = value
+        } else {
+          year.value = value ? false : year.value
+        }
       }
-
-      return res
-    }, [])
+    }
 
     return () => (
       <div class="page-container">
-        {archives.map((group) => (
-          <ul class="archives">
-            {group.map((post) => {
-              return typeof post === 'string' ? (
-                <li class="archives__year">{post}</li>
-              ) : (
-                <li class="archives__item">
-                  <h2 class="post-title">
-                    <a href={post.url}>{post.title}</a>
+        <div class="archives">
+          {years.map(({ label, value, posts }) => (
+            <ICollapse
+              label={label}
+              modelValue={value}
+              onUpdate:modelValue={$event => onChange({ label, value: $event })}
+            >
+              <ul class="post-list">
+                {posts.map(post => (
+                  <li class="post-item">
                     <span class="post-date">{post.date.string.slice(-5)}</span>
-                  </h2>
-                </li>
-              )
-            })}
-          </ul>
-        ))}
+                    <a
+                      class="post-title"
+                      href={post.url}
+                    >
+                      {post.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </ICollapse>
+          ))}
+        </div>
       </div>
     )
   },
@@ -42,76 +63,45 @@ export default {
 
 <style lang="scss" scoped>
 .archives {
-  display: flex;
-  flex-direction: column;
-  border-right: 2px solid var(--vp-c-border);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
 
-  &__year,
-  &__item {
-    position: relative;
-    padding: 6px 12px 6px;
-    transition: all 0.3s var(--timing-1);
-
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      right: -2px;
-      width: 2px;
-      height: 36px;
-      background-color: transparent;
+  .post {
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      transition: 0.3s;
     }
-  }
 
-  &__year {
-    margin-bottom: 16px;
-    color: var(--vp-c-text-2);
-    font-size: 28px;
-    font-weight: bold;
-    text-align: right;
+    &-item {
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+    }
 
-    &:hover {
+    &-title {
       color: var(--vp-c-text-1);
-      border-color: var(--color-red);
-    }
-  }
+      font-size: 16px;
 
-  &__item {
-    &:hover {
-      border-top-left-radius: 8px;
-      border-bottom-left-radius: 8px;
-      background-color: var(--vp-c-bg-alt);
-      border-color: var(--color-red);
-
-      &::after {
-        background-color: var(--vp-c-brand-1);
+      &:hover {
+        color: var(--vp-c-brand-1);
       }
     }
-  }
 
-  & + & {
-    margin-top: 32px;
+    &-date {
+      color: var(--vp-c-text-3);
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 }
 
-.post {
-  &-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--vp-c-text-1);
-    font-size: 16px;
-
-    a:hover {
-      color: var(--vp-c-brand-1);
-    }
-  }
-
-  &-date {
-    color: var(--vp-c-text-3);
-    font-size: 16px;
-    line-height: 24px;
+/* Tablet */
+@media (max-width: 767px) {
+  .archives {
+    grid-template-columns: 1fr;
   }
 }
 </style>

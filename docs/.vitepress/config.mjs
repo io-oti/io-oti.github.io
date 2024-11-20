@@ -59,8 +59,8 @@ export default defineConfig({
 
     // Nav - 导航
     nav: [
-      { text: 'Archives', link: 'pages/archives' },
-      { text: 'Categories', link: 'pages/categories' },
+      { text: '归档', link: 'pages/archives' },
+      { text: '分类', link: 'pages/categories' },
     ],
 
     // SocialLinks - 社交链接

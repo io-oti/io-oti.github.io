@@ -167,7 +167,7 @@
   --vp-c-text-3: #6c6f8580;
 
   ::selection {
-    background: var(--color-surface-2);
+    color: var(--color-yellow);
   }
 }
 

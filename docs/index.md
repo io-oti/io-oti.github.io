@@ -36,4 +36,4 @@
 layout: page
 ---
 
-<home />
+<Home />

@@ -342,7 +342,10 @@ export default {
       border-bottom: 2px solid transparent;
       transition: 0.3s;
 
-      &:hover,
+      &:hover {
+        color: var(--vp-c-brand-1);
+      }
+
       &.active {
         border-bottom: 2px solid var(--vp-c-brand-1);
       }

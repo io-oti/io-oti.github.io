@@ -24,7 +24,7 @@ export default {
     width: min(100vw - 64px, 1024px);
     min-height: calc(100vh - 64px - 89px);
     margin: 0 auto;
-    padding: 20px 0;
+    padding-block: 20px;
   }
 
   &-wrap {

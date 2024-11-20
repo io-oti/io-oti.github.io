@@ -7,7 +7,7 @@ export function useThemeAnimate() {
     'startViewTransition' in document &&
     window.matchMedia('(prefers-reduced-motion: no-preference)').matches
 
-  provide('toggle-appearance', async ({ clientX: x, clientY: y }) => {
+  provide('toggle-appearance', async ({ pageX: x, pageY: y }) => {
     if (!enableTransitions()) {
       isDark.value = !isDark.value
       return
