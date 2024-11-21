@@ -11,7 +11,7 @@ Github Profile 是 Github 网站的个人主页。GitHub 早在 2020 年就推�
 
 以下是我的主页截图：
 
-![github-profile](/public/github-profile.jpg)
+![github-profile](/github-profile.jpg)
 
 ## 新建仓库
 
