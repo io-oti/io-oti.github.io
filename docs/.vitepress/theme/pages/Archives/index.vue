@@ -1,5 +1,5 @@
 <script lang="jsx">
-import ICollapse from '@/components/ICollapse/index'
+import Collapse from '@/components/Collapse/index'
 import { data } from '@/posts.data.js'
 
 export default {
@@ -30,11 +30,11 @@ export default {
       }
     }
 
-    return () => (
+    return () => h(
       <div class="page-container">
         <div class="archives">
           {years.map(({ label, value, posts }) => (
-            <ICollapse
+            <Collapse
               label={label}
               modelValue={value}
               onUpdate:modelValue={$event => onChange({ label, value: $event })}
@@ -52,7 +52,7 @@ export default {
                   </li>
                 ))}
               </ul>
-            </ICollapse>
+            </Collapse>
           ))}
         </div>
       </div>

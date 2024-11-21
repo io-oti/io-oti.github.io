@@ -1,55 +1,63 @@
 <script lang="jsx">
+import Collapse from '@/components/Collapse/index'
 import { data } from '@/posts.data.js'
-import List from '@/components/List/index'
 
 export default {
   setup() {
-    const categories = data
-      .reduce((res, post) => {
-        if (post.tag && !res.includes(post.tag)) {
-          res = [...res, post.tag]
+    const categories = reactive(
+      data
+        .reduce((categories, post) => {
+          const label = post.tag
+          const value = false
+          const category = categories.find(category => category.label === label)
+
+          if (category) {
+            category.posts.push(post)
+          } else {
+            categories = [...categories, { label, value, posts: [post] }]
+          }
+
+          return categories
+        }, [])
+        .sort((a, b) => a.label.localeCompare(b.label))
+    )
+
+    const onChange = ({ label, value }) => {
+      for (let category of categories) {
+        if (label === category.label) {
+          category.value = value
+        } else {
+          category.value = value ? false : category.value
         }
+      }
+    }
 
-        return res
-      }, [])
-      .sort()
-
-    const currentTag = ref(categories[0])
-
-    const posts = computed(() => {
-      return data.filter(post => post.tag?.includes(currentTag.value))
-    })
-
-    const onChangeTag = category => (currentTag.value = category)
-
-    return () => (
+    return () => h(
       <div class="page-container">
-        <ul class="categories">
-          {categories.map(category => (
-            <li>
-              <Badge
-                class={currentTag.value === category ? 'active' : ''}
-                text={category}
-                type="info"
-                onclick={() => onChangeTag(category)}
-              />
-            </li>
-          ))}
-        </ul>
-        <List class="posts">
-          {posts.value.map((post, index) => (
-            <li
-              class="post"
-              key={post.title}
-              data-index={index}
+        <div class="categories">
+          {categories.map(({ label, value, posts }) => (
+            <Collapse
+              size="small"
+              label={label}
+              modelValue={value}
+              onUpdate:modelValue={$event => onChange({ label, value: $event })}
             >
-              <h2 class="post-title">
-                <a href={post.url}>{post.title}</a>
-                <span class="post-date">{post.date.string}</span>
-              </h2>
-            </li>
+              <ul class="post-list">
+                {posts.map(post => (
+                  <li class="post-item">
+                    <a
+                      class="post-title"
+                      href={post.url}
+                    >
+                      {post.title}
+                    </a>
+                    <span class="post-date">{post.date.string.slice(-5)}</span>
+                  </li>
+                ))}
+              </ul>
+            </Collapse>
           ))}
-        </List>
+        </div>
       </div>
     )
   },
@@ -58,59 +66,45 @@ export default {
 
 <style lang="scss" scoped>
 .categories {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px 24px;
-}
-
-.VPBadge {
-  width: 100%;
-  cursor: pointer;
-
-  &.active {
-    color: var(--vp-c-brand-1);
-  }
-}
-
-.posts {
-  margin-top: 24px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
 
   .post {
-    width: calc(50% - 12px);
-    padding: 16px;
-    background: var(--vp-c-bg-soft);
-    border-radius: 16px;
-    transition: background 0.3s ease-in-out;
-
-    &:hover {
-      background: var(--vp-c-bg-elv);
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      transition: 0.3s;
     }
 
-    &-title {
+    &-item {
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+
+    &-title {
       color: var(--vp-c-text-1);
       font-size: 16px;
 
-      a:hover {
+      &:hover {
         color: var(--vp-c-brand-1);
       }
     }
 
     &-date {
       color: var(--vp-c-text-3);
-      font-size: 16px;
+      font-size: 14px;
       line-height: 24px;
     }
   }
+}
 
-  /* Mobile */
-  @media (max-width: 426px) {
-    .post {
-      width: 100%;
-    }
+/* Tablet */
+@media (max-width: 767px) {
+  .categories {
+    grid-template-columns: 1fr;
   }
 }
 </style>

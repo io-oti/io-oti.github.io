@@ -1,4 +1,5 @@
 <script lang="jsx">
+import Avatar from '@/components/Icons/Avatar.vue'
 import profile from './profile.json'
 
 export default {
@@ -17,11 +18,7 @@ export default {
         <div class="profile-header">
           <div className="avatar">
             <div className="avatar-bg"></div>
-            <img
-              src={profile.avatar}
-              class="avatar-img"
-              alt="avatar"
-            />
+            <Avatar class="avatar-img" />
           </div>
           <div class="brief">
             <h1 class="name">{profile.name}</h1>
@@ -178,7 +175,6 @@ export default {
         position: absolute;
         width: 100%;
         height: 100%;
-        background-image: #88888888;
         border-radius: 50%;
       }
     }
