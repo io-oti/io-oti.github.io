@@ -87,6 +87,7 @@ export default {
     &-title {
       color: var(--vp-c-text-1);
       font-size: 16px;
+      transition: 0.3s;
 
       &:hover {
         color: var(--vp-c-brand-1);

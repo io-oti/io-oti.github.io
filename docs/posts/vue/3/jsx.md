@@ -3,10 +3,10 @@ author: Io_oTI
 date: 2024-07-12
 draft: false
 tag: 'vue'
-title: 'Vue 3 JSX 用法'
+title: 'Vue 3 的 JSX 语法'
 ---
 
-# Vue 3 JSX 语法
+# Vue 3 的 JSX 语法
 
 ## 安装
 
@@ -65,7 +65,7 @@ const App = () => <input type="email" />
 
 ```jsx
 const placeholderText = 'email'
-const App = () => <input type="email" placeholder={placeholderText} />
+const App = () => <input type="email" placeholder={ placeholderText } />
 ```
 
 ### 事件 - On
@@ -95,7 +95,7 @@ const App = defineComponent({
     }
 
     return () => (
-      <div onClick={withModifiers(inc, ["self"])}>{count.value}</div>
+      <div onClick={ withModifiers(inc, ["self"]) }>{ count.value }</div>
     )
   },
 })
@@ -119,7 +119,7 @@ const App = defineComponent({
     }
 
     return () => (
-      <input value={count.value} onKeyup={withKeys(inc, ["enter"])} />
+      <input value={ count.value } onKeyup={ withKeys(inc, ["enter"]) } />
     )
   }
 })
@@ -132,8 +132,8 @@ const App = defineComponent({
 ```jsx{3,4}
 const A = (props, { slots }) => (
   <>
-    <h1>{slots.default ? slots.default() : 'foo'}</h1>
-    <h2>{slots.bar?.()}</h2>
+    <h1>{ slots.default ? slots.default() : 'foo' }</h1>
+    <h2>{ slots.bar?.() }</h2>
   </>
 )
 ```
@@ -149,7 +149,7 @@ const App = {
       bar: () => <span>B</span>,
     }
     return () => (
-      <A v-slots={slots}>
+      <A v-slots={ slots }>
         <div>A</div>
       </A>
     )
@@ -164,7 +164,7 @@ const App = {
       default: () => <div>A</div>,
       bar: () => <span>B</span>,
     }
-    return () => <A v-slots={slots} />
+    return () => <A v-slots={ slots } />
   },
 }
 ```
@@ -206,12 +206,22 @@ const App = {
 }
 ```
 
+```jsx[textContent]{5}
+const App = {
+  setup() {
+    const msg = ref('hi')
+
+    return () => <span textContent={ msg } />
+  }
+}
+```
+
 ```jsx[innerText]{5}
 const App = {
   setup() {
     const msg = ref('hi')
 
-    return () => <span innerText={msg} />
+    return () => <span innerText={ msg } />
   }
 }
 ```
@@ -225,22 +235,35 @@ const App = {
   setup() {
     const template = ref('<span>hi</span>')
 
-    return () => <div innerHTML={template} />
+    return () => <div innerHTML={ template } />
   }
 }
 ```
 
 #### v-show
 
-```jsx{3,5}
+::: code-group
+
+```jsx[基本用法]{3,5}
 const App = {
   setup() {
     const visible = ref(true)
 
-    return () => <input v-show={visible.value} />
+    return () => <input v-show={ visible.value } />
   }
 }
 ```
+
+```jsx[style]{3,5}
+const App = {
+  setup() {
+    const visible = ref(true)
+
+    return () => <input style={ { display: visible.value ? '' : 'none' } } />
+  }
+}
+```
+:::
 
 #### v-if / v-else
 
@@ -249,7 +272,7 @@ const App = {
   setup() {
     const isExist = ref(false)
 
-    return () => (<>{ isExist.value ? <button>Button</button> : null}</>)
+    return () => (<>{ isExist.value ? <button>Button</button> : null }</>)
   }
 }
 ```
@@ -265,7 +288,7 @@ const App = {
     ])
 
     return () => (<ul>{items.value.map(item => (
-        <li>{item.label}:{item.value}</li>
+        <li>{ item.label }:{ item.value }</li>
       )
     )}</ul>)
   }
@@ -297,7 +320,7 @@ const App = {
 ::: code-group
 
 ```jsx[完全示例]
-<A v-model={[val, 'argument', ['modifier']]} />
+<A v-model={ [val, 'argument', ['modifier']] } />
 // 或者
 <input v-model:argument_modifier={val} />
 ```
@@ -319,7 +342,7 @@ h(A, {
 > 注意: 你应该传递一个二维数组给 v-models。
 
 ```jsx
-<A v-models={[[foo], [bar, 'bar']]} />
+<A v-models={ [[foo], [bar, 'bar']] } />
 ```
 
 ```jsx
@@ -365,7 +388,7 @@ h(A, {
 const App = {
   directives: { custom: customDirective },
   setup() {
-    return () => <a v-custom:arg={val} />
+    return () => <a v-custom:arg={ val } />
   },
 }
 ```
@@ -374,7 +397,7 @@ const App = {
 const App = {
   directives: { custom: customDirective },
   setup() {
-    return () => <a v-custom={[val, 'arg', ['a', 'b']]} />
+    return () => <a v-custom={ [val, 'arg', ['a', 'b']] } />
   },
 }
 ```

@@ -328,7 +328,38 @@ export default {
 
 ### template
 
+```vue
+<template v-if="loginType === 'username'">
+  <label>Username</label>
+  <input placeholder="输入用户名" key="username-input">
+</template>
+<template v-else>
+  <label>Email</label>
+  <input placeholder="输入邮箱" key="email-input">
+</template>
+```
+
 ### component
+
+```vue
+<template>
+  <component :is="TabComponent" />
+</template>
+
+<script>
+import TabComponent from './TabComponent'
+
+export default {
+  components: {
+    TabComponent
+  },
+  data() {
+    return {
+      text: 'hello',
+    }
+  },
+}
+```
 
 ### transition
 

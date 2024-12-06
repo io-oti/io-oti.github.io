@@ -8,17 +8,57 @@ title: 'Google Chrome'
 
 # Google Chrome
 
+## Chrome DevTools
+
+打开开发工具
+
+| 操作               | Windows/Linux               | macOS                      |
+| ------------------ | --------------------------- | -------------------------- |
+| 打开上次使用的窗格 | `F12` 或 `Ctrl + Shift + I` | `⌘ + ⌥ + I`                |
+| 打开“控制台”工具   | `Ctrl + Shift + J`          | `⌘ + ⌥ + J`                |
+| 打开“元素”工具     | `Ctrl + Shift + C`          | `⌘ + ⇧ + C` 或 `⌘ + ⌥ + C` |
+
+全局键盘快捷方式
+
+| 操作           | Windows/Linux     | macOS                  |
+| -------------- | ----------------- | ---------------------- |
+| 显示“设置”     | `Shift+?` 或 `F1` | `⇧+?` 或 `Function+F1` |
+| 聚焦于下一窗格 | `Ctrl + ]`        | `⌘ + ]`                |
+| 聚焦于上一窗格 | `Ctrl + [`        | `⌘ + [`                |
+
+### Sources
+
+#### Snippets
+
+为所有元素添加边框
+
+```javascript
+;[].forEach.call($$('*'), function (a) {
+  a.style.outline = '1px solid #' + (~~(Math.random() * (1 << 24))).toString(16)
+})
+```
+
 ## 前端跨域-关闭安全策略
 
-```bash
-# Mac
-open -n /Applications/Google\ Chrome.app/ --args --disable-web-security --user-data-dir=/Users/ex-wulinxiong002/Documents
+::: warning
+以下命令需要替换中 `[]` 的内容，最好为 `--user-data-dir` 设置一个空的文件夹。
+:::
+
+::: code-group
+
+```bash[macOS 终端]
+open -n /Applications/Google\ Chrome.app/ --args --disable-web-security --user-data-dir=[/Users/Username/browser]
 ```
 
-```powershell
-# Windows
-"Google Chrome" --args --disable-web-security --user-data-dir=D:\Documents
+```cmd[Windows 命令提示符]
+start chrome --disable-web-security --user-data-dir=[D:\browser]
 ```
+
+```powershell[Windows PowerShell]
+Start-Process -FilePath "chrome" -ArgumentList "--disable-web-security --user-data-dir=[D:\browser]"
+```
+
+:::
 
 ### SameSite （v80+ 跨域不带 Cookie）
 
@@ -41,43 +81,20 @@ open -n /Applications/Google\ Chrome.app/ --args --disable-web-security --user-d
 
 ### SameSite （v91+ 跨域不带 Cookie）
 
-```bash
-# Chrome 91 禁用 SameSiteByDefaultCookies 与 CookiesWithoutSameSiteMustBeSecure
-open -n /Applications/Google\ Chrome.app/ --args --disable-web-security --disable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure --user-data-dir=/Users/ex-wulinxiong002/Downloads/chrome
+Chrome 91 禁用 SameSiteByDefaultCookies 与 CookiesWithoutSameSiteMustBeSecure
 
+::: code-group
 
-# Edge 禁用 SameSiteByDefaultCookies 与 CookiesWithoutSameSiteMustBeSecure
-open -n /Applications/Microsoft\ Edge.app --args --disable-web-security --disable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure --user-data-dir=/Users/ex-wulinxiong002/Downloads/chrome
+```bash[macOS 终端]
+open -n /Applications/Google\ Chrome.app/ --args --disable-web-security --disable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure --user-data-dir=[/Users/Username/browser]
 ```
 
-## Chrome DevTools
-
-### Sources
-
-#### Snippets
-
-为所有元素添加边框
-
-```javascript
-;[].forEach.call($$('*'), function (a) {
-  a.style.outline = '1px solid #' + (~~(Math.random() * (1 << 24))).toString(16)
-})
+```cmd[Windows 命令提示符]
+start chrome --disable-web-security --disable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure --user-data-dir=[D:\browser]
 ```
 
-### 快捷键
+```cmd[Windows PowerShell]
+Start-Process -FilePath "chrome" -ArgumentList "--disable-web-security --disable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure --user-data-dir=[D:\browser]"
+```
 
-#### 打开开发工具
-
-| 操作               | Windows/Linux               | macOS                       |
-| ------------------ | --------------------------- | --------------------------- |
-| 打开上次使用的窗格 | `F12` 或 `Ctrl + Shift + I` | `⌘ + ⌥ + I`                 |
-| 打开“控制台”工具   | `Ctrl + Shift + J`          | `⌘ + ⌥ + J`                 |
-| 打开“元素”工具     | `Ctrl + Shift + C`          | `⌘ + ⇧ + C` 或 `⌘ + ⌥ + C` |
-
-#### 全局键盘快捷方式
-
-| 操作           | Windows/Linux  | macOS               |
-| -------------- | -------------- | ------------------- |
-| 显示“设置”     | Shift+？ 或 F1 | ⇧+？ 或 Function+F1 |
-| 聚焦于下一窗格 | `Ctrl + ]`     | `⌘ + ]`             |
-| 聚焦于上一窗格 | `Ctrl + [`     | `⌘ + [`             |
+:::

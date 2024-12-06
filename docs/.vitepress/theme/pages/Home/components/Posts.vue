@@ -44,9 +44,7 @@ export default {
   gap: 10px;
   flex: 1;
   padding: 20px;
-  // background: var(--vp-c-bg);
   border-radius: 16px;
-  // border: 1px solid var(--vp-c-gutter);
 
   &-item {
     display: flex;
@@ -57,6 +55,7 @@ export default {
     &__title {
       color: var(--vp-c-text-1);
       font-size: 16px;
+      transition: 0.3s;
 
       &:hover {
         color: var(--vp-c-brand-1);
