@@ -21,11 +21,9 @@ const canvas = ref(null)
 const firefly = ref(null)
 const crawler = ref(null)
 
-const resize = e => {
-  if (!e) return
-
-  canvas.value.width = e.target.innerWidth
-  canvas.value.height = e.target.innerHeight
+const resize = () => {
+  canvas.value.width = window.innerWidth
+  canvas.value.height = window.innerHeight
 }
 
 watch(

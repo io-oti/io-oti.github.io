@@ -10,11 +10,6 @@ const Input = {
   },
 }
 
-document.addEventListener('mousemove', function (event) {
-  Input.mouse.x = event.clientX
-  Input.mouse.y = event.clientY
-})
-
 class Animation {
   constructor(canvas) {
     this.canvas = canvas
@@ -27,6 +22,10 @@ class Animation {
   start(option) {
     const mergeOption = { ...defaultOption, ...option }
 
+    window.addEventListener('mousemove', function (event) {
+      Input.mouse.x = event.clientX
+      Input.mouse.y = event.clientY
+    })
     this.crawler = this.setupCrawler(mergeOption)
     this.running = true
     this.draw()
