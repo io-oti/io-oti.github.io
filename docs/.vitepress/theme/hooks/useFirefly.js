@@ -1,21 +1,25 @@
-import { onMounted, onUnmounted } from 'vue'
+const defaultOption = {
+  count: 25,
+  color: 'rgba(236, 196, 94, 1)',
+  speed: 1,
+  radius: 2,
+}
 
 class Animation {
-  constructor() {
-    this.canvas = document.createElement('canvas')
+  constructor(canvas) {
+    this.canvas = canvas
     this.context = this.canvas.getContext('2d')
     this.fireflies = []
-    this.requestID = undefined
     this.running = false
-
-    this.resize()
+    this.requestID = undefined
   }
 
   start(option) {
-    window.addEventListener('resize', this.resize.bind(this))
+    const mergeOption = { ...defaultOption, ...option }
+
     this.fireflies = Array.from(
-      { length: option.count },
-      () => new Firefly(option)
+      { length: mergeOption.count },
+      () => new Firefly(mergeOption)
     )
     this.running = true
     this.draw()
@@ -25,22 +29,12 @@ class Animation {
     window.cancelAnimationFrame(this.requestID)
     this.running = false
     this.fireflies = []
-    this.canvas.remove()
-  }
-
-  resize() {
-    this.canvas.width = window.innerWidth
-    this.canvas.height = window.innerHeight
+    this.context.clearRect(0, 0, window.innerWidth, window.innerHeight)
   }
 
   draw() {
-    if (this.running) {
-      this.redraw()
-      this.requestID = window.requestAnimationFrame(this.draw.bind(this))
-    }
-  }
+    if (!this.running) return
 
-  redraw() {
     this.context.clearRect(0, 0, window.innerWidth, window.innerHeight)
 
     for (let i = 0; i < this.fireflies.length; i++) {
@@ -57,6 +51,8 @@ class Animation {
       this.context.shadowColor = 'yellow'
       this.context.fill()
     }
+
+    this.requestID = window.requestAnimationFrame(this.draw.bind(this))
   }
 }
 
@@ -112,29 +108,6 @@ function setOpacity(color, opacity) {
   return `rgba(${colors[1]}, ${colors[2]}, ${colors[3]}, ${opacity})`
 }
 
-function init() {
-  const animation = new Animation()
-
-  document.body.prepend(animation.canvas)
-  animation.canvas.style.position = 'fixed'
-  animation.canvas.style.zIndex = '-1'
-
-  return animation
-}
-
-export function useBackground() {
-  const animation = init()
-
-  onMounted(() => {
-    animation.start({
-      count: 25,
-      color: 'rgba(236, 196, 94, 1)',
-      speed: 1,
-      radius: 2,
-    })
-  })
-
-  onUnmounted(() => {
-    animation.stop()
-  })
+export function useFirefly(canvas) {
+  return { firefly: new Animation(canvas) }
 }
