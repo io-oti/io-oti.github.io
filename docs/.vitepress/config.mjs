@@ -81,15 +81,15 @@ export default defineConfig({
 
     // Sidebar - 侧边栏
     sidebar: genSidebar(
-      '/posts/vue/3',
-      '/posts/vue/2',
-      '/posts/vue/vite',
-      '/posts/nodejs',
-      '/posts/windows',
       '/posts/browser',
-      '/posts/nginx',
       '/posts/git',
-      '/posts/webpack'
+      '/posts/nodejs',
+      '/posts/nginx',
+      '/posts/vite',
+      '/posts/vue/2',
+      '/posts/vue/3',
+      '/posts/webpack',
+      '/posts/windows'
     ),
 
     // Outline - 目录
