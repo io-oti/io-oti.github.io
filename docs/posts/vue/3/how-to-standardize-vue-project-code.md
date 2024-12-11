@@ -201,7 +201,6 @@ Prettier 是一个固执己见的代码格式化器。它支持格式化：
 
 <details>
   <summary>settings.json:</summary>
-  <p>
 
   ```json
   {
@@ -242,7 +241,6 @@ Prettier 是一个固执己见的代码格式化器。它支持格式化：
   }
   ```
 
-  </p>
 </details>
 
 ## 参考

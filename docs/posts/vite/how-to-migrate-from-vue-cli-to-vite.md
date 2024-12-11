@@ -237,7 +237,7 @@ export default defineConfig({
 
 环境变量在 Vite 中的工作方式与它们在 Vue CLI 中的工作方式之间存在很多交叉。例如，你的 .env 命名约定可以保持不变。
 
-```
+```dotenv
 .env                # loaded in all cases
 .env.local          # loaded in all cases, ignored by git
 .env.[mode]         # only loaded in specified mode
