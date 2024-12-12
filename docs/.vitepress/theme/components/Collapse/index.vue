@@ -97,11 +97,11 @@ export default {
 
   &[open='true'] {
     height: 100%;
-    background: var(--vp-c-bg-soft);
+    background-color: var(--vp-c-bg-soft);
   }
 
   &:hover {
-    background: var(--vp-c-bg-soft);
+    background-color: var(--vp-c-bg-soft);
   }
 
   &-label {

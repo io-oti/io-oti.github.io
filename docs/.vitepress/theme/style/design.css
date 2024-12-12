@@ -188,9 +188,9 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-c-bg: #dce0e8cc;
-  --vp-c-bg-alt: #dce0e8cc;
-  --vp-c-bg-elv: #eff1f5cc;
+  --vp-c-bg: #ffffffcc;
+  --vp-c-bg-alt: #eff1f5cc;
+  --vp-c-bg-elv: #ffffffcc;
   --vp-c-bg-soft: #eff1f5cc;
 }
 

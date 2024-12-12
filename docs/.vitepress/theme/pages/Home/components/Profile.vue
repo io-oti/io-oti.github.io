@@ -16,9 +16,7 @@ export default {
         data-active={active.value}
       >
         <div class="profile-header">
-          <div class="avatar">
-            <Avatar class="avatar-img" />
-          </div>
+          <Avatar class="avatar" />
           <div class="brief">
             <h1 class="name">{profile.name}</h1>
             {profile.post && <h2 class="post">{profile.post}</h2>}
@@ -98,7 +96,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: min(100%, 365px);
-  background: var(--vp-c-bg-soft);
+  background-color: var(--vp-c-bg-soft);
   border-radius: 16px;
   overflow: hidden;
   transition: 0.3s ease-in;
@@ -113,10 +111,6 @@ export default {
         width: 50px;
         height: 50px;
         transform: none;
-
-        &-bg {
-          filter: blur(10px);
-        }
       }
 
       .brief {
@@ -146,39 +140,17 @@ export default {
     overflow: hidden;
     transition: 0.3s ease-in;
 
-    * {
-      transition: 0.3s ease-in;
-    }
-
     .avatar {
       position: absolute;
       top: 24px;
       left: 50%;
       width: 100px;
       height: 100px;
+      border: 1px solid var(--vp-c-border);
+      border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
+      transition: 0.3s ease-in;
       transform: translateX(-50%) translateY(0);
-
-      &::before {
-        position: absolute;
-        top: 20%;
-        left: 20%;
-        content: '';
-        width: 60%;
-        height: 60%;
-        background-image: linear-gradient(93deg, #bd34fe 50%, #47caff 50%);
-        border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
-        animation: edge 4s both infinite;
-        filter: blur(20px);
-      }
-
-      &-img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border: 1px solid var(--vp-c-border);
-        border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
-        animation: edge 4s both infinite;
-      }
+      animation: edge 4s both infinite;
     }
 
     .brief {
@@ -186,6 +158,7 @@ export default {
       bottom: 0;
       left: 50%;
       text-align: center;
+      transition: 0.3s ease-in;
       transform: translateX(-50%) translateY(0);
     }
 
@@ -193,11 +166,13 @@ export default {
       margin-bottom: 12px;
       font-size: 24px;
       font-weight: bold;
+      transition: 0.3s ease-in;
     }
 
     .post {
       color: var(--vp-c-text-3);
       font-size: 16px;
+      transition: 0.3s ease-in;
     }
   }
 
@@ -238,7 +213,7 @@ export default {
         height: 100%;
         background: linear-gradient(
           to top,
-          #86d6f300 0%,
+          #00000000 0%,
           var(--vp-c-brand-1) 100%
         );
       }
@@ -265,7 +240,7 @@ export default {
           font-size: 12px;
           line-height: 0.6;
           text-indent: -40px;
-          background: var(--vp-c-brand-1);
+          background-color: var(--vp-c-brand-1);
           border: 2px solid #fff;
           border-radius: 50%;
         }
