@@ -97,11 +97,11 @@ export default {
 
   &[open='true'] {
     height: 100%;
-    border: 1px solid var(--vp-c-gutter);
+    background: var(--vp-c-bg-soft);
   }
 
   &:hover {
-    border: 1px solid var(--vp-c-gutter);
+    background: var(--vp-c-bg-soft);
   }
 
   &-label {
