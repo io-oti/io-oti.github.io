@@ -16,8 +16,7 @@ export default {
         data-active={active.value}
       >
         <div class="profile-header">
-          <div className="avatar">
-            <div className="avatar-bg"></div>
+          <div class="avatar">
             <Avatar class="avatar-img" />
           </div>
           <div class="brief">
@@ -99,9 +98,8 @@ export default {
   display: flex;
   flex-direction: column;
   width: min(100%, 365px);
-  background: var(--vp-c-bg);
+  background: var(--vp-c-bg-soft);
   border-radius: 16px;
-  border: 1px solid var(--vp-c-gutter);
   overflow: hidden;
   transition: 0.3s ease-in;
 
@@ -160,14 +158,16 @@ export default {
       height: 100px;
       transform: translateX(-50%) translateY(0);
 
-      &-bg {
+      &::before {
         position: absolute;
-        top: 10%;
-        left: 10%;
-        width: 80%;
-        height: 80%;
-        background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
-        border-radius: 50%;
+        top: 20%;
+        left: 20%;
+        content: '';
+        width: 60%;
+        height: 60%;
+        background-image: linear-gradient(93deg, #bd34fe 50%, #47caff 50%);
+        border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
+        animation: edge 4s both infinite;
         filter: blur(20px);
       }
 
@@ -175,7 +175,9 @@ export default {
         position: absolute;
         width: 100%;
         height: 100%;
-        border-radius: 50%;
+        border: 1px solid var(--vp-c-border);
+        border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
+        animation: edge 4s both infinite;
       }
     }
 
@@ -306,25 +308,6 @@ export default {
           transition: 0.3s;
         }
       }
-
-      &-me {
-        width: 100%;
-        margin-top: 20px;
-        padding: 12px 16px;
-        color: #ffffff;
-        font-size: 14px;
-        font-weight: bold;
-        background: linear-gradient(
-          to right,
-          var(--vp-c-brand-3) 0%,
-          var(--vp-c-brand-1) 96%
-        );
-        border: 0;
-        border-radius: 5px;
-        outline: none;
-        cursor: pointer;
-        transition: 0.3s;
-      }
     }
   }
 
@@ -356,6 +339,24 @@ export default {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes edge {
+  0% {
+    border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
+  }
+  25% {
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+  }
+  50% {
+    border-radius: 30% 70% 70% 30% / 70% 70% 30% 30%;
+  }
+  75% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  100% {
+    border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
   }
 }
 
