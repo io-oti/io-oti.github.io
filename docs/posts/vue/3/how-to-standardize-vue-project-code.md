@@ -112,18 +112,31 @@ export default [
 
 我们将 `eslint.config.mjs` 文件格式化一下，并根据实际情况修改一些配置。比如添加一些全局变量，这可以避免 ESLint 将全局变量当作未定义变量；以及如果你使用 JSX 来编写 Vue，那么你应该配置启用 JSX。
 
-这里是 [eslint-plugin-vue](https://eslint.vuejs.org/rules/) 的可用规则，推荐使用 'flat/recommended' 规则。
+这里是 [eslint-plugin-vue的规则](https://eslint.vuejs.org/rules/)，推荐使用 'flat/recommended' 规则。如果需要配置更多文件的规则，最好给 `eslint-plugin-vue` 加上 files 属性，避免影响其他规则。
 
-```javascript{3,7,14,18-20}
+[Issues - How does the flat configuration of eslint-plugin-vue only apply to vue files](https://github.com/vuejs/eslint-plugin-vue/issues/2603)
+
+```javascript{7-10,15,25,29-31,37}
 import globals from 'globals'
 import pluginJs from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
 
-export default [
-  pluginJs.configs.recommended,
-  ...pluginVue.configs['flat/recommended'],
+export default [,
+  // 给 eslint-plugin-vue 加上匹配文件类型
+  ...pluginVue.configs['flat/recommended'].map(config => ({
+    ...config,
+    files: ['docs/**/*.vue'],
+  })),
   {
-    files: ['**/*.{js,mjs,cjs,vue}'],
+    name: 'files-to-ignore',
+    ignores: [
+      // 忽略文件或文件夹
+      "**/node_modules/"
+    ]
+  },
+  {
+    name: 'files-to-lint',
+    files: ['src/**/*.{js,mjs,cjs,vue}'],
     languageOptions: {
       globals: {
         ...globals.browser,
@@ -137,8 +150,9 @@ export default [
         },
       },
     },
-    // 自定义规则
     rules: {
+      ...pluginJs.configs.recommended.rules,
+      // 自定义规则
       'vue/multi-word-component-names': 0,
     },
   },
