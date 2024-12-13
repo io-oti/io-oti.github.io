@@ -146,6 +146,7 @@ export default {
       left: 50%;
       width: 100px;
       height: 100px;
+      background-color: var(--vp-c-bg);
       border: 1px solid var(--vp-c-border);
       border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
       transition: 0.3s ease-in;
@@ -321,13 +322,13 @@ export default {
   0% {
     border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
   }
-  25% {
+  40% {
     border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
   }
   50% {
     border-radius: 30% 70% 70% 30% / 70% 70% 30% 30%;
   }
-  75% {
+  60% {
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   }
   100% {

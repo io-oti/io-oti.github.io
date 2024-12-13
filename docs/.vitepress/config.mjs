@@ -1,12 +1,7 @@
 import { defineConfig } from 'vitepress'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import autoImport from 'unplugin-auto-import/vite'
-import components from 'unplugin-vue-components/vite'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-// import { fileURLToPath, URL } from 'node:url'
-import path from 'path'
-
 import { genSidebar } from './configs/sidebar.js'
+import { markdown } from './configs/markdown.js'
+import { vite } from './configs/vite.js'
 
 export default defineConfig({
   title: '槭 林',
@@ -81,15 +76,15 @@ export default defineConfig({
 
     // Sidebar - 侧边栏
     sidebar: genSidebar(
-      '/posts/browser',
+      '/posts/devTools/vite',
+      '/posts/devTools/webpack',
       '/posts/git',
       '/posts/nodejs',
       '/posts/nginx',
-      '/posts/vite',
       '/posts/vue/2',
       '/posts/vue/3',
-      '/posts/webpack',
-      '/posts/windows'
+      '/posts/web/css',
+      '/posts/os/windows'
     ),
 
     // Outline - 目录
@@ -115,58 +110,7 @@ export default defineConfig({
     },
   },
 
-  markdown: {
-    // 启用代码块中的行号
-    lineNumbers: true,
-    // 全局自定义容器标题
-    container: {
-      tipLabel: '提示',
-      warningLabel: '警告',
-      dangerLabel: '危险',
-      infoLabel: '信息',
-      detailsLabel: '详细信息',
-    },
-  },
+  markdown,
 
-  vite: {
-    server: {
-      host: '0.0.0.0',
-    },
-    plugins: [
-      autoImport({
-        imports: ['vue'],
-        resolvers: [ElementPlusResolver()],
-        eslintrc: {
-          enabled: true,
-          filepath: './.eslintrc-auto-import.js',
-        },
-      }),
-      components({
-        resolvers: [ElementPlusResolver()],
-      }),
-      vueJsx(),
-    ],
-    resolve: {
-      // 设置别名
-      alias: [
-        { find: '~', replacement: path.resolve(__dirname, './') },
-        { find: '@', replacement: path.resolve(__dirname, './theme') },
-        // {
-        //   find: /^.*\/VPPage\.vue$/,
-        //   replacement: fileURLToPath(
-        //     new URL('./theme/pages/Profile/index.vue', import.meta.url)
-        //   ),
-        // },
-      ],
-      // https://cn.vitejs.dev/config/#resolve-extensions
-      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
-    },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: 'modern-compiler',
-        },
-      },
-    },
-  },
+  vite,
 })

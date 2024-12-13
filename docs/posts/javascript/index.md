@@ -3,26 +3,36 @@ author: Io_oTI
 date: 2024-07-12
 draft: true
 tag: 'javascript'
-title: 'Language'
+title: 'JavaScript'
 ---
 
-# Javascript 学习
+# JavaScript
 
 ## Data Types
 
-### Undefined Type
+### Null
 
-### Null Type
+### Undefined
 
-### Boolean Type
+### Boolean
 
-### String Type
+### Number
 
-### Symbol Type
+### BigInt
 
-### Numeric Types
+### String
 
-### Object Type
+### Symbol
+
+### Object
+
+#### Date
+
+#### Array
+
+#### Map、Set、WeakMap、WeakSet
+
+#### Json
 
 ## Type Conversion
 
@@ -73,3 +83,9 @@ title: 'Language'
 ## Asynchronous
 
 - [ ] Event Loop
+
+## 参考
+
+[JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
+
+[现代JavaScript教程](https://zh.javascript.info/)
