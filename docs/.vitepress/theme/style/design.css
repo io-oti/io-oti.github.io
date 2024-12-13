@@ -158,7 +158,8 @@
   --vp-c-text-3: #6c6f8580;
 
   ::selection {
-    color: var(--c-lavender, --vp-c-gray-soft);
+    color: var(--vp-c-text-1);
+    background-color: var(--c-surface-0, --vp-c-gray-soft);
   }
 }
 
@@ -168,7 +169,8 @@
   --vp-c-text-3: #a6adc880;
 
   ::selection {
-    color: var(--c-lavender, --vp-c-gray-soft);
+    color: var(--vp-c-text-1);
+    background-color: var(--c-surface-0, --vp-c-gray-soft);
   }
 }
 
