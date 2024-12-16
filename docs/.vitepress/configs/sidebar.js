@@ -73,3 +73,15 @@ export function genSidebar(...paths) {
     return res
   }, {})
 }
+
+export default genSidebar(
+  '/posts/devTools/vite',
+  '/posts/devTools/webpack',
+  '/posts/git',
+  '/posts/nodejs',
+  '/posts/nginx',
+  '/posts/vue/2',
+  '/posts/vue/3',
+  '/posts/web/css',
+  '/posts/os/windows'
+)

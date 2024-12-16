@@ -5,3 +5,9 @@ docs/.vitepress/temp
 playground
 
 node_modules
+
+# system files
+
+.DS_Store
+Thumbs.db
+*.swp
