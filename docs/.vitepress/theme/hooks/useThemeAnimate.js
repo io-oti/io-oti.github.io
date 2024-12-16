@@ -31,8 +31,8 @@ export function useThemeAnimate() {
     document.documentElement.animate(
       isDark.value ? clipPath.reverse() : clipPath,
       {
-        duration: 1e3,
-        easing: 'cubic-bezier(.21,.48,.27,.75)',
+        duration: 600,
+        easing: 'cubic-bezier(.3,.8,.3,.8)',
         pseudoElement: `::view-transition-${
           isDark.value ? 'old' : 'new'
         }(root)`,

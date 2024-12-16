@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
-import { genSidebar } from './configs/sidebar.js'
 import { markdown } from './configs/markdown.js'
 import { vite } from './configs/vite.js'
+import sidebar from './configs/sidebar.js'
 
 export default defineConfig({
   title: '槭 林',
@@ -75,17 +75,7 @@ export default defineConfig({
     ],
 
     // Sidebar - 侧边栏
-    sidebar: genSidebar(
-      '/posts/devTools/vite',
-      '/posts/devTools/webpack',
-      '/posts/git',
-      '/posts/nodejs',
-      '/posts/nginx',
-      '/posts/vue/2',
-      '/posts/vue/3',
-      '/posts/web/css',
-      '/posts/os/windows'
-    ),
+    sidebar,
 
     // Outline - 目录
     outline: {

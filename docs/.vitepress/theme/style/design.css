@@ -194,6 +194,9 @@
   --vp-c-bg-alt: #eff1f5cc;
   --vp-c-bg-elv: #ffffffcc;
   --vp-c-bg-soft: #eff1f5cc;
+  --bg-lg: linear-gradient(150deg,
+      #eff1f54d 14%,
+      #eff1f5cc 59%);
 }
 
 .dark {
@@ -201,6 +204,9 @@
   --vp-c-bg-alt: #181825cc;
   --vp-c-bg-elv: #1e1e2ecc;
   --vp-c-bg-soft: #1e1e2ecc;
+  --bg-lg: linear-gradient(150deg,
+      #1e1e2ecc 14%,
+      #1e1e2e4d 59%);
 }
 
 /**

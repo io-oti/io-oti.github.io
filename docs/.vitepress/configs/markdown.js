@@ -1,3 +1,5 @@
+// more info: https://github.com/vuejs/vitepress/blob/main/src/node/markdown/markdown.ts
+
 export const markdown = {
   // 启用代码块中的行号
   lineNumbers: true,
@@ -13,4 +15,6 @@ export const markdown = {
     // 默认禁用；设置为 true 可为所有图片启用懒加载。
     lazyLoading: true,
   },
+  // https://shiki.tmrs.site/themes
+  theme: { light: 'catppuccin-latte', dark: 'catppuccin-mocha' },
 }
