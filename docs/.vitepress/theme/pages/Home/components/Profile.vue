@@ -146,7 +146,6 @@ export default {
       left: 50%;
       width: 100px;
       height: 100px;
-      background-color: var(--vp-c-bg);
       border: 1px solid var(--vp-c-border);
       border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
       transition: 0.3s ease-in;
