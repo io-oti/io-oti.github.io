@@ -1,15 +1,3 @@
-const defaultOption = {
-  size: 1,
-  legs: 2,
-  tail: 10,
-}
-const Input = {
-  mouse: {
-    x: 0,
-    y: 0,
-  },
-}
-
 class Animation {
   constructor(canvas) {
     this.canvas = canvas
@@ -17,16 +5,27 @@ class Animation {
     this.crawler = null
     this.running = false
     this.requestID = undefined
+    this.position = { x: 0, y: 0 }
+    this.defaultOption = {
+      size: 1,
+      legs: 2,
+      tail: 10,
+    }
+
+    this.init()
   }
 
-  start(option) {
-    const mergeOption = { ...defaultOption, ...option }
-
-    window.addEventListener('mousemove', function (event) {
-      Input.mouse.x = event.clientX
-      Input.mouse.y = event.clientY
+  init() {
+    window.addEventListener('mousemove', event => {
+      this.position = { x: event.clientX, y: event.clientY }
     })
-    this.crawler = this.setupCrawler(mergeOption)
+  }
+
+  start(option = {}) {
+    this.crawler = this.setupCrawler({
+      ...this.defaultOption,
+      ...option,
+    })
     this.running = true
     this.draw()
   }
@@ -35,22 +34,24 @@ class Animation {
     window.cancelAnimationFrame(this.requestID)
     this.running = false
     this.crawler = null
-    this.context.clearRect(0, 0, window.innerWidth, window.innerHeight)
+    this.clearCanvas()
   }
 
   setupCrawler({ size, legs, tail }) {
     this.crawler = new Crawler(
-      window.innerWidth / 2,
-      window.innerHeight / 2,
-      0,
-      size * 10,
-      size * 2,
-      0.5,
-      16,
-      0.5,
-      0.085,
-      0.5,
-      0.3
+      ...Object.values({
+        x: window.innerWidth / 2,
+        y: window.innerHeight / 2,
+        angle: 0,
+        fAccel: size * 10,
+        fFric: size * 2,
+        fRes: 0.5,
+        fThresh: 16,
+        rAccel: 0.5,
+        rFric: 0.085,
+        rRes: 0.5,
+        rThresh: 0.3,
+      })
     )
 
     let spinal = this.crawler
@@ -120,14 +121,17 @@ class Animation {
     return this.crawler
   }
 
+  clearCanvas() {
+    this.context.clearRect(0, 0, window.innerWidth, window.innerHeight)
+  }
+
   draw() {
     if (!this.running) return
 
     const r = 4
 
-    this.context.clearRect(0, 0, window.innerWidth, window.innerHeight)
-
-    this.crawler.follow(Input.mouse.x, Input.mouse.y)
+    this.clearCanvas()
+    this.crawler.follow(this.position.x, this.position.y)
 
     this.context.beginPath()
     this.context.arc(
@@ -296,7 +300,7 @@ class LimbSystem {
   }
 
   update() {
-    this.moveTo(Input.mouse.x, Input.mouse.y)
+    this.moveTo(this.position.x, this.position.y)
   }
 }
 
@@ -420,15 +424,14 @@ class Crawler {
     this.rSpeed *= 1 - this.rRes
 
     if (Math.abs(this.rSpeed) > this.rFric) {
-      this.rSpeed -= this.rFric * (2 * (this.rSpeed > 0) - 1)
+      this.rSpeed -= this.rFric * Math.sign(this.rSpeed)
     } else {
       this.rSpeed = 0
     }
 
     // Update position
-    this.absAngle += this.rSpeed
-    this.absAngle -=
-      2 * Math.PI * Math.floor(this.absAngle / (2 * Math.PI) + 1 / 2)
+    const angleChange = this.rSpeed
+    this.absAngle = (this.absAngle + angleChange) % (2 * Math.PI)
     this.x += this.speed * Math.cos(this.absAngle)
     this.y += this.speed * Math.sin(this.absAngle)
     this.absAngle += Math.PI
