@@ -213,14 +213,13 @@ export default {
         height: 100%;
         background: linear-gradient(
           to top,
-          #00000000 0%,
+          transparent 0%,
           var(--vp-c-brand-1) 100%
         );
       }
 
       &-item {
         position: relative;
-        padding-right: 20px;
         padding-bottom: 20px;
         padding-left: 60px;
         z-index: 1;

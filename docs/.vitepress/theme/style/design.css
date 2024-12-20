@@ -2,6 +2,26 @@
 @import url(./catppuccin-mocha.css);
 @import url(./component.css);
 
+
+/**
+ * Colors: Brand
+ *
+ * - 枫叶红：#C21F30
+ * - 覆盆子红：#AC1F18
+ * - 胭脂红：#9D2933
+ * -------------------------------------------------------------------------- */
+:root {
+  --c-primary: #C21F30;
+  --c-secondary: #AC1F18;
+  --c-tertiary: #9D2933;
+}
+
+.dark {
+  --c-primary: #9D2933;
+  --c-secondary: #AC1F18;
+  --c-tertiary: #C21F30;
+}
+
 /**
  * Colors: Palette
  * -------------------------------------------------------------------------- */
@@ -98,9 +118,9 @@
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
-  --vp-c-brand-1: var(--c-red, --vp-c-indigo-1);
-  --vp-c-brand-2: var(--c-maroon, --vp-c-indigo-2);
-  --vp-c-brand-3: var(--c-peach, --vp-c-indigo-3);
+  --vp-c-brand-1: var(--c-primary, --vp-c-red-1);
+  --vp-c-brand-2: var(--c-secondary, --vp-c-red-2);
+  --vp-c-brand-3: var(--c-tertiary, --vp-c-red-3);
   --vp-c-brand-soft: var(--vp-c-red-soft);
 
   /* DEPRECATED: Use `--vp-c-brand-1` instead. */
@@ -158,7 +178,6 @@
   --vp-c-text-3: #6c6f8580;
 
   ::selection {
-    color: var(--vp-c-text-1);
     background-color: var(--c-surface-0, --vp-c-gray-soft);
   }
 }
@@ -169,7 +188,6 @@
   --vp-c-text-3: #a6adc880;
 
   ::selection {
-    color: var(--vp-c-text-1);
     background-color: var(--c-surface-0, --vp-c-gray-soft);
   }
 }
