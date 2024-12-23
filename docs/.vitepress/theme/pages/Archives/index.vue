@@ -30,7 +30,7 @@ export default {
       }
     }
 
-    return () => h(
+    return () => (
       <div class="page-container">
         <div class="archives">
           {years.map(({ label, value, posts }) => (

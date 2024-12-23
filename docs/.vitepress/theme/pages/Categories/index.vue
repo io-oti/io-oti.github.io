@@ -32,7 +32,7 @@ export default {
       }
     }
 
-    return () => h(
+    return () => (
       <div class="page-container">
         <div class="categories">
           {categories.map(({ label, value, posts }) => (

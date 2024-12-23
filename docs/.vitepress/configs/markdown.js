@@ -1,6 +1,6 @@
 // more info: https://github.com/vuejs/vitepress/blob/main/src/node/markdown/markdown.ts
 
-export const markdown = {
+export default {
   // 启用代码块中的行号
   lineNumbers: true,
   // 全局自定义容器标题

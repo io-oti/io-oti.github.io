@@ -25,7 +25,7 @@ const resetIndex = items => {
 // 首字母转大写
 const firstToUpperCase = str => {
   return typeof str === 'string'
-    ? str.replace(/^(\w{1})/, s => s.toUpperCase())
+    ? str.replace(/^(\w{1})|-/g, s => (s !== '-' ? s.toUpperCase() : ' '))
     : ''
 }
 
@@ -74,14 +74,16 @@ export function genSidebar(...paths) {
   }, {})
 }
 
+// Sidebar - 侧边栏
 export default genSidebar(
   '/posts/devTools/vite',
   '/posts/devTools/webpack',
   '/posts/git',
+  '/posts/javascript',
+  '/posts/miniprogram',
   '/posts/nodejs',
   '/posts/nginx',
-  '/posts/vue/2',
-  '/posts/vue/3',
+  '/posts/vue',
   '/posts/web/css',
   '/posts/os/windows'
 )

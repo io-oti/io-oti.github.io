@@ -16,9 +16,7 @@ title: '如何规范 Vue 3 项目代码'
 
 [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) 是一个 Vue 官方开发的 VS Code 扩展，该插件提供了语法高亮、TypeScript 支持，以及模板内表达式与组件 props 的智能提示。
 
-::: tip
-Vue - Official 取代了之前为 Vue 2 提供的官方 VS Code 扩展 Vetur。如果你之前已经安装了 Vetur，请确保在 Vue 3 的项目中禁用它。
-:::
+> Vue - Official 取代了之前为 Vue 2 提供的官方 VS Code 扩展 Vetur。如果你之前已经安装了 Vetur，请确保在 Vue 3 的项目中禁用它。
 
 ### 推荐配置
 
@@ -171,6 +169,18 @@ export default [,
   },
 }
 ```
+
+### ESLint 配置检查器
+
+[@eslint/config-inspector](https://www.npmjs.com/package/@eslint/config-inspector)
+
+在包含 `eslint.config.js` 文件的目录运行以下命令：
+
+```shell
+npx @eslint/config-inspector@latest
+```
+
+此命令将在本地启动一个 web 服务，在页面上展示所有的 ESLint 配置、规则和生效的文件。
 
 ## Prettier
 

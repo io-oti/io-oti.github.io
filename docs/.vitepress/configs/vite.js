@@ -4,9 +4,12 @@ import components from 'unplugin-vue-components/vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import path from 'path'
 
-export const vite = {
+export default {
   server: {
     host: '0.0.0.0',
+    fs: {
+      allow: ['/pages/'],
+    }
   },
   plugins: [
     autoImport({
