@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+import { useData } from 'vitepress'
+
+const { isDark } = useData()
+</script>
 
 <template>
   <svg
@@ -8,7 +12,7 @@
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      fill="#11111bcc"
+      :fill="isDark ? '#11111b' : '#ffffff'"
       d="M0 0h960v960H0z"
     />
 
@@ -1490,6 +1494,5 @@
 .icon {
   width: 100px;
   height: 100px;
-  fill: var(--vp-c-text-1);
 }
 </style>
