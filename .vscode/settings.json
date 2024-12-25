@@ -4,19 +4,25 @@
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
-
   /* vscode - explorer */
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "README.md": "*.js,*.json,.gitignore"
+    "README.md": ".env,.env.*,*.js,*.json,.gitignore"
   },
-
+  /* vscode - markdown */
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.rulers": [
+      80
+    ],
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+  }
   /* vscode - vue */
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   /* extensions - prettier */
   "prettier.bracketSameLine": false,
   "prettier.bracketSpacing": true,
@@ -26,7 +32,6 @@
   "prettier.singleQuote": true,
   "prettier.tabWidth": 2,
   "prettier.trailingComma": "es5",
-
   /* extensions - vite */
   "vite.autoStart": false,
   "vite.browserType": "system",

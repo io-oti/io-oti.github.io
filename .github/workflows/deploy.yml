@@ -8,6 +8,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  VITE_REPO_ID: ${{ vars.VITE_REPO_ID }}
+  VITE_CATEGORY_ID: ${{ vars.VITE_CATEGORY_ID }}
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 # permissions:
 #   contents: read

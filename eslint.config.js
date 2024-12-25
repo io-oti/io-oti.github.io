@@ -25,6 +25,7 @@ export default [
         ...globals.browser,
         ...autoImport.globals,
         __dirname: true,
+        process: true,
       },
       parserOptions: {
         ecmaVersion: 2020,

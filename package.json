@@ -40,6 +40,7 @@
     "vitepress": "^1.0.0"
   },
   "dependencies": {
+    "@giscus/vue": "^3.0.0",
     "gray-matter": "^4.0.3",
     "vue": "^3.4.5"
   }

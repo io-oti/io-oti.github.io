@@ -1,13 +1,21 @@
 <template>
-  <canvas
-    ref="canvas"
-    class="canvas"
-  />
-  <DefaultTheme.Layout />
+  <DefaultTheme.Layout>
+    <template #layout-top>
+      <canvas
+        ref="canvas"
+        class="canvas"
+      />
+    </template>
+    <template #doc-after>
+      <Comments />
+    </template>
+  </DefaultTheme.Layout>
 </template>
 
 <script setup>
 import DefaultTheme from 'vitepress/theme'
+import Comments from '@/components/Comments/index.vue'
+
 import { useData } from 'vitepress'
 import { useFirefly } from '@/hooks/useFirefly.js'
 import { useCrawler } from '@/hooks/useCrawler.js'
