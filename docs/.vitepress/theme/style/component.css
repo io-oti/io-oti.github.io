@@ -57,3 +57,22 @@
 .vp-doc a {
   text-underline-offset: 0.25em;
 }
+
+/**
+ * Element: details
+ * -------------------------------------------------------------------------- */
+
+.vp-doc details {
+  padding: 16px;
+  background-color: var(--vp-c-bg-alt);
+  border-radius: 8px;
+
+  summary {
+    margin-block: 0px;
+  }
+
+  div[class*='language-'] {
+    margin-bottom: 0px;
+    background-color: transparent;
+  }
+}
