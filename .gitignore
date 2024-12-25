@@ -1,15 +1,16 @@
+# vitepress compiled output
 docs/.vitepress/cache
 docs/.vitepress/dist
 docs/.vitepress/temp
 
-node_modules
-playground
-
 # environment variables
-.env
-.env.*
+docs/.env
+docs/.env.*
 
 # system files
 .DS_Store
 Thumbs.db
 *.swp
+
+node_modules
+playground
