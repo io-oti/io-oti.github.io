@@ -10,12 +10,6 @@ title: 'Microsoft PowerToys'
 
 Microsoft PowerToys 是一组实用程序，可供高级用户调整和简化其 `Windows` 体验，从而提高工作效率。
 
-[关于 PowerToys](https://learn.microsoft.com/zh-cn/windows/powertoys/)
-
-[安装 PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/install)
-
-[我的 PowerToys 设置](https://github.com/io-oti/oh-settings/tree/main/power-toys)
-
 ## 键盘管理器
 
 ### 按键 - 重新映射键
@@ -39,3 +33,10 @@ Microsoft PowerToys 是一组实用程序，可供高级用户调整和简化其
 `Ctrl(Left)` + `Tab` 到 `Alt(Left)` + `Tab`
 
 `Ctrl(Left)` + `Shift` + `Tab` 到 `Alt(Left)` + `Shift` + `Tab`
+
+## 参考
+
+- [PowerToys 官方文档](https://docs.microsoft.com/zh-cn/windows/powertoys/)
+- [关于 PowerToys](https://learn.microsoft.com/zh-cn/windows/powertoys/)
+- [安装 PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/install)
+- [我的 PowerToys 设置](https://github.com/io-oti/oh-settings/tree/main/power-toys)

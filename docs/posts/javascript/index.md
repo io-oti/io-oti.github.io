@@ -6,7 +6,7 @@ tag: 'javascript'
 title: 'JavaScript'
 ---
 
-# JavaScript
+# {{ $frontmatter.title }}
 
 ## Data Types
 
@@ -86,6 +86,5 @@ title: 'JavaScript'
 
 ## 参考
 
-[JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
-
-[现代JavaScript教程](https://zh.javascript.info/)
+- [JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
+- [现代JavaScript教程](https://zh.javascript.info/)

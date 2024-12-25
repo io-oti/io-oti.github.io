@@ -2,10 +2,10 @@
 author: Io_oTI
 date: 2023-09-27
 tag: 'vue'
-title: 'Vue 2 渲染函数用法'
+title: 'Vue 2 渲染函数语法'
 ---
 
-# Vue 2 渲染函数用法
+# Vue 2 渲染函数语法
 
 将 h 作为 createElement 的别名是 Vue 生态系统中的一个通用惯例，实际上也是 JSX 所要求的。从 Vue 的 Babel 插件的 3.4.0 版本开始，在以 ES2015 语法声明的含有 JSX 的任何方法和 getter 中 (不是函数或箭头函数中) 自动注入 const h = this.$createElement，这样你就可以去掉 (h) 参数了。对于更早版本的插件，如果 h 在当前作用域中不可用，应用会抛错。
 

@@ -3,10 +3,10 @@ author: Io_oTI
 date: 2023-09-27
 draft: false
 tag: 'vue'
-title: 'Vue 2 的 JSX 语法'
+title: 'Vue 2 JSX 语法'
 ---
 
-# Vue 2 的 JSX 语法
+# Vue 2 JSX 语法
 
 要了解更多关于 JSX 如何映射到 JavaScript，请阅读[使用文档](https://github.com/vuejs/jsx#installation)。
 

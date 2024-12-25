@@ -460,12 +460,8 @@ git clone <https://github.com.cnpmjs.org/[repository].git>
 
 ## Git Workflow
 
-[Git Flow](https://www.notion.so/Git-Flow-fb15ecfbc47745f794f4b5bafa54f6a4)
-
-[GitHub flow - GitHub Docs](https://docs.github.com/en/get-started/quickstart/github-flow)
-
-[Introduction to GitLab Flow | GitLab](https://docs.gitlab.com/ee/topics/gitlab_flow.html#introduction-to-gitlab-flow)
-
-[Git Cheatsheet - cs.fyi](https://cs.fyi/guide/git-cheatsheet)
-
-[GitHub Git 备忘单 - GitHub Cheatsheets](https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/)
+- [Git Flow](https://www.notion.so/Git-Flow-fb15ecfbc47745f794f4b5bafa54f6a4)
+- [GitHub flow - GitHub Docs](https://docs.github.com/en/get-started/quickstart/github-flow)
+- [Introduction to GitLab Flow | GitLab](https://docs.gitlab.com/ee/topics/gitlab_flow.html#introduction-to-gitlab-flow)
+- [Git Cheatsheet - cs.fyi](https://cs.fyi/guide/git-cheatsheet)
+- [GitHub Git 备忘单 - GitHub Cheatsheets](https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/)

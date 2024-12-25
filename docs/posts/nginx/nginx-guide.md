@@ -101,4 +101,6 @@ http {
 }
 ```
 
-[Nginx 使用指南](https://www.notion.so/Nginx-0925a3f551934ddfb4c4d08a7e6fca60?pvs=21)
+## 参考
+
+- [Nginx 使用指南](https://www.notion.so/Nginx-0925a3f551934ddfb4c4d08a7e6fca60?pvs=21)

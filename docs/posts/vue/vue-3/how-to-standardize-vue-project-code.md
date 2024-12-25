@@ -269,8 +269,6 @@ Prettier 是一个固执己见的代码格式化器。它支持格式化：
 
 ## 参考
 
-[ESLint](https://eslint.org/docs/latest/)
-
-[eslint-plugin-vue 用户指南](https://eslint.vuejs.org/user-guide/)
-
-[Prettier](https://prettier.io/docs/en/)
+- [ESLint](https://eslint.org/docs/latest/)
+- [eslint-plugin-vue 用户指南](https://eslint.vuejs.org/user-guide/)
+- [Prettier](https://prettier.io/docs/en/)

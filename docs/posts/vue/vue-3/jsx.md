@@ -3,10 +3,10 @@ author: Io_oTI
 date: 2024-07-12
 draft: false
 tag: 'vue'
-title: 'Vue 3 的 JSX 语法'
+title: 'Vue 3 JSX 语法'
 ---
 
-# Vue 3 的 JSX 语法
+# Vue 3 JSX 语法
 
 ## 安装
 

@@ -1,11 +1,12 @@
 ---
 author: Io_oTI
 date: 2023-09-28
+draft: false
 tag: 'github'
 title: 'Github Pages'
 ---
 
-# Github Pages
+# {{ $frontmatter.title }}
 
 ## 配置 Github Pages
 
@@ -61,8 +62,47 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
+### 环境变量
+
+1. 在 github 上添加环境变量: `Settings` > `Environments` > `Pages` > `github-pages` > `Environment variables` > `Add environment variable`，输入你的环境变量名和值。
+
+2. 修改`.github/workflows/deploy.yml` 文件，添加环境变量：
+
+   ```yml
+   name: Deploy Github Pages
+
+   on:
+     # Runs on pushes targeting the default branch
+     push:
+       branches: ['main']
+
+     # Allows you to run this workflow manually from the Actions tab
+     workflow_dispatch:
+
+   env: # [!code focus:3]
+     # Setting an environment variable with the value of a configuration variable
+     MY_VARIABLE: ${{ vars.MY_VARIABLE }}
+   ```
+
+3. 在 js 文件中引入环境变量：
+
+   ```js
+   const myVariable = process.env.MY_VARIABLE;
+   ```
+
 ### 部署问题：
 
+错误信息：
+
 > Error: The process '/usr/bin/git' failed with exit code 128
->
-> 在 github 上修改仓库的配置 `Settings` > `Actions` > `Genneral` > `Workflow permissions`，选择 `Read and write permissions` 选项并保存
+
+解决方法：
+
+> 在 github 上修改仓库的配置: `Settings` > `Actions` > `Genneral` > `Workflow permissions`，选择 `Read and write permissions` 选项并保存
+
+## 参考
+
+- [Github Pages 官方文档](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages)
+- [Github Pages 官方教程](https://pages.github.com/)
+- [Github Actions 官方文档](https://docs.github.com/en/actions)
+- [Github 文档 | 使用 vars 上下文访问配置变量值](https://docs.github.com/zh/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables#using-the-vars-context-to-access-configuration-variable-values)
