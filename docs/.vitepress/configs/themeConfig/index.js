@@ -1,10 +1,6 @@
-import { loadEnv } from 'vitepress'
-
 import search from './search.js'
 import socialLinks from './socialLinks.js'
 import sidebar from './sidebar.js'
-
-const { VITE_REPO_ID = '', VITE_CATEGORY_ID = '' } = loadEnv('', process.cwd())
 
 export default {
   // logo - 网站图标
@@ -50,9 +46,9 @@ export default {
   // Giscus - 评论
   giscus: {
     repo: 'io-oti/io-oti.github.io',
-    repoId: VITE_REPO_ID,
+    repoId: '',
     category: 'General',
-    categoryId: VITE_CATEGORY_ID,
+    categoryId: '',
     mapping: 'title',
     strict: '0',
     reactionsEnabled: '1',

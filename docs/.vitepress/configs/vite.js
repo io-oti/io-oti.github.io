@@ -6,7 +6,7 @@ import path from 'path'
 
 export default {
   server: {
-    host: '0.0.0.0',
+    host: true,
     fs: {
       allow: ['/pages/'],
     }
