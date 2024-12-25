@@ -1,6 +1,10 @@
+import { config } from 'dotenv'
+
 import search from './search.js'
 import socialLinks from './socialLinks.js'
 import sidebar from './sidebar.js'
+
+config({ path: 'docs/.env' })
 
 export default {
   // logo - 网站图标
@@ -46,9 +50,9 @@ export default {
   // Giscus - 评论
   giscus: {
     repo: 'io-oti/io-oti.github.io',
-    repoId: '',
+    repoId: process.env.VITE_GISCUS_REPO_ID,
     category: 'General',
-    categoryId: '',
+    categoryId: process.env.VITE_GISCUS_CATEGORY_ID,
     mapping: 'title',
     strict: '0',
     reactionsEnabled: '1',

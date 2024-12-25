@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@giscus/vue": "^3.0.0",
+    "dotenv": "^16.4.7",
     "gray-matter": "^4.0.3",
     "vue": "^3.4.5"
   }
