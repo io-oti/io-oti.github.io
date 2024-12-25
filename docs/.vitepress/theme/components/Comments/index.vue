@@ -10,12 +10,16 @@ import { useData } from 'vitepress'
 
 const { theme, isDark } = useData()
 
-const giscusConfig = computed(() => ({
-  ...theme.value.giscus,
-  theme: `${location.origin}/css/giscus-${
-    isDark.value ? 'mocha' : 'latte'
-  }.css`,
-}))
+const giscusConfig = ref({ ...theme.value.giscus })
+
+watchPostEffect(() => {
+  giscusConfig.value = {
+    ...theme.value.giscus,
+    theme: `${location.origin}/css/giscus-${
+      isDark.value ? 'mocha' : 'latte'
+    }.css`,
+  }
+})
 </script>
 
 <style lang="scss" scoped>

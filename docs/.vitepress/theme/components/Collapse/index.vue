@@ -32,7 +32,7 @@ export default {
             class="collapse-label"
             onclick={() => onChange(!props.modelValue)}
           >
-            <div>{props.label}</div>
+            <div class="collapse-title">{props.label}</div>
             <div class="collapse-count">
               {slots.count ? slots.count() : props.count}
             </div>
@@ -56,30 +56,6 @@ export default {
   transition: 0.4s;
   overflow: hidden;
 
-  &:hover {
-    .collapse-count {
-      background-color: var(--vp-c-bg);
-      transform: scale(1);
-      visibility: visible;
-    }
-  }
-
-  &-label {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &-count {
-    color: var(--vp-c-text-3);
-    font-weight: normal;
-    text-align: center;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: 0.3s;
-    visibility: hidden;
-  }
-
   &.large {
     height: 116px;
     border-radius: 16px;
@@ -88,13 +64,6 @@ export default {
       padding: 20px;
       font-size: 96px;
       line-height: 76px;
-    }
-
-    .collapse-count {
-      width: 66px;
-      height: 66px;
-      font-size: 36px;
-      line-height: 66px;
     }
 
     .collapse-content {
@@ -112,13 +81,6 @@ export default {
       line-height: 56px;
     }
 
-    .collapse-count {
-      width: 56px;
-      height: 56px;
-      font-size: 27px;
-      line-height: 56px;
-    }
-
     .collapse-content {
       padding: 0px 16px 16px;
     }
@@ -132,14 +94,10 @@ export default {
       padding: 12px;
       font-size: 36px;
       line-height: 46px;
-      -webkit-text-stroke-width: 1px;
     }
 
-    .collapse-count {
-      width: 36px;
-      height: 36px;
-      font-size: 18px;
-      line-height: 36px;
+    .collapse-title {
+      -webkit-text-stroke-width: 1px;
     }
 
     .collapse-content {
@@ -154,20 +112,50 @@ export default {
 
   &:hover {
     background-color: var(--vp-c-bg-soft);
+
+    .collapse-title {
+      -webkit-text-stroke-color: var(--vp-c-text-2);
+    }
+
+    .collapse-count {
+      background-color: var(--vp-c-bg);
+      transform: scale(1);
+      visibility: visible;
+    }
   }
 
   &-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     color: transparent;
     font-weight: 700;
     list-style: none;
     transition: 0.3s;
     cursor: pointer;
+  }
+
+  &-title {
+    flex: 1;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: var(--vp-c-text-3);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 
-    &:hover {
-      -webkit-text-stroke-color: var(--vp-c-text-2);
-    }
+  &-count {
+    width: 36px;
+    height: 36px;
+    color: var(--vp-c-text-2);
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.3s;
+    visibility: hidden;
   }
 
   &-content {
