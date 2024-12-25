@@ -21,9 +21,9 @@ main {
   --color-prettylights-syntax-markup-ignored-text: #cdd6f4;
   --color-btn-text: #cdd6f4;
   --color-btn-bg: #313244;
-  --color-btn-border: #45475a;
+  --color-btn-border: transparent;
   --color-btn-hover-bg: #45475a;
-  --color-btn-hover-border: #585b70;
+  --color-btn-hover-border: transparent;
   --color-btn-active-bg: #585b70;
   --color-btn-selected-bg: #585b70;
   --color-btn-counter-bg: #585b70;
@@ -36,7 +36,7 @@ main {
   --color-btn-primary-shadow: 0 0 transparent;
   --color-btn-primary-inset-shadow: 0 0 transparent;
   --color-btn-primary-hover-bg: #cbefc8;
-  --color-btn-primary-hover-border: #cbefc8;
+  --color-btn-primary-hover-border: transparent;
   --color-btn-primary-selected-bg: #cbefc8;
   --color-btn-primary-selected-shadow: 0 0 transparent;
   --color-btn-primary-disabled-text: #11111b;
@@ -45,7 +45,7 @@ main {
   --color-action-list-item-default-hover-bg: #45475a;
   --color-segmented-control-bg: #585b70;
   --color-segmented-control-button-bg: #1e1e2e;
-  --color-segmented-control-button-selected-border: #6c7086;
+  --color-segmented-control-button-selected-border: transparent;
   --color-fg-default: #cdd6f4;
   --color-fg-muted: #bac2de;
   --color-fg-subtle: #bac2de;
@@ -53,8 +53,8 @@ main {
   --color-canvas-overlay: #313244cc;
   --color-canvas-inset: #11111bcc;
   --color-canvas-subtle: #181825cc;
-  --color-border-default: #45475a;
-  --color-border-muted: #313244;
+  --color-border-default: #45475acc;
+  --color-border-muted: #313244cc;
   --color-neutral-muted: rgba(108, 112, 134, 0.4);
   --color-accent-fg: #cba6f7;
   --color-accent-emphasis: #cba6f7;
@@ -76,8 +76,4 @@ main {
 
 main .gsc-comment-box-textarea::placeholder {
   color: #a6adc8;
-}
-
-main .gsc-loading-image {
-  background-image: url("https://giscus.catppuccin.com/assets/loading.gif");
 }

@@ -12,10 +12,9 @@ const { theme, isDark } = useData()
 
 const giscusConfig = computed(() => ({
   ...theme.value.giscus,
-  theme: isDark.value ? 'dark' : 'light',
-  // theme: isDark.value
-  //   ? 'https://giscus.catppuccin.com/themes/mocha.css'
-  //   : 'https://giscus.catppuccin.com/themes/latte.css',
+  theme: `${location.origin}/css/giscus-${
+    isDark.value ? 'mocha' : 'latte'
+  }.css`,
 }))
 </script>
 
