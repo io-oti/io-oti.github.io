@@ -9,7 +9,7 @@ export default {
     host: true,
     fs: {
       allow: ['/pages/'],
-    }
+    },
   },
   plugins: [
     autoImport({
@@ -18,6 +18,7 @@ export default {
       eslintrc: {
         enabled: true,
         filepath: './.eslintrc-auto-import.js',
+        globalsPropValue: false,
       },
     }),
     components({

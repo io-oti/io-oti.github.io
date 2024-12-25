@@ -36,22 +36,29 @@ export default {
           {years.map(({ label, value, posts }) => (
             <Collapse
               label={label}
+              count={posts.length}
               modelValue={value}
               onUpdate:modelValue={$event => onChange({ label, value: $event })}
             >
-              <ul class="post-list">
-                {posts.map(post => (
-                  <li class="post-item">
-                    <span class="post-date">{post.date.string.slice(-5)}</span>
-                    <a
-                      class="post-title"
-                      href={post.url}
-                    >
-                      {post.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              {{
+                default: () => (
+                  <ul class="post-list">
+                    {posts.map(post => (
+                      <li class="post-item">
+                        <span class="post-date">
+                          {post.date.string.slice(-5)}
+                        </span>
+                        <a
+                          class="post-title"
+                          href={post.url}
+                        >
+                          {post.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                ),
+              }}
             </Collapse>
           ))}
         </div>

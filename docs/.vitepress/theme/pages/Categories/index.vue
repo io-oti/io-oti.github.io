@@ -39,22 +39,29 @@ export default {
             <Collapse
               size="small"
               label={label}
+              count={posts.length}
               modelValue={value}
               onUpdate:modelValue={$event => onChange({ label, value: $event })}
             >
-              <ul class="post-list">
-                {posts.map(post => (
-                  <li class="post-item">
-                    <a
-                      class="post-title"
-                      href={post.url}
-                    >
-                      {post.title}
-                    </a>
-                    <span class="post-date">{post.date.string.slice(-5)}</span>
-                  </li>
-                ))}
-              </ul>
+              {{
+                default: () => (
+                  <ul class="post-list">
+                    {posts.map(post => (
+                      <li class="post-item">
+                        <a
+                          class="post-title"
+                          href={post.url}
+                        >
+                          {post.title}
+                        </a>
+                        <span class="post-date">
+                          {post.date.string.slice(-5)}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                ),
+              }}
             </Collapse>
           ))}
         </div>
@@ -71,6 +78,20 @@ export default {
   grid-template-columns: 1fr 1fr;
 
   .post {
+    &-count {
+      width: 36px;
+      height: 36px;
+      color: var(--vp-c-text-3);
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 36px;
+      text-align: center;
+      border-radius: 50%;
+      transform: scale(0);
+      transition: 0.3s;
+      visibility: hidden;
+    }
+
     &-list {
       display: flex;
       flex-direction: column;
