@@ -16,7 +16,7 @@ export default {
         data-active={active.value}
       >
         <div class="profile-header">
-          <Avatar class="avatar" />
+          <Avatar class="avatar rounded-triangle" />
           <div class="brief">
             <h1 class="name">{profile.name}</h1>
             {profile.post && <h2 class="post">{profile.post}</h2>}
@@ -147,10 +147,8 @@ export default {
       width: 100px;
       height: 100px;
       border: 1px solid var(--vp-c-border);
-      border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
       transition: 0.3s ease-in;
       transform: translateX(-50%) translateY(0);
-      animation: edge 4s both infinite;
     }
 
     .brief {
@@ -313,24 +311,6 @@ export default {
   }
   100% {
     opacity: 1;
-  }
-}
-
-@keyframes edge {
-  0% {
-    border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
-  }
-  40% {
-    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
-  }
-  50% {
-    border-radius: 30% 70% 70% 30% / 70% 70% 30% 30%;
-  }
-  60% {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  }
-  100% {
-    border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
   }
 }
 

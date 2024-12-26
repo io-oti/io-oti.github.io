@@ -33,7 +33,7 @@ export default {
             onclick={() => onChange(!props.modelValue)}
           >
             <div class="collapse-title">{props.label}</div>
-            <div class="collapse-count">
+            <div class="collapse-count rounded-triangle">
               {slots.count ? slots.count() : props.count}
             </div>
           </div>
@@ -139,20 +139,22 @@ export default {
     flex: 1;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: var(--vp-c-text-3);
+    text-transform: uppercase;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    transform: skewX(-8deg);
   }
 
   &-count {
     width: 36px;
     height: 36px;
     color: var(--vp-c-text-2);
+    font-family: sans-serif;
     font-size: 18px;
     font-weight: normal;
     line-height: 36px;
     text-align: center;
-    border-radius: 50%;
     transform: scale(0);
     transition: 0.3s;
     visibility: hidden;

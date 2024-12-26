@@ -85,7 +85,7 @@ export default {
     &-item {
       display: flex;
       align-items: center;
-      column-gap: 20px;
+      column-gap: 16px;
     }
 
     &-title {
@@ -99,6 +99,7 @@ export default {
 
     &-date {
       color: var(--vp-c-text-3);
+      font-family: sans-serif;
       font-size: 16px;
       line-height: 24px;
     }

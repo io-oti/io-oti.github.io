@@ -117,6 +117,7 @@ export default {
 
     &-date {
       color: var(--vp-c-text-3);
+      font-family: sans-serif;
       font-size: 14px;
       line-height: 24px;
     }

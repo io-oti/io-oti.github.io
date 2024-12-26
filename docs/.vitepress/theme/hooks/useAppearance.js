@@ -32,7 +32,7 @@ export function useAppearance() {
       isDark.value ? clipPath.reverse() : clipPath,
       {
         duration: 600,
-        easing: 'cubic-bezier(.3,.8,.3,.8)',
+        easing: 'cubic-bezier(0.76, 0, 0.24, 1)',
         pseudoElement: `::view-transition-${
           isDark.value ? 'old' : 'new'
         }(root)`,
