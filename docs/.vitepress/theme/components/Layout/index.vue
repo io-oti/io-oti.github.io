@@ -19,9 +19,9 @@ import Comments from '@/components/Comments/index.vue'
 import { useData } from 'vitepress'
 import { useFirefly } from '@/hooks/useFirefly.js'
 import { useCrawler } from '@/hooks/useCrawler.js'
-import { useThemeAnimate } from '@/hooks/useThemeAnimate.js'
+import { useAppearance } from '@/hooks/useAppearance.js'
 
-useThemeAnimate()
+useAppearance()
 
 const { isDark } = useData()
 
@@ -55,7 +55,6 @@ onMounted(() => {
 <style lang="scss" scoped>
 .canvas {
   position: fixed;
-  z-index: -1;
 }
 
 .Layout {

@@ -1,13 +1,11 @@
-import DefaultTheme from 'vitepress/theme'
 import Layout from '@/components/Layout/index.vue'
-import '@/style/design.css'
+import '@/styles/theme.css'
 
 import Home from '@/pages/Home/index.vue'
 import Archives from '@/pages/Archives/index.vue'
 import Categories from '@/pages/Categories/index.vue'
 
 export default {
-  extends: DefaultTheme,
   Layout,
   enhanceApp({ app }) {
     app.component('Home', Home)

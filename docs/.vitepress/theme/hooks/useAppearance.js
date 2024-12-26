@@ -1,7 +1,7 @@
 import { nextTick, provide } from 'vue'
 import { useData } from 'vitepress'
 
-export function useThemeAnimate() {
+export function useAppearance() {
   const { isDark } = useData()
   const enableTransitions = () =>
     'startViewTransition' in document &&
