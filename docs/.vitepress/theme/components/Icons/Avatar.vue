@@ -1,8 +1,4 @@
-<script setup>
-import { useData } from 'vitepress'
-
-const { isDark } = useData()
-</script>
+<script setup></script>
 
 <template>
   <svg
@@ -11,11 +7,6 @@ const { isDark } = useData()
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path
-      :fill="isDark ? '#11111b' : '#ffffff'"
-      d="M0 0h960v960H0z"
-    />
-
     <defs>
       <filter
         id="polycleaner"
@@ -1494,5 +1485,6 @@ const { isDark } = useData()
 .icon {
   width: 100px;
   height: 100px;
+  background-color: var(--vp-c-bg);
 }
 </style>

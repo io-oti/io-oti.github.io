@@ -2,6 +2,7 @@
 docs/.vitepress/cache
 docs/.vitepress/dist
 docs/.vitepress/temp
+docs/auto-imports.d.ts
 
 # environment variables
 docs/.env
