@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-10-17
-draft: true
+publish: false
 tag: 'database'
 title: 'Learn SQL'
 ---

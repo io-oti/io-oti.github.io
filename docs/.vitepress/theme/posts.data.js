@@ -4,8 +4,8 @@ import { createContentLoader } from "vitepress"
 export default createContentLoader("posts/**/*.md", {
   transform(raw) {
     return raw
-      .reduce((res, { frontmatter: { date, draft, ...z }, url }) => {
-        if (draft) return res
+      .reduce((res, { frontmatter: { date, publish, ...z }, url }) => {
+        if (!publish) return res
 
         res.push({ date: formatDate(date), url, ...z })
 

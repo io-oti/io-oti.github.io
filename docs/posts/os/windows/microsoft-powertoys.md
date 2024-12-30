@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-10-29
-draft: false
+publish: true
 tag: 'windows'
 title: 'Microsoft PowerToys'
 ---

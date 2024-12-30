@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2023-10-26
-draft: false
+publish: true
 tag: 'css'
 title: '选择器（Selectors）'
 ---

@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-12-06
-draft: true
+publish: false
 tag: 'nodejs'
 title: 'Vue Data UI'
 ---

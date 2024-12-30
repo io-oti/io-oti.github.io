@@ -21,8 +21,7 @@ export default {
       },
     },
     _render(src, env, md) {
-      if (env.frontmatter?.draft) return ''
-      if (env.relativePath.startsWith('draft')) return ''
+      if (!env.frontmatter?.publish) return ''
 
       return md.render(src, env)
     },

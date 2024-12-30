@@ -13,5 +13,7 @@ docs/.env.*
 Thumbs.db
 *.swp
 
+# dependencies
+package-lock.json
 node_modules
 playground

@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-10-29
-draft: true
+publish: false
 tag: 'vue'
 title: 'Vue 2 源码阅读'
 ---

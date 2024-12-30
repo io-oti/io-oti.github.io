@@ -54,10 +54,10 @@ const recursionDir = path => {
 
     if (isMarkdown(item)) {
       const {
-        data: { draft, title },
+        data: { publish, title },
       } = getFrontmatter(`${prevPath}/${item}`)
 
-      if (draft) return res
+      if (!publish) return res
 
       res.push({ text: title, link: `${path}/${item}` })
     }

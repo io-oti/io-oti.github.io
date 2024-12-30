@@ -44,6 +44,7 @@
   "dependencies": {
     "@catppuccin/vitepress": "^0.1.0",
     "@giscus/vue": "^3.0.0",
+    "vitepress-plugin-rss": "^0.3.0",
     "vue": "^3.4.5"
   }
 }

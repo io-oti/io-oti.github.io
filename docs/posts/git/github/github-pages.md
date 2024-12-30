@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2023-09-28
-draft: false
+publish: true
 tag: 'github'
 title: 'Github Pages'
 ---

@@ -1,6 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-06-23
+publish: true
 tag: 'github'
 title: 'Github Profile'
 ---

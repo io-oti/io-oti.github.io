@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-07-23
-draft: true
+publish: false
 tag: 'mac'
 title: 'macOS'
 ---

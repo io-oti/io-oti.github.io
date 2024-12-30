@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-07-12
-draft: true
+publish: false
 tag: 'nodejs'
 title: 'PDF.js'
 ---

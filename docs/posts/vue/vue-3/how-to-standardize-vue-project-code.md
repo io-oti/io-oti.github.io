@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-12-09
-draft: false
+publish: true
 tag: 'vue'
 title: '如何规范 Vue 3 项目代码'
 ---

@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-07-12
-draft: false
+publish: true
 tag: 'nodejs'
 title: 'NPM'
 ---

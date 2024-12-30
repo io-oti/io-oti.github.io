@@ -1,6 +1,7 @@
 ---
 author: Io_oTI
 date: 2023-10-16
+publish: true
 tag: 'vite'
 title: '如何从 Vue CLI 迁移到 Vite'
 ---

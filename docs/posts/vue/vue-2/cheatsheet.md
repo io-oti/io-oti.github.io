@@ -1,6 +1,7 @@
 ---
 author: Io_oTI
 date: 2023-09-27
+publish: true
 tag: 'vue'
 title: 'Vue 2 备忘录'
 ---

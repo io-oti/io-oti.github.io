@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-10-30
-draft: false
+publish: true
 tag: 'miniprogram'
 title: '微信小程序开发指南'
 ---

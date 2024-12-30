@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-10-30
-draft: true
+publish: false
 tag: 'linux'
 title: 'tree'
 ---

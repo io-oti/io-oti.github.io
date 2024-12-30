@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2023-10-23
-draft: false
+publish: true
 tag: 'windows'
 title: 'Windows 构建前端开发环境'
 ---

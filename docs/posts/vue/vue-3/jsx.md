@@ -1,7 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-07-12
-draft: false
+publish: true
 tag: 'vue'
 title: 'Vue 3 JSX 语法'
 ---

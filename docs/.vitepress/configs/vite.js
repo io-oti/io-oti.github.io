@@ -2,6 +2,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import autoImport from 'unplugin-auto-import/vite'
 import components from 'unplugin-vue-components/vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import { RssPlugin } from 'vitepress-plugin-rss'
 import path from 'path'
 
 export default {
@@ -25,6 +26,21 @@ export default {
       resolvers: [ElementPlusResolver()],
     }),
     vueJsx(),
+    RssPlugin({
+      language: 'zh-CN',
+      title: '槭林',
+      description: '今日菖蒲花 明朝枫树老',
+      copyright: 'Copyright © 2023-present Io_oTI',
+      baseUrl: 'https://io-oti.github.io',
+      anthor: {
+        name: 'Io_oTI',
+        email: 'io_oti@outlook.com',
+        link: 'https://io-oti.github.io',
+      },
+      filter: page => page.url.includes('/posts/'),
+      indent: true,
+      icon: true,
+    }),
   ],
   resolve: {
     // 设置别名

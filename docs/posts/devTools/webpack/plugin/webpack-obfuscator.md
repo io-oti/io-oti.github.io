@@ -1,6 +1,7 @@
 ---
 author: Io_oTI
 date: 2024-07-12
+publish: true
 tag: 'webpack'
 title: 'webpack-obfuscator'
 ---
