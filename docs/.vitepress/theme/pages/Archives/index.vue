@@ -85,7 +85,7 @@ export default {
     &-item {
       display: flex;
       align-items: center;
-      column-gap: 16px;
+      column-gap: 20px;
     }
 
     &-title {

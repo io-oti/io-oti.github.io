@@ -118,9 +118,8 @@ export default {
     }
 
     .collapse-count {
-      background-color: var(--vp-c-bg);
+      background-color: var(--vp-c-purple-soft);
       transform: scale(1);
-      visibility: visible;
     }
   }
 
@@ -143,13 +142,12 @@ export default {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    transform: skewX(-8deg);
   }
 
   &-count {
     width: 36px;
     height: 36px;
-    color: var(--vp-c-text-2);
+    color: var(--vp-c-purple-1);
     font-family: sans-serif;
     font-size: 18px;
     font-weight: normal;
@@ -157,7 +155,6 @@ export default {
     text-align: center;
     transform: scale(0);
     transition: 0.3s;
-    visibility: hidden;
   }
 
   &-content {

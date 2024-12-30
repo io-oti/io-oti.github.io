@@ -49,12 +49,12 @@ main {
   --color-fg-default: #cdd6f4;
   --color-fg-muted: #bac2de;
   --color-fg-subtle: #bac2de;
-  --color-canvas-default: #1e1e2ecc;
-  --color-canvas-overlay: #313244cc;
-  --color-canvas-inset: #11111bcc;
-  --color-canvas-subtle: #181825cc;
-  --color-border-default: #45475acc;
-  --color-border-muted: #313244cc;
+  --color-canvas-default: #1e1e2ebf;
+  --color-canvas-overlay: #313244bf;
+  --color-canvas-inset: #11111bbf;
+  --color-canvas-subtle: #181825bf;
+  --color-border-default: #45475abf;
+  --color-border-muted: #313244bf;
   --color-neutral-muted: rgba(108, 112, 134, 0.4);
   --color-accent-fg: #cba6f7;
   --color-accent-emphasis: #cba6f7;

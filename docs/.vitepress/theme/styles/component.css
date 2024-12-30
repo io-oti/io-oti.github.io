@@ -1,30 +1,6 @@
 /**
- * Animation: Timing
- * -------------------------------------------------------------------------- */
-
-:root {
-  --pg-a-timing-1: cubic-bezier(0, 1, 0.5, 1);
-}
-
-/**
  * Component: Layout
  * -------------------------------------------------------------------------- */
-
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-
-::view-transition-old(root),
-.dark::view-transition-new(root) {
-  z-index: 1;
-}
-
-::view-transition-new(root),
-.dark::view-transition-old(root) {
-  z-index: 9999;
-}
 
 :root {
   .page-container {
@@ -43,47 +19,40 @@
 }
 
 /**
- * Component: Nav
- * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-nav-screen-bg-color: var(--vp-c-bg);
-}
-
-/**
- * Element: a
- * -------------------------------------------------------------------------- */
-
-.vp-doc a {
-  text-underline-offset: 0.25em;
-}
-
-/**
- * Element: details
- * -------------------------------------------------------------------------- */
-
-.vp-doc details {
-  padding: 16px;
-  background-color: var(--vp-c-bg-alt);
-  border-radius: 8px;
-
-  summary {
-    margin-block: 0px;
-  }
-
-  div[class*='language-'] {
-    margin-bottom: 0px;
-    background-color: transparent;
-  }
-}
-
-/**
- * Element: rounded triangle
+ * Component: rounded triangle
  * -------------------------------------------------------------------------- */
 
 .rounded-triangle {
   border-radius: 70% 30% 30% 70% / 30% 30% 70% 70%;
   animation: edge 4s both infinite;
+}
+
+/**
+ * Animation View Transition
+ * -------------------------------------------------------------------------- */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root),
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root),
+.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+
+/**
+ * Animation Easing
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --a-easing-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 /**

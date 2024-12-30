@@ -1,7 +1,5 @@
-@import url(./catppuccin-latte.css);
-@import url(./catppuccin-mocha.css);
+@import url(@catppuccin/vitepress/theme/mocha/pink.css);
 @import url(./component.css);
-
 
 /**
  * Colors: Brand
@@ -11,262 +9,78 @@
  * - 胭脂红：#9D2933
  * -------------------------------------------------------------------------- */
 :root {
-  --c-primary: #C21F30;
-  --c-secondary: #AC1F18;
-  --c-tertiary: #9D2933;
+  --vp-c-brand-1: #C21F30;
+  --vp-c-brand-2: #AC1F18;
+  --vp-c-brand-3: #9D2933;
+
+  /* Background Colors */
+  --vp-c-bg: #eff1f5d9;
+  --vp-c-bg-alt: #e6e9efd9;
+  --vp-c-bg-elv: #dce0e8d9;
+  --vp-c-bg-soft: #e6e9efd9;
+
+  /* Border Colors */
+  --vp-c-border: #ccd0dad9;
+  --vp-c-divider: #ccd0dad9;
+  --vp-c-gutter: #bcc0ccd9;
 }
 
 .dark {
-  --c-primary: #9D2933;
-  --c-secondary: #AC1F18;
-  --c-tertiary: #C21F30;
+  --vp-c-brand-1: #9D2933;
+  --vp-c-brand-2: #AC1F18;
+  --vp-c-brand-3: #C21F30;
+
+  /* Background Colors */
+  --vp-c-bg: #1e1e2ed9;
+  --vp-c-bg-alt: #181825d9;
+  --vp-c-bg-elv: #11111bd9;
+  --vp-c-bg-soft: #181825d9;
+
+  /* Border Colors */
+  --vp-c-border: #313244d9;
+  --vp-c-divider: #313244d9;
+  --vp-c-gutter: #45475ad9;
 }
 
 /**
- * Colors: Palette
+ * Element: a
  * -------------------------------------------------------------------------- */
 
-:root {
-  --vp-c-gray-1: #dddde3;
-  --vp-c-gray-2: #e4e4e9;
-  --vp-c-gray-3: #ebebef;
-  --vp-c-gray-soft: rgba(142, 150, 170, 0.14);
-  --vp-c-indigo-1: #3451b2;
-  --vp-c-indigo-2: #3a5ccc;
-  --vp-c-indigo-3: #5672cd;
-  --vp-c-indigo-soft: rgba(100, 108, 255, 0.14);
-
-  --vp-c-purple-1: #6f42c1;
-  --vp-c-purple-2: #7e4cc9;
-  --vp-c-purple-3: #8e5cd9;
-  --vp-c-purple-soft: rgba(159, 122, 234, 0.14);
-
-  --vp-c-green-1: #18794e;
-  --vp-c-green-2: #299764;
-  --vp-c-green-3: #30a46c;
-  --vp-c-green-soft: rgba(16, 185, 129, 0.14);
-
-  --vp-c-yellow-1: #915930;
-  --vp-c-yellow-2: #946300;
-  --vp-c-yellow-3: #9f6a00;
-  --vp-c-yellow-soft: rgba(234, 179, 8, 0.14);
-
-  --vp-c-red-1: #b8272c;
-  --vp-c-red-2: #d5393e;
-  --vp-c-red-3: #e0575b;
-  --vp-c-red-soft: rgba(244, 63, 94, 0.14);
-
-  --vp-c-sponsor: #db2777;
-}
-
-.dark {
-  --vp-c-gray-1: #515c67;
-  --vp-c-gray-2: #414853;
-  --vp-c-gray-3: #32363f;
-  --vp-c-gray-soft: rgba(101, 117, 133, 0.16);
-
-  --vp-c-indigo-1: #a8b1ff;
-  --vp-c-indigo-2: #5c73e7;
-  --vp-c-indigo-3: #3e63dd;
-  --vp-c-indigo-soft: rgba(100, 108, 255, 0.16);
-
-  --vp-c-purple-1: #c8abfa;
-  --vp-c-purple-2: #a879e6;
-  --vp-c-purple-3: #8e5cd9;
-  --vp-c-purple-soft: rgba(159, 122, 234, 0.16);
-
-  --vp-c-green-1: #3dd68c;
-  --vp-c-green-2: #30a46c;
-  --vp-c-green-3: #298459;
-  --vp-c-green-soft: rgba(16, 185, 129, 0.16);
-
-  --vp-c-yellow-1: #f9b44e;
-  --vp-c-yellow-2: #da8b17;
-  --vp-c-yellow-3: #a46a0a;
-  --vp-c-yellow-soft: rgba(234, 179, 8, 0.16);
-
-  --vp-c-red-1: #f66f81;
-  --vp-c-red-2: #f14158;
-  --vp-c-red-3: #b62a3c;
-  --vp-c-red-soft: rgba(244, 63, 94, 0.16);
+.vp-doc a {
+  text-underline-offset: 0.25em;
 }
 
 /**
- * Colors: Function
- *
- * - `default`: The color used purely for subtle indication without any
- *   special meanings attached to it such as bg color for menu hover state.
- *
- * - `brand`: Used for primary brand colors, such as link text, button with
- *   brand theme, etc.
- *
- * - `tip`: Used to indicate useful information. The default theme uses the
- *   brand color for this by default.
- *
- * - `warning`: Used to indicate warning to the users. Used in custom
- *   container, badges, etc.
- *
- * - `danger`: Used to show error, or dangerous message to the users. Used
- *   in custom container, badges, etc.
- *
- * To understand the scaling system, refer to "Colors: Palette" section.
+ * Element: details
  * -------------------------------------------------------------------------- */
 
-:root {
-  --vp-c-default-1: var(--vp-c-gray-1);
-  --vp-c-default-2: var(--vp-c-gray-2);
-  --vp-c-default-3: var(--vp-c-gray-3);
-  --vp-c-default-soft: var(--vp-c-gray-soft);
+.vp-doc details {
+  padding: 16px;
+  background-color: var(--vp-c-bg-alt);
+  border-radius: 8px;
 
-  --vp-c-brand-1: var(--c-primary, --vp-c-red-1);
-  --vp-c-brand-2: var(--c-secondary, --vp-c-red-2);
-  --vp-c-brand-3: var(--c-tertiary, --vp-c-red-3);
-  --vp-c-brand-soft: var(--vp-c-red-soft);
-
-  /* DEPRECATED: Use `--vp-c-brand-1` instead. */
-  --vp-c-brand: var(--vp-c-brand-1);
-
-  --vp-c-tip-1: var(--vp-c-brand-1);
-  --vp-c-tip-2: var(--vp-c-brand-2);
-  --vp-c-tip-3: var(--vp-c-brand-3);
-  --vp-c-tip-soft: var(--vp-c-brand-soft);
-
-  --vp-c-note-1: var(--vp-c-brand-1);
-  --vp-c-note-2: var(--vp-c-brand-2);
-  --vp-c-note-3: var(--vp-c-brand-3);
-  --vp-c-note-soft: var(--vp-c-brand-soft);
-
-  --vp-c-success-1: var(--vp-c-green-1);
-  --vp-c-success-2: var(--vp-c-green-2);
-  --vp-c-success-3: var(--vp-c-green-3);
-  --vp-c-success-soft: var(--vp-c-green-soft);
-
-  --vp-c-important-1: var(--vp-c-purple-1);
-  --vp-c-important-2: var(--vp-c-purple-2);
-  --vp-c-important-3: var(--vp-c-purple-3);
-  --vp-c-important-soft: var(--vp-c-purple-soft);
-
-  --vp-c-warning-1: var(--vp-c-yellow-1);
-  --vp-c-warning-2: var(--vp-c-yellow-2);
-  --vp-c-warning-3: var(--vp-c-yellow-3);
-  --vp-c-warning-soft: var(--vp-c-yellow-soft);
-
-  --vp-c-danger-1: var(--vp-c-red-1);
-  --vp-c-danger-2: var(--vp-c-red-2);
-  --vp-c-danger-3: var(--vp-c-red-3);
-  --vp-c-danger-soft: var(--vp-c-red-soft);
-
-  --vp-c-caution-1: var(--vp-c-red-1);
-  --vp-c-caution-2: var(--vp-c-red-2);
-  --vp-c-caution-3: var(--vp-c-red-3);
-  --vp-c-caution-soft: var(--vp-c-red-soft);
-}
-
-/**
- * Colors: Text
- *
- * - `text-1`: Used for primary text.
- *
- * - `text-2`: Used for muted texts, such as "inactive menu" or "info texts".
- *
- * - `text-3`: Used for subtle texts, such as "placeholders" or "caret icon".
- * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-c-text-1: #4c4f69;
-  --vp-c-text-2: #5c5f77bf;
-  --vp-c-text-3: #6c6f8580;
-
-  ::selection {
-    background-color: var(--c-surface-0, --vp-c-gray-soft);
+  summary {
+    margin-block: 0px;
   }
-}
 
-.dark {
-  --vp-c-text-1: #cdd6f4;
-  --vp-c-text-2: #bac2debf;
-  --vp-c-text-3: #a6adc880;
-
-  ::selection {
-    background-color: var(--c-surface-0, --vp-c-gray-soft);
+  div[class*='language-'] {
+    margin-bottom: 0px;
+    background-color: transparent;
   }
 }
 
 /**
- * Colors: Background
- *
- * - `bg`: The bg color used for main screen.
- *
- * - `bg-alt`: The alternative bg color used in places such as "sidebar",
- *   or "code block".
- *
- * - `bg-elv`: The elevated bg color. This is used at parts where it "floats",
- *   such as "dialog".
- *
- * - `bg-soft`: The bg color to slightly distinguish some components from
- *   the page. Used for things like "carbon ads" or "table".
+ * Pseudo Element: Selection
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-c-bg: #ffffffcc;
-  --vp-c-bg-alt: #eff1f5cc;
-  --vp-c-bg-elv: #ffffffcc;
-  --vp-c-bg-soft: #eff1f5cc;
-  --bg-lg: linear-gradient(150deg,
-      #eff1f54d 14%,
-      #eff1f5cc 59%);
+  ::selection {
+    background-color: var(--vp-c-red-soft);
+  }
 }
 
 .dark {
-  --vp-c-bg: #11111bcc;
-  --vp-c-bg-alt: #181825cc;
-  --vp-c-bg-elv: #1e1e2ecc;
-  --vp-c-bg-soft: #1e1e2ecc;
-  --bg-lg: linear-gradient(150deg,
-      #1e1e2ecc 14%,
-      #1e1e2e4d 59%);
-}
-
-/**
- * Colors: Solid
- * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-c-white: #eff1f5;
-  --vp-c-black: #1e1e2e;
-
-  --vp-c-neutral: var(--vp-c-black);
-  --vp-c-neutral-inverse: var(--vp-c-white);
-}
-
-.dark {
-  --vp-c-neutral: var(--vp-c-white);
-  --vp-c-neutral-inverse: var(--vp-c-black);
-}
-
-/**
- * Colors: Borders
- *
- * - `divider`: This is used for separators. This is used to divide sections
- *   within the same components, such as having separator on "h2" heading.
- *
- * - `border`: This is designed for borders on interactive components.
- *   For example this should be used for a button outline.
- *
- * - `gutter`: This is used to divide components in the page. For example
- *   the header and the lest of the page.
- * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-c-border: var(--c-surface-1, #c2c2c4);
-  --vp-c-divider: var(--c-surface-0, #e2e2e3);
-  --vp-c-gutter: var(--c-base, #e2e2e3);
-  --pg-c-warning: var(--c-yellow, #df8e1d);
-}
-
-.dark {
-  --vp-c-border: var(--c-surface-1, #3c3f44);
-  --vp-c-divider: var(--c-surface-0, #2e2e32);
-  --vp-c-gutter: var(--c-base, #000000);
-  --pg-c-warning: var(--c-yellow, #f9e2af);
+  ::selection {
+    background-color: var(--vp-c-red-soft);
+  }
 }
