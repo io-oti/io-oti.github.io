@@ -38,6 +38,7 @@ export default {
         link: 'https://io-oti.github.io',
       },
       filter: page => page.url.includes('/posts/'),
+      renderHTML: false,
       indent: true,
       icon: true,
     }),
