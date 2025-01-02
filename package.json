@@ -34,6 +34,7 @@
     "dotenv": "^16.4.7",
     "eslint": "^9.16.0",
     "eslint-plugin-vue": "^9.27.0",
+    "feed": "^4.2.2",
     "globals": "^15.9.0",
     "gray-matter": "^4.0.3",
     "sass": "^1.77.6",
@@ -44,7 +45,6 @@
   "dependencies": {
     "@catppuccin/vitepress": "^0.1.0",
     "@giscus/vue": "^3.0.0",
-    "vitepress-plugin-rss": "^0.3.0",
     "vue": "^3.4.5"
   }
 }
