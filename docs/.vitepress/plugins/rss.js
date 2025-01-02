@@ -86,29 +86,31 @@ async function buildEnd({ site, outDir }) {
   log()
 }
 
-function config(config) {
-  config.vitepress.buildEnd = buildEnd
+function config(config, { command }) {
+  if (command === 'build') {
+    config.vitepress.buildEnd = buildEnd
 
-  if (!rssOptions.socialLink) return
+    if (!rssOptions.socialLink) return
 
-  const socialLink = {
-    ariaLabel: 'rss',
-    icon: 'rss',
-    link: genLink(rssOptions.link, rssOptions.filePath),
-  }
-
-  if (!config.vitepress.site.themeConfig) {
-    config.vitepress.site.themeConfig = {
-      socialLinks: [socialLink],
+    const socialLink = {
+      ariaLabel: 'rss',
+      icon: 'rss',
+      link: genLink(rssOptions.link, rssOptions.filePath),
     }
 
-    return
-  }
+    if (!config.vitepress.site.themeConfig) {
+      config.vitepress.site.themeConfig = {
+        socialLinks: [socialLink],
+      }
 
-  if (config.vitepress.site.themeConfig.socialLinks) {
-    config.vitepress.site.themeConfig.socialLinks.push(socialLink)
-  } else {
-    config.vitepress.site.themeConfig.socialLinks = [socialLink]
+      return
+    }
+
+    if (config.vitepress.site.themeConfig.socialLinks) {
+      config.vitepress.site.themeConfig.socialLinks.push(socialLink)
+    } else {
+      config.vitepress.site.themeConfig.socialLinks = [socialLink]
+    }
   }
 }
 
