@@ -5,7 +5,8 @@ import fs from 'fs'
 import 'node:path'
 import 'node:fs'
 
-const pluginName = 'vite-plugin-vitepress-rss'
+const PLUGIN_NAME = 'vite-plugin-vitepress-rss'
+let isBuilded = false
 let rssOptions = {
   link: '',
   filePath: 'feed.rss',
@@ -13,16 +14,6 @@ let rssOptions = {
   log: true,
   files: 'docs/**/*.md',
   content: 'html',
-}
-
-function log() {
-  if (!rssOptions.log) return
-
-  console.log(
-    '\x1B[32m✓\x1B[0m',
-    'rss feed generated:',
-    `\x1B[36m${genLink(rssOptions.link, rssOptions.filePath)}\x1B[0m`
-  )
 }
 
 function genLink(base, path) {
@@ -65,60 +56,86 @@ function genPosts(files) {
   }).load()
 }
 
-async function buildEnd({ site, outDir }) {
-  const siteOptions = {
-    language: site.lang,
-    title: site.title,
-    link: rssOptions.link,
-    description: site.description,
-    image: rssOptions.image,
-    favicon: rssOptions.favicon,
-    copyright: site.themeConfig?.footer?.copyright,
-    updated: new Date(),
-    generator: pluginName,
-  }
-  const filePath = path.join(outDir, rssOptions.filePath)
-  const feed = new Feed({ ...siteOptions, ...rssOptions })
-  const posts = await genPosts(rssOptions.files)
+function addSocialLink(siteConfig) {
+  if (!rssOptions.socialLink) return siteConfig
 
-  posts.forEach(post => feed.addItem(post))
-  await fs.promises.writeFile(filePath, feed.rss2())
-  log()
+  const socialLink = {
+    ariaLabel: 'rss',
+    icon: 'rss',
+    link: genLink(rssOptions.link, rssOptions.filePath),
+  }
+
+  if (siteConfig.themeConfig) {
+    if (siteConfig.themeConfig.socialLinks) {
+      siteConfig.themeConfig.socialLinks.push(socialLink)
+      console.log('socialLinks-if:', siteConfig.themeConfig.socialLinks)
+    } else {
+      siteConfig.themeConfig.socialLinks = [socialLink]
+      console.log('socialLinks-else:', siteConfig.themeConfig.socialLinks)
+    }
+  } else {
+    siteConfig.themeConfig = { socialLinks: [socialLink] }
+  }
+
+  return siteConfig
 }
 
-function config(config, { command }) {
-  if (command === 'build') {
-    config.vitepress.buildEnd = buildEnd
+function printInfo() {
+  if (!rssOptions.log) return
 
-    if (!rssOptions.socialLink) return
+  console.log(
+    '\x1B[32m✓\x1B[0m',
+    'rss feed generated:',
+    `\x1B[36m${genLink(rssOptions.link, rssOptions.filePath)}\x1B[0m`
+  )
+}
 
-    const socialLink = {
-      ariaLabel: 'rss',
-      icon: 'rss',
-      link: genLink(rssOptions.link, rssOptions.filePath),
+function genFeed(func) {
+  return async siteConfig => {
+    if (func) {
+      await func(siteConfig)
     }
 
-    if (!config.vitepress.site.themeConfig) {
-      config.vitepress.site.themeConfig = {
-        socialLinks: [socialLink],
-      }
-
-      return
+    const { lang, title, description, themeConfig } = siteConfig.site
+    const { filePath, files } = rssOptions
+    const siteOptions = {
+      language: lang,
+      title,
+      // link,
+      description,
+      // image,
+      // favicon,
+      copyright: themeConfig?.footer?.copyright,
+      updated: new Date(),
+      generator: PLUGIN_NAME,
     }
+    const outFile = path.join(siteConfig.outDir, filePath)
+    const feed = new Feed({ ...siteOptions, ...rssOptions })
+    const posts = await genPosts(files)
 
-    if (config.vitepress.site.themeConfig.socialLinks) {
-      config.vitepress.site.themeConfig.socialLinks.push(socialLink)
-    } else {
-      config.vitepress.site.themeConfig.socialLinks = [socialLink]
-    }
+    posts.forEach(post => feed.addItem(post))
+    await fs.promises.writeFile(outFile, feed.rss2())
+    printInfo()
   }
+}
+
+const config = config => {
+  if (isBuilded) return
+
+  const { vitepress } = config
+
+  vitepress.buildEnd = genFeed(vitepress.buildEnd)
+  vitepress.site = addSocialLink(vitepress.site)
+
+  isBuilded = true
+  return { ...config, vitepress }
 }
 
 export default function (options) {
   rssOptions = { ...rssOptions, ...options }
 
   return {
-    name: pluginName,
+    name: PLUGIN_NAME,
     apply: 'build',
     config,
   }
