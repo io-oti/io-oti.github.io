@@ -101,10 +101,9 @@ function genFeed(func) {
     const siteOptions = {
       language: lang,
       title,
-      // link,
       description,
-      // image,
-      // favicon,
+      image: genLink(rssOptions.link, rssOptions.image),
+      favicon: genLink(rssOptions.link, rssOptions.favicon),
       copyright: themeConfig?.footer?.copyright,
       updated: new Date(),
       generator: PLUGIN_NAME,

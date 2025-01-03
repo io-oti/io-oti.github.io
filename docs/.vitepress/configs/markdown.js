@@ -2,7 +2,7 @@
 
 export default {
   // 启用代码块中的行号
-  // lineNumbers: true,
+  lineNumbers: false,
   // 全局自定义容器标题
   container: {
     tipLabel: '提示',
