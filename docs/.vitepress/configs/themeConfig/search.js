@@ -20,10 +20,8 @@ export default {
         },
       },
     },
-    _render(src, env, md) {
-      if (!env.frontmatter?.publish) return ''
-
-      return md.render(src, env)
+    _render (src, env, md) {
+      return !env.frontmatter?.publish ? md.render(src, env) : ''
     },
   },
 }
