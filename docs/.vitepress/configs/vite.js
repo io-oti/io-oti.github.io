@@ -28,7 +28,7 @@ export default {
     vueJsx(),
     rss({
       link: 'https://io-oti.github.io',
-      files: 'posts/*.md',
+      files: 'posts/**/*.md',
       image: 'https://io-oti.github.io/icons/maple.png',
       favicon: 'https://io-oti.github.io/icons/maple.svg',
     }),

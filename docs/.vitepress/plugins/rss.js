@@ -7,7 +7,7 @@ const PLUGIN_NAME = 'vite-plugin-vitepress-rss'
 let isBuilded = false
 let rssOptions = {
   link: '',
-  files: 'docs/*.md',
+  files: './**/*.md',
   content: 'html',
   filePath: 'feed.rss',
   socialLink: true,
