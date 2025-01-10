@@ -18,7 +18,7 @@ export default createContentLoader("posts/**/*.md", {
 function formatDate(raw) {
   const date = new Date(raw)
 
-  date.setUTCHours(12)
+  date.setUTCHours(date.getUTCHours() + 8)
 
   return {
     time: +date,

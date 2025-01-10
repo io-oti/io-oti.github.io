@@ -1,6 +1,6 @@
 import { createContentLoader } from 'vitepress'
 import { Feed } from 'feed'
-import { statSync, writeFileSync } from 'fs'
+import { writeFileSync } from 'fs'
 import path from 'path'
 
 const PLUGIN_NAME = 'vite-plugin-vitepress-rss'
@@ -56,7 +56,7 @@ function printInfo() {
   )
 }
 
-function genPosts(files, srcDir) {
+function genPosts(files) {
   return createContentLoader(files, {
     render: rssOptions.content === 'html',
     excerpt: rssOptions.content === 'excerpt',
@@ -70,13 +70,6 @@ function genPosts(files, srcDir) {
           if (!post.frontmatter.publish) return posts
 
           const link = spliceLink(rssOptions.link, post.url)
-          const date = statSync(
-            path.format({
-              root: path.basename(srcDir),
-              name: post.url,
-              ext: '.md',
-            })
-          )
 
           posts.push({
             title: post.frontmatter.title,
@@ -88,7 +81,7 @@ function genPosts(files, srcDir) {
               ''
             ),
             author: post.frontmatter.author,
-            date: date.mtime,
+            date: new Date(post.frontmatter.date),
           })
 
           return posts
