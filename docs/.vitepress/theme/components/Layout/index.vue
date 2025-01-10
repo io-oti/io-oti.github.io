@@ -7,7 +7,7 @@
       />
     </template>
     <template #doc-after>
-      <Comments />
+      <Comments :key="route.path" />
     </template>
   </DefaultTheme.Layout>
 </template>
@@ -16,13 +16,14 @@
 import DefaultTheme from 'vitepress/theme'
 import Comments from '@/components/Comments/index.vue'
 
-import { useData } from 'vitepress'
+import { useData, useRouter } from 'vitepress'
 import { useFirefly } from '@/hooks/useFirefly.js'
 import { useCrawler } from '@/hooks/useCrawler.js'
 import { useAppearance } from '@/hooks/useAppearance.js'
 
 useAppearance()
 
+const { route } = useRouter()
 const { isDark } = useData()
 
 const canvas = ref(null)
