@@ -1,59 +1,27 @@
 import { createContentLoader } from 'vitepress'
 import { Feed } from 'feed'
+import { statSync, writeFileSync } from 'fs'
 import path from 'path'
-import fs from 'fs'
-import 'node:path'
-import 'node:fs'
 
 const PLUGIN_NAME = 'vite-plugin-vitepress-rss'
 let isBuilded = false
 let rssOptions = {
   link: '',
+  files: './**/*.md',
+  content: 'html',
   filePath: 'feed.rss',
   socialLink: true,
   log: true,
-  files: 'docs/**/*.md',
-  content: 'html',
 }
 
-function genLink(base, path) {
+function spliceLink(base, path) {
   if (!base || !path) return ''
 
-  const p = path.startsWith('/') ? path : '/' + path
+  const formattedPath = path.startsWith('/') ? path : '/' + path
 
-  return base.endsWith('/') ? base.replace(/\/$/, p) : base + p
-}
-
-function genPosts(files) {
-  return createContentLoader(files, {
-    render: rssOptions.content === 'html',
-    excerpt: rssOptions.content === 'excerpt',
-    transform(raw) {
-      return raw
-        .sort((a, b) => {
-          return +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date)
-        })
-        .reduce((posts, post) => {
-          if (!post.frontmatter.publish) return posts
-
-          const link = genLink(rssOptions.link, post.url)
-
-          posts.push({
-            title: post.frontmatter.title,
-            id: link,
-            link,
-            description: post.frontmatter.description,
-            content: post[rssOptions.content],
-            author: post.frontmatter.author,
-            contributor: post.frontmatter.contributor,
-            date: new Date(post.frontmatter.date),
-            image: post.frontmatter.image,
-          })
-
-          return posts
-        }, [])
-    },
-  }).load()
+  return base.endsWith('/')
+    ? base.replace(/\/$/, formattedPath)
+    : base + formattedPath
 }
 
 function addSocialLink(siteConfig) {
@@ -62,16 +30,14 @@ function addSocialLink(siteConfig) {
   const socialLink = {
     ariaLabel: 'rss',
     icon: 'rss',
-    link: genLink(rssOptions.link, rssOptions.filePath),
+    link: spliceLink(rssOptions.link, rssOptions.filePath),
   }
 
   if (siteConfig.themeConfig) {
     if (siteConfig.themeConfig.socialLinks) {
       siteConfig.themeConfig.socialLinks.push(socialLink)
-      console.log('socialLinks-if:', siteConfig.themeConfig.socialLinks)
     } else {
       siteConfig.themeConfig.socialLinks = [socialLink]
-      console.log('socialLinks-else:', siteConfig.themeConfig.socialLinks)
     }
   } else {
     siteConfig.themeConfig = { socialLinks: [socialLink] }
@@ -86,34 +52,74 @@ function printInfo() {
   console.log(
     '\x1B[32m✓\x1B[0m',
     'rss feed generated:',
-    `\x1B[36m${genLink(rssOptions.link, rssOptions.filePath)}\x1B[0m`
+    `\x1B[36m${spliceLink(rssOptions.link, rssOptions.filePath)}\x1B[0m`
   )
+}
+
+function genPosts(files, srcDir) {
+  return createContentLoader(files, {
+    render: rssOptions.content === 'html',
+    excerpt: rssOptions.content === 'excerpt',
+    transform(raw) {
+      return raw
+        .sort(
+          (a, b) =>
+            +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date)
+        )
+        .reduce((posts, post) => {
+          if (!post.frontmatter.publish) return posts
+
+          const link = spliceLink(rssOptions.link, post.url)
+          const date = statSync(
+            path.format({
+              root: path.basename(srcDir),
+              name: post.url,
+              ext: 'md',
+            })
+          )
+
+          posts.push({
+            title: post.frontmatter.title,
+            id: link,
+            link,
+            description: post.frontmatter.description,
+            content: post[rssOptions.content]?.replaceAll(
+              '&ZeroWidthSpace;',
+              ''
+            ),
+            author: post.frontmatter.author,
+            date: date.mtime,
+          })
+
+          return posts
+        }, [])
+    },
+  }).load()
 }
 
 function genFeed(func) {
   return async siteConfig => {
-    if (func) {
-      await func(siteConfig)
-    }
+    if (func) await func(siteConfig)
 
     const { lang, title, description, themeConfig } = siteConfig.site
     const { filePath, files } = rssOptions
     const siteOptions = {
-      language: lang,
       title,
       description,
-      image: genLink(rssOptions.link, rssOptions.image),
-      favicon: genLink(rssOptions.link, rssOptions.favicon),
+      id: rssOptions.link,
+      link: rssOptions.link,
+      language: lang,
+      image: spliceLink(rssOptions.link, rssOptions.image),
+      favicon: spliceLink(rssOptions.link, rssOptions.favicon),
       copyright: themeConfig?.footer?.copyright,
-      updated: new Date(),
       generator: PLUGIN_NAME,
+      updated: new Date(),
     }
-    const outFile = path.join(siteConfig.outDir, filePath)
     const feed = new Feed({ ...siteOptions, ...rssOptions })
-    const posts = await genPosts(files)
+    const posts = await genPosts(files, siteConfig.srcDir)
 
     posts.forEach(post => feed.addItem(post))
-    await fs.promises.writeFile(outFile, feed.rss2())
+    writeFileSync(path.join(siteConfig.outDir, filePath), feed.rss2())
     printInfo()
   }
 }
