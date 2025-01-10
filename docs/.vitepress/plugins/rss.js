@@ -7,7 +7,7 @@ const PLUGIN_NAME = 'vite-plugin-vitepress-rss'
 let isBuilded = false
 let rssOptions = {
   link: '',
-  files: './**/*.md',
+  files: 'docs/*.md',
   content: 'html',
   filePath: 'feed.rss',
   socialLink: true,
@@ -74,7 +74,7 @@ function genPosts(files, srcDir) {
             path.format({
               root: path.basename(srcDir),
               name: post.url,
-              ext: 'md',
+              ext: '.md',
             })
           )
 
