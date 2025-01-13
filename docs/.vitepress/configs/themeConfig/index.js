@@ -2,7 +2,6 @@ import { config } from 'dotenv'
 
 import search from './search.js'
 import socialLinks from './socialLinks.js'
-import sidebar from './sidebar.js'
 
 config({ path: 'docs/.env' })
 
@@ -21,9 +20,6 @@ export default {
 
   // SocialLinks - 社交链接
   socialLinks,
-
-  // Sidebar - 侧边栏
-  sidebar,
 
   // Outline - 目录
   outline: {

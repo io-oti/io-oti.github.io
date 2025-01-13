@@ -1,10 +1,14 @@
+// 导入所需的模块
 import { createContentLoader } from 'vitepress'
 import { Feed } from 'feed'
 import { writeFileSync } from 'fs'
 import path from 'path'
 
+// 定义插件名称
 const PLUGIN_NAME = 'vite-plugin-vitepress-rss'
 let isBuilded = false
+
+// RSS 配置选项
 let rssOptions = {
   link: '',
   files: './**/*.md',
@@ -14,6 +18,7 @@ let rssOptions = {
   log: true,
 }
 
+// 拼接链接的函数
 function spliceLink(base, path) {
   if (!base || !path) return ''
 
@@ -24,6 +29,7 @@ function spliceLink(base, path) {
     : base + formattedPath
 }
 
+// 添加社交链接到站点配置
 function addSocialLink(siteConfig) {
   if (!rssOptions.socialLink) return siteConfig
 
@@ -46,6 +52,7 @@ function addSocialLink(siteConfig) {
   return siteConfig
 }
 
+// 打印生成信息
 function printInfo() {
   if (!rssOptions.log) return
 
@@ -56,6 +63,7 @@ function printInfo() {
   )
 }
 
+// 生成文章的函数
 function genPosts(files) {
   return createContentLoader(files, {
     render: rssOptions.content === 'html',
@@ -90,6 +98,7 @@ function genPosts(files) {
   }).load()
 }
 
+// 生成 RSS 源的函数
 function genFeed(func) {
   return async siteConfig => {
     if (func) await func(siteConfig)
@@ -117,6 +126,7 @@ function genFeed(func) {
   }
 }
 
+// 配置函数
 const config = config => {
   if (isBuilded) return
 
@@ -129,6 +139,7 @@ const config = config => {
   return { ...config, vitepress }
 }
 
+// 默认导出插件函数
 export default function (options) {
   rssOptions = { ...rssOptions, ...options }
 

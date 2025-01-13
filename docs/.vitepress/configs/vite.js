@@ -2,6 +2,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import autoImport from 'unplugin-auto-import/vite'
 import components from 'unplugin-vue-components/vite'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import sidebar from '../plugins/sidebar'
 import rss from '../plugins/rss'
 import path from 'path'
 
@@ -26,6 +27,18 @@ export default {
       resolvers: [ElementPlusResolver()],
     }),
     vueJsx(),
+    sidebar([
+      '/posts/devTools/vite',
+      '/posts/devTools/webpack',
+      '/posts/git',
+      '/posts/javascript',
+      '/posts/miniprogram',
+      '/posts/nodejs',
+      '/posts/nginx',
+      '/posts/vue',
+      '/posts/web/css',
+      '/posts/os/windows',
+    ]),
     rss({
       link: 'https://io-oti.github.io',
       files: 'posts/**/*.md',
