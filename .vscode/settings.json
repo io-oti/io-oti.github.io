@@ -38,4 +38,10 @@
   "vite.buildCommand": "npm run docs:build",
   "vite.devCommand": "npm run docs:dev",
   "vite.port": 5173,
+  /* extensions - markdownlint */
+  "markdownlint.config": {
+    "MD025": false,
+    "MD033": false,
+    "MD041": false,
+  },
 }
