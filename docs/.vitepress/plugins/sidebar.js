@@ -90,7 +90,8 @@ function genSidebar(paths) {
 export default function (paths, options) {
   return {
     name: PLUGIN_NAME,
-    config(config) {
+    enforce: 'post',
+    configResolved(config) {
       const { srcDir, site } = config.vitepress
 
       pluginOptions = { ...pluginOptions, ...options, base: srcDir }
