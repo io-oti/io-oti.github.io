@@ -1,7 +1,6 @@
 import { config } from 'dotenv'
 
 import search from './search.js'
-import socialLinks from './socialLinks.js'
 
 config({ path: 'docs/.env' })
 
@@ -19,7 +18,23 @@ export default {
   ],
 
   // SocialLinks - 社交链接
-  socialLinks,
+  socialLinks: [
+    {
+      ariaLabel: 'github',
+      icon: 'github',
+      link: 'https://github.com/io-oti',
+    },
+    {
+      ariaLabel: 'codepen',
+      icon: 'codepen',
+      link: 'https://codepen.io/Io_oTI',
+    },
+    {
+      ariaLabel: 'rss',
+      icon: 'rss',
+      link: 'https://io-oti.github.io/feed.rss',
+    },
+  ],
 
   // Outline - 目录
   outline: {
