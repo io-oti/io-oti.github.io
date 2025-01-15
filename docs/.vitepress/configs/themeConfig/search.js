@@ -20,8 +20,12 @@ export default {
         },
       },
     },
-    _render (src, env, md) {
-      return !env.frontmatter?.publish ? md.render(src, env) : ''
+    _render(src, env, md) {
+      const html = md.render(src, env)
+
+      if (env.frontmatter?.publish === false) return ''
+
+      return html
     },
   },
 }
