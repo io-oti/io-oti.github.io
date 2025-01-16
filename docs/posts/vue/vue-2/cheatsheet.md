@@ -319,12 +319,6 @@ export default {
 
 ### is
 
-### slot
-
-### slot-scope
-
-### scope
-
 ## 组件
 
 ### template

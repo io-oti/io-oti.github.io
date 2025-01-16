@@ -38,7 +38,7 @@ title: 'Google Chrome'
 })
 ```
 
-## 前端跨域-关闭安全策略
+## 关闭浏览器的安全策略（前端跨域）
 
 ::: warning
 以下命令需要替换中 `[]` 的内容，最好为 `--user-data-dir` 设置一个空的文件夹。
@@ -46,15 +46,15 @@ title: 'Google Chrome'
 
 ::: code-group
 
-```bash[macOS 终端]
+```bash [macOS 终端]
 open -n /Applications/Google\ Chrome.app/ --args --disable-web-security --user-data-dir=[/Users/Username/browser]
 ```
 
-```cmd[Windows 命令提示符]
+```cmd [Windows 命令提示符]
 start chrome --disable-web-security --user-data-dir=[D:\browser]
 ```
 
-```powershell[Windows PowerShell]
+```powershell [Windows PowerShell]
 Start-Process -FilePath "chrome" -ArgumentList "--disable-web-security --user-data-dir=[D:\browser]"
 ```
 
@@ -85,16 +85,20 @@ Chrome 91 禁用 SameSiteByDefaultCookies 与 CookiesWithoutSameSiteMustBeSecure
 
 ::: code-group
 
-```bash[macOS 终端]
+```bash [macOS 终端]
 open -n /Applications/Google\ Chrome.app/ --args --disable-web-security --disable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure --user-data-dir=[/Users/Username/browser]
 ```
 
-```cmd[Windows 命令提示符]
+```cmd [Windows 命令提示符]
 start chrome --disable-web-security --disable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure --user-data-dir=[D:\browser]
 ```
 
-```cmd[Windows PowerShell]
+```cmd [Windows PowerShell]
 Start-Process -FilePath "chrome" -ArgumentList "--disable-web-security --disable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure --user-data-dir=[D:\browser]"
 ```
 
 :::
+
+## 参考
+
+- [Chrome DevTools](https://developer.chrome.google.cn/docs/devtools?hl=zh-cn)

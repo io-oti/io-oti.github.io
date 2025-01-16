@@ -30,13 +30,13 @@ NPM 是 JavaScript 运行时环境 Node.js 标准的软件包管理器。
 
 ```bash
 # 显示所有配置设置。使用-l也可以显示默认值。使用--json以json格式显示设置。
-$ npm config list
+npm config list
 
 # 配置 npm 的默认镜像源
-$ npm config set registry=https://registry.npmmirror.com
+npm config set registry=https://registry.npmmirror.com
 
 # 从所有配置文件中删除指定的密钥。
-$ npm config delete <key | [key, ...]>
+npm config delete <key | [key, ...]>
 ```
 
 ### 使用 npmrc 文件配置 npm
@@ -69,41 +69,41 @@ npm 获取配置顺序（降序）：
 使用 help 命令查看所有可用命令：
 
 ```bash
-$ npm help
+npm help
 ```
 
 ### 备忘录
 
 ```bash
 # 查看已安装软件包
-$ npm ls <pkg-name>
+npm ls <pkg-name>
 
 # 查看全局已安装软件包 - 列出第0层
-$ npm ls -g --depth 0
+npm ls -g --depth 0
 
 # 搜索软件包 - 指定镜像源
-$ npm search <pkg-name> --registry=https://registry.npmmirror.com
+npm search <pkg-name> --registry=https://registry.npmmirror.com
 
 # 查看软件包注册表信息
-$ npm viwe <pkg-name>
+npm viwe <pkg-name>
 
 # 安装软件包 - 指定镜像源
-$ npm install <pkg-name> --registry=https://registry.npmmirror.com
+npm install <pkg-name> --registry=https://registry.npmmirror.com
 
 # 卸载软件包
-$ npm uninstall <pkg-name>
+npm uninstall <pkg-name>
 
 # 忽略依赖安装
-$ npm install phantomjs-prebuilt@2.1.14 --ignore-scripts
+npm install phantomjs-prebuilt@2.1.14 --ignore-scripts
 
 # 重置缓存运行
-$ npm start -- --reset-cache
+npm start -- --reset-cache
 
 # 强制清除缓存
-$ npm cache clean --force
+npm cache clean --force
 
 # 重新构建软件包
-$ npm rebuild
+npm rebuild
 ```
 
 ## Npx

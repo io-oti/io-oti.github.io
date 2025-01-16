@@ -90,7 +90,7 @@ jobs:
    const myVariable = process.env.MY_VARIABLE;
    ```
 
-### 部署问题：
+### 部署问题
 
 错误信息：
 

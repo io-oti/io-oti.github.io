@@ -17,7 +17,7 @@ repository: [node-sass](https://github.com/sass/node-sass)
 ## 安装
 
 ```bash
-$ npm install node-sass
+npm install node-sass
 ```
 
 ## Node.js 版本支持策略
@@ -49,13 +49,13 @@ $ npm install node-sass
 
 ```bash
 # 指定本地文件安装
-$ npm install node-sass --sass-binary-path=[path]
+npm install node-sass --sass-binary-path=[path]
 
 
 # 指定文件链接安装
-$ npm install node-sass --sass-binary-site=[url]
+npm install node-sass --sass-binary-site=[url]
 
 
 # NodeJS 12 指定文件链接安装 node-sass
-$ npm install node-sass --sass-binary-site=https://github.com/sass/node-sass/releases/download/v4.12.0/win32-x64-72_binding.node
+npm install node-sass --sass-binary-site=https://github.com/sass/node-sass/releases/download/v4.12.0/win32-x64-72_binding.node
 ```

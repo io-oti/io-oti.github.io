@@ -22,13 +22,14 @@ title: '微信小程序开发指南'
    npm install [package name]
    ```
 
-1. 构建 npm 包
+2. 构建 npm 包
 
    点击微信开发者工具中的菜单栏：`工具` --> `构建 npm`
 
-   等待构建完成后，package.json 所在的目录中会有一个 `miniprogram_npm` 文件夹，这里面就是已经构建好的 npm 包。
+   等待构建完成后，package.json 所在的目录中会有一个 `miniprogram_npm` 文件夹，
+   这里面就是已经构建好的 npm 包。
 
-2. 在 JS 文件中引用：
+3. 在 JS 文件中引用：
 
    ```javascript
    import packageName from 'packageName'

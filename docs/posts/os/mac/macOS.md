@@ -72,9 +72,9 @@ brew install <libuv>
 
 ### Homebrew 替换源
 
-华中科技大学开源镜像站： https://mirrors.hust.edu.cn/
+华中科技大学开源镜像站： [https://mirrors.hust.edu.cn/](https://mirrors.hust.edu.cn/)
 
-参考链接：https://www.cnblogs.com/joyce33/p/13376752.html
+参考链接：[https://www.cnblogs.com/joyce33/p/13376752.html](https://www.cnblogs.com/joyce33/p/13376752.html)
 
 - **\*** 替换 brew（源代码仓库）：
 
@@ -147,16 +147,16 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 
 1. Clone the repository:
 
-```bash
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-```
+   ```bash
+   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+   ```
 
-Users in China can use the official mirror on gitee.com for faster download.
-中国用户可以使用 gitee.com 上的官方镜像加速下载.
+   Users in China can use the official mirror on gitee.com for faster download.
+   中国用户可以使用 gitee.com 上的官方镜像加速下载.
 
-```bash
-git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-```
+   ```bash
+   git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+   ```
 
 2. `Set ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc.`
 

@@ -263,6 +263,7 @@ const App = {
   }
 }
 ```
+
 :::
 
 #### v-if / v-else

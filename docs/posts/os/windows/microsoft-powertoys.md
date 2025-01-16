@@ -18,10 +18,9 @@ Microsoft PowerToys 是一组实用程序，可供高级用户调整和简化其
 
 `Alt(Left)` 到 `Ctrl(Left)`
 
-
 #### 问题
 
- - [微信导致映射键失效 - Github Issues 21877](https://github.com/microsoft/PowerToys/issues/21877#issuecomment-1876571225)
+- [微信导致映射键失效 - Github Issues 21877](https://github.com/microsoft/PowerToys/issues/21877#issuecomment-1876571225)
   可通过添加 `F22` 到 `Disable` 映射键来解决。
 
 ### 快捷键 - 重新映射快捷键

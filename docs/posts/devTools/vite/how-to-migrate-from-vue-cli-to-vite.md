@@ -25,7 +25,7 @@ title: '如何从 Vue CLI 迁移到 Vite'
 
 请记住，这只是脚手架样板。随着项目的增长，Vue CLI 版本只会逐渐变慢，而 Vite 承诺无论你的项目规模如何，都能以相同的水平执行。
 
-## 如何从 Vue CLI 迁移到 Vite
+## 如何从 Vue CLI 迁移到 Vite？
 
 所以你确信 Vite 适合你，那么如何将你的项目从使用 Vue CLI 迁移到 Vite？
 
@@ -118,7 +118,7 @@ env: {
 此更改还将迫使我们自行更新 eslint ，以及 eslint-plugin-vue 支持 es2021 环境。
 
 ```bash
-$ npm install eslint@8 eslint-plugin-vue@8
+npm install eslint@8 eslint-plugin-vue@8
 ```
 
 ### 步骤 3：添加 Vite 配置

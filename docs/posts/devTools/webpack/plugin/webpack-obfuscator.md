@@ -17,7 +17,7 @@ repository: [webpack-obfuscator](https://github.com/javascript-obfuscator/webpac
 ## 安装
 
 ```bash
-$ npm install --save-dev javascript-obfuscator webpack-obfuscator
+npm install --save-dev javascript-obfuscator webpack-obfuscator
 ```
 
 ## 使用

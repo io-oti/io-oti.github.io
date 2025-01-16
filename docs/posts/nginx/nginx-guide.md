@@ -46,7 +46,7 @@ http {                                        # http区块的开始
     listen     80;                            # 侦听端口
     server_name  localhost;                   # 提供服务的域名主机名
 
-    access_log 	 /var/log/nginx/host.access.log  main;
+    access_log   /var/log/nginx/host.access.log  main;
 
     location / {                              # 第一个location区块开始
       root   html;                            # 站点的根目录

@@ -15,7 +15,7 @@ npmjs: [uglifyjs-webpack-plugin](https://www.npmjs.com/package/uglifyjs-webpack-
 ## 安装
 
 ```bash
-$ npm install uglifyjs-webpack-plugin --save-dev
+npm install uglifyjs-webpack-plugin --save-dev
 ```
 
 ## 使用

@@ -21,7 +21,6 @@ title: '选择器（Selectors）'
 
 以上代码片段中 `.my-css-rule` 是一个 CSS 的类选择器，高亮代码行则是一条 CSS 规则的申明，其中 `color` 是 CSS 的属性，`black` 是这条 CSS 属性的值。
 
-
 ### 通用选择器
 
 ```css{1}

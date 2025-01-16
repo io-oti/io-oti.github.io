@@ -15,7 +15,7 @@ npmjs: [compression-webpack-plugin](https://www.npmjs.com/package/compression-we
 ## 安装
 
 ```bash
-$ npm install compression-webpack-plugin --save-dev
+npm install compression-webpack-plugin --save-dev
 ```
 
 ## 使用

@@ -70,7 +70,7 @@ memory=2GB
 
 1. 请打开 PowerShell，并使用以下命令进入默认 WSL 分发版的根目录：`wsl -u root`。
 
-  > 如果需要在非默认分发版中更新忘记的密码，请使用命令：`wsl -d Debian -u root`，并将 Debian 替换为目标分发版的名称。
+   > 如果需要在非默认分发版中更新忘记的密码，请使用命令：`wsl -d Debian -u root`，并将 Debian 替换为目标分发版的名称。
 
 2. 在 PowerShell 内的根级别打开 WSL 发行版后，可使用此命令更新密码：`passwd <username>`，其中 `<username>` 是发行版中帐户的用户名，而你忘记了它的密码。
 
@@ -90,7 +90,7 @@ sudo vi /etc/sudoers
 Windows 不会自动更新或升级 Linux 分发版。 大多数 Linux 用户往往倾向于自行控制此任务。建议使用发行版的首选包管理器定期更新和升级包。 对于 Ubuntu 或 Debian，请使用以下命令：
 
 ```Bash
-$ sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade
 ```
 
 ### 使用 ZSH
@@ -238,11 +238,13 @@ p10k configure
 1. 打开 Ubuntu 命令行（或所选的发行版）。
 
 2. 使用以下命令安装 cURL（用于在命令行中从 Internet 下载内容的工具）：
+
    ```shell
    sudo apt-get install curl
    ```
 
 3. 使用以下命令安装 nvm：
+
    ```shell
    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
    ```
@@ -253,13 +255,17 @@ p10k configure
 
 6. 安装 Node.js 的当前版本和稳定的 LTS 版本。 后面的步骤将介绍如何使用 nvm 命令在 Node.js 的活动版本之间切换。
    - 安装 Node.js 的当前稳定的 LTS 版本（推荐用于生产应用程序）：
-    ```shell
-    nvm install --lts
-    ```
+
+     ```shell
+     nvm install --lts
+     ```
+
    - 安装 Node.js 的当前版本（用于测试最新的 Node.js 功能和改进，但更容易出现问题）：
-    ```shell
-    nvm install node
-    ```
+
+     ```shell
+     nvm install node
+     ```
+
 7. 列出安装的 Node 版本：`nvm ls`。现在应会看到刚安装的两个版本。
 
 8. 使用以下命令验证 Node.js 是否已安装，以及是否为当前默认版本：`node --version`。 然后使用以下命令验证是否也有 npm：`npm --version`（还可以使用 `which node` 或 `which npm` 来查看用于默认版本的路径）。
@@ -300,6 +306,7 @@ chmod -R 775 PYCR/
 ```powershell
 netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8080 connectaddress=xxx.xxx.xxx.xxx
 ```
+
 查看所有代理状态
 
 ```powershell

@@ -19,7 +19,7 @@ repository: [sheetjs](https://github.com/SheetJS/sheetjs)
 ## 安装
 
 ```bash
-$ npm install xlsx
+npm install xlsx
 ```
 
 ## 使用
