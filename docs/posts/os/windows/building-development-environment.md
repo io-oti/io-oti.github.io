@@ -1,12 +1,12 @@
 ---
 author: Io_oTI
-date: 2023-10-23
+date: 2024-10-23
 publish: true
 tag: 'windows'
 title: 'Windows 构建前端开发环境'
 ---
 
-# Windows 构建前端开发环境
+# {{ $frontmatter.title }}
 
 ::: tip
 以下教程仅运行于 Windows 10 以上版本的 Windows 操作系统。
@@ -176,11 +176,9 @@ git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$H
 
 修改 `oh-my-zsh` 的配置文件，将主题设置为 `powerlevel10k`：
 
-```shell{4}
-code ~/.zshrc
-
+```shell
 # 将 "ZSH_THEME=robbyrussell" 修改为:
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k" # [!code focus]
 
 # Enable instant prompt and don't print warnings when detecting console output
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
@@ -201,17 +199,15 @@ typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 source ~/.zshrc
 ```
 
-#### 安装字体
+##### 安装字体
 
-缺少字体终端中的文字和符号会显示乱码，可以在 Windows 系统安装 `powerlevel10k` 推荐字体以解决此问题：
+缺少字体终端中的文字和符号会显示乱码，可以在 Windows 系统安装 `powerlevel10k` 推
+荐字体以解决此问题：
 
-[MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
-
-[MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
-
-[MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
-
-[MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
+- [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+- [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
+- [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
+- [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
 
 下载好字体以后可以直接双击字体文件安装，然后修改 `visual studio code` 的配置，将字体添加到配置项：
 
@@ -288,7 +284,7 @@ npm i -g @antfu/ni
 
 ### 问题
 
-#### 1. Ubuntu 文件夹背景高亮
+#### Ubuntu 文件夹背景高亮
 
 其实很简单，drwxrwxrwx 权限中如果其它组权限拥有写入权限，系统默认这是一个高风险
 目录，因为任何人都可以该目录进行写入操作，当然也包括黑客，所以将它显示为醒目的绿
@@ -299,7 +295,7 @@ npm i -g @antfu/ni
 chmod -R 775 PYCR/
 ```
 
-#### 2. 通过局域网访问 wsl 服务
+#### 通过局域网访问 wsl 服务
 
 通过netsh命令添加网络代理
 
