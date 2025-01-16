@@ -1,18 +1,18 @@
 ---
 author: Io_oTI
-date: 2023-10-26
+date: 2024-10-30
 publish: true
 tag: 'css'
 title: '选择器（Selectors）'
 ---
 
-# 选择器（Selectors）
+# {{ $frontmatter.title }}
 
 ## 简单选择器
 
 如需了解选择器的工作原理及其在 CSS 中的作用， 请务必了解 CSS 规则的组成部分 CSS 规则是一段代码块 包含一个或多个选择器以及一个或多个声明，以下代码片段中包含一个选择器和两条申明：
 
-```css{2}
+```css
 .my-css-rule {
   color: black;
   background: lightgray;
@@ -23,7 +23,7 @@ title: '选择器（Selectors）'
 
 ### 通用选择器
 
-```css{1}
+```css
 * {
   color: black;
 }
@@ -31,7 +31,7 @@ title: '选择器（Selectors）'
 
 ### 元素选择器
 
-```css{1}
+```css
 div {
   background: gray;
 }
@@ -39,7 +39,7 @@ div {
 
 ### 类选择器
 
-```css{1}
+```css
 .container {
   background: gray;
 }
@@ -47,7 +47,7 @@ div {
 
 ### 属性选择器
 
-```css{1}
+```css
 [data-type='number'] {
   background: gray;
 }
@@ -55,7 +55,7 @@ div {
 
 ### id选择器
 
-```css{1}
+```css
 #container {
   background: gray;
 }
@@ -63,7 +63,7 @@ div {
 
 ### 分组选择器
 
-```css{1-2}
+```css
 .container,
 #container {
   background: gray;
@@ -86,6 +86,14 @@ div:hover {
 div::before {
   background: gray;
 }
+
+div::after {
+  background: gray;
+}
+
+li::marker {
+  color: #00b7a8;
+}
 ```
 
 ## 复杂选择器
@@ -97,3 +105,7 @@ div::before {
 ### 复合选择器
 
 ✍ 敬请期待
+
+## 参考
+
+- [CSS 选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Selectors)

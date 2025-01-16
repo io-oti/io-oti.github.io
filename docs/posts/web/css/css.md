@@ -6,7 +6,7 @@ tag: 'css'
 title: 'CSS'
 ---
 
-# CSS
+# {{ $frontmatter.title }}
 
 ## [盒子模型（Box Model）](box-model.md)
 
@@ -16,11 +16,11 @@ CSS 显示的所有内容都是一个框。因此，了解 CSS Box 模型的工�
 
 CSS 显示的所有内容都是一个框。因此，了解 CSS Box 模型的工作原理是 CSS 的核心基础。
 
-## 级联（The Cascade）
+## 层叠（Cascade）
 
 有时，一个元素可能会应用两条或更多条竞争性 CSS 规则。在此单元中，您将了解浏览器如何选择要使用的选项，以及如何控制此项选择。
 
-## [特异性（Specificity）](specificity.md)
+## [优先级（Specificity）](specificity.md)
 
 本单元深入探讨了特异性，这是级联的一个关键部分。
 
@@ -40,7 +40,7 @@ CSS 显示的所有内容都是一个框。因此，了解 CSS Box 模型的工�
 
 简要介绍构建组件或页面布局时必须选择的各种布局方法。
 
-## Flexbox
+## 弹性盒子（Flexbox）
 
 Flexbox 是一种布局机制，用于在一个维度上排列一组项。在本单元中，您将学习如何使用它。
 
@@ -115,3 +115,8 @@ CSS 中的滤镜意味着您可以应用那些您可能仅在图形应用中才�
 ## 文本和排版（Text and typography）
 
 在本单元中，您将学习如何设置网页上的文本样式。
+
+## 参考
+
+- [Learn CSS | web.dev for China](https://web.developers.google.cn/learn/css)
+- [CSS 构建 | MDN](https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core/Styling_basics)
