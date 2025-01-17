@@ -68,7 +68,7 @@ export default {
     strict: '0',
     reactionsEnabled: '1',
     emitMetadata: '0',
-    inputPosition: 'top',
+    inputPosition: 'bottom',
     theme: 'dark',
     lang: 'zh-CN',
     loading: 'lazy',

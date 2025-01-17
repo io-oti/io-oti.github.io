@@ -43,6 +43,15 @@
 }
 
 /**
+ * Element: html, body
+ * -------------------------------------------------------------------------- */
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+/**
  * Element: a
  * -------------------------------------------------------------------------- */
 
@@ -54,14 +63,14 @@
 
   &::after {
     content: "";
-    display: block;
+    flex-shrink: unset;
     position: absolute;
     bottom: -0.25em;
     left: 0;
     width: 100%;
     height: 2px;
     margin: 0;
-    background-color: var(--vp-c-brand-1);
+    background: var(--vp-c-brand-1);
     mask-image: unset;
     transform: scaleX(0);
     transform-origin: top right;
