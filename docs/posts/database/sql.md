@@ -7,4 +7,3 @@ title: 'Learn SQL'
 ---
 
 # Learn SQL
-

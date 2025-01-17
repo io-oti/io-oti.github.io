@@ -141,11 +141,11 @@ chsh -s /bin/zsh
 
 ::: code-group
 
-```shell[使用 curl 安装]
+```shell [使用 curl 安装]
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-```shell[使用 wget 安装]
+```shell [使用 wget 安装]
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
 
@@ -167,7 +167,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.
 
 下载好 `zsh-autosuggestions` 和 `zsh-syntax-highlighting` 插件后，还需要将插件添加至 `.zshrc` 配置文件:
 
-```shell{5-6}
+```shell
 # 添加 zsh-autosuggestions, zsh-syntax-highlighting 和 zsh-z 插件
 # oh-my-zsh 内置了 git 和 z 插件，所以无需安装，直接配置就可使用
 plugins=(

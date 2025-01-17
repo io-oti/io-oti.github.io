@@ -78,11 +78,11 @@ eslint@9.x, globals, @eslint/js, eslint-plugin-vue
 
 等待包管理器安装好依赖包和 eslint 配置脚本创建 `eslint.config.mjs` 文件，之后 `package.json` 中会出现这些依赖项：
 
-```json{4-7}
+```json
 {
   "...": "",
   "devDependencies": {
-    "@eslint/js": "^9.16.0",
+    "@eslint/js": "^9.16.0", // [!code highlight:4]
     "eslint": "^9.16.0",
     "eslint-plugin-vue": "^9.32.0",
     "globals": "^15.13.0"
@@ -114,14 +114,14 @@ export default [
 
 [Issues - How does the flat configuration of eslint-plugin-vue only apply to vue files](https://github.com/vuejs/eslint-plugin-vue/issues/2603)
 
-```javascript{7-10,15,25,29-31,37}
+```javascript
 import globals from 'globals'
 import pluginJs from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
 
 export default [,
   // 给 eslint-plugin-vue 加上匹配文件类型
-  ...pluginVue.configs['flat/recommended'].map(config => ({
+  ...pluginVue.configs['flat/recommended'].map(config => ({ // [!code highlight:4]
     ...config,
     files: ['docs/**/*.vue'],
   })),
@@ -129,7 +129,7 @@ export default [,
     name: 'files-to-ignore',
     ignores: [
       // 忽略文件或文件夹
-      "**/node_modules/"
+      "**/node_modules/" // [!code highlight]
     ]
   },
   {
@@ -139,11 +139,11 @@ export default [,
       globals: {
         ...globals.browser,
         // 添加全局变量
-        __dirname: true,
+        __dirname: true, // [!code highlight]
       },
       parserOptions: {
         // 启用 JSX
-        ecmaFeatures: {
+        ecmaFeatures: { // // [!code highlight:3]
           jsx: true,
         },
       },
@@ -151,7 +151,7 @@ export default [,
     rules: {
       ...pluginJs.configs.recommended.rules,
       // 自定义规则
-      'vue/multi-word-component-names': 0,
+      'vue/multi-word-component-names': 0, // // [!code highlight]
     },
   },
 ]

@@ -74,7 +74,7 @@ const App = () => <input type="email" placeholder={ placeholderText } />
 
 ::: code-group
 
-```jsx[基本用法]{3-4}
+```jsx [基本用法]{3-4}
 const App = () => (
   <button
     onclick={() => {})}
@@ -83,7 +83,7 @@ const App = () => (
 )
 ```
 
-```jsx[事件修饰符]{1,12}
+```jsx [事件修饰符]{1,12}
 import { defineComponent, withModifiers } from 'vue'
 
 const App = defineComponent({
@@ -196,7 +196,7 @@ const App = {
 
 ::: code-group
 
-```jsx[基本用法]{5}
+```jsx [基本用法]{5}
 const App = {
   setup() {
     const msg = ref('hi')
@@ -206,7 +206,7 @@ const App = {
 }
 ```
 
-```jsx[textContent]{5}
+```jsx{5} [textContent]
 const App = {
   setup() {
     const msg = ref('hi')
@@ -216,7 +216,7 @@ const App = {
 }
 ```
 
-```jsx[innerText]{5}
+```jsx{5} [innerText]
 const App = {
   setup() {
     const msg = ref('hi')
@@ -244,7 +244,7 @@ const App = {
 
 ::: code-group
 
-```jsx[基本用法]{3,5}
+```jsx{3,5} [基本用法]
 const App = {
   setup() {
     const visible = ref(true)
@@ -254,7 +254,7 @@ const App = {
 }
 ```
 
-```jsx[style]{3,5}
+```jsx{3,5} [style]
 const App = {
   setup() {
     const visible = ref(true)
@@ -302,15 +302,15 @@ const App = {
 
 ::: code-group
 
-```jsx[基本用法]
+```jsx [基本用法]
 <input v-model={val} />
 ```
 
-```jsx[传参]
+```jsx [传参]
 <input v-model:argument={val} />
 ```
 
-```jsx[修饰符]
+```jsx [修饰符]
 <input v-model={[val, ['modifier']]} />
 // 或者
 <input v-model_modifier={val} />
@@ -320,13 +320,13 @@ const App = {
 
 ::: code-group
 
-```jsx[完全示例]
+```jsx [完全示例]
 <A v-model={ [val, 'argument', ['modifier']] } />
 // 或者
 <input v-model:argument_modifier={val} />
 ```
 
-```js[编译结果]
+```js [编译结果]
 h(A, {
   argument: val,
   argumentModifiers: {

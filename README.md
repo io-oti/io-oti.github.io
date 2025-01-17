@@ -1,6 +1,6 @@
 <h3 align="center">
   <a href="https://readme-typing-svg.herokuapp.com/">
-    <img src="https://readme-typing-svg.herokuapp.com/?lines=Hi,+This+is+my+blog!+👋;Welcome+to+your+visit!🤗&font=Fira+Code&center=true&weight=600&color=539bf5&size=24">
+    <img src="https://readme-typing-svg.herokuapp.com/?lines=Hi,+This+is+my+blog!+👋;Welcome+to+your+visit!🤗&font=Fira+Code&center=true&weight=600&color=539bf5&size=24" alt="Typing SVG" />
   </a>
 </h3>
 

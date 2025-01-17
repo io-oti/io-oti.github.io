@@ -104,7 +104,7 @@ Type: `{ String | Array }`
 
 ### 内容 - Content
 
-```javascript{8-10}
+```javascript
 export default {
   data () {
     return {
@@ -112,7 +112,7 @@ export default {
     };
   },
 
-  render (h) {
+  render (h) { // [!code highlight:3]
     return h('div', {}, this.text);
   }
 };
@@ -126,7 +126,7 @@ export default {
 
 :::code-group
 
-```javascript{21-23} [Parent.vue]
+```javascript [Parent.vue]
 import Children from './Children.vue'
 
 export default {
@@ -147,13 +147,13 @@ export default {
     }
   }
 
-  render(h) {
+  render(h) { // [!code highlight:3]
     return h('children', { text: this.text, props: { name: this.name } });
   }
 }
 ```
 
-```javascript{9-11} [Children.vue]
+```javascript [Children.vue]
 export default {
  name: 'Children',
 
@@ -162,7 +162,7 @@ export default {
     default: 'world'
   }
 
-  render (h) {
+  render (h) { // [!code highlight:3]
     return h('div', {}, `${this.$attrs.text} ${this.name}`);
   }
 };
@@ -172,7 +172,7 @@ export default {
 
 #### DomProps
 
-```javascript{9-14}
+```javascript
 export default {
   data () {
     return {
@@ -181,7 +181,7 @@ export default {
     };
   },
 
-  render (h) {
+  render (h) { // [!code highlight:6]
     return h('div', {}, [
       h('div', { domProps: { innerText: this.text } }),
       h('div', { domProps: { innerHTML: this.html } })
@@ -194,7 +194,7 @@ export default {
 
 `vm.$listeners` 包含了父作用域中的 (不含 `.native` 修饰器的) `v-on` 事件监听器。
 
-```javascript{14-16}
+```javascript
 export default {
  data () {
     return {
@@ -208,7 +208,7 @@ export default {
     }
   },
 
-  render (h) {
+  render (h) { // [!code highlight:4]
     return h('div', { on: { click: this.handleCount, ...this.$listeners }}, this.count);
   }
 };
@@ -222,7 +222,7 @@ export default {
 
 :::code-group
 
-```javascript{17-24} [Children.vue]
+```javascript [Children.vue]
 import Children from './Children.vue'
 
 export default {
@@ -239,7 +239,7 @@ export default {
     }
   },
 
-  render (h) {
+  render (h) { // [!code highlight:8]
     const scopedSlots = {
       default: h('span', {}, this.text),
       suffix: h('span', {}, this.name)
@@ -250,11 +250,11 @@ export default {
 }
 ```
 
-```javascript{4-12} [Children.vue]
+```javascript [Children.vue]
 export default {
   name: 'Children',
 
-  render (h) {
+  render (h) { // [!code highlight:9]
     return h('div', {}, [
       this.$scopedSlots.default(),
       this.$scopedSlots.suffix()
@@ -270,7 +270,7 @@ export default {
 
 ### 指令 - Directives
 
-```javascript{8-14}
+```javascript
 export default {
  data () {
     return {
@@ -278,7 +278,7 @@ export default {
     };
   },
 
-  render () {
+  render () { // [!code highlight:7]
     const directives = [
       { name: 'permission', value: this.permissionCode }
     ]
@@ -290,7 +290,7 @@ export default {
 
 #### v-model
 
-```javascript{14-21}
+```javascript
 export default {
   data () {
     return {
@@ -304,7 +304,7 @@ export default {
     }
   },
 
-  render (h) {
+  render (h) { // [!code highlight:8]
     return h('div', [
       h('input', {
         attrs: { value: this.value },

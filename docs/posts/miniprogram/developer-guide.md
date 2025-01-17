@@ -49,7 +49,7 @@ npm install --save miniprogram-computed
 
 ::: code-group
 
-```javascript[computed]
+```javascript [computed]
 import computedBehavior from 'miniprogram-computed'
 
 Component({
@@ -66,7 +66,7 @@ Component({
 })
 ```
 
-```javascript[watch]
+```javascript [watch]
 import computedBehavior from 'miniprogram-computed'
 
 Component({
@@ -123,7 +123,7 @@ npm install --save mobx-miniprogram mobx-miniprogram-bindings
 
 ::: code-group
 
-```javascript[创建 store]
+```javascript [创建 store]
 // store.js
 import { observable, action } from 'mobx-miniprogram'
 
@@ -149,7 +149,7 @@ export const store = observable({
 })
 ```
 
-```javascript[在 Component 构造器中使用]
+```javascript [在 Component 构造器中使用]
 import { storeBindingsBehavior } from 'mobx-miniprogram-bindings'
 import { store } from './store'
 

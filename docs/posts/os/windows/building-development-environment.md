@@ -78,11 +78,11 @@ memory=2GB
 
 修改以下配置使用 sudo 时可以不用输入密码。
 
-```shell{4}
+```shell
 sudo vi /etc/sudoers
 
 # Allow members of group sudo to execute any command
-%sudo   ALL=(ALL:ALL) NOPASSWD:ALL
+%sudo   ALL=(ALL:ALL) NOPASSWD:ALL # [!code highlight]
 ```
 
 ### 更新和升级包
@@ -115,11 +115,11 @@ chsh -s /usr/bin/zsh
 
 ::: code-group
 
-```shell[使用 curl 安装]
+```shell [使用 curl 安装]
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-```shell[使用 wget 安装]
+```shell [使用 wget 安装]
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
 
@@ -141,12 +141,12 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.
 
 下载好 `zsh-autosuggestions` 和 `zsh-syntax-highlighting` 插件后，还需要将插件添加至 `.zshrc` 配置文件:
 
-```shell{5-6}
+```shell
 # 添加 zsh-autosuggestions, zsh-syntax-highlighting 和 zsh-z 插件
 # oh-my-zsh 内置了 git 和 z 插件，所以无需安装，直接配置就可使用
 plugins=(
   git
-  zsh-autosuggestions
+  zsh-autosuggestions # [!code highlight:2]
   zsh-syntax-highlighting
   z
 )
@@ -164,11 +164,11 @@ source ~/.zshrc
 
 ::: code-group
 
-```shell[Github]
+```shell [Github]
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-```shell[Gitee]
+```shell [Gitee]
 git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
@@ -211,7 +211,7 @@ source ~/.zshrc
 
 下载好字体以后可以直接双击字体文件安装，然后修改 `visual studio code` 的配置，将字体添加到配置项：
 
-```json{2}
+```json
 {
   "editor.fontFamily": "MesloLGS NF",
 }

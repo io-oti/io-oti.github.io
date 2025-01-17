@@ -6,7 +6,7 @@ tag: 'windows'
 title: 'Microsoft PowerToys'
 ---
 
-# Microsoft PowerToys
+# {{ $frontmatter.title }}
 
 Microsoft PowerToys 是一组实用程序，可供高级用户调整和简化其 `Windows` 体验，从而提高工作效率。
 
@@ -14,9 +14,10 @@ Microsoft PowerToys 是一组实用程序，可供高级用户调整和简化其
 
 ### 按键 - 重新映射键
 
-`Ctrl(Left)` 到 `Alt(Left)`
-
-`Alt(Left)` 到 `Ctrl(Left)`
+| 选择         | 发送         |
+| ------------ | ------------ |
+| `Ctrl(Left)` | `Alt(Left)`  |
+| `Alt(Left)`  | `Ctrl(Left)` |
 
 #### 问题
 
@@ -25,13 +26,12 @@ Microsoft PowerToys 是一组实用程序，可供高级用户调整和简化其
 
 ### 快捷键 - 重新映射快捷键
 
-`Alt(Left)` + `Tab` 到 `Ctrl(Left)` + `Tab`
-
-`Alt(Left)` + `Shift` + `Tab` 到 `Ctrl(Left)` + `Shift` + `Tab`
-
-`Ctrl(Left)` + `Tab` 到 `Alt(Left)` + `Tab`
-
-`Ctrl(Left)` + `Shift` + `Tab` 到 `Alt(Left)` + `Shift` + `Tab`
+| 选择                           | 发送                           |
+| ------------------------------ | ------------------------------ |
+| `Alt(Left)` + `Tab`            | `Ctrl(Left)` + `Tab`           |
+| `Alt(Left)` + `Shift` + `Tab`  | `Ctrl(Left)` + `Shift` + `Tab` |
+| `Ctrl(Left)` + `Tab`           | `Alt(Left)` + `Tab`            |
+| `Ctrl(Left)` + `Shift` + `Tab` | `Alt(Left)` + `Shift` + `Tab`  |
 
 ## 参考
 
