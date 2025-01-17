@@ -28,8 +28,8 @@ export default {
     }),
     vueJsx(),
     sidebar([
-      '/posts/devTools/vite',
-      '/posts/devTools/webpack',
+      '/posts/dev-tools/vite',
+      '/posts/dev-tools/webpack',
       '/posts/git',
       '/posts/javascript',
       '/posts/miniprogram',
