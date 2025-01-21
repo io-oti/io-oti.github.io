@@ -1,6 +1,10 @@
 <script lang="jsx">
 export default {
   props: {
+    id: {
+      type: [String, Number],
+      default: '',
+    },
     label: {
       type: String,
       default: '',
@@ -20,13 +24,44 @@ export default {
   },
   emits: ['update:modelValue'],
   setup(props, { emit, slots }) {
+    const sizes = reactive({ large: '116px', medium: '88px', small: '70px' })
+    const height = ref(sizes[props.size])
+
+    console.log('index.vue:', height.value);
+
+    const collapseRef = useTemplateRef('collapse')
+
     const onChange = value => emit('update:modelValue', value)
+
+    watchPostEffect(() => {
+      if (!collapseRef.value) return
+
+      if (props.modelValue) {
+        if (document?.startViewTransition) {
+          document.startViewTransition(() => {
+            collapseRef.value.style.height = '100%'
+          })
+        } else {
+          collapseRef.value.style.height = '100%'
+        }
+      } else {
+        if (document?.startViewTransition) {
+          document.startViewTransition(() => {
+            collapseRef.value.style.height = height.value
+          })
+        } else {
+          collapseRef.value.style.height = height.value
+        }
+      }
+    })
 
     return () =>
       h(
         <div
+          ref="collapse"
           class={`collapse ${props.size}`}
           open={props.modelValue}
+          style={{ 'view-transition-name': `expanded-effect-${props.id}` }}
         >
           <div
             class="collapse-label"
@@ -51,9 +86,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$height: v-bind(height);
+
 .collapse {
   border: 1px solid transparent;
-  transition: 0.4s;
   overflow: hidden;
 
   &.large {
@@ -81,6 +117,10 @@ export default {
       line-height: 56px;
     }
 
+    .collapse-title {
+      -webkit-text-stroke-width: 1px;
+    }
+
     .collapse-content {
       padding: 0px 16px 16px;
     }
@@ -106,7 +146,6 @@ export default {
   }
 
   &[open='true'] {
-    height: 100%;
     background-color: var(--vp-c-bg-soft);
   }
 
@@ -130,7 +169,6 @@ export default {
     color: transparent;
     font-weight: 700;
     list-style: none;
-    transition: 0.3s;
     cursor: pointer;
   }
 
@@ -154,22 +192,32 @@ export default {
     line-height: 36px;
     text-align: center;
     transform: scale(0);
-    transition: 0.3s;
   }
 
   &-content {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
-    transition: 0.5s;
 
     &.fade-in {
-      animation: fadeIn 0.5s both;
+      animation: fadeIn 0.3s ease-in-out both;
     }
 
     &.fade-out {
-      animation: fadeOut 0.5s both;
+      animation: fadeOut 0.3s ease-in-out both;
     }
+  }
+}
+
+::view-transition-old(expanded-effect) {
+  .collapse {
+    animation: expand 0.3s ease-in-out both;
+  }
+}
+
+::view-transition-new(expanded-effect) {
+  .collapse {
+    animation: collapse 0.3s ease-in-out both;
   }
 }
 
@@ -192,6 +240,24 @@ export default {
   100% {
     opacity: 0;
     transform: translatey(20px);
+  }
+}
+
+@keyframes expand {
+  from {
+    height: var(height);
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes collapse {
+  from {
+    height: 100%;
+  }
+  to {
+    height: var(height);
   }
 }
 </style>

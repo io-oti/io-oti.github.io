@@ -49,6 +49,9 @@
 html,
 body {
   scroll-behavior: smooth;
+  scrollbar-color: var(--vp-c-gutter) var(--vp-c-bg);
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
 }
 
 /**
@@ -68,9 +71,10 @@ body {
     bottom: -0.25em;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: .1em;
     margin: 0;
-    background: var(--vp-c-brand-1);
+    color: inherit;
+    background: currentColor;
     mask-image: unset;
     transform: scaleX(0);
     transform-origin: top right;

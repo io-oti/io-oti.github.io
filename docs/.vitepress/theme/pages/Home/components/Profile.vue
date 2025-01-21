@@ -29,7 +29,7 @@ export default {
             if (section.about) {
               res.push(
                 <div class={`profile-body-section ${isActive ? 'active' : ''}`}>
-                  <div class="profile-body-label">{section.label}</div>
+                  {/* <div class="profile-body-label">{section.label}</div> */}
                   {section.about && <div class="about">{section.about}</div>}
                 </div>
               )
@@ -37,7 +37,7 @@ export default {
             if (section.timeline) {
               res.push(
                 <div class={`profile-body-section ${isActive ? 'active' : ''}`}>
-                  <div class="profile-body-label">{section.label}</div>
+                  {/* <div class="profile-body-label">{section.label}</div> */}
                   <div class="timeline">
                     {section.timeline.map(time => (
                       <div
@@ -55,7 +55,7 @@ export default {
             if (section.contact) {
               res.push(
                 <div class={`profile-body-section ${isActive ? 'active' : ''}`}>
-                  <div class="profile-body-label">{section.label}</div>
+                  {/* <div class="profile-body-label">{section.label}</div> */}
                   <div class="contact">
                     {section.contact.map(item => (
                       <div class="contact-item">
@@ -95,13 +95,14 @@ export default {
 .profile {
   display: flex;
   flex-direction: column;
-  width: min(100%, 365px);
+  width: 100%;
   background-color: var(--vp-c-bg-soft);
   border-radius: 16px;
   overflow: hidden;
   transition: 0.3s ease-in;
 
-  &[data-active='1'] {
+  &[data-active='1'],
+  &[data-active='2'] {
     .profile-header {
       height: 90px;
 
@@ -264,7 +265,6 @@ export default {
         color: var(--vp-c-text-3);
         font-size: 14px;
         line-height: 1.6;
-        cursor: pointer;
 
         & + .contact-item {
           margin-top: 16px;

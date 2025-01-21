@@ -33,8 +33,9 @@ export default {
     return () => (
       <div class="page-container">
         <div class="archives">
-          {years.map(({ label, value, posts }) => (
+          {years.map(({ label, value, posts }, key) => (
             <Collapse
+              id={key}
               label={label}
               count={posts.length}
               modelValue={value}
@@ -70,9 +71,9 @@ export default {
 
 <style lang="scss" scoped>
 .archives {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 
   .post {
     &-list {
@@ -103,13 +104,6 @@ export default {
       font-size: 16px;
       line-height: 24px;
     }
-  }
-}
-
-/* Tablet */
-@media (max-width: 767px) {
-  .archives {
-    grid-template-columns: 1fr;
   }
 }
 </style>

@@ -41,20 +41,20 @@ export default {
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   flex: 1;
-  padding: 20px;
   border-radius: 16px;
 
   &-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    column-gap: 20px;
     width: 100%;
 
     &__title {
       color: var(--vp-c-text-1);
-      font-size: 16px;
+      font-size: 14px;
       transition: 0.3s;
 
       &:hover {
@@ -65,7 +65,7 @@ export default {
     &__date {
       color: var(--vp-c-text-3);
       font-family: sans-serif;
-      font-size: 14px;
+      font-size: 12px;
       line-height: 24px;
     }
   }

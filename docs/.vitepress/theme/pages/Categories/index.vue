@@ -35,8 +35,9 @@ export default {
     return () => (
       <div class="page-container">
         <div class="categories">
-          {categories.map(({ label, value, posts }) => (
+          {categories.map(({ label, value, posts }, key) => (
             <Collapse
+              id={key}
               size="small"
               label={label}
               count={posts.length}
@@ -73,9 +74,9 @@ export default {
 
 <style lang="scss" scoped>
 .categories {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 
   .post {
     &-count {
@@ -121,13 +122,6 @@ export default {
       font-size: 14px;
       line-height: 24px;
     }
-  }
-}
-
-/* Tablet */
-@media (max-width: 767px) {
-  .categories {
-    grid-template-columns: 1fr;
   }
 }
 </style>

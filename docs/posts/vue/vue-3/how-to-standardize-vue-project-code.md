@@ -208,7 +208,7 @@ Prettier 是一个固执己见的代码格式化器。它支持格式化：
   },
 ```
 
-这里是[Prettier 配置项文档](https://prettier.io/docs/en/options)，以下是推荐的格式化配置：
+这里是 [Prettier 配置项文档](https://prettier.io/docs/en/options) ，以下是推荐的格式化配置：
 
 ```json
   "prettier.bracketSameLine": false,

@@ -4,7 +4,7 @@
 
 :root {
   .page-container {
-    width: min(100vw - 64px, 1024px);
+    width: min(100vw - 64px, 664px);
     min-height: calc(100vh - 64px - 89px);
     margin: 0 auto;
     padding-block: 20px;

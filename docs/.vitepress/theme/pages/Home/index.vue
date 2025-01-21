@@ -6,10 +6,8 @@ export default {
   setup() {
     return () => (
       <div class="home-container">
-        <div class="home-wrap">
-          <Profile />
-          <Posts />
-        </div>
+        <Profile />
+        <Posts />
       </div>
     )
   },
@@ -21,16 +19,12 @@ export default {
   &-container {
     display: flex;
     align-items: center;
-    width: min(100vw - 64px, 1024px);
+    flex-direction: column;
+    row-gap: 24px;
+    width: min(100vw - 64px, 664px);
     min-height: calc(100vh - 64px - 89px);
     margin: 0 auto;
-    padding-block: 20px;
-  }
-
-  &-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
+    padding-block: 24px;
   }
 }
 
