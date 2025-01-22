@@ -18,50 +18,42 @@ export default {
       default: true,
     },
     size: {
-      validator: value => ['large', 'medium', 'small'].includes(value),
       default: 'large',
+      validator: value => ['large', 'medium', 'small'].includes(value),
     },
   },
   emits: ['update:modelValue'],
   setup(props, { emit, slots }) {
-    const sizes = reactive({ large: '116px', medium: '88px', small: '70px' })
-    const height = ref(sizes[props.size])
+    const enableTransitions = () =>
+      'startViewTransition' in document &&
+      window.matchMedia('(prefers-reduced-motion: no-preference)').matches
 
-    console.log('index.vue:', height.value);
-
-    const collapseRef = useTemplateRef('collapse')
+    const contentRef = useTemplateRef('collapseContent')
 
     const onChange = value => emit('update:modelValue', value)
 
-    watchPostEffect(() => {
-      if (!collapseRef.value) return
+    watch(
+      () => props.modelValue,
+      isExpand => {
+        if (!contentRef.value) return
 
-      if (props.modelValue) {
-        if (document?.startViewTransition) {
-          document.startViewTransition(() => {
-            collapseRef.value.style.height = '100%'
-          })
-        } else {
-          collapseRef.value.style.height = '100%'
+        if (!enableTransitions) {
+          contentRef.value.style.display = isExpand ? 'flex' : 'none'
+          return
         }
-      } else {
-        if (document?.startViewTransition) {
-          document.startViewTransition(() => {
-            collapseRef.value.style.height = height.value
-          })
-        } else {
-          collapseRef.value.style.height = height.value
-        }
+
+        document.startViewTransition(() => {
+          contentRef.value.style.display = isExpand ? 'flex' : 'none'
+        })
       }
-    })
+    )
 
     return () =>
       h(
         <div
-          ref="collapse"
           class={`collapse ${props.size}`}
-          open={props.modelValue}
           style={{ 'view-transition-name': `expanded-effect-${props.id}` }}
+          expand={props.modelValue}
         >
           <div
             class="collapse-label"
@@ -69,10 +61,11 @@ export default {
           >
             <div class="collapse-title">{props.label}</div>
             <div class="collapse-count rounded-triangle">
-              {slots.count ? slots.count() : props.count}
+              {slots.count?.() || props.count}
             </div>
           </div>
           <div
+            ref="collapseContent"
             class={`collapse-content ${
               props.modelValue ? 'fade-in' : 'fade-out'
             }`}
@@ -86,14 +79,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$height: v-bind(height);
-
 .collapse {
-  border: 1px solid transparent;
-  overflow: hidden;
-
   &.large {
-    height: 116px;
     border-radius: 16px;
 
     .collapse-label {
@@ -108,7 +95,6 @@ $height: v-bind(height);
   }
 
   &.medium {
-    height: 88px;
     border-radius: 12px;
 
     .collapse-label {
@@ -127,7 +113,6 @@ $height: v-bind(height);
   }
 
   &.small {
-    height: 70px;
     border-radius: 8px;
 
     .collapse-label {
@@ -145,8 +130,12 @@ $height: v-bind(height);
     }
   }
 
-  &[open='true'] {
+  &[expand='true'] {
     background-color: var(--vp-c-bg-soft);
+
+    .collapse-content {
+      display: flex;
+    }
   }
 
   &:hover {
@@ -195,69 +184,44 @@ $height: v-bind(height);
   }
 
   &-content {
-    display: flex;
+    display: none;
     flex-direction: column;
     row-gap: 10px;
 
     &.fade-in {
-      animation: fadeIn 0.3s ease-in-out both;
+      animation: fadeIn 0.3s both;
     }
 
     &.fade-out {
-      animation: fadeOut 0.3s ease-in-out both;
+      animation: fadeOut 0.3s both;
     }
   }
 }
 
-::view-transition-old(expanded-effect) {
-  .collapse {
-    animation: expand 0.3s ease-in-out both;
-  }
-}
-
+::view-transition-old(expanded-effect)
 ::view-transition-new(expanded-effect) {
-  .collapse {
-    animation: collapse 0.3s ease-in-out both;
-  }
+  animation: none;
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translatey(20px);
+    transform: translateY(-20px);
   }
   100% {
     opacity: 1;
-    transform: translatey(0px);
+    transform: translateY(0);
   }
 }
 
 @keyframes fadeOut {
   0% {
     opacity: 1;
-    transform: translatey(0px);
+    transform: translateY(0);
   }
   100% {
     opacity: 0;
-    transform: translatey(20px);
-  }
-}
-
-@keyframes expand {
-  from {
-    height: var(height);
-  }
-  to {
-    height: 100%;
-  }
-}
-
-@keyframes collapse {
-  from {
-    height: 100%;
-  }
-  to {
-    height: var(height);
+    transform: translateY(-20px);
   }
 }
 </style>
