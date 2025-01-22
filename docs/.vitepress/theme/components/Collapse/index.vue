@@ -24,27 +24,14 @@ export default {
   },
   emits: ['update:modelValue'],
   setup(props, { emit, slots }) {
-    const enableTransitions = () =>
-      'startViewTransition' in document &&
-      window.matchMedia('(prefers-reduced-motion: no-preference)').matches
-
-    const contentRef = useTemplateRef('collapseContent')
+    const fadeEffect = ref('')
 
     const onChange = value => emit('update:modelValue', value)
 
     watch(
       () => props.modelValue,
       isExpand => {
-        if (!contentRef.value) return
-
-        if (!enableTransitions) {
-          contentRef.value.style.display = isExpand ? 'flex' : 'none'
-          return
-        }
-
-        document.startViewTransition(() => {
-          contentRef.value.style.display = isExpand ? 'flex' : 'none'
-        })
+        fadeEffect.value = isExpand ? 'fade-in' : 'fade-out'
       }
     )
 
@@ -52,7 +39,6 @@ export default {
       h(
         <div
           class={`collapse ${props.size}`}
-          style={{ 'view-transition-name': `expanded-effect-${props.id}` }}
           expand={props.modelValue}
         >
           <div
@@ -64,12 +50,7 @@ export default {
               {slots.count?.() || props.count}
             </div>
           </div>
-          <div
-            ref="collapseContent"
-            class={`collapse-content ${
-              props.modelValue ? 'fade-in' : 'fade-out'
-            }`}
-          >
+          <div class={`collapse-content ${fadeEffect.value}`}>
             {slots.default?.()}
           </div>
         </div>
@@ -80,7 +61,12 @@ export default {
 
 <style lang="scss" scoped>
 .collapse {
+  border: 1px solid transparent;
+  transition: 0.3s;
+  overflow: hidden;
+
   &.large {
+    height: 116px;
     border-radius: 16px;
 
     .collapse-label {
@@ -95,6 +81,7 @@ export default {
   }
 
   &.medium {
+    height: 88px;
     border-radius: 12px;
 
     .collapse-label {
@@ -113,6 +100,7 @@ export default {
   }
 
   &.small {
+    height: 70px;
     border-radius: 8px;
 
     .collapse-label {
@@ -131,15 +119,16 @@ export default {
   }
 
   &[expand='true'] {
-    background-color: var(--vp-c-bg-soft);
+    height: calc-size(auto, size);
+    border-color: var(--vp-c-gutter);
 
     .collapse-content {
-      display: flex;
+      height: calc-size(auto, size);
     }
   }
 
   &:hover {
-    background-color: var(--vp-c-bg-soft);
+    border-color: var(--vp-c-gutter);
 
     .collapse-title {
       -webkit-text-stroke-color: var(--vp-c-text-2);
@@ -184,29 +173,28 @@ export default {
   }
 
   &-content {
-    display: none;
+    display: flex;
     flex-direction: column;
     row-gap: 10px;
+    height: 0;
+
+    transition: height 0.3s;
+    transition-behavior: allow-discrete;
 
     &.fade-in {
-      animation: fadeIn 0.3s both;
+      animation: fadeIn 0.3s;
     }
 
     &.fade-out {
-      animation: fadeOut 0.3s both;
+      animation: fadeOut 0.3s;
     }
   }
-}
-
-::view-transition-old(expanded-effect)
-::view-transition-new(expanded-effect) {
-  animation: none;
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-16px);
   }
   100% {
     opacity: 1;
@@ -221,7 +209,7 @@ export default {
   }
   100% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-16px);
   }
 }
 </style>
