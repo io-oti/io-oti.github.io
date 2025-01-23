@@ -45,10 +45,10 @@ function getPostsData(files) {
             id: link,
             link,
             description: post.frontmatter.description,
-            // content: post[rssOptions.content]?.replaceAll(
-            //   '&ZeroWidthSpace;',
-            //   ''
-            // ),
+            content: post[rssOptions.content]?.replaceAll(
+              '&ZeroWidthSpace;',
+              ''
+            ),
             author: post.frontmatter.author,
             date: new Date(post.frontmatter.date),
           })
@@ -64,14 +64,14 @@ function genFeed(func) {
   return async siteConfig => {
     if (func) await func(siteConfig)
 
-    const { lang, title, description, themeConfig } = siteConfig.site
+    const { lang, locales, title, description, themeConfig } = siteConfig.site
     const { filePath, files } = rssOptions
     const siteOptions = {
       title,
       description,
       id: rssOptions.link,
       link: rssOptions.link,
-      language: lang,
+      language: lang || locales?.root?.lang,
       image: spliceLink(rssOptions.link, rssOptions.image),
       favicon: spliceLink(rssOptions.link, rssOptions.favicon),
       copyright: themeConfig?.footer?.copyright,

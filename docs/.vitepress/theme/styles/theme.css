@@ -58,8 +58,7 @@ body {
  * Element: a
  * -------------------------------------------------------------------------- */
 
-.vp-doc a[href*='://'],
-.vp-doc a[target='__blank']:not(.no-icon) {
+:is(.vp-doc a[href*='://'], .vp-doc a[target='__blank']):not(.no-icon) {
   position: relative;
   text-decoration: unset;
   text-underline-offset: 0.25em;
