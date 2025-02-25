@@ -10,12 +10,6 @@ title: 'SheetJS'
 
 适用于 web 浏览器和服务器读取、编辑和导出电子表格。
 
-npmjs: [xlsx](https://www.npmjs.com/package/xlsx)
-
-homepage: [sheetjs](https://sheetjs.com/)
-
-repository: [sheetjs](https://github.com/SheetJS/sheetjs)
-
 ## 安装
 
 ```bash
@@ -41,3 +35,9 @@ reader.onload = () => {
   console.log('表格数据', workbook, workbook.SheetNames[0], ws)
 }
 ```
+
+## 参考
+
+- [sheetjs.com](https://sheetjs.com/)
+- [sheetjs - github](https://github.com/SheetJS/sheetjs)
+- [xlsx - npmjs](https://www.npmjs.com/package/xlsx)
