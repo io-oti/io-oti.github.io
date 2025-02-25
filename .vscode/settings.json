@@ -9,7 +9,8 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "README.md": ".*.js,*.config.js,*.json,.gitignore"
+    "README.md": ".*,*.config.js",
+    "package.json": "package-lock.json"
   },
   /* vscode - markdown */
   "[markdown]": {

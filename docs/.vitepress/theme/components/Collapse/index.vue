@@ -35,26 +35,25 @@ export default {
       }
     )
 
-    return () =>
-      h(
+    return () => (
+      <div
+        class={`collapse ${props.size}`}
+        expand={props.modelValue}
+      >
         <div
-          class={`collapse ${props.size}`}
-          expand={props.modelValue}
+          class="collapse-label"
+          onclick={() => onChange(!props.modelValue)}
         >
-          <div
-            class="collapse-label"
-            onclick={() => onChange(!props.modelValue)}
-          >
-            <div class="collapse-title">{props.label}</div>
-            <div class="collapse-count rounded-triangle">
-              {slots.count?.() || props.count}
-            </div>
-          </div>
-          <div class={`collapse-content ${fadeEffect.value}`}>
-            {slots.default?.()}
+          <div class="collapse-title">{props.label}</div>
+          <div class="collapse-count rounded-triangle">
+            {slots.count?.() || props.count}
           </div>
         </div>
-      )
+        <div class={`collapse-content ${fadeEffect.value}`}>
+          {slots.default?.()}
+        </div>
+      </div>
+    )
   },
 }
 </script>

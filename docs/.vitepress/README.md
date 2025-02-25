@@ -2,7 +2,7 @@
 
 This is the custom theme for VitePress. It is a simple and clean design that focuses on content and readability.
 
-```plaintext
+```shell
 docs/.vitepress
 ├── configs
 │   ├── themeConfig
