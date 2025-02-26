@@ -3,10 +3,10 @@ author: Io_oTI
 date: 2025-02-08
 publish: false
 tag: 'javascript'
-title: 'Algorithms'
+title: '算法'
 ---
 
-# {{ frontmatter.title }}
+# {{ $frontmatter.title }}
 
 ## 检索
 
