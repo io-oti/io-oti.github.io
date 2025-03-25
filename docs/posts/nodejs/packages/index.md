@@ -62,6 +62,16 @@ Anime.js 是一个轻量级的 JavaScript 动画库，具有简单而强大的 A
 
 小型渐进式客户端 HTTP 请求库和具有相同 API 的 Node.js 模块，支持许多高级 HTTP 客户端功能。
 
+## Tooling
+
+### @antfu/ni
+
+ni 可以简化包管理器使用命令，并始终使用正确的包管理器。
+
+### degit
+
+一个命令行工具，用于克隆远程 Git 仓库模板。
+
 ## Utils
 
 ### [Ramda](./utils/ramda.md)
