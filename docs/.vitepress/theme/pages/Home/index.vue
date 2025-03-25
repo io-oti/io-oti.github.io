@@ -1,9 +1,14 @@
 <script lang="jsx">
+import { WELCOME_MESSAGE } from '@/constants/index.js'
 import Profile from './components/Profile.vue'
 import Posts from './components/Posts.vue'
 
 export default {
   setup() {
+    onMounted(() => {
+      console.log(...WELCOME_MESSAGE)
+    })
+
     return () => (
       <div class="home-container">
         <Profile />
