@@ -1,18 +1,12 @@
 {
-  /* vscode - editor */
+  // #region vscode - editor ---------------------------------------------------
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
     "source.fixAll.markdownlint": "explicit",
     "source.organizeImports": "never"
   },
-  /* vscode - explorer */
-  "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.expand": false,
-  "explorer.fileNesting.patterns": {
-    "README.md": ".*,*.config.js",
-    "package.json": "package-lock.json"
-  },
-  /* vscode - markdown */
+  // #endregion ----------------------------------------------------------------
+  // #region vscode - markdown -------------------------------------------------
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",
     "editor.rulers": [
@@ -21,11 +15,21 @@
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80,
   }
-  /* vscode - vue */
+  // #endregion ----------------------------------------------------------------
+  // #region vscode - vue ------------------------------------------------------
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  /* extensions - prettier */
+  // #endregion ----------------------------------------------------------------
+  // #region vscode - explorer
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package*, .npm*,",
+    "README.md": "*.config.js, .eslint*, .git*",
+  },
+  // #endregion ----------------------------------------------------------------
+  // #region extensions - prettier ---------------------------------------------
   "prettier.bracketSameLine": false,
   "prettier.bracketSpacing": true,
   "prettier.printWidth": 80,
@@ -34,16 +38,19 @@
   "prettier.singleQuote": true,
   "prettier.tabWidth": 2,
   "prettier.trailingComma": "es5",
-  /* extensions - vite */
+  // #endregion ----------------------------------------------------------------
+  // #region extensions - vite -------------------------------------------------
   "vite.autoStart": false,
   "vite.browserType": "system",
   "vite.buildCommand": "npm run docs:build",
   "vite.devCommand": "npm run docs:dev",
   "vite.port": 5173,
-  /* extensions - markdownlint */
+  // #endregion ----------------------------------------------------------------
+  // #region extensions - markdownlint -----------------------------------------
   "markdownlint.config": {
     "MD025": false,
     "MD033": false,
     "MD041": false,
   },
+  // #endregion ----------------------------------------------------------------
 }
