@@ -1,12 +1,12 @@
 {
-  // #region vscode - editor ---------------------------------------------------
+  // #region editor ------------------------------------------------------------
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
     "source.fixAll.markdownlint": "explicit",
     "source.organizeImports": "never"
   },
   // #endregion ----------------------------------------------------------------
-  // #region vscode - markdown -------------------------------------------------
+  // #region editor - markdown -------------------------------------------------
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",
     "editor.rulers": [
@@ -16,12 +16,12 @@
     "editor.wordWrapColumn": 80,
   }
   // #endregion ----------------------------------------------------------------
-  // #region vscode - vue ------------------------------------------------------
+  // #region editor - vue ------------------------------------------------------
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // #endregion ----------------------------------------------------------------
-  // #region vscode - explorer
+  // #region explorer ----------------------------------------------------------
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
