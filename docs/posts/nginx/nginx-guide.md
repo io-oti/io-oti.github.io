@@ -6,8 +6,6 @@ tag: 'nginx'
 title: 'Nginx'
 ---
 
-# Nginx
-
 ## 命令
 
 ```bash

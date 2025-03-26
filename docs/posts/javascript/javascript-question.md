@@ -6,8 +6,6 @@ tag: 'javascript'
 title: 'JavaScript 进阶问题列表'
 ---
 
-# {{ $frontmatter.title }}
-
 从基础到进阶，测试你有多了解 JavaScript，刷新你的知识，或者帮助你的 coding 面试！:muscle:
 
 答案在问题下方的折叠部分，点击即可展开问题。祝你好运 :heart:

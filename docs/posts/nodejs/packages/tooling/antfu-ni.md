@@ -1,12 +1,14 @@
 ---
-author: Io_oTI
-date: 2025-03-25
-publish: true
-tag: 'nodejs'
-title: '@antfu/ni'
+{
+  "author": "Io_oTI",
+  "date": "2025-03-25",
+  "publish": true,
+  "tag": "nodejs",
+  "title": "@antfu/ni",
+}
 ---
 
-# {{ $frontmatter.title }}
+ni 可以简化包管理器使用命令，并始终使用正确的包管理器。
 
 ## 安装
 

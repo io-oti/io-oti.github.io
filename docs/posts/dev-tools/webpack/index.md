@@ -6,8 +6,6 @@ tag: 'webpack'
 title: 'webpack'
 ---
 
-# webpack
-
 ## loader
 
 ### [node-sass](./loader/node-sass.md)

@@ -6,4 +6,3 @@ tag: 'linux'
 title: 'Shell'
 ---
 
-# Shell

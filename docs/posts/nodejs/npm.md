@@ -6,8 +6,6 @@ tag: 'nodejs'
 title: 'NPM'
 ---
 
-# NPM
-
 NPM 是 JavaScript 运行时环境 Node.js 标准的软件包管理器。
 
 主页：[npmjs](https://www.npmjs.com/)

@@ -6,8 +6,6 @@ tag: 'javascript'
 title: '实现一览'
 ---
 
-# {{ $frontmatter.title }}
-
 ## 原理
 
 ### 实现 bind()

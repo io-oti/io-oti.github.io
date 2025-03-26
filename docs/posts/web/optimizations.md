@@ -6,8 +6,6 @@ tag: 'webpack'
 title: 'web optimizations'
 ---
 
-# web optimizations
-
 ## LCP (Largest Contentful Paint)
 
 ##

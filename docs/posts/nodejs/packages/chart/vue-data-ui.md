@@ -5,5 +5,3 @@ publish: false
 tag: 'nodejs'
 title: 'Vue Data UI'
 ---
-
-# Vue Data UI

@@ -6,8 +6,6 @@ tag: 'vue'
 title: 'Vue 2 备忘录'
 ---
 
-# Vue 2 备忘录
-
 ## 指令
 
 ### v-text

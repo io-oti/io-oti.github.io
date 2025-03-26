@@ -6,8 +6,6 @@ tag: 'webpack'
 title: 'node-sass'
 ---
 
-# node-sass
-
 Node-sass 是一个库，它为 Node.js 提供了与 LibSass 的绑定，LibSass 是流行的样式表预处理器 sass 的 C 版本。
 
 npmjs: [node-sass](https://www.npmjs.com/package/node-sass)

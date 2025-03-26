@@ -6,8 +6,6 @@ tag: 'github'
 title: 'Github Profile'
 ---
 
-# Github Profile
-
 Github Profile 是 Github 网站的个人主页。GitHub 早在 2020 年就推出自定义首页的功能，以下是自定义 Github 个人主页的教程。
 
 以下是我的主页截图：

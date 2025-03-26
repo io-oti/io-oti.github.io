@@ -6,8 +6,6 @@ tag: 'javascript'
 title: 'JavaScript'
 ---
 
-# {{ $frontmatter.title }}
-
 ## Data Types
 
 ### Null

@@ -6,8 +6,6 @@ tag: 'vue'
 title: 'Vue 3 JSX 语法'
 ---
 
-# Vue 3 JSX 语法
-
 ## 安装
 
 安装插件

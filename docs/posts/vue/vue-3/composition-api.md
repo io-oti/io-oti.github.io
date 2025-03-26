@@ -6,8 +6,6 @@ tag: 'vue'
 title: 'Composition API'
 ---
 
-# Composition API
-
 组合式 API 是 Vue 中的一组用于编写组件和组合式函数的函数。
 
 该词也用于描述用于编写组件的两种主要风格之一，另一种是选项式 API。通过组合式 API 编写的组件使用 `<script setup>` 或显式的 `setup()` 函数。

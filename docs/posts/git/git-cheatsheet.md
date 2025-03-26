@@ -6,8 +6,6 @@ tag: 'git'
 title: 'Git Cheapsheets'
 ---
 
-# Git Cheapsheets
-
 ## 设置和配置
 
 ```bash

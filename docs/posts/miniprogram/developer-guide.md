@@ -6,8 +6,6 @@ tag: 'miniprogram'
 title: '微信小程序开发指南'
 ---
 
-# 微信小程序开发指南
-
 推荐第一次开发微信小程序的开发者阅读微信官方的文档[《小程序开发指南》](https://developers.weixin.qq.com/ebook?action=get_post_info&docid=0008aeea9a8978ab0086a685851c0a)，本文的是对此文档的一些补充。
 
 ## npm

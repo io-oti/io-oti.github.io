@@ -6,8 +6,6 @@ tag: 'nodejs'
 title: 'Lodash'
 ---
 
-# Lodash
-
 一个现代化的 JavaScript 实用程序库，提供模块化、性能和附加功能。
 
 ## 安装

@@ -6,8 +6,6 @@ tag: 'nodejs'
 title: 'X-Spreadsheet'
 ---
 
-# X-Spreadsheet
-
 基于 JavaScript 快速构建 Web Excel
 
 npmjs: [x-data-spreadsheet](https://www.npmjs.com/package/x-data-spreadsheet)

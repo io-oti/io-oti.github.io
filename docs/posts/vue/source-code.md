@@ -6,8 +6,6 @@ tag: 'vue'
 title: 'Vue 源码阅读'
 ---
 
-# {{ $frontmatter.title }}
-
 Vue 源码目录结构：
 
 ```shell

@@ -1,12 +1,12 @@
 ---
-author: Io_oTI
-date: 2025-03-25
-publish: true
-tag: 'nodejs'
-title: 'degit'
+{
+  "author": "Io_oTI",
+  "date": "2025-03-25",
+  "publish": true,
+  "tag": "nodejs",
+  "title": "Degit",
+}
 ---
-
-# {{ $frontmatter.title }}
 
 一个命令行工具，用于克隆远程 Git 仓库模板。
 

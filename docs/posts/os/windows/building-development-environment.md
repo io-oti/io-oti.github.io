@@ -6,8 +6,6 @@ tag: 'windows'
 title: 'Windows 构建前端开发环境'
 ---
 
-# {{ $frontmatter.title }}
-
 ::: tip
 以下教程仅运行于 Windows 10 以上版本的 Windows 操作系统。
 :::

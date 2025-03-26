@@ -6,8 +6,6 @@ tag: 'nodejs'
 title: 'Underscore.js'
 ---
 
-# Underscore.js
-
 Underscore 是一个 JavaScript 库，它在不扩展任何内置对象的情况下提供了一大堆有用的函数式编程助手。
 
 ## 安装

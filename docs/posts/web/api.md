@@ -6,4 +6,3 @@ tag: 'web'
 title: 'Web API'
 ---
 
-# Web API

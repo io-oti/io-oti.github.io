@@ -6,8 +6,6 @@ tag: 'linux'
 title: 'tree'
 ---
 
-# Tree
-
 ## 安装
 
 在 Mac 上 安装 tree:

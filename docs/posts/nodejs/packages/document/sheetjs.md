@@ -6,8 +6,6 @@ tag: 'nodejs'
 title: 'SheetJS'
 ---
 
-# SheetJS
-
 适用于 web 浏览器和服务器读取、编辑和导出电子表格。
 
 ## 安装

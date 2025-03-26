@@ -6,8 +6,6 @@ tag: 'vite'
 title: '如何从 Vue CLI 迁移到 Vite'
 ---
 
-# 如何从 Vue CLI 迁移到 Vite
-
 如果你在 2021 年之前一直在使用 Vue 进行开发，那么你选择的构建工具很有可能是 Vue CLI。一段时间以来，它一直是脚手架 Vue.js 项目的事实标准。不过现在，Evan You 的下一代构建工具 Vite 已经引起了很多关注，是 Vue CLI 的绝佳替代品。
 
 ## 为什么要从 Vue CLI 迁移到 Vite？

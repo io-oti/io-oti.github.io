@@ -6,8 +6,6 @@ tag: 'github'
 title: 'Github Pages'
 ---
 
-# {{ $frontmatter.title }}
-
 ## 配置 Github Pages
 
 1. 新建 `<github username>.github.io` 的仓库

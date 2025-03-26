@@ -6,8 +6,6 @@ tag: 'mac'
 title: 'macOS 构建前端开发环境'
 ---
 
-# {{ $frontmatter.title }}
-
 ## Homebrew
 
 安装命令（需要管理员权限），使用其他镜像源安装可以直接下载脚本修改资源链接并运行脚本。

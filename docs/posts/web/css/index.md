@@ -6,8 +6,6 @@ tag: 'css'
 title: 'CSS'
 ---
 
-# {{ $frontmatter.title }}
-
 ## [盒子模型（Box Model）](box-model.md)
 
 CSS 显示的所有内容都是一个框。因此，了解 CSS Box 模型的工作原理是 CSS 的核心基础。

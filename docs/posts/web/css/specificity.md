@@ -6,8 +6,6 @@ tag: 'css'
 title: '优先级（Specificity）'
 ---
 
-# {{ $frontmatter.title }}
-
 假设使用的是以下 HTML 和 CSS：
 
 ::: code-group

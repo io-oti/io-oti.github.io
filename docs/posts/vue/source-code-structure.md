@@ -6,8 +6,6 @@ tag: 'vue'
 title: 'Vue 源码解析'
 ---
 
-# {{ $frontmatter.title }}
-
 ## compiler-编译器
 
 ### compiler/codegen

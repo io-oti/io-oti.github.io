@@ -6,8 +6,6 @@ tag: 'javascript'
 title: '算法'
 ---
 
-# {{ $frontmatter.title }}
-
 ## 检索
 
 ### 二分查找

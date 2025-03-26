@@ -6,8 +6,6 @@ tag: 'browser'
 title: 'Google Chrome'
 ---
 
-# Google Chrome
-
 ## Chrome DevTools
 
 打开开发工具

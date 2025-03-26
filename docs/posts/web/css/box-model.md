@@ -6,8 +6,6 @@ tag: 'css'
 title: '盒子模型（Box Model）'
 ---
 
-# {{ $frontmatter.title }}
-
 在 CSS 中，所有的元素都被一个个的“盒子”包围着，理解这些“盒子”的基本原理，是我们使用 CSS 实现准确布局、处理元素排列的关键。
 
 一般分为区块盒子（block boxes）和行内盒子（inline boxes）,可以使用 `display` 属性为显示类型设置各种值，该属性可以有多种值。

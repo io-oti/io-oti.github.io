@@ -1,12 +1,12 @@
 ---
-author: Io_oTI
-date: 2025-02-25
-publish: true
-tag: 'nodejs'
-title: 'Madge'
+{
+"author": "Io_oTI",
+"date": "2025-02-25",
+"publish": true,
+"tag": "nodejs",
+"title": "Madge",
+}
 ---
-
-# {{ $frontmatter.title }}
 
 Madge 是一个 Node.js 包，它可以分析项目的依赖关系图。它可以帮助你找出项目中哪些模块没有被使用，或者哪些模块之间存在循环依赖。
 

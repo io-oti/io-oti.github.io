@@ -6,8 +6,6 @@ tag: 'vue'
 title: '如何规范 Vue 3 项目代码'
 ---
 
-# 如何规范 Vue 3 项目代码
-
 ::: tip
 以下教程基于 Visual Studio Code 编辑器来安装和配置。
 :::

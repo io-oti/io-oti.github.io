@@ -6,8 +6,6 @@ tag: 'windows'
 title: 'Microsoft PowerToys'
 ---
 
-# {{ $frontmatter.title }}
-
 Microsoft PowerToys 是一组实用程序，可供高级用户调整和简化其 `Windows` 体验，从而提高工作效率。
 
 ## 键盘管理器

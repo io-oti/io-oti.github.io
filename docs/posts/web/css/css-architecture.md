@@ -6,8 +6,6 @@ tag: 'css'
 title: 'CSS 架构'
 ---
 
-# CSS 架构
-
 ## OOCSS
 
 ## BEM

@@ -6,8 +6,6 @@ tag: 'nodejs'
 title: 'Axios'
 ---
 
-# Axios
-
 一个基于 Promise 的网络请求库，可用于浏览器和 Node.js 环境。
 
 ## 安装

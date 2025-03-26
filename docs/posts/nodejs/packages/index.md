@@ -6,8 +6,6 @@ tag: 'nodejs'
 title: '目录'
 ---
 
-# 目录
-
 ## Animation
 
 ### [Anime.js](./animation/animejs.md)
@@ -64,23 +62,23 @@ Anime.js 是一个轻量级的 JavaScript 动画库，具有简单而强大的 A
 
 ## Tooling
 
-### @antfu/ni
+### [@antfu/ni](./tooling/ni.md)
 
 ni 可以简化包管理器使用命令，并始终使用正确的包管理器。
 
-### degit
+### [Degit](./tooling/degit.md)
 
 一个命令行工具，用于克隆远程 Git 仓库模板。
+
+### [Madge](./tooling/madge.md)
+
+Madge 根据 CommonJS、AMD 或 ES6 模块依赖关系创建图形。
 
 ## Utils
 
 ### [Ramda](./utils/ramda.md)
 
 一款实用的 JavaScript 函数式编程库。
-
-### [Madge](./utils/madge.md)
-
-Madge 根据 CommonJS、AMD 或 ES6 模块依赖关系创建图形。
 
 ### [Lodash](./utils/lodash.md)
 

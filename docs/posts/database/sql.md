@@ -5,5 +5,3 @@ publish: false
 tag: 'database'
 title: 'Learn SQL'
 ---
-
-# Learn SQL

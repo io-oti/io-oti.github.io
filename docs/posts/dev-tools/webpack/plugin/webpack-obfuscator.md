@@ -6,8 +6,6 @@ tag: 'webpack'
 title: 'webpack-obfuscator'
 ---
 
-# webpack-obfuscator
-
 JavaScript-Obfuscator 是一款功能强大的免费 JavaScript 模糊处理程序，包含多种功能，可为源代码提供保护。Webpack-Obfuscator 是 JavaScript-Obfuscator 的 webpack 插件。
 
 npmjs: [webpack-obfuscator](https://www.npmjs.com/package/webpack-obfuscator)
