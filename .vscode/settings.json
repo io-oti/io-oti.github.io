@@ -53,4 +53,15 @@
     "MD041": false,
   },
   // #endregion ----------------------------------------------------------------
+  // #region - extensions - Code Spell Checker ---------------------------------
+  "cSpell.words": [
+    "catppuccin",
+    "codepen",
+    "giscus",
+    "miniprogram",
+    "unplugin",
+    "wechat",
+    "shenzhen",
+  ],
+  // #endregion ----------------------------------------------------------------
 }

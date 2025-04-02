@@ -17,14 +17,17 @@ export default {
     autoImport({
       imports: ['vue'],
       resolvers: [ElementPlusResolver()],
+      viteOptimizeDeps: true,
       eslintrc: {
         enabled: true,
         filepath: './.eslintrc-auto-import.js',
         globalsPropValue: false,
       },
+      dts: false,
     }),
     components({
       resolvers: [ElementPlusResolver()],
+      dts: false,
     }),
     vueJsx(),
     sidebar([
