@@ -2,10 +2,10 @@
   "recommendations": [
     "shd101wyy.markdown-preview-enhanced",
     "davidanson.vscode-markdownlint",
+    "docsmsft.docs-markdown",
     "yzhang.markdown-all-in-one",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
-    "antfu.vite",
     "vue.volar",
   ]
 }

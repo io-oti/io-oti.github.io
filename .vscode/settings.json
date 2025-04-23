@@ -29,6 +29,31 @@
     "README.md": "*.config.js, .eslint*, .git*",
   },
   // #endregion ----------------------------------------------------------------
+  // #region - extensions - Code Spell Checker ---------------------------------
+  "cSpell.words": [
+    "catppuccin",
+    "codepen",
+    "frontmatter""giscus",
+    "miniprogram",
+    "unplugin",
+    "wechat",
+    "shenzhen",
+    "unshift"
+    "vite",
+    "vitepress",
+  ],
+  // #endregion ----------------------------------------------------------------
+  // #region extensions - learn-markdown ---------------------------------------
+  "markdown.showToolbar": true,
+  // #endregion ----------------------------------------------------------------
+  // #region extensions - markdownlint -----------------------------------------
+  "markdownlint.config": {
+    "MD025": false,
+    "MD033": false,
+    "MD041": false,
+    "MD045": false,
+  },
+  // #endregion ----------------------------------------------------------------
   // #region extensions - prettier ---------------------------------------------
   "prettier.bracketSameLine": false,
   "prettier.bracketSpacing": true,
@@ -38,30 +63,5 @@
   "prettier.singleQuote": true,
   "prettier.tabWidth": 2,
   "prettier.trailingComma": "es5",
-  // #endregion ----------------------------------------------------------------
-  // #region extensions - vite -------------------------------------------------
-  "vite.autoStart": false,
-  "vite.browserType": "system",
-  "vite.buildCommand": "npm run docs:build",
-  "vite.devCommand": "npm run docs:dev",
-  "vite.port": 5173,
-  // #endregion ----------------------------------------------------------------
-  // #region extensions - markdownlint -----------------------------------------
-  "markdownlint.config": {
-    "MD025": false,
-    "MD033": false,
-    "MD041": false,
-  },
-  // #endregion ----------------------------------------------------------------
-  // #region - extensions - Code Spell Checker ---------------------------------
-  "cSpell.words": [
-    "catppuccin",
-    "codepen",
-    "giscus",
-    "miniprogram",
-    "unplugin",
-    "wechat",
-    "shenzhen",
-  ],
   // #endregion ----------------------------------------------------------------
 }
