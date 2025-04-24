@@ -455,52 +455,6 @@ function lis(array) {
 }
 ```
 
-## 函数式编程
-
-### 柯里化
-
-```javascript
-function sum(...args1) {
-  let x = args1.reduce((prev, next) => {
-    return prev + next
-  })
-
-  return function (...args2) {
-    if (args2.length == 0) return x
-    let y = args2.reduce((prev, next) => {
-      return prev + next
-    })
-    return sum(x + y)
-  }
-}
-
-console.log(sum(1, 2, 2, 5)(7)()) // 17
-```
-
-### compose
-
-```javascript
-/**
- * 接收若干个函数作为参数，每个函数执行后的输出作为下一个函数的输入。
- * 执行方向是自右向左的，初始函数的参数在最右边。
- * @param  {...any} fns
- * @returns
- */
-function compose(...fns) {
-  return function (x) {
-    return fns.reverse().reduce((arg, fn) => {
-      return fn(arg)
-    }, x)
-  }
-}
-
-const add = (x) => x + 1
-const multiply = (x) => x * 2
-const minus = (x) => x - 1
-
-console.log(compose(minus, multiply, add)(1)) // 3
-```
-
 ## 技巧
 
 ### 防抖
