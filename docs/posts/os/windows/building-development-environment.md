@@ -39,7 +39,7 @@ wsl --install -d [DistroName]
 
 使用 WSL 会出现 vmmem 程序内存占用过高的情况，使用 .wslconfig 为 WSL 上运行的所有已安装的发行版配置全局设置，下面的 `.wslconfig` 示例文件演示了一些可用的配置选项。 在此示例中，文件路径为 `C:\Users\<UserName>\.wslconfig`。
 
-```shell
+```sh
 # Settings apply across all Linux distros running on WSL 2
 [wsl2]
 
@@ -66,17 +66,34 @@ memory=2GB
 
 如果忘记了 Linux 分发版的密码
 
-1. 请打开 PowerShell，并使用以下命令进入默认 WSL 分发版的根目录：`wsl -u root`。
+#### 步骤一：登录 WSL
 
-   > 如果需要在非默认分发版中更新忘记的密码，请使用命令：`wsl -d Debian -u root`，并将 Debian 替换为目标分发版的名称。
+请打开 PowerShell，并使用以下命令进入默认 WSL 分发版的根目录：
 
-2. 在 PowerShell 内的根级别打开 WSL 发行版后，可使用此命令更新密码：`passwd <username>`，其中 `<username>` 是发行版中帐户的用户名，而你忘记了它的密码。
+::: tip
+如果需要在非默认分发版中更新忘记的密码，请使用命令：`wsl -d Ubuntu -u root`，并将 Ubuntu 替换为目标分发版的名称。
+:::
 
-3. 系统将提示你输入新的 UNIX 密码，然后确认该密码。 在被告知密码已成功更新后，请使用以下命令在 PowerShell 内关闭 WSL：exit。
+```sh
+wsl -u root
+```
+
+#### 步骤二：更新密码
+
+在 PowerShell 内的根级别打开 WSL 发行版后，可使用此命令更新密码：`passwd <username>`，其中 `<username>` 是发行版中帐户的用户名，而你忘记了它的密码。
+
+#### 步骤三：完成更新
+
+系统将提示你输入新的 UNIX 密码，然后确认该密码。 在被告知密码已成功更新后，请使
+用以下命令在 PowerShell 内关闭 WSL：
+
+```sh
+exit
+```
 
 修改以下配置使用 sudo 时可以不用输入密码。
 
-```shell
+```sh
 sudo vi /etc/sudoers
 
 # Allow members of group sudo to execute any command
@@ -87,7 +104,7 @@ sudo vi /etc/sudoers
 
 Windows 不会自动更新或升级 Linux 分发版。 大多数 Linux 用户往往倾向于自行控制此任务。建议使用发行版的首选包管理器定期更新和升级包。 对于 Ubuntu 或 Debian，请使用以下命令：
 
-```Bash
+```sh
 sudo apt update && sudo apt upgrade
 ```
 
@@ -95,7 +112,7 @@ sudo apt update && sudo apt upgrade
 
 查看当前系统是否已安装 zsh ，如已安装则可以省略安装步骤，切换到 zsh 使用即可。
 
-```shell
+```sh
 # 查看系统已有 shell
 cat /etc/shells
 
@@ -113,11 +130,11 @@ chsh -s /usr/bin/zsh
 
 ::: code-group
 
-```shell [使用 curl 安装]
+```sh [使用 curl 安装]
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-```shell [使用 wget 安装]
+```sh [使用 wget 安装]
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
 
@@ -127,19 +144,19 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 
 下载 zsh-autosuggestions 插件：
 
-```shell
+```sh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 下载 zsh-syntax-highlighting 插件：
 
-```shell
+```sh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
 下载好 `zsh-autosuggestions` 和 `zsh-syntax-highlighting` 插件后，还需要将插件添加至 `.zshrc` 配置文件:
 
-```shell
+```sh
 # 添加 zsh-autosuggestions, zsh-syntax-highlighting 和 zsh-z 插件
 # oh-my-zsh 内置了 git 和 z 插件，所以无需安装，直接配置就可使用
 plugins=(
@@ -152,7 +169,7 @@ plugins=(
 
 最后使用命令让 `.zshrc` 配置文件生效：
 
-```shell
+```sh
 source ~/.zshrc
 ```
 
@@ -162,11 +179,11 @@ source ~/.zshrc
 
 ::: code-group
 
-```shell [Github]
+```sh [Github]
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-```shell [Gitee]
+```sh [Gitee]
 git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
@@ -174,7 +191,7 @@ git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$H
 
 修改 `oh-my-zsh` 的配置文件，将主题设置为 `powerlevel10k`：
 
-```shell
+```sh
 # 将 "ZSH_THEME=robbyrussell" 修改为:
 ZSH_THEME="powerlevel10k/powerlevel10k" # [!code focus]
 
@@ -193,7 +210,7 @@ typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 
 当然，修改完 `.zshrc` 配置文件别忘了让它生效：
 
-```shell
+```sh
 source ~/.zshrc
 ```
 
@@ -217,7 +234,7 @@ source ~/.zshrc
 
 现在你可以运行以下命令配置 `powerlevel10k` 主题:
 
-```shell
+```sh
 p10k configure
 ```
 
@@ -233,13 +250,13 @@ p10k configure
 
 2. 使用以下命令安装 cURL（用于在命令行中从 Internet 下载内容的工具）：
 
-   ```shell
+   ```sh
    sudo apt-get install curl
    ```
 
 3. 使用以下命令安装 nvm：
 
-   ```shell
+   ```sh
    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
    ```
 
@@ -250,13 +267,13 @@ p10k configure
 6. 安装 Node.js 的当前版本和稳定的 LTS 版本。 后面的步骤将介绍如何使用 nvm 命令在 Node.js 的活动版本之间切换。
    - 安装 Node.js 的当前稳定的 LTS 版本（推荐用于生产应用程序）：
 
-     ```shell
+     ```sh
      nvm install --lts
      ```
 
    - 安装 Node.js 的当前版本（用于测试最新的 Node.js 功能和改进，但更容易出现问题）：
 
-     ```shell
+     ```sh
      nvm install node
      ```
 
@@ -272,7 +289,7 @@ p10k configure
 
 ni 可以简化包管理器使用命令，并始终使用正确的包管理器。
 
-```shell
+```sh
 npm i -g @antfu/ni
 ```
 
@@ -289,7 +306,7 @@ npm i -g @antfu/ni
 色背景以警示操作者。表示将 PYCR 文件夹下所有的文件权限改为 除自己和所在群组外其
 他用户不能写入。
 
-```shell
+```sh
 chmod -R 775 PYCR/
 ```
 
