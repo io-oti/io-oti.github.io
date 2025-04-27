@@ -14,7 +14,7 @@ repository: [node-sass](https://github.com/sass/node-sass)
 
 ## 安装
 
-```bash
+```sh
 npm install node-sass
 ```
 
@@ -45,7 +45,7 @@ npm install node-sass
 
 ## 重建 node-sass 二进制文件
 
-```bash
+```sh
 # 指定本地文件安装
 npm install node-sass --sass-binary-path=[path]
 

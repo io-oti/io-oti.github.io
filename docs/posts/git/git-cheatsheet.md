@@ -8,7 +8,7 @@ title: 'Git Cheapsheets'
 
 ## 设置和配置
 
-```bash
+```sh
 # 初始化新的 Git 存储库
 git init
 
@@ -61,7 +61,7 @@ git mergetool
 
 - .gitignore 只能忽略之前没有被 staged(缓存)的文件，如果已经 staged 纳入了版本管理中，再修改 .gitignore 是无效的。
 
-```bash
+```sh
 # 显示工作树状态
 git status
 
@@ -97,7 +97,7 @@ git rm --cached <file_name>
 
 ## 分支与合并
 
-```bash
+```sh
 # 列出所有分支机构
 git branch
 
@@ -145,7 +145,7 @@ git rebase -i <remote_name>/<remote_branch>
 
 ## 远程存储库
 
-```bash
+```sh
 # 列出远程存储库
 git remote
 
@@ -214,7 +214,7 @@ git branch --unset-upstream <branch_name>
 
 ## 提交历史记录
 
-```bash
+```sh
 # 显示提交历史记录
 git log
 
@@ -236,7 +236,7 @@ git log --until=<date>
 
 ## 标签
 
-```bash
+```sh
 # 列出所有标签
 git tag
 
@@ -258,7 +258,7 @@ git show <tag_name>
 
 ## 储藏
 
-```bash
+```sh
 # 临时保存工作树中的更改
 git stash save "stash message"
 
@@ -292,7 +292,7 @@ git stash show <stash>
 
 ## Cherry-Picking
 
-```bash
+```sh
 # 将特定的提交从一个分支应用到另一个分支
 git cherry-pick <commit_id>
 ```
@@ -301,7 +301,7 @@ git cherry-pick <commit_id>
 
 - 不要执行 git reset --hard 命令，会导致此次修改的内容丢失。如果不慎操作，执行 git reflog 找到提交历史，然后再 git reset 回去。
 
-```bash
+```sh
 # 修改最新提交, Vim: ZZ 保存, ZQ 不保存
 git commit --amend
 
@@ -326,7 +326,7 @@ git reflog
 
 ## 子模块、子树和高级子模块
 
-```bash
+```sh
 # 将子模块添加到当前存储库
 git submodule add <repository_url> <path>
 
@@ -351,7 +351,7 @@ git submodule deinit <path>
 
 ## 钩子和自动化，以及差异和合并工具
 
-```bash
+```sh
 # 在 Git 存储库中找到 hooks 目录（通常位于.git/hooks/)
 git hooks
 
@@ -364,7 +364,7 @@ chmod +x <hook_script>
 
 ## 使用修补程序
 
-```bash
+```sh
 # 为特定提交生成修补程序文件
 git format-patch <commit_id>
 
@@ -377,7 +377,7 @@ git am <patch_file>
 
 ## 选择、调试和性能问题
 
-```bash
+```sh
 # 开始一个平分会话，查找引入错误的提交
 git bisect start
 
@@ -402,7 +402,7 @@ git clean -df
 
 ## 技巧和窍门
 
-```bash
+```sh
 # 交互式地选择要暂存的文件的部分（hunks）
 git add -p
 

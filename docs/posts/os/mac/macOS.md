@@ -10,7 +10,7 @@ title: 'macOS 构建前端开发环境'
 
 安装命令（需要管理员权限），使用其他镜像源安装可以直接下载脚本修改资源链接并运行脚本。
 
-```shell
+```sh
 # 使用 Shell 脚本安装 Homebrew：
 /bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ineo6/homebrew-install/install.sh)"
 
@@ -21,7 +21,7 @@ title: 'macOS 构建前端开发环境'
 <details>
   <summary>基本命令：</summary>
 
-  ```shell
+  ```sh
   # 查询可安装软件
   brew search [formula]
 
@@ -79,28 +79,28 @@ title: 'macOS 构建前端开发环境'
 
 **\*** 替换 brew（源代码仓库）：
 
-```shell
+```sh
 cd "$(brew --repo)"
 git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
 ```
 
 **\*** 替换 homebrew-core（Homebrew 核心源）：
 
-```shell
+```sh
 cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
 ```
 
 替换 homebrew-cask（提供 macos 应用和大型二进制文件的安装） ：
 
-```shell
+```sh
 git -C "$(brew --repo homebrew/cask)" remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
 ```
 
 替换 homebrew-bottles （预编译二进制软件包）：
 首先要先区分你的 mac 用哪种终端工具，如果是 bash ，则执行：
 
-```shell
+```sh
 echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.bash_profile
 source ~/.bash_profile
 ```
@@ -124,7 +124,7 @@ source ~/.zshrc
 
 ### 切换 zsh
 
-```shell
+```sh
 # 查看当前 shell
 echo $0
 
@@ -139,11 +139,11 @@ chsh -s /bin/zsh
 
 ::: code-group
 
-```shell [使用 curl 安装]
+```sh [使用 curl 安装]
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-```shell [使用 wget 安装]
+```sh [使用 wget 安装]
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
 
@@ -153,19 +153,19 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 
 下载 zsh-autosuggestions 插件：
 
-```shell
+```sh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 下载 zsh-syntax-highlighting 插件：
 
-```shell
+```sh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
 下载好 `zsh-autosuggestions` 和 `zsh-syntax-highlighting` 插件后，还需要将插件添加至 `.zshrc` 配置文件:
 
-```shell
+```sh
 # 添加 zsh-autosuggestions, zsh-syntax-highlighting 和 zsh-z 插件
 # oh-my-zsh 内置了 git 和 z 插件，所以无需安装，直接配置就可使用
 plugins=(
@@ -178,7 +178,7 @@ plugins=(
 
 最后使用命令让 `.zshrc` 配置文件生效：
 
-```shell
+```sh
 source ~/.zshrc
 ```
 
@@ -186,20 +186,20 @@ source ~/.zshrc
 
 Clone the repository:
 
-```shell
+```sh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
 Users in China can use the official mirror on gitee.com for faster download.
 中国用户可以使用 gitee.com 上的官方镜像加速下载.
 
-```shell
+```sh
 git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
 修改 `oh-my-zsh` 的配置文件，将主题设置为 `powerlevel10k`：
 
-```shell
+```sh
 # 将 "ZSH_THEME=robbyrussell" 修改为:
 ZSH_THEME="powerlevel10k/powerlevel10k" # [!code focus]
 
@@ -218,7 +218,7 @@ typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 
 当然，修改完 `.zshrc` 配置文件别忘了让它生效：
 
-```shell
+```sh
 source ~/.zshrc
 ```
 
@@ -241,7 +241,7 @@ source ~/.zshrc
 
 现在你可以运行以下命令配置 `powerlevel10k` 主题:
 
-```shell
+```sh
 p10k configure
 ```
 
@@ -253,7 +253,7 @@ p10k configure
 在安装版本管理器之前，始终建议从操作系统中删除 Node.js 或 npm 的任何现有安装，因为不同的安装类型可能会导致出现奇怪和混淆的冲突。
 :::
 
-```shell
+```sh
 # 安装 NVM，使用 NVM 管理 Node.js
 brew install nvm
 
@@ -280,7 +280,7 @@ nvm alias default <version>
 
 ni 可以简化包管理器使用命令，并始终使用正确的包管理器。
 
-```shell
+```sh
 npm i -g @antfu/ni
 ```
 

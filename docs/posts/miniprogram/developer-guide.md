@@ -16,7 +16,7 @@ title: '微信小程序开发指南'
 
    在小程序 package.json 所在的目录中执行命令：
 
-   ```shell
+   ```sh
    npm install [package name]
    ```
 
@@ -29,7 +29,7 @@ title: '微信小程序开发指南'
 
 3. 在 JS 文件中引用：
 
-   ```javascript
+   ```js
    import packageName from 'packageName'
    ```
 
@@ -39,7 +39,7 @@ title: '微信小程序开发指南'
 
 小程序有许多地方与 Vue 很像，但是并没有 Vue 的 computed 和 watch，想要使用这些特性可以安装并构建一个 npm 包来实现。
 
-```shell
+```sh
 npm install --save miniprogram-computed
 ```
 
@@ -47,7 +47,7 @@ npm install --save miniprogram-computed
 
 ::: code-group
 
-```javascript [computed]
+```js [computed]
 import computedBehavior from 'miniprogram-computed'
 
 Component({
@@ -64,7 +64,7 @@ Component({
 })
 ```
 
-```javascript [watch]
+```js [watch]
 import computedBehavior from 'miniprogram-computed'
 
 Component({
@@ -88,7 +88,7 @@ Component({
 
 在 Page 构造器中 computed 的使用示例：
 
-```javascript
+```js
 import computedBehavior from 'miniprogram-computed'
 
 Page({
@@ -115,13 +115,13 @@ Page({
 
 与 computed 的情况相似，如果需要用到全局的状态管理，则需要安装并构建 `mobx-miniprogram` 和 `mobx-miniprogram-bindings` npm 包:
 
-```shell
+```sh
 npm install --save mobx-miniprogram mobx-miniprogram-bindings
 ```
 
 ::: code-group
 
-```javascript [创建 store]
+```js [创建 store]
 // store.js
 import { observable, action } from 'mobx-miniprogram'
 
@@ -147,7 +147,7 @@ export const store = observable({
 })
 ```
 
-```javascript [在 Component 构造器中使用]
+```js [在 Component 构造器中使用]
 import { storeBindingsBehavior } from 'mobx-miniprogram-bindings'
 import { store } from './store'
 

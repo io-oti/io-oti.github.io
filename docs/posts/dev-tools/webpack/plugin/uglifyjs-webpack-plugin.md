@@ -12,13 +12,13 @@ npmjs: [uglifyjs-webpack-plugin](https://www.npmjs.com/package/uglifyjs-webpack-
 
 ## 安装
 
-```bash
+```sh
 npm install uglifyjs-webpack-plugin --save-dev
 ```
 
 ## 使用
 
-```javascript
+```js
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {

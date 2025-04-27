@@ -26,7 +26,7 @@ NPM 是 JavaScript 运行时环境 Node.js 标准的软件包管理器。
 
 使用以下命令可将 registry 配置为淘宝镜像源：
 
-```bash
+```sh
 # 显示所有配置设置。使用-l也可以显示默认值。使用--json以json格式显示设置。
 npm config list
 
@@ -66,13 +66,13 @@ npm 获取配置顺序（降序）：
 
 使用 help 命令查看所有可用命令：
 
-```bash
+```sh
 npm help
 ```
 
 ### 备忘录
 
-```bash
+```sh
 # 查看已安装软件包
 npm ls <pkg-name>
 

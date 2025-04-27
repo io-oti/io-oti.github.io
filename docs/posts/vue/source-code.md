@@ -8,7 +8,7 @@ title: 'Vue 源码阅读'
 
 Vue 源码目录结构：
 
-```shell
+```sh
 src
 ├── compiler                  # 编译器
 │   ├── codegen               #

@@ -14,13 +14,13 @@ repository: [webpack-obfuscator](https://github.com/javascript-obfuscator/webpac
 
 ## 安装
 
-```bash
+```sh
 npm install --save-dev javascript-obfuscator webpack-obfuscator
 ```
 
 ## 使用
 
-```javascript
+```js
 // 导入 webpack-obfuscator 依赖
 const WebpackObfuscator = require('webpack-obfuscator')
 

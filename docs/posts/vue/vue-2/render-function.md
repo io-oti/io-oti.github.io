@@ -26,7 +26,7 @@ Type: `{ Object }`
 
 一个与模板中 attribute 对应的数据对象。可选。
 
-```javascript
+```js
 {
   // 与 `v-bind:class` 的 API 相同，
   // 接受一个字符串、对象或字符串和对象组成的数组
@@ -102,7 +102,7 @@ Type: `{ String | Array }`
 
 ### 内容 - Content
 
-```javascript
+```js
 export default {
   data () {
     return {
@@ -124,7 +124,7 @@ export default {
 
 :::code-group
 
-```javascript [Parent.vue]
+```js [Parent.vue]
 import Children from './Children.vue'
 
 export default {
@@ -151,7 +151,7 @@ export default {
 }
 ```
 
-```javascript [Children.vue]
+```js [Children.vue]
 export default {
  name: 'Children',
 
@@ -170,7 +170,7 @@ export default {
 
 #### DomProps
 
-```javascript
+```js
 export default {
   data () {
     return {
@@ -192,7 +192,7 @@ export default {
 
 `vm.$listeners` 包含了父作用域中的 (不含 `.native` 修饰器的) `v-on` 事件监听器。
 
-```javascript
+```js
 export default {
  data () {
     return {
@@ -220,7 +220,7 @@ export default {
 
 :::code-group
 
-```javascript [Children.vue]
+```js [Children.vue]
 import Children from './Children.vue'
 
 export default {
@@ -248,7 +248,7 @@ export default {
 }
 ```
 
-```javascript [Children.vue]
+```js [Children.vue]
 export default {
   name: 'Children',
 
@@ -268,7 +268,7 @@ export default {
 
 ### 指令 - Directives
 
-```javascript
+```js
 export default {
  data () {
     return {
@@ -288,7 +288,7 @@ export default {
 
 #### v-model
 
-```javascript
+```js
 export default {
   data () {
     return {

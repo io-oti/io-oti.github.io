@@ -115,7 +115,7 @@ env: {
 
 此更改还将迫使我们自行更新 eslint ，以及 eslint-plugin-vue 支持 es2021 环境。
 
-```bash
+```sh
 npm install eslint@8 eslint-plugin-vue@8
 ```
 
@@ -123,7 +123,7 @@ npm install eslint@8 eslint-plugin-vue@8
 
 在此步骤中，让我们为 Vue.js 项目配置 Vite。Vite 是通过项目根目录中的文件配置 vite.config.js 的。这是使用 为 npm init vite@latest Vue 生成全新 Vite 项目时的默认 vite.config.js 文件的样子。
 
-```javascript
+```js
 // vite.config.js
 
 import { defineConfig } from 'vite'
@@ -139,7 +139,7 @@ export default defineConfig({
 
 首先，我们将从 vite-plugin-vue2 Vue 插件导入，而不是官方的 Vite Vue 插件。
 
-```javascript
+```js
 // vite.config.js
 import vue from '@vitejs/plugin-vue' // remove
 import { createVuePlugin as vue } from 'vite-plugin-vue2'
@@ -151,7 +151,7 @@ import { createVuePlugin as vue } from 'vite-plugin-vue2'
 
 其次，为了使 @ 导入别名像使用 Vue CLI 一样工作，我们需要添加这个位。
 
-```javascript
+```js
 // vite.config.js
 //...
 const path = require('path')
@@ -245,7 +245,7 @@ export default defineConfig({
 
 但是，你无法再访问变量上的环境 process 变量。相反，可以在 上 import.meta.env 找到它们。
 
-```javascript
+```js
 // router/index.js
 base: process.env.BASE_URL, //remove
 base: import.meta.env.BASE_URL,
@@ -257,14 +257,14 @@ base: import.meta.env.BASE_URL,
 
 虽然我们新创建的 Vue CLI 项目已经这样做了，但我敢打赌你现有的应用程序可能不会这样做。因此，必须确保单个文件组件的所有导入都以 .vue 扩展名结尾。
 
-```javascript
+```js
 // Home.vue
 import HelloWorld from '@/components/HelloWorld.vue' // .vue is required
 ```
 
 如果此过程由于代码库的大小而过于压倒性，则可以配置 vite，以便不需要这样做。这是通过添加到 .vue 中的 resolve.extensions vite.config.js 配置选项来实现的。确保还手动包含所有默认扩展名，因为此选项会覆盖默认值。
 
-```javascript
+```js
 // vite.config.js
 //...
 export default defineConfig({
@@ -282,7 +282,7 @@ export default defineConfig({
 
 最后，你可以删除所有用于命名动态导入的魔术注释，因为这些是特定于 webpack 的注释，对 Vite 没有任何意义。
 
-```javascript
+```js
 // router/index.js
 import(
     /* webpackChunkName: "about" */  // remove

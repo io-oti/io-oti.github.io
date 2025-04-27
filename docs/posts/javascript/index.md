@@ -10,7 +10,7 @@ title: 'JavaScript'
 
 ### 实现 apply()
 
-```javascript
+```js
 Function.prototype.myApply = function (context, args) {
   context.fn = this
   let res
@@ -37,7 +37,7 @@ test.myApply(obj, [1, 2, 3])
 
 ### 实现 bind()
 
-```javascript
+```js
 Function.prototype.bindNew = function (context, ...args) {
   return (...newArgs) => this.apply(context, [...args, ...newArgs])
 }
@@ -57,7 +57,7 @@ test.showName.bindNew({ name: 'Mr.fy' })('handsome')
 
 ### 实现 call()
 
-```javascript
+```js
 Function.prototype.myCall = function (context, ...rest) {
   context.fn = this
   const result = context.fn(...rest)
@@ -80,7 +80,7 @@ test.myCall(obj, 1, 2, 3)
 
 ### 实现 instanceof
 
-```javascript
+```js
 function myInstanceOf(left, right) {
   let prototype = right.prototype
 
@@ -97,7 +97,7 @@ console.log(myInstanceOf([], Array)) // true
 
 ### 实现 new
 
-```javascript
+```js
 function myNew(fun, ...args) {
   let obj = {}
   obj.__proto__ = fun.prototype
@@ -117,7 +117,7 @@ console.log(animal.name) // dog
 
 ### 实现 jsonp
 
-```javascript
+```js
 const newScript = document.createElement('script')
 
 newScript.src = 'https://www.adb.com?callback=fn'
@@ -130,7 +130,7 @@ function fn(data) {
 
 ### 实现 Promise
 
-```javascript
+```js
 const PENDING = Symbol()
 const REJECTED = Symbol()
 const FULFILLED = Symbol()
@@ -176,7 +176,7 @@ p.then((res) => {
 
 ### 实现 Promise.all()
 
-```javascript
+```js
 function isPromise(obj) {
   return (
     !!obj &&
@@ -210,7 +210,7 @@ function myPromiseAll(arr) {
 
 ### 实现 Promise.race()
 
-```javascript
+```js
 function myPromiseRace(arr) {
   return new Promise((resolve, reject) => {
     for (let i = 0; i < arr.length; i++) {
@@ -222,7 +222,7 @@ function myPromiseRace(arr) {
 
 ### 实现 EventEmitter 订阅监听模式
 
-```javascript
+```js
 class EventEmitter {
   constructor() {
     this.events = {}
@@ -258,7 +258,7 @@ class EventEmitter {
 
 ### 使用 setTimeout 实现 setInterval
 
-```javascript
+```js
 function myInterval(fn, time) {
   let context = this
 
@@ -273,7 +273,7 @@ function myInterval(fn, time) {
 
 ### 数组扁平化
 
-```javascript
+```js
 const flatten = function (arr) {
   let res = []
 
@@ -293,7 +293,7 @@ console.log(flatten([1, [1, 2, [2, 4]], 3, 5])) // [1, 1, 2, 2, 4, 3, 5]
 
 ### 数组去重
 
-```javascript
+```js
 /**
  * 数组去重
  *
@@ -315,7 +315,7 @@ function unique(array) {
 
 ### 数组转对象
 
-```javascript
+```js
 const data = [
   {
     id: 1,
@@ -405,7 +405,7 @@ console.log(array2Object2(data))
 
 ### 去除字符串首尾空格
 
-```javascript
+```js
 //正则表达式
 function myTrim1(str) {
   return str.replace(/^\s+|\s+$/g, '')
@@ -431,7 +431,7 @@ function myTrim2(str) {
 
 ### 最长递增子序列
 
-```javascript
+```js
 function lis(array) {
   if (array.length === 0) return 0
 
@@ -459,7 +459,7 @@ function lis(array) {
 
 ### 防抖
 
-```javascript
+```js
 function debounce(fn, wait) {
   let timeout = null
 
@@ -477,7 +477,7 @@ function debounce(fn, wait) {
 
 ### 节流
 
-```javascript
+```js
 function throttle(fn, wait) {
   let pre = new Date()
 
@@ -496,7 +496,7 @@ function throttle(fn, wait) {
 
 ### 深拷贝
 
-```javascript
+```js
 function deepClone(obj) {
   // 先判断是对象还是数组
   let copy = obj instanceof Array ? [] : {}
@@ -517,7 +517,7 @@ console.log(deepClone({ name: 'jack', birth: { year: '1997', month: '10' } })) /
 
 ### before 函数
 
-```javascript
+```js
 /**
  * 传入任意一个函数，只能调用指定的次数
  * @param {*} count 调用次数

@@ -12,13 +12,13 @@ title: 'Vue 2 JSX 语法'
 
 安装预设：
 
-```shell
+```sh
 npm install @vue/babel-preset-jsx @vue/babel-helper-vue-jsx-merge-props
 ```
 
 然后将预设添加到 `babel.config.js`：
 
-```javascript
+```js
 module.exports = {
   presets: ['@vue/babel-preset-jsx'],
 }

@@ -13,13 +13,13 @@ npmjs: [compression-webpack-plugin](https://www.npmjs.com/package/compression-we
 
 ## 安装
 
-```bash
+```sh
 npm install compression-webpack-plugin --save-dev
 ```
 
 ## 使用
 
-```javascript
+```js
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
 module.exports = {

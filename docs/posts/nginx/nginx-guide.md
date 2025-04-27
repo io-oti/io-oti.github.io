@@ -8,7 +8,7 @@ title: 'Nginx'
 
 ## 命令
 
-```bash
+```sh
 # 查找配置文件
 nginx -t
 
@@ -27,7 +27,7 @@ nginx -t
 
 ## 配置
 
-```bash
+```sh
 #user root;
 worker_processes  1;                          # work进程的数量
 
@@ -83,7 +83,7 @@ http {                                        # http区块的开始
 
 当然前提是客户端支持该压缩算法，服务端会通过客户端发送的请求头中的 `Accept-Encoding` 字段来确定是否支持。
 
-```bash
+```sh
 http {
   # 开启 gzip 压缩
   gzip  on;

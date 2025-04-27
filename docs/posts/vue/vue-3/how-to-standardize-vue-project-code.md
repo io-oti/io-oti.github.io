@@ -35,13 +35,13 @@ ESLint 是一个根据方案识别并报告 ECMAScript/JavaScript 代码问题�
 
 你可以参考使用以下命令来安装和配置 ESLint：
 
-```shell
+```sh
 npm init @eslint/config
 ```
 
 以下是配置步骤：
 
-```shell
+```sh
 ? How would you like to use ESLint? …
   To check syntax only
 ▸ To check syntax and find problems # 👈
@@ -90,7 +90,7 @@ eslint@9.x, globals, @eslint/js, eslint-plugin-vue
 
 `eslint.config.mjs` 文件的内容：
 
-```javascript
+```js
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import pluginVue from "eslint-plugin-vue";
@@ -112,7 +112,7 @@ export default [
 
 [Issues - How does the flat configuration of eslint-plugin-vue only apply to vue files](https://github.com/vuejs/eslint-plugin-vue/issues/2603)
 
-```javascript
+```js
 import globals from 'globals'
 import pluginJs from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
@@ -174,7 +174,7 @@ export default [,
 
 在包含 `eslint.config.js` 文件的目录运行以下命令：
 
-```shell
+```sh
 npx @eslint/config-inspector@latest
 ```
 

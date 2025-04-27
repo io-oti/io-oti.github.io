@@ -10,19 +10,19 @@ title: 'tree'
 
 在 Mac 上 安装 tree:
 
-```shell
+```sh
 brew install tree
 ```
 
 在 Ubuntu 上安装 tree:
 
-```shell
+```sh
 apt install tree
 ```
 
 ## 使用
 
-```shell
+```sh
 # 打印 src 目录
 tree [src] -L 2 --dirsfirst
 
@@ -33,7 +33,7 @@ tree —help
 <details>
   <summary>帮助文档：</summary>
 
-  ```bash
+  ```sh
   usage: tree [-acdfghilnpqrstuvxACDFJQNSUX] [-H baseHREF] [-T title ]
           [-L level [-R]] [-P pattern] [-I pattern] [-o filename] [--version]
           [--help] [--inodes] [--device] [--noreport] [--nolinks] [--dirsfirst]

@@ -10,7 +10,7 @@ title: '算法'
 
 ### 二分查找
 
-```javascript
+```js
 function binarySearch(array, target) {
   let low = 0
   let height = array.length - 1
@@ -30,7 +30,7 @@ function binarySearch(array, target) {
 
 ### 快速排序
 
-```javascript
+```js
 function quicksort(arr) {
   if (arr.length <= 1) return arr
 
@@ -55,7 +55,7 @@ console.log(quicksort([4, 3, 5, 2, 1, 6])) //  [1, 2, 3, 4, 5, 6]
 
 ### 归并排序
 
-```javascript
+```js
 function merge(left, right) {
   let res = []
 
@@ -85,7 +85,7 @@ console.log(mergeSort([3, 2, 4, 5, 1, 6])) // [1, 2, 3, 4, 5, 6]
 
 ### 插入排序
 
-```javascript
+```js
 function insertionSort(array) {
   for (let i = 1; i < array.length; i++) {
     let j = i - 1
@@ -105,7 +105,7 @@ function insertionSort(array) {
 
 ### 选择排序
 
-```javascript
+```js
 function selectionSort(array) {
   for (let i = 0; i < array.length; i++) {
     let minIndex = i
@@ -128,7 +128,7 @@ function selectionSort(array) {
 
 ### 希尔排序
 
-```javascript
+```js
 function shellSort(array) {
   const len = array.length
   let gap = Math.floor(len / 2)
@@ -151,7 +151,7 @@ function shellSort(array) {
 
 ### 堆排序
 
-```javascript
+```js
 function heapSort(array) {
   for (let i = Math.floor(array.length / 2 - 1); i >= 0; i--) {
     adjustHeap(array, i, array.length)

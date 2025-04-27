@@ -10,7 +10,7 @@ title: 'Vue 3 JSX 语法'
 
 安装插件
 
-```bash
+```sh
 npm install @vue/babel-plugin-jsx -D
 ```
 

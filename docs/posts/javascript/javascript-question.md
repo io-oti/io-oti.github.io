@@ -12,7 +12,7 @@ title: 'JavaScript 进阶问题列表'
 
 ## 1. 输出是什么？
 
-```javascript
+```js
 function sayHi() {
   console.log(name)
   console.log(age)
@@ -42,7 +42,7 @@ sayHi()
 
 ## 2. 输出是什么？
 
-```javascript
+```js
 for (var i = 0; i < 3; i++) {
   setTimeout(() => console.log(i), 1)
 }
@@ -70,7 +70,7 @@ for (let i = 0; i < 3; i++) {
 
 ## 3. 输出是什么？
 
-```javascript
+```js
 const shape = {
   radius: 10,
   diameter() {
@@ -104,7 +104,7 @@ shape.perimeter()
 
 ## 4. 输出是什么？
 
-```javascript
+```js
 +true;
 !"Lydia";
 ```
@@ -127,7 +127,7 @@ shape.perimeter()
 
 ## 5. 哪一个是正确的？
 
-```javascript
+```js
 const bird = {
   size: 'small'
 }
@@ -161,7 +161,7 @@ const mouse = {
 
 ## 6. 输出是什么？
 
-```javascript
+```js
 let c = { greeting: 'Hey!' }
 let d
 
@@ -193,7 +193,7 @@ console.log(d.greeting)
 
 ## 7. 输出是什么？
 
-```javascript
+```js
 let a = 3
 let b = new Number(3)
 let c = 3
@@ -224,7 +224,7 @@ console.log(b === c)
 
 ## 8. 输出是什么？
 
-```javascript
+```js
 class Chameleon {
   static colorChange(newColor) {
     this.newColor = newColor
@@ -257,7 +257,7 @@ freddie.colorChange('orange')
 
 ## 9. 输出是什么？
 
-```javascript
+```js
 let greeting
 greeting = {} // Typo!
 console.log(greeting)
@@ -281,7 +281,7 @@ console.log(greeting)
 
 ## 10. 当我们这么做时，会发生什么？
 
-```javascript
+```js
 function bark() {
   console.log('Woof!')
 }
@@ -308,7 +308,7 @@ bark.animal = 'dog'
 
 ## 11. 输出是什么？
 
-```javascript
+```js
 function Person(firstName, lastName) {
   this.firstName = firstName;
   this.lastName = lastName;
@@ -347,7 +347,7 @@ Person.prototype.getFullName = function () {
 
 ## 12. 输出是什么？
 
-```javascript
+```js
 function Person(firstName, lastName) {
   this.firstName = firstName
   this.lastName = lastName
@@ -413,7 +413,7 @@ console.log(sarah)
 
 ## 15. 输出是什么？
 
-```javascript
+```js
 function sum(a, b) {
   return a + b
 }
@@ -440,7 +440,7 @@ JavaScript 是一种**动态类型语言**：我们不指定某些变量的类�
 
 ## 16. 输出是什么？
 
-```javascript
+```js
 let number = 0
 console.log(number++)
 console.log(++number)
@@ -474,7 +474,7 @@ console.log(number)
 
 ## 17. 输出是什么？
 
-```javascript
+```js
 function getPersonInfo(one, two, three) {
   console.log(one)
   console.log(two)
@@ -503,7 +503,7 @@ getPersonInfo`${person} is ${age} years old`
 
 ## 18. 输出是什么？
 
-```javascript
+```js
 function checkAge(data) {
   if (data === { age: 18 }) {
     console.log('You are an adult!')
@@ -537,7 +537,7 @@ checkAge({ age: 18 })
 
 ## 19. 输出是什么？
 
-```javascript
+```js
 function getAge(...args) {
   console.log(typeof args)
 }
@@ -562,7 +562,7 @@ getAge(21)
 
 ## 20. 输出是什么？
 
-```javascript
+```js
 function getAge() {
   'use strict'
   age = 21
@@ -589,7 +589,7 @@ getAge()
 
 ## 21. 输出是什么？
 
-```javascript
+```js
 const sum = eval('10*10+5')
 ```
 
@@ -610,7 +610,7 @@ const sum = eval('10*10+5')
 
 ## 22. cool_secret 可访问多长时间？
 
-```javascript
+```js
 sessionStorage.setItem('cool_secret', 123)
 ```
 
@@ -633,7 +633,7 @@ sessionStorage.setItem('cool_secret', 123)
 
 ## 23. 输出是什么？
 
-```javascript
+```js
 var num = 8
 var num = 10
 
@@ -659,7 +659,7 @@ console.log(num)
 
 ## 24. 输出是什么？
 
-```javascript
+```js
 const obj = { 1: 'a', 2: 'b', 3: 'c' }
 const set = new Set([1, 2, 3, 4, 5])
 
@@ -688,7 +688,7 @@ set.has(1)
 
 ## 25. 输出是什么？
 
-```javascript
+```js
 const obj = { a: 'one', b: 'two', a: 'three' }
 console.log(obj)
 ```
@@ -726,7 +726,7 @@ console.log(obj)
 
 ## 27. 输出是什么？
 
-```javascript
+```js
 for (let i = 1; i < 5; i++) {
   if (i === 3) continue
   console.log(i)
@@ -750,7 +750,7 @@ for (let i = 1; i < 5; i++) {
 
 ## 28. 输出是什么？
 
-```javascript
+```js
 String.prototype.giveLydiaPizza = () => {
   return 'Just give Lydia pizza already!'
 }
@@ -777,7 +777,7 @@ name.giveLydiaPizza()
 
 ## 29. 输出是什么？
 
-```javascript
+```js
 const a = {}
 const b = { key: 'b' }
 const c = { key: 'c' }
@@ -809,7 +809,7 @@ console.log(a[b])
 
 ## 30. 输出是什么？
 
-```javascript
+```js
 const foo = () => console.log('First')
 const bar = () => setTimeout(() => console.log('Second'))
 const baz = () => console.log('Third')
@@ -912,7 +912,7 @@ WebAPI 不能随时向栈内添加内容。相反，它将回调函数推到名�
 
 ## 33. 输出是什么？
 
-```javascript
+```js
 const person = { name: 'Lydia' }
 
 function sayHi(age) {
@@ -942,7 +942,7 @@ sayHi.bind(person, 21)
 
 ## 34. 输出是什么？
 
-```javascript
+```js
 function sayHi() {
   return (() => 0)()
 }
@@ -969,7 +969,7 @@ typeof sayHi()
 
 ## 35. 下面哪些值是 falsy?
 
-```javascript
+```js
 0
 new Number(0)
 ('')
@@ -1006,7 +1006,7 @@ undefined
 
 ## 36. 输出是什么？
 
-```javascript
+```js
 console.log(typeof typeof 1)
 ```
 
@@ -1028,7 +1028,7 @@ console.log(typeof typeof 1)
 
 ## 37. 输出是什么？
 
-```javascript
+```js
 const numbers = [1, 2, 3]
 numbers[10] = 11
 console.log(numbers)
@@ -1055,7 +1055,7 @@ console.log(numbers)
 
 ## 38. 输出是什么？
 
-```javascript
+```js
 (() => {
   let x, y
   try {
@@ -1110,7 +1110,7 @@ JavaScript 只有基本类型和对象。
 
 ## 40. 输出是什么？
 
-```javascript
+```js
 [[0, 1], [2, 3]].reduce(
   (acc, cur) => {
     return acc.concat(cur)
@@ -1137,7 +1137,7 @@ JavaScript 只有基本类型和对象。
 
 ## 41. 输出是什么？
 
-```javascript
+```js
 !!null
 !!''
 !!1
@@ -1164,7 +1164,7 @@ JavaScript 只有基本类型和对象。
 
 ## 42. `setInterval` 方法的返回值是什么？
 
-```javascript
+```js
 setInterval(() => console.log('Hi'), 1000)
 ```
 
@@ -1185,7 +1185,7 @@ setInterval(() => console.log('Hi'), 1000)
 
 ## 43. 输出是什么？
 
-```javascript
+```js
 [...'Lydia']
 ```
 
@@ -1206,7 +1206,7 @@ string 类型是可迭代的。扩展运算符将迭代的每个字符映射成�
 
 ## 44. 输出是什么？
 
-```javascript
+```js
 function* generator(i) {
   yield i;
   yield i * 2;
@@ -1239,7 +1239,7 @@ console.log(gen.next().value);
 
 ## 45. 返回值是什么？
 
-```javascript
+```js
 const firstPromise = new Promise((res, rej) => {
   setTimeout(res, 500, "one");
 });
@@ -1268,7 +1268,7 @@ Promise.race([firstPromise, secondPromise]).then(res => console.log(res));
 
 ## 46. 输出是什么？
 
-```javascript
+```js
 let person = { name: "Lydia" };
 const members = [person];
 person = null;
@@ -1305,7 +1305,7 @@ console.log(members);
 
 ## 47. 输出是什么？
 
-```javascript
+```js
 const person = {
   name: "Lydia",
   age: 21
@@ -1333,7 +1333,7 @@ for (const item in person) {
 
 ## 48. 输出是什么？
 
-```javascript
+```js
 console.log(3 + 4 + "5");
 ```
 
@@ -1358,7 +1358,7 @@ console.log(3 + 4 + "5");
 
 ## 49. `num`的值是什么？
 
-```javascript
+```js
 const num = parseInt("7*6", 10);
 ```
 
@@ -1381,7 +1381,7 @@ const num = parseInt("7*6", 10);
 
 ## 50. 输出是什么？
 
-```javascript
+```js
 [1, 2, 3].map(num => {
   if (typeof num === "number") return;
   return num * 2;
@@ -1407,7 +1407,7 @@ const num = parseInt("7*6", 10);
 
 ## 51. 输出的是什么？
 
-```javascript
+```js
 function getInfo(member, year) {
   member.name = "Lydia";
   year = "1998";
@@ -1442,7 +1442,7 @@ console.log(person, birthYear);
 
 ## 52. 输出是什么？
 
-```javascript
+```js
 function greeting() {
   throw "Hello world!";
 }
@@ -1478,7 +1478,7 @@ sayHi();
 
 ## 53. 输出是什么？
 
-```javascript
+```js
 function Car() {
   this.make = "Lamborghini";
   return { make: "Maserati" };
@@ -1505,7 +1505,7 @@ console.log(myCar.make);
 
 ## 54. 输出是什么？
 
-```javascript
+```js
 (() => {
   let x = (y = 10);
 })();
@@ -1526,7 +1526,7 @@ console.log(typeof y);
 
 `let x = y = 10;` 是下面这个表达式的缩写：
 
-```javascript
+```js
 y = 10;
 let x = y;
 ```
@@ -1542,7 +1542,7 @@ let x = y;
 
 ## <a name=20190629></a>55. 输出是什么？
 
-```javascript
+```js
 class Dog {
   constructor(name) {
     this.name = name;
@@ -1581,7 +1581,7 @@ pet.bark();
 
 ## 56. 输出是什么？
 
-```javascript
+```js
 const set = new Set([1, 1, 2, 3, 4]);
 
 console.log(set);
@@ -1606,13 +1606,13 @@ console.log(set);
 
 ## 57. 输出是什么？
 
-```javascript
+```js
 // counter.js
 let counter = 10;
 export default counter;
 ```
 
-```javascript
+```js
 // index.js
 import myCounter from "./counter";
 
@@ -1640,7 +1640,7 @@ console.log(myCounter);
 
 ## 58. 输出是什么？
 
-```javascript
+```js
 const name = "Lydia";
 age = 21;
 
@@ -1667,7 +1667,7 @@ console.log(delete age);
 
 ## 59. 输出是什么？
 
-```javascript
+```js
 const numbers = [1, 2, 3, 4, 5];
 const [y] = numbers;
 
@@ -1686,7 +1686,7 @@ console.log(y);
 
 我们可以通过解构赋值来解析来自对象的数组或属性的值，比如说：
 
-```javascript
+```js
 [a, b] = [1, 2];
 ```
 
@@ -1694,7 +1694,7 @@ console.log(y);
 
 `a`的值现在是`1`，`b`的值现在是`2`.而在题目中，我们是这么做的：
 
-```javascript
+```js
 [y] = [1, 2, 3, 4, 5];
 ```
 
@@ -1707,7 +1707,7 @@ console.log(y);
 
 ## 60. 输出是什么？
 
-```javascript
+```js
 const user = { name: "Lydia", age: 21 };
 const admin = { admin: true, ...user };
 
@@ -1731,7 +1731,7 @@ console.log(admin);
 
 ## 61. 输出是什么？
 
-```javascript
+```js
 const person = { name: "Lydia" };
 
 Object.defineProperty(person, "age", { value: 21 });
@@ -1759,7 +1759,7 @@ console.log(Object.keys(person));
 
 ## 62. 输出是什么？
 
-```javascript
+```js
 const settings = {
   username: "lydiahallie",
   level: 19,
@@ -1792,7 +1792,7 @@ console.log(data);
 
 ## 63. 输出是什么？
 
-```javascript
+```js
 let num = 10;
 
 const increaseNumber = () => num++;
@@ -1824,7 +1824,7 @@ console.log(num2);
 
 ## 64. 输出什么？
 
-```javascript
+```js
 const value = { number: 10 };
 
 const multiply = (x = { ...value }) => {
@@ -1860,7 +1860,7 @@ multiply(value);
 
 ## 65. 输出什么？
 
-```javascript
+```js
 [1, 2, 3, 4].reduce((x, y) => console.log(x, y));
 ```
 
@@ -1897,7 +1897,7 @@ multiply(value);
 
 ## 66. 使用哪个构造函数可以成功继承`Dog`类？
 
-```javascript
+```js
 class Dog {
   constructor(name) {
     this.name = name;
@@ -1948,7 +1948,7 @@ class Labrador extends Dog {
 
 ## 67. 输出什么？
 
-```javascript
+```js
 // index.js
 console.log('running index.js');
 import { sum } from './sum.js';
@@ -1978,7 +1978,7 @@ export const sum = (a, b) => a + b;
 
 ## 68. 输出什么？
 
-```javascript
+```js
 console.log(Number(2) === Number(2))
 console.log(Boolean(false) === Boolean(false))
 console.log(Symbol('foo') === Symbol('foo'))
@@ -2001,7 +2001,7 @@ console.log(Symbol('foo') === Symbol('foo'))
 
 ## 69. 输出什么？
 
-```javascript
+```js
 const name = "Lydia Hallie"
 console.log(name.padStart(13))
 console.log(name.padStart(2))
@@ -2026,7 +2026,7 @@ console.log(name.padStart(2))
 
 ## 70. 输出什么？
 
-```javascript
+```js
 console.log("🥑" + "💻");
 ```
 
@@ -2047,7 +2047,7 @@ console.log("🥑" + "💻");
 
 ## 71. 如何能打印出`console.log`语句后注释掉的值？
 
-```javascript
+```js
 function* startGame() {
   const 答案 = yield "Do you love JavaScript?";
   if (答案 !== "Yes") {
@@ -2080,7 +2080,7 @@ console.log(/* 2 */); // JavaScript loves you back ❤️
 
 ## 72. 输出什么？
 
-```javascript
+```js
 console.log(String.raw`Hello\nworld`);
 ```
 
@@ -2096,7 +2096,7 @@ console.log(String.raw`Hello\nworld`);
 
 `String.raw`函数是用来获取一个模板字符串的原始字符串的，它返回一个字符串，其中忽略了转义符（`\n`，`\v`，`\t`等）。但反斜杠可能造成问题，因为你可能会遇到下面这种类似情况：
 
-```javascript
+```js
 const path = `C:\Documents\Projects\table.html`
 String.raw`${path}`
 ```
@@ -2107,7 +2107,7 @@ String.raw`${path}`
 
 直接使用`String.raw`
 
-```javascript
+```js
 String.raw`C:\Documents\Projects\table.html`
 ```
 
@@ -2120,7 +2120,7 @@ String.raw`C:\Documents\Projects\table.html`
 
 ## 73. 输出什么？
 
-```javascript
+```js
 async function getData() {
   return await Promise.resolve("I made it!");
 }
@@ -2152,7 +2152,7 @@ console.log(data);
 
 ## 74. 输出什么？
 
-```javascript
+```js
 function addToList(item, list) {
   return list.push(item);
 }
@@ -2180,7 +2180,7 @@ console.log(result);
 
 ## 75. 输出什么？
 
-```javascript
+```js
 const box = { x: 10, y: 20 };
 
 Object.freeze(box);
@@ -2213,7 +2213,7 @@ console.log(shape)
 
 ## 76. 输出什么？
 
-```javascript
+```js
 const { name: myName } = { name: "Lydia" };
 
 console.log(name);
@@ -2240,7 +2240,7 @@ console.log(name);
 
 ## 77. 以下是个纯函数么？
 
-```javascript
+```js
 function sum(a, b) {
   return a + b;
 }
@@ -2265,7 +2265,7 @@ function sum(a, b) {
 
 ## 78. 输出什么？
 
-```javascript
+```js
 const add = () => {
   const cache = {};
   return num => {
@@ -2312,7 +2312,7 @@ console.log(addFunction(5 * 2));
 
 ## <a name=20190726></a>79. 输出什么？
 
-```javascript
+```js
 const myLifeSummedUp = ["☕", "💻", "🍷", "🍫"]
 
 for (let item in myLifeSummedUp) {
@@ -2347,7 +2347,7 @@ for (let item of myLifeSummedUp) {
 
 ## 80. 输出什么？
 
-```javascript
+```js
 const list = [1 + 2, 1 * 2, 1 / 2]
 console.log(list)
 ```
@@ -2371,7 +2371,7 @@ console.log(list)
 
 ## 81. 输出什么？
 
-```javascript
+```js
 function sayHi(name) {
   return `Hi there, ${name}`
 }
@@ -2402,7 +2402,7 @@ console.log(sayHi())
 
 ## 82. 输出什么？
 
-```javascript
+```js
 var status = "😎"
 
 setTimeout(() => {
@@ -2438,7 +2438,7 @@ setTimeout(() => {
 
 ## 83. 输出什么？
 
-```javascript
+```js
 const person = {
   name: "Lydia",
   age: 21
@@ -2473,7 +2473,7 @@ console.log(person)
 
 ## 84. 输出什么？
 
-```javascript
+```js
 function checkAge(age) {
   if (age < 18) {
     const message = "Sorry, you're too young."
@@ -2504,7 +2504,7 @@ console.log(checkAge(21))
 
 ## 85. 什么样的信息将被打印？
 
-```javascript
+```js
 fetch('https://www.website.com/api/user/1')
   .then(res => res.json())
   .then(res => console.log(res))
@@ -2527,7 +2527,7 @@ fetch('https://www.website.com/api/user/1')
 
 ## 86. 哪个选项是将`hasName`设置为`true`的方法，前提是不能将`true`作为参数传递？
 
-```javascript
+```js
 function getName(name) {
   const hasName = //
 }
@@ -2556,7 +2556,7 @@ function getName(name) {
 
 ## 87. 输出什么？
 
-```javascript
+```js
 console.log("I want pizza"[0])
 ```
 
@@ -2579,7 +2579,7 @@ console.log("I want pizza"[0])
 
 ## 88. 输出什么？
 
-```javascript
+```js
 function sum(num1, num2 = num1) {
   console.log(num1 + num2)
 }
@@ -2615,7 +2615,7 @@ test(3, 4) // 3 4
 
 ## 89. 输出什么？
 
-```javascript
+```js
 // module.js
 export default () => "Hello world"
 export const name = "Lydia"
@@ -2645,7 +2645,7 @@ console.log(data)
 
 ## 90. 输出什么？
 
-```javascript
+```js
 class Person {
   constructor(name) {
     this.name = name
@@ -2668,7 +2668,7 @@ console.log(typeof member)
 
 类是构造函数的语法糖，如果用构造函数的方式来重写`Person`类则将是：
 
-```javascript
+```js
 function Person() {
   this.name = name
 }
@@ -2681,7 +2681,7 @@ function Person() {
 
 ## 91. 输出什么？
 
-```javascript
+```js
 let newList = [1, 2, 3].push(4)
 
 console.log(newList.push(5))
@@ -2706,7 +2706,7 @@ console.log(newList.push(5))
 
 ## 92. 输出什么？
 
-```javascript
+```js
 function giveLydiaPizza() {
   return "Here is pizza!"
 }
@@ -2734,7 +2734,7 @@ console.log(giveLydiaChocolate.prototype)
 
 ## 93. 输出什么？
 
-```javascript
+```js
 const person = {
   name: "Lydia",
   age: 21
@@ -2768,7 +2768,7 @@ for (const [x, y] of Object.entries(person)) {
 
 ## 94. 输出什么？
 
-```javascript
+```js
 function getItems(fruitList, ...args, favoriteFruit) {
   return [...fruitList, ...args, favoriteFruit]
 }
@@ -2788,7 +2788,7 @@ getItems(["banana", "apple"], "pear", "orange")
 
 `... args`是剩余参数，剩余参数的值是一个包含所有剩余参数的数组，**并且只能作为最后一个参数**。上述示例中，剩余参数是第二个参数，这是不可能的，并会抛出语法错误。
 
-```javascript
+```js
 function getItems(fruitList, favoriteFruit, ...args) {
   return [...fruitList, ...args, favoriteFruit]
 }
@@ -2802,7 +2802,7 @@ getItems(["banana", "apple"], "pear", "orange")
 
 ## <a name=20190817></a>95. 输出什么？
 
-```javascript
+```js
 function nums(a, b) {
   if
   (a > b)
@@ -2831,7 +2831,7 @@ console.log(nums(1, 2))
 
 在这里，我们在新的一行上写了一个`return`语句和另一个值`a + b`。然而，由于它是一个新行，引擎并不知道它实际上是我们想要返回的值。相反，它会在`return`后面自动添加分号。你可以这样看：
 
-```javascript
+```js
   return;
   a + b
 ```
@@ -2843,7 +2843,7 @@ console.log(nums(1, 2))
 
 ## 96. 输出什么？
 
-```javascript
+```js
 class Person {
   constructor() {
     this.name = "Lydia"
@@ -2877,7 +2877,7 @@ console.log(member.name)
 
 ## 97. 输出什么？
 
-```javascript
+```js
 const info = {
   [Symbol('a')]: 'b'
 }
@@ -2905,7 +2905,7 @@ console.log(Object.keys(info))
 
 ## 98. 输出什么？
 
-```javascript
+```js
 const getList = ([x, ...y]) => [x, y]
 const getUser = user => { name: user.name, age: user.age }
 
@@ -2943,7 +2943,7 @@ console.log(getUser(user))
 
 ## 99. 输出什么？
 
-```javascript
+```js
 const name = "Lydia"
 
 console.log(name())
@@ -2971,7 +2971,7 @@ console.log(name())
 
 ## 100. 输出什么？
 
-```javascript
+```js
 // 🎉✨ This is my 100th question! ✨🎉
 
 const output = `${[] && 'Im'}possible!
@@ -2997,7 +2997,7 @@ You should${'' && `n't`} see a therapist after so much JavaScript lol`
 
 ## 101.输出什么？
 
-```javascript
+```js
 const one = (false || {} || null)
 const two = (null || false || "")
 const three = ([] || 0 || true)
@@ -3028,7 +3028,7 @@ console.log(one, two, three)
 
 ## 102. 依次输出什么？
 
-```javascript
+```js
 const myPromise = () => Promise.resolve('I have resolved!')
 
 function firstFunction() {
@@ -3068,7 +3068,7 @@ secondFunction()
 
 ## 103. 输出什么？
 
-```javascript
+```js
 const set = new Set()
 
 set.add(1)
@@ -3103,7 +3103,7 @@ for (let item of set) {
 
 ## 104. 结果是什么？
 
-```javascript
+```js
 Promise.resolve(5)
 ```
 
@@ -3126,7 +3126,7 @@ Promise.resolve(5)
 
 ## 105. 输出什么？
 
-```javascript
+```js
 function compareMembers(person1, person2 = person) {
   if (person1 !== person2) {
     console.log("Not the same!")
@@ -3163,7 +3163,7 @@ compareMembers(person)
 
 ## 106. 输出什么？
 
-```javascript
+```js
 const colorConfig = {
   red: true,
   blue: false,
@@ -3199,7 +3199,7 @@ JavaScript 解释（或取消装箱）语句。当我们使用方括号表示法
 
 ## 107. 输出什么？
 
-```javascript
+```js
 console.log('❤️' === '❤️')
 ```
 
@@ -3218,7 +3218,7 @@ console.log('❤️' === '❤️')
 
 ## 108. 哪些方法修改了原数组？
 
-```javascript
+```js
 const emojis = ['✨', '🥑', '😍']
 
 emojis.map(x => x + '✨')
@@ -3248,7 +3248,7 @@ emojis.splice(1, 2, '✨')
 
 ## <a name=20191009></a>109. 输出什么？
 
-```javascript
+```js
 const food = ['🍕', '🍫', '🥑', '🍔']
 const info = { favoriteFood: food[0] }
 
@@ -3276,7 +3276,7 @@ console.log(food)
 
 ## 110. 这个函数干了什么？
 
-```javascript
+```js
 JSON.parse()
 ```
 
@@ -3292,7 +3292,7 @@ JSON.parse()
 
 使用`JSON.parse()`方法，我们可以将 JSON 字符串解析为 JavaScript 值。
 
-```javascript
+```js
 // 将数字字符串化为有效的 JSON，然后将 JSON 字符串解析为 JavaScript 值：
 const jsonNumber = JSON.stringify(4) // '4'
 JSON.parse(jsonNumber) // 4
@@ -3311,7 +3311,7 @@ JSON.parse(jsonArray) // { name: 'Lydia' }
 
 ## 111. 输出什么？
 
-```javascript
+```js
 let name = 'Lydia'
 
 function getName() {
@@ -3338,7 +3338,7 @@ getName()
 
 如果我们不在`getName`函数中声明`name`变量，则 javascript 引擎会查看原型链。会找到其外部作用域有一个名为`name`的变量，其值为`Lydia`。在这种情况下，它将打印`Lydia`：
 
-```javascript
+```js
 let name = 'Lydia'
 
 function getName() {
@@ -3353,7 +3353,7 @@ getName() // Lydia
 
 ## 112. 输出什么？
 
-```javascript
+```js
 function* generatorOne() {
   yield ['a', 'b', 'c'];
 }
@@ -3383,14 +3383,14 @@ console.log(two.next().value)
 
 在函数 `generatorOne` 中，我们通过 `yield` 关键字 yield 了一个完整的数组 `['a', 'b', 'c']`。函数`one`通过`next`方法返回的对象的`value` 属性的值 (`one.next().value`) 等价于数组 `['a', 'b', 'c']`.
 
-```javascript
+```js
 console.log(one.next().value) // ['a', 'b', 'c']
 console.log(one.next().value) // undefined
 ```
 
 在函数 `generatorTwo` 中，我们使用 `yield*` 关键字。就相当于函数`two`第一个`yield`的值，等价于在迭代器中第一个 `yield` 的值。数组`['a', 'b', 'c']`就是这个迭代器。第一个 `yield` 的值就是 `a`，所以我们第一次调用 `two.next().value`时，就返回`a`。
 
-```javascript
+```js
 console.log(two.next().value) // 'a'
 console.log(two.next().value) // 'b'
 console.log(two.next().value) // 'c'
@@ -3402,7 +3402,7 @@ console.log(two.next().value) // undefined
 
 ## 113. 输出什么？
 
-```javascript
+```js
 console.log(`${(x => x)('I love')} to program`)
 ```
 
@@ -3423,7 +3423,7 @@ console.log(`${(x => x)('I love')} to program`)
 
 ## 114. 将会发生什么？
 
-```javascript
+```js
 let config = {
   alert: setInterval(() => {
     console.log('Alert!')
@@ -3450,7 +3450,7 @@ config = null
 
 ## 115. 哪一个方法会返回 `'Hello world!'` ？
 
-```javascript
+```js
 const myMap = new Map()
 const myFunc = () => 'greeting'
 
@@ -3484,7 +3484,7 @@ myMap.get(() => 'greeting')
 
 ## 116. 输出什么？
 
-```javascript
+```js
 const person = {
   name: "Lydia",
   age: 21
@@ -3523,7 +3523,7 @@ console.log(person)
 
 ## 117. 下面那个选项将会返回 `6`?
 
-```javascript
+```js
 function sumValues(x, y, z) {
   return x + y + z;
 }
@@ -3546,7 +3546,7 @@ function sumValues(x, y, z) {
 
 ## 118. 输出什么？
 
-```javascript
+```js
 let num = 1;
 const list = ["🥳", "🤠", "🥰", "🤪"];
 
@@ -3570,7 +3570,7 @@ console.log(list[(num += 1)]);
 
 ## 119. 输出什么？
 
-```javascript
+```js
 const person = {
   firstName: "Lydia",
   lastName: "Hallie",
@@ -3611,7 +3611,7 @@ console.log(member.getLastName?.());
 
 ## 120. 输出什么？
 
-```javascript
+```js
 const groceries = ["banana", "apple", "peanuts"];
 
 if (groceries.indexOf("banana")) {
@@ -3638,7 +3638,7 @@ if (groceries.indexOf("banana")) {
 
 ## 121. 输出什么？
 
-```javascript
+```js
 const config = {
   languages: [],
   set language(lang) {
@@ -3666,7 +3666,7 @@ console.log(config.language);
 
 ## 122. 输出什么？
 
-```javascript
+```js
 const name = "Lydia Hallie";
 
 console.log(!typeof name === "object");
@@ -3692,7 +3692,7 @@ console.log(!typeof name === "string");
 
 ## 123. 输出什么？
 
-```javascript
+```js
 const add = x => y => z => {
   console.log(x, y, z);
   return x + y + z;
@@ -3718,7 +3718,7 @@ add(4)(5)(6);
 
 ## 124. 输出什么？
 
-```javascript
+```js
 async function* range(start, end) {
   for (let i = start; i <= end; i++) {
     yield Promise.resolve(i);
@@ -3750,7 +3750,7 @@ async function* range(start, end) {
 
 ## 125. 输出什么？
 
-```javascript
+```js
 const myFunc = ({ x, y, z }) => {
   console.log(x, y, z);
 };
@@ -3775,7 +3775,7 @@ myFunc(1, 2, 3);
 
 ## 126. 输出什么？
 
-```javascript
+```js
 function getFine(speed, amount) {
   const formattedSpeed = new Intl.NumberFormat(
     'en-US',
@@ -3810,7 +3810,7 @@ console.log(getFine(130, 300))
 
 ## 127. 输出什么？
 
-```javascript
+```js
 const spookyItems = ["👻", "🎃", "🕸"];
 ({ item: spookyItems[3] } = { item: "💀" });
 
@@ -3834,7 +3834,7 @@ console.log(spookyItems);
 
 ## 128. 输出什么？
 
-```javascript
+```js
 const name = "Lydia Hallie";
 const age = 21;
 
@@ -3864,7 +3864,7 @@ console.log(isNaN(age));
 
 ## 129. 输出什么？
 
-```javascript
+```js
 const randomValue = 21;
 
 function getInfo() {
@@ -3892,7 +3892,7 @@ getInfo();
 
 ## 130. 输出什么？
 
-```javascript
+```js
 const myPromise = Promise.resolve("Woah some cool data");
 
 (async () => {
@@ -3923,7 +3923,7 @@ const myPromise = Promise.resolve("Woah some cool data");
 
 ## 131. 输出什么？
 
-```javascript
+```js
 const emojis = ["🥑", ["✨", "✨", ["🍕", "🍕"]]];
 
 console.log(emojis.flat(1));
@@ -3946,7 +3946,7 @@ console.log(emojis.flat(1));
 
 ## <a name=20191224></a>132. 输出什么？
 
-```javascript
+```js
 class Counter {
   constructor() {
     this.count = 0;
@@ -3992,7 +3992,7 @@ console.log(counterOne.count);
 
 ## 133. 输出什么？
 
-```javascript
+```js
 const myPromise = Promise.resolve(Promise.resolve("Promise!"));
 
 function funcOne() {
@@ -4037,7 +4037,7 @@ promise 和 timeout 都是异步操作，函数继续执行当 JS 引擎忙于�
 
 ## 134. 我们怎样才能在 `index.js` 中调用 `sum.js?` 中的 `sum`？
 
-```javascript
+```js
 // sum.js
 export default function sum(x) {
   return x + x;
@@ -4059,7 +4059,7 @@ import * as sum from "./sum";
 
 使用符号 `*`，我们引入文件中的所有值，包括默认和具名。如果我们有以下文件：
 
-```javascript
+```js
 // info.js
 export const name = "Lydia";
 export const age = 21;
@@ -4072,7 +4072,7 @@ console.log(info);
 
 将会输出以下内容：
 
-```javascript
+```js
 {
   default: "I love JavaScript",
   name: "Lydia",
@@ -4082,7 +4082,7 @@ console.log(info);
 
 以 `sum` 为例，相当于以下形式引入值 `sum`：
 
-```javascript
+```js
 { default: function sum(x) { return x + x } }
 ```
 
@@ -4093,7 +4093,7 @@ console.log(info);
 
 ## 135. 输出什么？
 
-```javascript
+```js
 const handler = {
   set: () => console.log("Added a new property!"),
   get: () => console.log("Accessed a property!")
@@ -4128,7 +4128,7 @@ person.name;
 
 ## 136. 以下哪一项会对对象 `person` 有副作用？
 
-```javascript
+```js
 const person = { name: "Lydia Hallie" };
 
 Object.seal(person);
@@ -4153,7 +4153,7 @@ Object.seal(person);
 
 ## 137. 以下哪一项会对对象 `person` 有副作用？
 
-```javascript
+```js
 const person = {
   name: "Lydia Hallie",
   address: {
@@ -4183,7 +4183,7 @@ Object.freeze(person);
 
 ## 138. 输出什么？
 
-```javascript
+```js
 const add = x => x + x;
 
 function myFunc(num = 2, value = add(num)) {
@@ -4213,7 +4213,7 @@ myFunc(3);
 
 ## 139. 输出什么？
 
-```javascript
+```js
 class Counter {
   #number = 10
 
@@ -4249,7 +4249,7 @@ console.log(counter.#number)
 
 ## 140. 选择哪一个？
 
-```javascript
+```js
 const teams = [
   { name: "Team 1", members: ["Paul", "Lisa"] },
   { name: "Team 2", members: ["Laura", "Tim"] }
@@ -4291,7 +4291,7 @@ obj.next(); // { value: "Lisa", done: false }
 
 ## 141. 输出什么？
 
-```javascript
+```js
 const person = {
   name: "Lydia Hallie",
   hobbies: ["coding"]
@@ -4334,7 +4334,7 @@ pushing `dancing` 和 `baking` 之后，`person.hobbies` 的值为 `["coding", "
 
 ## 142. 输出什么？
 
-```javascript
+```js
 class Bird {
   constructor() {
     console.log("I'm a bird. 🦢");
@@ -4368,7 +4368,7 @@ const pet = new Flamingo();
 
 ## 143. 哪一个选项会导致报错？
 
-```javascript
+```js
 const emojis = ["🎄", "🎅🏼", "🎁", "⭐"];
 
 /* 1 */ emojis.push("🦌");
@@ -4394,7 +4394,7 @@ const emojis = ["🎄", "🎅🏼", "🎁", "⭐"];
 
 ## 144. 我们需要向对象 `person` 添加什么，以致执行 `[...person]` 时获得形如 `["Lydia Hallie", 21]` 的输出？
 
-```javascript
+```js
 const person = {
   name: "Lydia Hallie",
   age: 21
@@ -4420,7 +4420,7 @@ const person = {
 
 ## 145. 输出什么？
 
-```javascript
+```js
 let count = 0;
 const nums = [0, 1, 2, 3];
 
@@ -4448,7 +4448,7 @@ console.log(count)
 
 ## 146. 输出是什么？
 
-```javascript
+```js
 function getFruit(fruits) {
   console.log(fruits?.[1]?.[1])
 }
@@ -4481,7 +4481,7 @@ getFruit([['🍍'], ['🍊', '🍌']])
 
 ## 147. 输出什么？
 
-```javascript
+```js
 class Calc {
   constructor() {
     this.count = 0
@@ -4515,7 +4515,7 @@ console.log(calc.count)
 
 ## 148. 输出什么？
 
-```javascript
+```js
 const user = {
   email: "e@mail.com",
   password: "12345"
@@ -4555,7 +4555,7 @@ console.log(updatedUser === user)
 
 ## 149. 输出什么？
 
-```javascript
+```js
 const fruit = ['🍌', '🍊', '🍎']
 
 fruit.slice(0, 1)
@@ -4584,7 +4584,7 @@ console.log(fruit)
 
 ## 150. 输出什么？
 
-```javascript
+```js
 const animals = {};
 let dog = { emoji: '🐶' }
 let cat = { emoji: '🐈' }
@@ -4618,7 +4618,7 @@ console.log(animals[dog])
 
 ## 151. 输出什么？
 
-```javascript
+```js
 const user = {
   email: "my@email.com",
   updateEmail: email => {
@@ -4647,7 +4647,7 @@ console.log(user.email)
 
 ## 152. 输出什么？
 
-```javascript
+```js
 const promise1 = Promise.resolve('First')
 const promise2 = Promise.resolve('Second')
 const promise3 = Promise.reject('Third')
@@ -4681,7 +4681,7 @@ runPromises()
 
 ## 153. 哪个作为`method`的值可以打印`{ name: "Lydia", age: 22 }`?
 
-```javascript
+```js
 const keys = ["name", "age"]
 const values = ["Lydia", 22]
 
@@ -4710,7 +4710,7 @@ Object[method](keys.map((_, i) => {
 
 ## 154. 输出什么？
 
-```javascript
+```js
 const createMember = ({ email, address = {}}) => {
   const validEmail = /.+\@.+\..+/.test(email)
   if (!validEmail) throw new Error("Valid email pls")
@@ -4742,7 +4742,7 @@ console.log(member)
 
 ## 155. 输出什么？
 
-```javascript
+```js
 let randomValue = { name: "Lydia" }
 randomValue = 23
 

@@ -30,7 +30,7 @@ title: 'Google Chrome'
 
 为所有元素添加边框
 
-```javascript
+```js
 ;[].forEach.call($$('*'), function (a) {
   a.style.outline = '1px solid #' + (~~(Math.random() * (1 << 24))).toString(16)
 })
@@ -44,7 +44,7 @@ title: 'Google Chrome'
 
 ::: code-group
 
-```bash [macOS 终端]
+```sh [macOS 终端]
 open -n /Applications/Google\ Chrome.app/ --args --disable-web-security --user-data-dir=[/Users/Username/browser]
 ```
 
@@ -83,7 +83,7 @@ Chrome 91 禁用 SameSiteByDefaultCookies 与 CookiesWithoutSameSiteMustBeSecure
 
 ::: code-group
 
-```bash [macOS 终端]
+```sh [macOS 终端]
 open -n /Applications/Google\ Chrome.app/ --args --disable-web-security --disable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure --user-data-dir=[/Users/Username/browser]
 ```
 
