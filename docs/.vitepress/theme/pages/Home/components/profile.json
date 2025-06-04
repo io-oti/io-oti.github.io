@@ -7,26 +7,6 @@
       "about": "Hey, I am Io_oTI, a front-end developer. Just a person who is balding, but now my hair is still very lush."
     },
     {
-      "label": "EXPERIENCE",
-      "timeline": [
-        {
-          "year": "2024",
-          "corp": "Front-end Developer at Some hotel",
-          "work": "Developed wechat miniprogram."
-        },
-        {
-          "year": "2020",
-          "corp": "Front-end Developer at One Connect",
-          "work": "Developed management backend system."
-        },
-        {
-          "year": "2015",
-          "corp": "Software Engineer at FNST",
-          "work": "DevOps openstack cinder driver program."
-        }
-      ]
-    },
-    {
       "label": "CONTACT",
       "contact": [
         {
@@ -43,6 +23,26 @@
           "type": "wechat",
           "src": "/icons/icon-wechat.svg",
           "value": "wizard_ok"
+        }
+      ]
+    },
+    {
+      "label": "EXPERIENCE",
+      "timeline": [
+        {
+          "year": "2024",
+          "corp": "Front-end Developer at Jin Jiang Hotels China Region",
+          "work": "Developed wechat miniprogram and web app."
+        },
+        {
+          "year": "2020",
+          "corp": "Front-end Developer at One Connect",
+          "work": "Developed management backend system."
+        },
+        {
+          "year": "2015",
+          "corp": "Software Engineer at FNST",
+          "work": "Test openstack cinder driver program."
         }
       ]
     }
