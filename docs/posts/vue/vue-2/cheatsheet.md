@@ -37,7 +37,7 @@ export default {
 </template>
 
 <script>
-exprot default {
+export default {
   data () {
     return {
       html: '<span>hello</span>'
@@ -55,7 +55,7 @@ exprot default {
 </template>
 
 <script>
-exprot default {
+export default {
   data () {
     return {
       isShow: false
@@ -77,7 +77,7 @@ exprot default {
 </template>
 
 <script>
-exprot default {
+export default {
   name: 'Syntax',
 
   props: {
@@ -111,7 +111,7 @@ exprot default {
 </template>
 
 <script>
-exprot default {
+export default {
   data () {
     return {
       items: [
@@ -138,7 +138,7 @@ exprot default {
 </template>
 
 <script>
-exprot default {
+export default {
   data () {
     return {
       items: {
@@ -207,7 +207,7 @@ export default {
 </template>
 
 <script>
-exprot default {
+export default {
   data () {
     return {
       msg: 'hello',
@@ -241,7 +241,7 @@ exprot default {
 </template>
 
 <script>
-exprot default {
+export default {
   data () {
     return {
       msg: 'hello',
